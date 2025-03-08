@@ -17,7 +17,8 @@ export default function App() {
 
   // Fetch quiz questions
   useEffect(() => {
-    fetch("/questions.json")
+    fetch("https://josevalqui.github.io/votometro/questions.json")
+
       .then((res) => res.json())
       .then((data) => {
         console.log("Fetched questions:", data);
@@ -33,7 +34,7 @@ export default function App() {
 
   // Fetch static question details
   useEffect(() => {
-    fetch("/question_details.json")
+    fetch("https://josevalqui.github.io/votometro/question_details.json")
       .then((res) => res.json())
       .then((data) => {
         console.log("Fetched question details:", data);
@@ -119,7 +120,7 @@ const submitAnswersToFirebase = async () => {
       userAnswers[q.id] = { answer: userMapping[answer] || 0.5, weight: weights[i] };
     });
 
-    fetch("/processed_votes.json")
+    fetch("https://josevalqui.github.io/votometro/processed_votes.json")
       .then((res) => res.json())
       .then((data) => {
         const individualResults = data.candidates.map((candidate) => {
@@ -164,7 +165,7 @@ const submitAnswersToFirebase = async () => {
   // When an entity (candidate or party) is selected, fetch vote_details.json and set details.
   const handleEntityClick = (entity, type) => {
     setSelectedEntity(entity);
-    fetch("/vote_details.json")
+    fetch("https://josevalqui.github.io/votometro/vote_details.json")
       .then((res) => res.json())
       .then((data) => {
         if (type === "individual") {
