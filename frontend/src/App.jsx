@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { db } from "./firebase"; // <-- Adjust the path if your firebase.js is located elsewhere
 import { collection, addDoc } from "firebase/firestore";
+import { getAuth, RecaptchaVerifier } from "firebase/auth";
 
 export default function App() {
   // State variables
@@ -267,6 +268,8 @@ const submitAnswersToFirebase = async () => {
           </>
         ) : (
           <>
+            <div id="recaptcha-container"></div>
+
             <h2>Completaste el Votómetro!</h2>
             <div style={{ marginTop: "20px", display: "flex", gap: "10px", justifyContent: "flex-start", width: "100%" }}>
               <button onClick={() => setShowIndividualResults(false)}
