@@ -30,5 +30,13 @@
     "law": "Ley que modifica el artículo 17 de la Ley 30220, Ley universitaria, sobre requisito para ser miembro del Consejo Directivo de la Sunedu.",
     "pdf_link": "src/assets/sesiones_parlamentarias_2021-2025_pdfs/PL_697_2DA_VOTAC.pdf",
     "date": "N/A"
+  },
+  {
+    "id": "PL_74",
+    "question": "El Perú debería ser más estricto respecto a la migración",
+    "source": "https://www.infobae.com/peru/2023/02/17/que-implica-la-promulgacion-de-la-ley-que-puede-limitar-el-ingreso-y-transito-de-extranjeros-en-peru/",
+    "law": "LEY QUE MODIFICA LOS ARTÍCULOS 10, 45, 61 Y 63 DEL DECRETO LEGISLATIVO 1350, DECRETO LEGISLATIVO DE MIGRACIONES, EN EL MARCO DE LA SEGURIDAD",
+    "pdf_link": "src/assets/sesiones_parlamentarias_2021-2025_pdfs/PL_74.pdf",
+    "date": "N/A"
   }
 ]
