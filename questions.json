@@ -2,6 +2,7 @@
   {
     "id": "PL 649 INS",
     "question": "Está bien reducir las protecciones a los bosques para impulsar el desarrollo económico, a pesar de que pueda provocar mayor destrucción ambiental",
+    "polarity": "+",
     "options": [
       "Sí",
       "No tengo una opinión sobre este tema",
@@ -11,6 +12,7 @@
   {
     "id": "PL 6589",
     "question": "Está bien reducir el tiempo de procesos judiciales para acelerar los juicios, aunque esto signifique que más crímenes queden impunes",
+    "polarity": "+",
     "options": [
       "Sí",
       "No tengo una opinión sobre este tema",
@@ -19,7 +21,8 @@
   },
   {
     "id": "PL 6951",
-    "question": "Si alguien actuó en contra de los derechos humanos hace 25 años, no deberían sufrir las consecuencias hoy",
+    "question": "Si alguien actuó en contra de los derechos humanos hace 25 años, debería sufrir las consecuencias hoy",
+    "polarity": "-",
     "options": [
       "Sí",
       "No tengo una opinión sobre este tema",
@@ -29,6 +32,7 @@
   {
     "id": "PL_697_2DA_VOTAC",
     "question": "Los políticos y las universidades deberían tener más poder sobre la SUNEDU",
+    "polarity": "+",
     "options": [
       "Sí",
       "No tengo una opinión sobre este tema",
@@ -38,6 +42,7 @@
   {
     "id": "PL_74",
     "question": "El Perú debería ser más estricto respecto a la migración",
+    "polarity": "+",
     "options": [
       "Sí",
       "No tengo una opinión sobre este tema",
