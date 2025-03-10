@@ -21,8 +21,8 @@
   },
   {
     "id": "PL 6951",
-    "question": "Si alguien actuó en contra de los derechos humanos hace 25 años, debería sufrir las consecuencias hoy",
-    "polarity": "-",
+    "question": "Si alguien actuó en contra de los derechos humanos hace 25 años, no debería sufrir las consecuencias hoy",
+    "polarity": "+",
     "options": [
       "Sí",
       "No tengo una opinión sobre este tema",
