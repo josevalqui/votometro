@@ -1,463 +1,699 @@
+// App.js
 import React, { useState, useEffect } from "react";
-import { db } from "./firebase"; // <-- Adjust the path if your firebase.js is located elsewhere
+import { useQuiz } from "./useQuiz";
+import { db } from "./firebase"; // adjust path if needed
 import { collection, addDoc } from "firebase/firestore";
-import { getAuth, RecaptchaVerifier } from "firebase/auth";
 
 export default function App() {
-  // State variables
-  const [questions, setQuestions] = useState([]);
-  const [questionDetails, setQuestionDetails] = useState([]);
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [answers, setAnswers] = useState([]);
-  const [weights, setWeights] = useState([]);
-  const [comparisonResults, setComparisonResults] = useState(null);
-  const [selectedEntity, setSelectedEntity] = useState(null);
-  const [entityDetails, setEntityDetails] = useState({});
-  const [hoveredOption, setHoveredOption] = useState(null);
-  const [showIndividualResults, setShowIndividualResults] = useState(false);
+  const [election, setElection] = useState(null);
+  const { state, dispatch, config, electionConfigs } = useQuiz(election);
 
-  // Fetch quiz questions
+  // Map quiz options to labels.
+  const userAnswerMapping = { 
+    "Estoy de acuerdo": "A favor", 
+    "No tengo una opinión sobre este tema": "Neutral", 
+    "No estoy de acuerdo": "En contra" 
+  };
+
+  // Preselect an entity based on available results.
   useEffect(() => {
-    fetch("https://josevalqui.github.io/votometro/questions.json")
-
-      .then((res) => res.json())
-      .then((data) => {
-        console.log("Fetched questions:", data);
-        if (Array.isArray(data) && data.length > 0) {
-          setQuestions(data);
-          setAnswers(Array(data.length).fill(null));
-        } else {
-          console.error("Invalid questions data:", data);
-        }
-      })
-      .catch((err) => console.error("Error fetching questions:", err));
-  }, []);
-
-  // Fetch static question details
-  useEffect(() => {
-    fetch("https://josevalqui.github.io/votometro/question_details.json")
-      .then((res) => res.json())
-      .then((data) => {
-        console.log("Fetched question details:", data);
-        setQuestionDetails(data);
-      })
-      .catch((err) => console.error("Error fetching question details:", err));
-  }, []);
-
-  // Set default weights when questions load
-  useEffect(() => {
-    if (questions.length) {
-      setWeights(Array(questions.length).fill(3));
+    if (state.comparisonResults) {
+      const currConfig = electionConfigs[election];
+      const resultsArray = !currConfig.isPresidentialElection
+        ? state.comparisonResults.party_results
+        : state.comparisonResults.individual_results;
+      if (resultsArray && resultsArray.length > 0) {
+        handleEntityClick(
+          resultsArray[0],
+          !currConfig.isPresidentialElection ? "party" : "individual"
+        );
+      }
     }
-  }, [questions]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [state.comparisonResults]);
 
-  // Handle answer selection
   const handleAnswerClick = (selectedOption) => {
-    setAnswers((prev) => {
-      const updated = [...prev];
-      updated[currentQuestionIndex] = selectedOption;
-      return updated;
-    });
-    if (currentQuestionIndex < questions.length - 1) {
-      setCurrentQuestionIndex(currentQuestionIndex + 1);
+    dispatch({ type: "ANSWER", index: state.currentQuestionIndex, answer: selectedOption });
+    if (state.currentQuestionIndex < state.questions.length - 1) {
+      dispatch({ type: "SET_CURRENT_QUESTION_INDEX", payload: state.currentQuestionIndex + 1 });
     }
   };
 
-  // Skip and go back
   const handleSkip = () => {
-    if (currentQuestionIndex < questions.length - 1) {
-      setCurrentQuestionIndex(currentQuestionIndex + 1);
+    if (state.currentQuestionIndex < state.questions.length - 1) {
+      dispatch({ type: "SET_CURRENT_QUESTION_INDEX", payload: state.currentQuestionIndex + 1 });
     }
   };
 
   const handleGoBack = () => {
-    if (currentQuestionIndex > 0) {
-      setCurrentQuestionIndex(currentQuestionIndex - 1);
+    if (state.currentQuestionIndex > 0) {
+      dispatch({ type: "SET_CURRENT_QUESTION_INDEX", payload: state.currentQuestionIndex - 1 });
     }
   };
 
-  // Submit answers (for logging)
   const submitAnswers = () => {
-    console.log("Submitted answers:", questions.map((q, i) => ({
+    const answersData = state.questions.map((q, i) => ({
       id: q.id,
       question: q.question,
-      answer: answers[i] || "Sin respuesta",
-      weight: weights[i],
-    })));
+      answer: state.answers[i] || "Sin respuesta",
+      weight: state.weights[i],
+    }));
+    console.log("Submitted answers:", answersData);
   };
 
-// Replace submitAnswersToSheet with this function:
-const submitAnswersToFirebase = async () => {
-  const answersData = {
-    userId: localStorage.getItem("userId") || Date.now(), // Unique User ID
-    answers,
-    createdAt: new Date(), // Timestamp for the entry
+  const submitAnswersToFirebase = async () => {
+    const answersData = {
+      userId: localStorage.getItem("userId") || Date.now(),
+      answers: state.answers,
+      createdAt: new Date(),
+    };
+    localStorage.setItem("userId", answersData.userId);
+    try {
+      const docRef = await addDoc(collection(db, "quizAnswers"), answersData);
+      console.log("Document written with ID:", docRef.id);
+    } catch (error) {
+      console.error("Error adding document:", error);
+    }
   };
 
-  // Save userId in localStorage so it's consistent across visits
-  localStorage.setItem("userId", answersData.userId);
-
-  try {
-    // Adds a new document in the "quizAnswers" collection in Firestore
-    const docRef = await addDoc(collection(db, "quizAnswers"), answersData);
-    console.log("Document written with ID:", docRef.id);
-  } catch (error) {
-    console.error("Error adding document:", error);
-  }
-};
-  
-  // Compute similarity scores using processed_votes.json
   const handleEndQuiz = () => {
+    // Log and submit answers.
     submitAnswers();
     submitAnswersToFirebase();
-    setSelectedEntity(null);
-    setShowIndividualResults(false);
-    setCurrentQuestionIndex(questions.length);
+    dispatch({ type: "SET_SELECTED_ENTITY", payload: null });
+    dispatch({ type: "SET_SHOW_INDIVIDUAL_RESULTS", payload: config.isPresidentialElection });
+    // Mark quiz end by setting currentQuestionIndex beyond last question.
+    dispatch({ type: "SET_CURRENT_QUESTION_INDEX", payload: state.questions.length });
 
+    // Process user answers into numeric values.
     const userAnswers = {};
-    const userMapping = { "Sí": 1, "No tengo una opinión sobre este tema": 0.5, "No": 0 };
-    questions.forEach((q, i) => {
-      const answer = answers[i] || "No tengo una opinión sobre este tema";
-      userAnswers[q.id] = { answer: userMapping[answer] || 0.5, weight: weights[i] };
+    state.questions.forEach((q, i) => {
+      const rawAnswer = state.answers[i] || "No tengo una opinión sobre este tema";
+      const normalizedAnswer = rawAnswer.trim().toLowerCase();
+      const userMapping = { 
+        "estoy de acuerdo": 1, 
+        "no tengo una opinión sobre este tema": 0.5, 
+        "no estoy de acuerdo": 0 
+      };
+      let numericAnswer = userMapping[normalizedAnswer];
+      if (numericAnswer === undefined) {
+        console.log(`Mapping failed for answer: "${rawAnswer}". Falling back to 0.5.`);
+        numericAnswer = 0.5;
+      }
+      if (q.polarity === "-") {
+        numericAnswer = numericAnswer === 1 ? 0 : numericAnswer === 0 ? 1 : numericAnswer;
+      }
+      userAnswers[q.id] = { answer: numericAnswer, weight: state.weights[i] };
     });
 
-    fetch("https://josevalqui.github.io/votometro/processed_votes.json")
+    // Fetch candidate votes and compute similarity scores.
+    fetch(config.votesURL)
       .then((res) => res.json())
       .then((data) => {
-        const individualResults = data.candidates.map((candidate) => {
-          let weightedDiff = 0, totalWeight = 0;
+        const processedCandidates = Object.values(data.candidates.processed);
+        const individualResults = processedCandidates.map((candidate) => {
+          let weightedDiff = 0,
+            totalWeight = 0;
           Object.entries(candidate.votes).forEach(([voteCol, candidateVote]) => {
             if (candidateVote === null) return;
-            const pdf_id = voteCol.split("_")[0];
+            // Process candidate vote using the election-specific function.
+            let numericCandidateVote = config.processCandidateVote(candidateVote);
+            const pdf_id =
+              config.name === "ecuador"
+                ? voteCol
+                : voteCol.split("_").slice(0, -1).join("_");
             if (userAnswers[pdf_id]) {
               const { answer: userAns, weight } = userAnswers[pdf_id];
-              weightedDiff += Math.abs(userAns - candidateVote) * weight;
+              weightedDiff += Math.abs(userAns - numericCandidateVote) * weight;
               totalWeight += weight;
             }
           });
-          
-          const similarity = totalWeight > 0 ? Math.round((1 - weightedDiff / totalWeight) * 100) : 0;
+          const similarity =
+            totalWeight > 0 ? Math.round((1 - weightedDiff / totalWeight) * 100) : 0;
           return { name: candidate.name, party: candidate.party, similarity_score: similarity };
         });
         individualResults.sort((a, b) => b.similarity_score - a.similarity_score);
-
-        const partyAggregation = {};
-        individualResults.forEach((cand) => {
-          if (!partyAggregation[cand.party]) {
-            partyAggregation[cand.party] = { total: 0, count: 0 };
-          }
-          partyAggregation[cand.party].total += cand.similarity_score;
-          partyAggregation[cand.party].count += 1;
-        });
-        const partyResults = Object.entries(partyAggregation).map(([party, stats]) => ({
-          party,
-          average_similarity_score: Math.round(stats.total / stats.count),
-        }));
-        partyResults.sort((a, b) => b.average_similarity_score - a.average_similarity_score);
-
-        setComparisonResults({
-          individual_results: individualResults,
-          party_results: partyResults,
-        });
-      })
-      .catch((err) => console.error("Error fetching processed votes:", err));
-  };
-
-  // When an entity (candidate or party) is selected, fetch vote_details.json and set details.
-  const handleEntityClick = (entity, type) => {
-    setSelectedEntity(entity);
-    fetch("https://josevalqui.github.io/votometro/vote_details.json")
-      .then((res) => res.json())
-      .then((data) => {
-        if (type === "individual") {
-          setEntityDetails(data.candidates[entity.name] || {});
-        } else if (type === "party") {
-          setEntityDetails({
-            party_meta: data.party_meta[entity.party] || {},
-            details: data.parties[entity.party] || []
+        if (!config.isPresidentialElection) {
+          const partyAggregation = {};
+          individualResults.forEach((cand) => {
+            if (!partyAggregation[cand.party]) {
+              partyAggregation[cand.party] = { total: 0, count: 0 };
+            }
+            partyAggregation[cand.party].total += cand.similarity_score;
+            partyAggregation[cand.party].count += 1;
+          });
+          const partyResults = Object.entries(partyAggregation).map(([party, stats]) => ({
+            party,
+            average_similarity_score: Math.round(stats.total / stats.count),
+          }));
+          partyResults.sort((a, b) => b.average_similarity_score - a.average_similarity_score);
+          dispatch({
+            type: "SET_COMPARISON_RESULTS",
+            payload: { individual_results: individualResults, party_results: partyResults },
+          });
+        } else {
+          dispatch({
+            type: "SET_COMPARISON_RESULTS",
+            payload: { individual_results: individualResults, party_results: [] },
           });
         }
       })
-      .catch((err) => console.error("Error fetching vote details:", err));
+      .catch((err) => console.error("Error fetching combined votes:", err));
   };
 
-  // Render vote info (for candidate, simply return the vote)
-  const renderVote = (detail) => detail.vote;
+  const handleEntityClick = (entity, type) => {
+    dispatch({ type: "SET_SELECTED_ENTITY", payload: entity });
+    fetch(config.votesURL)
+      .then((res) => res.json())
+      .then((data) => {
+        if (type === "individual") {
+          dispatch({
+            type: "SET_ENTITY_DETAILS",
+            payload: data.candidates.details[entity.name] || {},
+          });
+        } else if (type === "party") {
+          dispatch({
+            type: "SET_ENTITY_DETAILS",
+            payload: {
+              party_meta: data.parties.meta[entity.party] || {},
+              details: data.parties.details[entity.party] || [],
+            },
+          });
+        }
+      })
+      .catch((err) => console.error("Error fetching combined votes:", err));
+  };
 
-  // Format date (expects yyyymmddhhmm format)
+  const handleReset = () => {
+    setElection(null);
+    dispatch({ type: "RESET" });
+  };
+
   function formatDate(dateStr) {
     if (!dateStr || dateStr === "N/A") return "N/A";
     const year = dateStr.substring(0, 4);
     const month = parseInt(dateStr.substring(4, 6), 10);
     const day = parseInt(dateStr.substring(6, 8), 10);
     const months = [
-      "enero", "febrero", "marzo", "abril", "mayo", "junio",
-      "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"
+      "enero",
+      "febrero",
+      "marzo",
+      "abril",
+      "mayo",
+      "junio",
+      "julio",
+      "agosto",
+      "septiembre",
+      "octubre",
+      "noviembre",
+      "diciembre",
     ];
     return `${day}. de ${months[month - 1]} de ${year}`;
   }
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", alignItems: "center",
-      justifyContent: "flex-start", minHeight: "90vh", width: "100vw", overflowY: "auto", padding: "20px" }}>
-      <div style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", maxWidth: "1100px" }}>
-        {questions.length === 0 ? (
-          <h2>Loading...</h2>
-        ) : currentQuestionIndex < questions.length ? (
-          <>
-            <div style={{ marginBottom: "10px" }}>
-              <h3>{currentQuestionIndex + 1} / {questions.length}</h3>
-            </div>
-            <div style={{ marginBottom: "20px" }}>
-              <label>Importancia de este tema:</label><br />
-              <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                <span style={{ fontSize: "14px" }}>Poca</span>
-                <input type="range" min="1" max="5"
-                  value={weights[currentQuestionIndex] !== undefined ? weights[currentQuestionIndex] : 3}
-                  onChange={(e) => {
-                    const newWeights = [...weights];
-                    newWeights[currentQuestionIndex] = Number(e.target.value);
-                    setWeights(newWeights);
-                  }}
-                  style={{ flexGrow: 1 }} />
-                <span style={{ fontSize: "14px" }}>Mucha</span>
-              </div>
-            </div>
-            <h2>{questions[currentQuestionIndex].question}</h2>
-            {questions[currentQuestionIndex].options.map((option, index) => (
-              <button key={index}
-                onClick={() => handleAnswerClick(option)}
-                onMouseEnter={() => setHoveredOption(option)}
-                onMouseLeave={() => setHoveredOption(null)}
-                style={{
-                  margin: "10px", padding: "10px 40px", fontSize: "16px", cursor: "pointer",
-                  display: "block", width: "100%",
-                  backgroundColor: (answers[currentQuestionIndex] === option || hoveredOption === option) ? "black" : "darkslategrey",
-                  color: "white", border: "1px solid #ccc", borderRadius: "5px",
-                }}>
-                {option}
-              </button>
-            ))}
-            <div style={{ marginTop: "20px" }}>
-              <button onClick={handleGoBack}
-                disabled={currentQuestionIndex === 0}
-                style={{
-                  marginRight: "10px", padding: "10px 20px", fontSize: "16px",
-                  cursor: currentQuestionIndex === 0 ? "not-allowed" : "pointer",
-                  opacity: currentQuestionIndex === 0 ? 0.5 : 1,
-                }}>Volver</button>
-              <button onClick={() => {
-                if (currentQuestionIndex === questions.length - 1) {
-                  handleEndQuiz();
-                } else {
-                  handleSkip();
-                }
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "flex-start",
+        minHeight: "90vh",
+        width: "100vw",
+        overflowY: "auto",
+        padding: "20px",
+      }}
+    >
+      {!election ? (
+        <div
+          style={{
+            textAlign: "center",
+            marginTop: "50px",
+            display: "flex",
+            flexDirection: "column",
+            gap: "10px",
+          }}
+        >
+          <h2>Selecciona una elección</h2>
+          <button onClick={() => setElection("peru_parl_2026")}>
+            Perú: Elección parlamentaria (12.04.2026)
+          </button>
+          <button onClick={() => setElection("ecuador_pres_2025")}>
+            Ecuador: Elección presidencial (13.04.2025)
+          </button>
+        </div>
+      ) : (
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            textAlign: "center",
+            maxWidth: "1100px",
+          }}
+        >
+          {election && (
+            <button
+              onClick={handleReset}
+              style={{
+                position: "absolute",
+                top: "20px",
+                left: "20px",
+                zIndex: 1000,
+                padding: "5px 10px",
+                fontSize: "18px",
+                cursor: "pointer",
               }}
-                style={{ padding: "10px 20px", fontSize: "16px", cursor: "pointer" }}>
-                {currentQuestionIndex === questions.length - 1 ? "Terminar encuesta" : "Saltar"}
-              </button>
-            </div>
-            <div style={{ marginTop: "20px" }}>
-              <h3>Current Answers:</h3>
-              <ul style={{ listStyleType: "none", padding: 0, textAlign: "left" }}>
-                {answers.map((answer, index) => (
-                  <li key={index}><strong>Q{index + 1}:</strong> {answer || "Sin respuesta"}</li>
+            >
+              Reiniciar
+            </button>
+          )}
+          {state.questions.length === 0 ? (
+            <h2>Loading...</h2>
+          ) : state.currentQuestionIndex < state.questions.length ? (
+            <>
+              <div style={{ marginBottom: "10px" }}>
+                <h3>
+                  {state.currentQuestionIndex + 1} / {state.questions.length}
+                </h3>
+              </div>
+              <div style={{ marginBottom: "20px" }}>
+                <label>Qué tan importante te parece este tema?</label>
+                <br />
+                <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                  <span style={{ fontSize: "14px" }}>Poco importante</span>
+                  <input
+                    type="range"
+                    min="1"
+                    max="5"
+                    value={state.weights[state.currentQuestionIndex]}
+                    onChange={(e) =>
+                      dispatch({
+                        type: "SET_WEIGHTS",
+                        index: state.currentQuestionIndex,
+                        weight: Number(e.target.value),
+                      })
+                    }
+                    style={{ flexGrow: 1.5 }}
+                  />
+                  <span style={{ fontSize: "14px" }}>Muy importante</span>
+                </div>
+              </div>
+              <div style={{ minHeight: "7em", display: "flex", alignItems: "center" }}>
+                <h2>{state.questions[state.currentQuestionIndex].question}</h2>
+              </div>
+              <div style={{ width: "400px", maxWidth: "100%" }}>
+                {state.questions[state.currentQuestionIndex].options.map((option, index) => (
+                  <button
+                    key={index}
+                    onClick={() => handleAnswerClick(option)}
+                    onMouseEnter={() =>
+                      dispatch({ type: "SET_HOVERED_OPTION", payload: option })
+                    }
+                    onMouseLeave={() =>
+                      dispatch({ type: "SET_HOVERED_OPTION", payload: null })
+                    }
+                    style={{
+                      margin: "10px",
+                      padding: "10px 40px",
+                      fontSize: "16px",
+                      cursor: "pointer",
+                      display: "block",
+                      width: "100%",
+                      backgroundColor:
+                        state.answers[state.currentQuestionIndex] === option ||
+                        state.hoveredOption === option
+                          ? "black"
+                          : "darkslategrey",
+                      color: "white",
+                      border: "1px solid #ccc",
+                      borderRadius: "5px",
+                    }}
+                  >
+                    {option}
+                  </button>
                 ))}
-              </ul>
-            </div>
-          </>
-        ) : (
-          <>
-            <div id="recaptcha-container"></div>
-
-            <h2>Completaste el Votómetro!</h2>
-            <div style={{ marginTop: "20px", display: "flex", gap: "10px", justifyContent: "flex-start", width: "100%" }}>
-              <button onClick={() => setShowIndividualResults(false)}
-                onMouseEnter={(e) => { e.target.style.backgroundColor = "black"; e.target.style.color = "white"; }}
-                onMouseLeave={(e) => { e.target.style.backgroundColor = showIndividualResults ? "darkslategrey" : "black"; }}
+              </div>
+              <div style={{ marginTop: "20px" }}>
+                <button
+                  onClick={handleGoBack}
+                  disabled={state.currentQuestionIndex === 0}
+                  style={{
+                    marginRight: "10px",
+                    padding: "10px 20px",
+                    fontSize: "16px",
+                    cursor: state.currentQuestionIndex === 0 ? "not-allowed" : "pointer",
+                    opacity: state.currentQuestionIndex === 0 ? 0.5 : 1,
+                  }}
+                >
+                  Volver
+                </button>
+                <button
+                  onClick={() => {
+                    if (state.currentQuestionIndex === state.questions.length - 1) {
+                      handleEndQuiz();
+                    } else {
+                      handleSkip();
+                    }
+                  }}
+                  style={{ padding: "10px 20px", fontSize: "16px", cursor: "pointer" }}
+                >
+                  {state.currentQuestionIndex === state.questions.length - 1
+                    ? "Terminar encuesta"
+                    : "Saltar"}
+                </button>
+              </div>
+            </>
+          ) : (
+            <>
+              <div id="recaptcha-container"></div>
+              <h2>Resultados</h2>
+              <div
                 style={{
-                  padding: "10px 20px", fontSize: "16px", cursor: "pointer",
-                  backgroundColor: showIndividualResults ? "darkslategrey" : "black",
-                  color: "white", border: "1px solid #ccc", borderRadius: "5px",
-                  transition: "background-color 0.2s ease-in-out, color 0.2s ease-in-out",
-                }}>Partidos políticos</button>
-              <button onClick={() => setShowIndividualResults(true)}
-                onMouseEnter={(e) => { e.target.style.backgroundColor = "black"; e.target.style.color = "white"; }}
-                onMouseLeave={(e) => { e.target.style.backgroundColor = showIndividualResults ? "black" : "darkslategrey"; }}
-                style={{
-                  padding: "10px 20px", fontSize: "16px", cursor: "pointer",
-                  backgroundColor: showIndividualResults ? "black" : "darkslategrey",
-                  color: "white", border: "1px solid #ccc", borderRadius: "5px",
-                  transition: "background-color 0.2s ease-in-out, color 0.2s ease-in-out",
-                }}>Congresistas</button>
-            </div>
-            <div style={{ display: "flex", width: "100%" }}>
-              <div style={{ flex: 1 }}>
-                {comparisonResults && (
-                  <div style={{ marginTop: "20px", width: "100%" }}>
-                    {showIndividualResults ? (
-                      <ul style={{
-                        listStyleType: "none", padding: 0, textAlign: "left",
-                        maxHeight: "40vh", overflowY: "auto",
-                      }}>
-                        <div style={{
-                          display: "flex", justifyContent: "space-between", fontWeight: "bold",
-                          paddingBottom: "5px", borderBottom: "1px solid #ccc", paddingRight: "10px",
-                        }}>
-                          <span>Congresista</span>
-                          <span style={{ marginLeft: "auto", paddingRight: "10px" }}>Similaridad</span>
-                        </div>
-                        {comparisonResults.individual_results.map((result, index) => (
-                          <li key={index} style={{
-                            cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center",
+                  marginTop: "20px",
+                  display: "flex",
+                  gap: "10px",
+                  justifyContent: "flex-start",
+                  width: "100%",
+                }}
+              >
+                {!electionConfigs[election].isPresidentialElection && (
+                  <button
+                    onClick={() =>
+                      dispatch({ type: "SET_SHOW_INDIVIDUAL_RESULTS", payload: false })
+                    }
+                    onMouseEnter={(e) => {
+                      e.target.style.backgroundColor = "black";
+                      e.target.style.color = "white";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.style.backgroundColor = state.showIndividualResults
+                        ? "darkslategrey"
+                        : "black";
+                    }}
+                    style={{
+                      padding: "10px 20px",
+                      fontSize: "16px",
+                      cursor: "pointer",
+                      backgroundColor: state.showIndividualResults ? "darkslategrey" : "black",
+                      color: "white",
+                      border: "1px solid #ccc",
+                      borderRadius: "5px",
+                      transition: "background-color 0.2s ease-in-out, color 0.2s ease-in-out",
+                    }}
+                  >
+                    Partidos políticos
+                  </button>
+                )}
+                {!config.isPresidentialElection && (
+                  <button
+                    onClick={() =>
+                      dispatch({ type: "SET_SHOW_INDIVIDUAL_RESULTS", payload: true })
+                    }
+                    onMouseEnter={(e) => {
+                      e.target.style.backgroundColor = "black";
+                      e.target.style.color = "white";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.style.backgroundColor = state.showIndividualResults
+                        ? "black"
+                        : "darkslategrey";
+                    }}
+                    style={{
+                      padding: "10px 20px",
+                      fontSize: "16px",
+                      cursor: "pointer",
+                      backgroundColor: state.showIndividualResults ? "black" : "darkslategrey",
+                      color: "white",
+                      border: "1px solid #ccc",
+                      borderRadius: "5px",
+                      transition: "background-color 0.2s ease-in-out, color 0.2s ease-in-out",
+                    }}
+                  >
+                    Candidatos
+                  </button>
+                )}
+              </div>
+              <div style={{ display: "flex", width: "100%" }}>
+                <div style={{ flex: 1 }}>
+                  {state.comparisonResults && (
+                    <div style={{ marginTop: "20px", width: "100%" }}>
+                      {state.showIndividualResults ? (
+                        <ul
+                          style={{
+                            listStyleType: "none",
+                            padding: 0,
+                            textAlign: "left",
+                            maxHeight: "60vh",
+                            overflowY: "auto",
                           }}
-                            onClick={() => handleEntityClick(result, "individual")}>
-                            <span>{result.names?.join(", ") || result.name} ({result.party})</span>
-                            <span style={{ marginLeft: "auto", fontWeight: "bold", paddingRight: "15px" }}>
-                              {result.similarity_score}%
-                            </span>
-                          </li>
-                        ))}
-                      </ul>
-                    ) : (
-                      <>
-                        <div style={{
-                          display: "flex", justifyContent: "space-between", fontWeight: "bold",
-                          paddingBottom: "5px", borderBottom: "1px solid #ccc", paddingRight: "10px",
-                        }}>
-                          <span>Partido</span>
-                          <span style={{ marginLeft: "auto", paddingRight: "10px" }}>Similaridad</span>
-                        </div>
-                        <ul style={{ listStyleType: "none", padding: 0, textAlign: "left", width: "100%" }}>
-                          {comparisonResults.party_results.map((partyResult, index) => (
-                            <li key={index} style={{
-                              cursor: "pointer", display: "flex", flexDirection: "column", alignItems: "flex-start", padding: "5px 0",
+                        >
+                          <div
+                            style={{
+                              display: "flex",
+                              justifyContent: "space-between",
+                              fontWeight: "bold",
+                              paddingBottom: "5px",
+                              borderBottom: "1px solid #ccc",
+                              paddingRight: "10px",
                             }}
-                              onClick={() => handleEntityClick(partyResult, "party")}>
-                              <div style={{ width: "100%", display: "flex", justifyContent: "space-between" }}>
-                                <span><strong>{partyResult.party}</strong></span>
-                                <span style={{ fontWeight: "bold", paddingRight: "15px" }}>
-                                  {partyResult.average_similarity_score}%
-                                </span>
-                              </div>
+                          >
+                            <span>Candidato</span>
+                            <span style={{ marginLeft: "auto", paddingRight: "10px" }}>
+                              Similaridad
+                            </span>
+                          </div>
+                          {state.comparisonResults.individual_results.map((result, index) => (
+                            <li
+                              key={index}
+                              style={{
+                                cursor: "pointer",
+                                display: "flex",
+                                justifyContent: "space-between",
+                                alignItems: "center",
+                              }}
+                              onClick={() => handleEntityClick(result, "individual")}
+                            >
+                              <span>{result.names?.join(", ") || result.name}</span>
+                              <span
+                                style={{
+                                  marginLeft: "auto",
+                                  fontWeight: "bold",
+                                  paddingRight: "15px",
+                                }}
+                              >
+                                {result.similarity_score}%
+                              </span>
                             </li>
                           ))}
                         </ul>
-                      </>
-                    )}
-                  </div>
-                )}
-              </div>
-              <div style={{
-                width: "50%", padding: "0px 0px 0px 15px", borderLeft: "1px solid #ccc",
-                overflowY: "auto", maxHeight: "45vh", textAlign: "left",
-              }}>
-                {selectedEntity ? (
-                  <>
-                    <h2 style={{ margin: "2px 0" }}>
-                      {selectedEntity.name ? selectedEntity.name : selectedEntity.party}
-                    </h2>
-                    {/* Candidate Meta */}
-                    {entityDetails.candidate_meta && (
-                      <div style={{ marginBottom: "4px" }}>
-                        <p style={{ margin: "2px 0" }}>
-                          <strong>Edad (2024):</strong> {entityDetails.candidate_meta.age}<br />
-                          <strong>Sentencia penal:</strong> {entityDetails.candidate_meta.sentencia_penal}<br />
-                          <strong>Partido:</strong> {entityDetails.candidate_meta.party}<br />
-                          <strong>Asistencia:</strong> {entityDetails.candidate_meta.attendance || "N/A"}<br /><br />
-                        </p>
-                      </div>
-                    )}
-                    {/* Party Meta */}
-                    {entityDetails.party_meta && (
-                      <div style={{ marginBottom: "4px" }}>
-                        <p style={{ margin: "2px 0" }}>
-                          <strong>Edad promedio:</strong> {entityDetails.party_meta.average_age}<br />
-                          <strong>Asistencia promedio:</strong> {entityDetails.party_meta.average_attendance_percentage || "N/A"}%<br />
-                          <strong>Sentencia penal:</strong> {entityDetails.party_meta.sentencia_penal.yes}/{entityDetails.party_meta.sentencia_penal.total} congresistas<br />
-                        </p><br />
-                      </div>
-                    )}
-                    {entityDetails.details && entityDetails.details.length > 0 ? (
-                      questionDetails.length > 0 ? (
-                        questionDetails.map((qd, idx) => {
-                          // If it's a candidate, match by pdf id; if it's a party, use aggregated details.
-                          let detail = entityDetails.details.find(d => d.id === qd.id) || {};
-                          return (
-                            <div key={idx} style={{ marginBottom: "2px", lineHeight: "1.2" }}>
-                              <p style={{ margin: "2px 0" }}>
-                                <strong>Statement:</strong> {qd.question} <br />
-                                <small style={{ color: "gray", fontSize: "0.9em" }}>
-                                  <strong>Proyecto de ley:</strong> {qd.law ? qd.law : "N/A"}
-                                </small>
-                              </p>
-                              <p style={{ margin: "2px 0" }}>
-                                <strong>Fecha de la votación:</strong> {detail.date || "N/A"} <br />
-                                {entityDetails.party_meta ? (
-                                  <>
-                                    <strong>Voto más común:</strong> {detail.vote || "N/A"} <br />
-                                  </>
-                                ) : (
-                                  <>
-                                    <strong>Voto:</strong> {detail.vote || "N/A"} <br />
-                                  </>
+                      ) : (
+                        <>
+                          <div
+                            style={{
+                              display: "flex",
+                              justifyContent: "space-between",
+                              fontWeight: "bold",
+                              paddingBottom: "5px",
+                              borderBottom: "1px solid #ccc",
+                              paddingRight: "10px",
+                            }}
+                          >
+                            <span>Partido</span>
+                            <span style={{ marginLeft: "auto", paddingRight: "10px" }}>
+                              Similaridad
+                            </span>
+                          </div>
+                          <ul style={{ listStyleType: "none", padding: 0, textAlign: "left", width: "100%" }}>
+                            {state.comparisonResults.party_results.map((partyResult, index) => (
+                              <li
+                                key={index}
+                                style={{
+                                  cursor: "pointer",
+                                  display: "flex",
+                                  flexDirection: "column",
+                                  alignItems: "flex-start",
+                                  padding: "5px 0",
+                                }}
+                                onClick={() => handleEntityClick(partyResult, "party")}
+                              >
+                                <div
+                                  style={{
+                                    width: "100%",
+                                    display: "flex",
+                                    justifyContent: "space-between",
+                                  }}
+                                >
+                                  <span>
+                                    <strong>{partyResult.party}</strong>
+                                  </span>
+                                  <span
+                                    style={{
+                                      fontWeight: "bold",
+                                      paddingRight: "15px",
+                                    }}
+                                  >
+                                    {partyResult.average_similarity_score}%
+                                  </span>
+                                </div>
+                              </li>
+                            ))}
+                          </ul>
+                        </>
+                      )}
+                    </div>
+                  )}
+                </div>
+                <div
+                  style={{
+                    width: "60%",
+                    padding: "0px 0px 0px 15px",
+                    borderLeft: "1px solid #ccc",
+                    overflowY: "auto",
+                    maxHeight: "60vh",
+                    textAlign: "left",
+                  }}
+                >
+                  {state.selectedEntity ? (
+                    <>
+                      <h2 style={{ margin: "2px 0" }}>
+                        {state.selectedEntity.name ? state.selectedEntity.name : state.selectedEntity.party}
+                      </h2>
+                      {state.entityDetails.candidate_meta && (
+                        <div style={{ marginBottom: "4px" }}>
+                          <p style={{ margin: "2px 0" }}>
+                            <strong>Edad:</strong> {state.entityDetails.candidate_meta.age}
+                            <br />
+                            {!electionConfigs[election].isPresidentialElection && (
+                              <>
+                                <strong>Sentencia penal:</strong> {state.entityDetails.candidate_meta.sentencia_penal}
+                                <br />
+                                <strong>Asistencia:</strong> {state.entityDetails.candidate_meta.attendance || "N/A"}
+                                <br />
+                              </>
+                            )}
+                            <strong>Partido:</strong> {state.entityDetails.candidate_meta.party}
+                            <br />
+                            <br />
+                          </p>
+                        </div>
+                      )}
+                      {state.entityDetails.party_meta && (
+                        <div style={{ marginBottom: "4px" }}>
+                          <p style={{ margin: "2px 0" }}>
+                            <strong>Edad promedio:</strong> {state.entityDetails.party_meta.average_age}
+                            <br />
+                            <strong>Asistencia promedio:</strong>{" "}
+                            {state.entityDetails.party_meta.average_attendance_percentage || "N/A"}%
+                            <br />
+                            <strong>Sentencia penal:</strong>{" "}
+                            {state.entityDetails.party_meta.sentencia_penal.yes}/{state.entityDetails.party_meta.sentencia_penal.total}{" "}
+                            congresistas
+                            <br />
+                          </p>
+                          <br />
+                        </div>
+                      )}
+                      {state.entityDetails.details && state.entityDetails.details.length > 0 ? (
+                        state.questionDetails.length > 0 ? (
+                          state.questionDetails.map((qd, idx) => {
+                            let detail = state.entityDetails.details.find((d) => d.id === qd.id) || {};
+                            const actualSource = config.name === "ecuador" ? detail.source : qd.source;
+                            return (
+                              <div key={idx} style={{ marginBottom: "2px", lineHeight: "1.2" }}>
+                                <p style={{ margin: "2px 0" }}>
+                                  <strong>Statement:</strong> {qd.question} <br />
+                                  {config.showLawInfo && qd.law && (
+                                    <small style={{ color: "gray", fontSize: "0.9em" }}>
+                                      <strong>Proyecto de ley:</strong> {qd.law}
+                                    </small>
+                                  )}
+                                </p>
+                                {config.showLawInfo && (
+                                  <p style={{ margin: "2px 0" }}>
+                                    <strong>Fecha de la votación:</strong> {detail.date || "N/A"} <br />
+                                  </p>
                                 )}
-                              </p>
-                              <p style={{ margin: "2px 0" }}>
-                                <strong>Documento y noticias:</strong>{" "}
-                                {qd.source ? (
-                                  <>
-                                    <a href={qd.pdf_link} target="_blank" rel="noopener noreferrer">
-                                      Documento
-                                    </a>{" "}
-                                    |{" "}
-                                    <a href={qd.source} target="_blank" rel="noopener noreferrer">
-                                      {new URL(qd.source).hostname.replace("www.", "") + "/..."}
-                                    </a>
-                                  </>
-                                ) : (
-                                  "N/A"
+                                <p style={{ margin: "2px 0" }}>
+                                  {state.entityDetails.party_meta ? (
+                                    <>
+                                      <strong>Voto más común del partido:</strong> {detail.vote || "N/A"} <br />
+                                    </>
+                                  ) : (
+                                    <>
+                                      <strong>
+                                        {config.name === "ecuador"
+                                          ? "Opinión del candidato:"
+                                          : "Opinión del congresista (basado en el voto):"}
+                                      </strong>{" "}
+                                      {detail.vote || "N/A"} <br />
+                                    </>
+                                  )}
+                                </p>
+                                <p style={{ margin: "2px 0" }}>
+                                  <strong>Tu respuesta:</strong>{" "}
+                                  {userAnswerMapping[state.answers[idx]] || "Sin respuesta"}
+                                </p>
+                                {actualSource && (
+                                  <p style={{ margin: "2px 0" }}>
+                                    {config.showLawInfo ? (
+                                      <>
+                                        <strong>Documento y noticias:</strong>{" "}
+                                        <a href={actualSource} target="_blank" rel="noopener noreferrer">
+                                          {new URL(actualSource).hostname.replace("www.", "") + "/..."}
+                                        </a>
+                                      </>
+                                    ) : (
+                                      <>
+                                        <strong>Noticias:</strong>{" "}
+                                        <a href={actualSource} target="_blank" rel="noopener noreferrer">
+                                          {new URL(actualSource).hostname.replace("www.", "") + "/..."}
+                                        </a>
+                                      </>
+                                    )}
+                                  </p>
                                 )}
-                              </p>
-                              <br />
-                            </div>
-                          );
-                        })
+                                <br />
+                              </div>
+                            );
+                          })
+                        ) : (
+                          <p style={{ margin: "2px 0" }}>No vote details available.</p>
+                        )
                       ) : (
                         <p style={{ margin: "2px 0" }}>No vote details available.</p>
-                      )
-                    ) : (
-                      <p style={{ margin: "2px 0" }}>No vote details available.</p>
-                    )}
-                  </>
-                ) : (
-                  <p> </p>
-                )}
+                      )}
+                    </>
+                  ) : (
+                    <p> </p>
+                  )}
+                </div>
               </div>
-            </div>
-            <ul style={{ listStyleType: "none", padding: 0, textAlign: "left" }}>
-              <strong>Tus respuestas:</strong>
-              {answers.map((answer, index) => (
-                <li key={index}>
-                  {questions[index]?.question}: {answer || "Sin respuesta"}
-                </li>
-              ))}
-            </ul>
-            <div style={{ marginTop: "20px", display: "flex", gap: "10px" }}>
-              <button onClick={() => setCurrentQuestionIndex(questions.length - 1)}
-                onMouseEnter={(e) => (e.target.style.backgroundColor = "black")}
-                onMouseLeave={(e) => (e.target.style.backgroundColor = "darkslategrey")}
-                style={{
-                  padding: "10px 20px", fontSize: "16px", cursor: "pointer",
-                  backgroundColor: "darkslategrey", color: "white", border: "1px solid #ccc",
-                  borderRadius: "5px", transition: "background-color 0.2s ease-in-out",
-                }}>
-                Volver a la encuesta
-              </button>
-            </div>
-          </>
-        )}
-      </div>
+              <div style={{ marginTop: "20px", display: "flex", gap: "10px" }}>
+                <button
+                  onClick={() =>
+                    dispatch({ type: "SET_CURRENT_QUESTION_INDEX", payload: state.questions.length - 1 })
+                  }
+                  onMouseEnter={(e) => (e.target.style.backgroundColor = "black")}
+                  onMouseLeave={(e) => (e.target.style.backgroundColor = "darkslategrey")}
+                  style={{
+                    padding: "10px 20px",
+                    fontSize: "16px",
+                    cursor: "pointer",
+                    backgroundColor: "darkslategrey",
+                    color: "white",
+                    border: "1px solid #ccc",
+                    borderRadius: "5px",
+                    transition: "background-color 0.2s ease-in-out",
+                  }}
+                >
+                  Volver a la encuesta
+                </button>
+              </div>
+            </>
+          )}
+        </div>
+      )}
     </div>
   );
 }
