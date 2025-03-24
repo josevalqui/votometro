@@ -8,7 +8,7 @@ from datetime import datetime
 EXCEL_FILE = r"C:\Users\josem\OneDrive\Proyectos\Wahl O Mat Peru\Ecuador\preguntas__ecuador_20250319.xlsx"
 COMPARISON_CSV = r"C:\Users\josem\OneDrive\Proyectos\Wahl O Mat Peru\Ecuador\votos_20250320.csv"
 # Output files (placed into the frontend public folder)
-OUTPUT_DIR = r"C:\Users\josem\OneDrive\Proyectos\Wahl O Mat Peru\App client side_20250307\votometro\frontend\public\\"
+OUTPUT_DIR = r"C:\Users\josem\OneDrive\Proyectos\Wahl O Mat Peru\App client side_20250307\votometro\public\\"
 OUTPUT_QUESTIONS = OUTPUT_DIR + "questions_ecuador_2025.json"
 OUTPUT_PROCESSED_VOTES = OUTPUT_DIR + "processed_votes_ecuador_2025.json"
 OUTPUT_VOTE_DETAILS = OUTPUT_DIR + "vote_details_ecuador_2025.json"
