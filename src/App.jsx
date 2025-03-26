@@ -235,12 +235,9 @@ export default function App() {
           }}
         >
           <h2>Selecciona una elección</h2>
-          <button onClick={() => setElection("peru_parl_2026")}>
-            Perú: Elección parlamentaria (12.04.2026)
-          </button>
-          <button onClick={() => setElection("ecuador_pres_2025")}>
-            Ecuador: Elección presidencial (13.04.2025)
-          </button>
+          <button onClick={() => setElection("peru_parl_2026")}>Perú: Elección parlamentaria (12.04.2026)</button>
+          <button onClick={() => setElection("chile_diputados_2025")}>Chile: Elección parlamentaria (15.11.2025)</button>
+          {/* <button onClick={() => setElection("ecuador_pres_2025")}>Ecuador: Elección presidencial (13.04.2025)</button> */}
         </div>
       ) : (
         <div
