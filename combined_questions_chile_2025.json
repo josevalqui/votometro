@@ -1,0 +1,86 @@
+[
+  {
+    "id": "20191024_horasLaborales_11179-13",
+    "question": "Estuvo bien reducir las horas laborales a 40 horas por semana",
+    "polarity": "+",
+    "options": [
+      "Estoy de acuerdo",
+      "Neutral",
+      "No estoy de acuerdo"
+    ],
+    "source": "https://www.bcn.cl/portal/leyfacil/recurso/reduccion-de-la-jornada-laboral-a-40-horas-semanales",
+    "law": "Modifica el Código del Trabajo con el objeto de reducir la jornada laboral",
+    "pdf_link": "src/assets/sesiones_chile_pdfs/20191024_horasLaborales_11179-13.pdf",
+    "date": "24.10.2019"
+  },
+  {
+    "id": "20240826_datosPersonales_11092-07",
+    "question": "Estuvo bien aumentar la seguridad de los datos personales de las personas",
+    "polarity": "+",
+    "options": [
+      "Estoy de acuerdo",
+      "Neutral",
+      "No estoy de acuerdo"
+    ],
+    "source": "https://www.rsm.global/chile/es/news/ley-21719-proteccion-de-datos-personales",
+    "law": "Proposición de la Comisión Mixta recaída en el proyecto de ley, originado en moción y mensaje, que “Regula la protección y el tratamiento de los datos personales y crea la Agencia de Protección de Datos Personales.”. [Cabe hacer presente que por no alcanzar el quórum constitucional no se aprueba el artículo 55 propuesto por la Comisión] ",
+    "pdf_link": "src/assets/sesiones_chile_pdfs/20240826_datosPersonales_11092-07.pdf",
+    "date": "26.08.2024"
+  },
+  {
+    "id": "20250124_pensiones_ 15480-13",
+    "question": "La reforma al sistema de pensiones de enero de 2025 fue buena",
+    "polarity": "+",
+    "options": [
+      "Estoy de acuerdo",
+      "Neutral",
+      "No estoy de acuerdo"
+    ],
+    "source": "https://www.ft.com/content/9e3ab931-eb05-4616-b8b7-0825cf9a690c?utm_source=chatgpt.com",
+    "law": "Crea un nuevo Sistema Mixto de Pensiones y un Seguro Social en el pilar contributivo, mejora la Pensión Garantizada Universal y establece beneficios y modificaciones regulatorias que indica",
+    "pdf_link": "src/assets/sesiones_chile_pdfs/20250124_pensiones_ 15480-13.pdf",
+    "date": "24.01.2025"
+  },
+  {
+    "id": "20211123_matirmonio_11422-07",
+    "question": "El matrimonio entre personas del mismo género debería estar permitido",
+    "polarity": "+",
+    "options": [
+      "Estoy de acuerdo",
+      "Neutral",
+      "No estoy de acuerdo"
+    ],
+    "source": "https://www.chileatiende.gob.cl/fichas/101164-ley-de-matrimonio-igualitario",
+    "law": "Modifica diversos cuerpos legales para regular, en igualdad de condiciones, el matrimonio de parejas del mismo sexo.",
+    "pdf_link": "src/assets/sesiones_chile_pdfs/20211123_matirmonio_11422-07.pdf",
+    "date": "23.11.2021"
+  },
+  {
+    "id": "20141021_educación_93366-04",
+    "question": "La reforma de educación del 2015 fue buena",
+    "polarity": "+",
+    "options": [
+      "Estoy de acuerdo",
+      "Neutral",
+      "No estoy de acuerdo"
+    ],
+    "source": "https://www.example.com",
+    "law": "Regula la admisión de los y las estudiantes, elimina el financiamiento compartido y prohíbe el lucro en establecimientos educacionales que reciben aportes del Estado.",
+    "pdf_link": "src/assets/sesiones_chile_pdfs/20141021_educación_93366-04.pdf",
+    "date": "21.10.2014"
+  },
+  {
+    "id": "20240807_plastico_16849-12",
+    "question": "El uso de plásticos de un solo uso debería ser reducido",
+    "polarity": "+",
+    "options": [
+      "Estoy de acuerdo",
+      "Neutral",
+      "No estoy de acuerdo"
+    ],
+    "source": "https://www.example.com",
+    "law": "Modifica la ley N° 21.368, que regula la entrega de plásticos de un solo uso y las botellas plásticas, y modifica los cuerpos legales que indica, en materia de plazos de entrada en vigencia de sus obligaciones",
+    "pdf_link": "src/assets/sesiones_chile_pdfs/20240807_plastico_16849-12.pdf",
+    "date": "07.08.2024"
+  }
+]
