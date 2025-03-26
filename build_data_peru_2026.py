@@ -9,10 +9,6 @@ EXCEL_FILE = r"C:\Users\josem\OneDrive\Proyectos\Wahl O Mat Peru\Peru\Votaciones
 COMPARISON_CSV = r"C:\Users\josem\OneDrive\Proyectos\Wahl O Mat Peru\Peru\Votaciones parlamentarias 2026\votes.csv"
 # Output files (placed into the frontend public folder)
 OUTPUT_DIR = "public/"
-OUTPUT_QUESTIONS = OUTPUT_DIR + "questions_peru_2026.json"
-OUTPUT_PROCESSED_VOTES = OUTPUT_DIR + "processed_votes_peru_2026.json"
-OUTPUT_VOTE_DETAILS = OUTPUT_DIR + "vote_details_peru_2026.json"
-OUTPUT_QUESTION_DETAILS = OUTPUT_DIR + "question_details_peru_2026.json"
 
 def clean_value(val):
     if pd.isna(val):
@@ -60,7 +56,7 @@ def generate_combined_questions_json():
     df = pd.read_excel(EXCEL_FILE).head(5)
     combined_questions = []
     for _, row in df.iterrows():
-        pdf_name = str(row["PDF Name"]).strip()
+        pdf_name = str(row["Filename"]).strip()
         combined_questions.append({
             "id": pdf_name,
             "question": row["Question"],
@@ -78,207 +74,6 @@ def generate_combined_questions_json():
 def party_rows_count(ages):
     return len(ages) if ages else 0
 
-# 2. Generate processed_votes.json (for computing similarity)
-def generate_processed_votes_json():
-    if not os.path.exists(COMPARISON_CSV):
-        return
-    df = pd.read_csv(COMPARISON_CSV)
-    candidates = []
-    parties = {}
-    exclude_cols = {"Name Comercio", "Party", "Name in pdf", "Age (2024)", "Attendance", "Sentencia penal"}
-    
-    for _, row in df.iterrows():
-        candidate = {}
-        candidate["name"] = str(row["Name Comercio"]).strip()
-        candidate["party"] = str(row["Party"]).strip()
-        candidate["age"] = None if pd.isna(row.get("Age (2024)")) else int(row["Age (2024)"])
-        candidate["attendance"] = None if pd.isna(row.get("Attendance")) else str(row["Attendance"]).replace("X", "/")
-        candidate["sentencia_penal"] = clean_value(row.get("Sentencia penal"))
-        
-        votes = {}
-        for col in df.columns:
-            if col not in exclude_cols:
-                votes[col] = map_csv_answer_numeric(row[col])
-        candidate["votes"] = votes
-        candidates.append(candidate)
-        
-        party = candidate["party"]
-        if party not in parties:
-            parties[party] = {"ages": [], "attendance": [], "sentencia_penal": {"Sí": 0, "No": 0}}
-        if candidate["age"] is not None:
-            parties[party]["ages"].append(candidate["age"])
-        if candidate["attendance"]:
-            try:
-                present, total = map(int, candidate["attendance"].split("/"))
-                parties[party]["attendance"].append((present, total))
-            except Exception:
-                pass
-        if candidate["sentencia_penal"] == "Sí":
-            parties[party]["sentencia_penal"]["Sí"] += 1
-        elif candidate["sentencia_penal"] == "No":
-            parties[party]["sentencia_penal"]["No"] += 1
-    
-    aggregated_parties = {}
-    for party, data in parties.items():
-        avg_age = round(sum(data["ages"]) / len(data["ages"]), 0) if data["ages"] else None
-        total_present, total_sessions = 0, 0
-        for present, total in data["attendance"]:
-            total_present += present
-            total_sessions += total
-        avg_attendance = round((total_present / total_sessions) * 100, 0) if total_sessions > 0 else None
-        aggregated_parties[party] = {
-            "average_age": avg_age,
-            "average_attendance_percentage": avg_attendance,
-            "sentencia_penal_counts": data["sentencia_penal"],
-            "total_congresistas": party_rows_count(data["ages"])
-        }
-    
-    output = {"candidates": candidates, "parties": aggregated_parties}
-    with open(OUTPUT_PROCESSED_VOTES, "w", encoding="utf-8") as f:
-        json.dump(output, f, ensure_ascii=False, indent=2)
-
-# 3. Generate vote_details.json (candidate-specific vote details and aggregated party vote details)
-def generate_vote_details_json():
-    if not os.path.exists(EXCEL_FILE) or not os.path.exists(COMPARISON_CSV):
-        return
-    df_excel = pd.read_excel(EXCEL_FILE).head(5)
-    df_votes = pd.read_csv(COMPARISON_CSV)
-    candidate_details = {}
-    for _, row in df_votes.iterrows():
-        candidate_name = str(row["Name Comercio"]).strip()
-        attendance_val = str(row["Attendance"]).replace("X", "/") if not pd.isna(row.get("Attendance")) else "N/A"
-        candidate_meta = {
-            "age": int(row["Age (2024)"]) if not pd.isna(row["Age (2024)"]) else None,
-            "sentencia_penal": clean_value(row.get("Sentencia penal")),
-            "party": clean_value(row.get("Party")),
-            "attendance": attendance_val
-        }
-        details = []
-        for _, q_row in df_excel.iterrows():
-            pdf_name = str(q_row["PDF Name"]).strip()
-            question_text = q_row["Question"]
-            vote_value = "N/A"
-            date_value = "N/A"
-            for col in row.index:
-                if col in ["Name Comercio", "Party", "Name in pdf"]:
-                    continue
-                parts = col.split("_")
-                csv_pdf_id = "_".join(parts[:-1])
-                csv_date = parts[-1]
-                if csv_pdf_id == pdf_name:
-                    vote_value = map_vote_value(row[col])
-                    date_value = format_date(csv_date)  # convert to "1. de enero de 2024" format
-                    break
-
-                    break
-            source_value = clean_value(q_row.get("Sources", "N/A"))
-            law_value = clean_value(q_row.get("Law", "N/A"))
-            pdf_link = f"src/assets/sesiones_parlamentarias_2021-2025_pdfs/{pdf_name}.pdf"
-            details.append({
-                "id": pdf_name,
-                "question": question_text,
-                "date": date_value,
-                "vote": vote_value,
-                "source": source_value,
-                "law": law_value,
-                "pdf_link": pdf_link
-            })
-        candidate_details[candidate_name] = {"candidate_meta": candidate_meta, "details": details}
-
-    # Aggregate party vote details (mode vote per question)
-    party_vote_details = {}
-    for party in df_votes["Party"].dropna().unique():
-        party = str(party).strip()
-        party_rows = df_votes[df_votes["Party"].str.strip() == party]
-        details = []
-        for _, q_row in df_excel.iterrows():
-            pdf_name = str(q_row["PDF Name"]).strip()
-            question_text = q_row["Question"]
-            vote_value = "N/A"
-            date_value = "N/A"
-            for col in party_rows.columns:
-                if col in ["Name Comercio", "Party", "Name in pdf"]:
-                    continue
-                parts = col.split("_")
-                csv_pdf_id = "_".join(parts[:-1])
-                csv_date = parts[-1]
-                if csv_pdf_id == pdf_name:
-                    votes = party_rows[col].dropna().tolist()
-                    vote_counts = {
-                        "A favor": 0,
-                        "En contra": 0,
-                        "Abstención/Sin respuesta": 0,
-                        "No presente": 0
-                    }
-                    for vote in votes:
-                        mapped = map_vote_value(vote)
-                        if mapped in vote_counts:
-                            vote_counts[mapped] += 1
-                    if any(vote_counts.values()):
-                        mode_vote = max(vote_counts.items(), key=lambda x: x[1])[0]
-                    else:
-                        mode_vote = "N/A"
-                    vote_value = mode_vote
-                    date_value = format_date(csv_date)
-                    break
-            source_value = clean_value(q_row.get("Sources", "N/A"))
-            law_value = clean_value(q_row.get("Law", "N/A"))
-            pdf_link = f"src/assets/sesiones_parlamentarias_2021-2025_pdfs/{pdf_name}.pdf"
-            details.append({
-                "id": pdf_name,
-                "question": question_text,
-                "date": date_value,
-                "vote": vote_value,
-                "source": source_value,
-                "law": law_value,
-                "pdf_link": pdf_link
-            })
-        party_vote_details[party] = details
-
-    # Compute party meta details (aggregated from CSV)
-    party_meta = {}
-    for party in df_votes["Party"].dropna().unique():
-        party = str(party).strip()
-        party_rows = df_votes[df_votes["Party"].str.strip() == party]
-        if not party_rows.empty:
-            avg_age = party_rows["Age (2024)"].dropna().astype(int).mean()
-            total_present = 0
-            total_sessions = 0
-            for _, r in party_rows.iterrows():
-                att = r.get("Attendance")
-                if pd.isna(att):
-                    continue
-                att_str = str(att).replace("X", "/")
-                try:
-                    present, sessions = map(int, att_str.split("/"))
-                except:
-                    present = sessions = 0
-                total_present += present
-                total_sessions += sessions
-            avg_attendance = round((total_present / total_sessions) * 100, 0) if total_sessions > 0 else None
-            sentencia_counts = party_rows["Sentencia penal"].value_counts().to_dict()
-            count_si = sentencia_counts.get("Sí", 0)
-            count_no = sentencia_counts.get("No", 0)
-            total_congresistas = party_rows.shape[0]
-            party_meta[party] = {
-                "average_age": round(avg_age,0) if pd.notna(avg_age) else None,
-                "average_attendance_percentage": avg_attendance,
-                "sentencia_penal": {
-                    "yes": count_si,
-                    "no": count_no,
-                    "total": total_congresistas
-                }
-            }
-        else:
-            party_meta[party] = {}
-    
-    output = {
-        "candidates": candidate_details,
-        "parties": party_vote_details,
-        "party_meta": party_meta
-    }
-    with open(OUTPUT_VOTE_DETAILS, "w", encoding="utf-8") as f:
-        json.dump(output, f, ensure_ascii=False, indent=2)
 
 # New combined votes generator – merges processed votes and vote details
 def generate_combined_votes_json():
@@ -343,7 +138,7 @@ def generate_combined_votes_json():
         attendance_val = str(row["Attendance"]).replace("X", "/") if not pd.isna(row.get("Attendance")) else "N/A"
         details = []
         for _, q_row in df_excel.iterrows():
-            pdf_name = str(q_row["PDF Name"]).strip()
+            pdf_name = str(q_row["Filename"]).strip()
             vote_value = "N/A"
             date_value = "N/A"
             for col in row.index:
@@ -383,7 +178,7 @@ def generate_combined_votes_json():
         party_rows = df_votes[df_votes["Party"].str.strip() == party_str]
         details = []
         for _, q_row in df_excel.iterrows():
-            pdf_name = str(q_row["PDF Name"]).strip()
+            pdf_name = str(q_row["Filename"]).strip()
             vote_value = "N/A"
             date_value = "N/A"
             for col in party_rows.columns:
@@ -466,16 +261,3 @@ def generate_combined_votes_json():
 if __name__ == "__main__":
     generate_combined_questions_json()
     generate_combined_votes_json()
-
-    # List the original files you no longer need
-    original_files = [
-        OUTPUT_QUESTIONS,
-        OUTPUT_PROCESSED_VOTES,
-        OUTPUT_VOTE_DETAILS,
-        OUTPUT_QUESTION_DETAILS
-    ]
-    # Delete each file if it exists
-    for file_path in original_files:
-        if os.path.exists(file_path):
-            os.remove(file_path)
-            print(f"Deleted {file_path}")

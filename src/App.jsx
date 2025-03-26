@@ -119,7 +119,7 @@ export default function App() {
             // Process candidate vote using the election-specific function.
             let numericCandidateVote = config.processCandidateVote(candidateVote);
             const pdf_id =
-              config.name === "ecuador"
+              config.name === "ecuador" || config.name === "chile"
                 ? voteCol
                 : voteCol.split("_").slice(0, -1).join("_");
             if (userAnswers[pdf_id]) {
@@ -130,7 +130,7 @@ export default function App() {
           });
           const similarity =
             totalWeight > 0 ? Math.round((1 - weightedDiff / totalWeight) * 100) : 0;
-          return { name: candidate.name, party: candidate.party, similarity_score: similarity };
+          return { name: candidate.name, party: candidate.party || candidate.candidate_meta?.party, similarity_score: similarity };
         });
         individualResults.sort((a, b) => b.similarity_score - a.similarity_score);
         if (!config.isPresidentialElection) {
@@ -559,38 +559,47 @@ export default function App() {
                       {state.entityDetails.candidate_meta && (
                         <div style={{ marginBottom: "4px" }}>
                           <p style={{ margin: "2px 0" }}>
-                            <strong>Edad:</strong> {state.entityDetails.candidate_meta.age}
-                            <br />
-                            {!electionConfigs[election].isPresidentialElection && (
+                            {config.name === "chile" ? (
                               <>
-                                <strong>Sentencia penal:</strong> {state.entityDetails.candidate_meta.sentencia_penal}
-                                <br />
                                 <strong>Asistencia:</strong> {state.entityDetails.candidate_meta.attendance || "N/A"}
                                 <br />
+                                <strong>Partido:</strong> {state.entityDetails.candidate_meta.party}
+                                <br /><br />
+                              </>
+                            ) : (
+                              <>
+                                <strong>Edad:</strong> {state.entityDetails.candidate_meta.age}
+                                <br />
+                                {!electionConfigs[election].isPresidentialElection && (
+                                  <>
+                                    <strong>Sentencia penal:</strong> {state.entityDetails.candidate_meta.sentencia_penal}
+                                    <br />
+                                    <strong>Asistencia:</strong> {state.entityDetails.candidate_meta.attendance || "N/A"}
+                                    <br />
+                                  </>
+                                )}
+                                <strong>Partido:</strong> {state.entityDetails.candidate_meta.party}
+                                <br /><br />
                               </>
                             )}
-                            <strong>Partido:</strong> {state.entityDetails.candidate_meta.party}
-                            <br />
-                            <br />
                           </p>
                         </div>
                       )}
-                      {state.entityDetails.party_meta && (
+
+                      {state.entityDetails.party_meta && config.name !== "chile" && (
                         <div style={{ marginBottom: "4px" }}>
                           <p style={{ margin: "2px 0" }}>
                             <strong>Edad promedio:</strong> {state.entityDetails.party_meta.average_age}
                             <br />
-                            <strong>Asistencia promedio:</strong>{" "}
-                            {state.entityDetails.party_meta.average_attendance_percentage || "N/A"}%
+                            <strong>Asistencia promedio:</strong> {state.entityDetails.party_meta.average_attendance_percentage || "N/A"}%
                             <br />
-                            <strong>Sentencia penal:</strong>{" "}
-                            {state.entityDetails.party_meta.sentencia_penal.yes}/{state.entityDetails.party_meta.sentencia_penal.total}{" "}
-                            congresistas
+                            <strong>Sentencia penal:</strong> {state.entityDetails.party_meta.sentencia_penal.yes}/{state.entityDetails.party_meta.sentencia_penal.total} congresistas
                             <br />
                           </p>
                           <br />
                         </div>
                       )}
+
                       {state.entityDetails.details && state.entityDetails.details.length > 0 ? (
                         state.questionDetails.length > 0 ? (
                           state.questionDetails.map((qd, idx) => {
@@ -631,7 +640,7 @@ export default function App() {
                                   <strong>Tu respuesta:</strong>{" "}
                                   {userAnswerMapping[state.answers[idx]] || "Sin respuesta"}
                                 </p>
-                                {actualSource && (
+                                {actualSource && actualSource.startsWith("http") && (
                                   <p style={{ margin: "2px 0" }}>
                                     {config.showLawInfo ? (
                                       <>
