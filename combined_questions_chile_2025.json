@@ -28,7 +28,7 @@
     "date": "26.08.2024"
   },
   {
-    "id": "20250124_pensiones_ 15480-13",
+    "id": "20250124_pensiones_15480-13",
     "question": "La reforma al sistema de pensiones de enero de 2025 fue buena",
     "polarity": "+",
     "options": [
@@ -38,11 +38,11 @@
     ],
     "source": "https://www.ft.com/content/9e3ab931-eb05-4616-b8b7-0825cf9a690c?utm_source=chatgpt.com",
     "law": "Crea un nuevo Sistema Mixto de Pensiones y un Seguro Social en el pilar contributivo, mejora la Pensión Garantizada Universal y establece beneficios y modificaciones regulatorias que indica",
-    "pdf_link": "src/assets/sesiones_chile_pdfs/20250124_pensiones_ 15480-13.pdf",
+    "pdf_link": "src/assets/sesiones_chile_pdfs/20250124_pensiones_15480-13.pdf",
     "date": "24.01.2025"
   },
   {
-    "id": "20211123_matirmonio_11422-07",
+    "id": "20211123_matrimonio_11422-07",
     "question": "El matrimonio entre personas del mismo género debería estar permitido",
     "polarity": "+",
     "options": [
@@ -52,7 +52,7 @@
     ],
     "source": "https://www.chileatiende.gob.cl/fichas/101164-ley-de-matrimonio-igualitario",
     "law": "Modifica diversos cuerpos legales para regular, en igualdad de condiciones, el matrimonio de parejas del mismo sexo.",
-    "pdf_link": "src/assets/sesiones_chile_pdfs/20211123_matirmonio_11422-07.pdf",
+    "pdf_link": "src/assets/sesiones_chile_pdfs/20211123_matrimonio_11422-07.pdf",
     "date": "23.11.2021"
   },
   {
