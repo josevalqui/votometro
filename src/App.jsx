@@ -118,6 +118,7 @@ export default function App() {
             if (candidateVote === null) return;
             // Process candidate vote using the election-specific function.
             let numericCandidateVote = config.processCandidateVote(candidateVote);
+            if (typeof numericCandidateVote !== "number") return; // Skip invalid votes like "ausente"
             const pdf_id =
               config.name === "ecuador" || config.name === "chile"
                 ? voteCol
@@ -603,7 +604,11 @@ export default function App() {
                       {state.entityDetails.details && state.entityDetails.details.length > 0 ? (
                         state.questionDetails.length > 0 ? (
                           state.questionDetails.map((qd, idx) => {
-                            let detail = state.entityDetails.details.find((d) => d.id === qd.id) || {};
+                            const detail = state.entityDetails.details.find((d) => d.id === qd.id);
+
+                            // ✅ Skip if no vote or "N/A"
+                            if (!detail || !detail.vote || detail.vote === "N/A") return null;
+
                             const actualSource = config.name === "ecuador" ? detail.source : qd.source;
                             return (
                               <div key={idx} style={{ marginBottom: "2px", lineHeight: "1.2" }}>
@@ -622,17 +627,27 @@ export default function App() {
                                 )}
                                 <p style={{ margin: "2px 0" }}>
                                   {state.entityDetails.party_meta ? (
-                                    <>
-                                      <strong>Voto más común del partido:</strong> {detail.vote || "N/A"} <br />
-                                    </>
+                                    detail.vote_counts ? (
+                                      <>
+                                        <strong>Votos del partido:</strong>{" "}
+                                        A favor: {detail.vote_counts["A favor"] || 0},{" "}
+                                        En contra: {detail.vote_counts["En contra"] || 0},{" "}
+                                        Abstención: {detail.vote_counts["Abstención"] || 0}
+                                        <br />
+                                      </>
+                                    ) : (
+                                      <>
+                                        <strong>Voto más común del partido:</strong> {detail.vote || "N/A"} <br />
+                                      </>
+                                    )
                                   ) : (
                                     <>
                                       <strong>
                                         {config.name === "ecuador"
                                           ? "Opinión del candidato:"
-                                          : "Opinión del congresista (basado en el voto):"}
+                                          : "Voto del congresista:"}
                                       </strong>{" "}
-                                      {detail.vote || "N/A"} <br />
+                                      {detail.vote} <br />
                                     </>
                                   )}
                                 </p>
@@ -669,6 +684,7 @@ export default function App() {
                       ) : (
                         <p style={{ margin: "2px 0" }}>No vote details available.</p>
                       )}
+
                     </>
                   ) : (
                     <p> </p>

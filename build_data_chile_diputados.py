@@ -25,7 +25,7 @@ def map_csv_answer_numeric(vote):
         elif vote in ["abstención", "pareo"]:
             return 0.5
         elif vote == "ausente":
-            return "ausente"
+            return None
     return None
 
 
@@ -146,17 +146,15 @@ def generate_combined_votes_json():
         details = []
         for _, q_row in df_excel.iterrows():
             filename = str(q_row["Filename"]).strip()
-            vote_value = "N/A"
-            date_value = "N/A"
-            for col in row.index:
-                if col in exclude_cols:
-                    continue
-                if col == filename:
-                    # In candidate_details loop inside generate_combined_votes_json:
-                    vote_value = map_csv_answer_numeric(row[col]) if not pd.isna(row[col]) else "N/A"
+            vote_raw = row.get(filename)
 
-                    date_value = str(q_row["Date"])  # read directly from Excel "Date" column
-                    break
+            # Skip if vote is "No activo"
+            if pd.isna(vote_raw) or str(vote_raw).strip().lower() == "no activo":
+                continue
+
+            vote_value = str(vote_raw).strip().capitalize()
+            date_value = str(q_row["Date"])
+
             details.append({
                 "id": filename,
                 "question": q_row["Question"],
@@ -166,6 +164,7 @@ def generate_combined_votes_json():
                 "law": clean_value(q_row.get("Law", "N/A")),
                 "pdf_link": f"src/assets/sesiones_chile_pdfs/{filename}.pdf"
             })
+
         candidate_details[candidate_name] = {
             "candidate_meta": {
                 "party": clean_value(row.get("Partido")),
@@ -210,10 +209,12 @@ def generate_combined_votes_json():
                 "question": q_row["Question"],
                 "date": date_value,
                 "vote": vote_value,
+                "vote_counts": vote_counts,  # ✅ add this line
                 "source": clean_value(q_row.get("Source", "N/A")),
                 "law": clean_value(q_row.get("Law", "N/A")),
                 "pdf_link": f"src/assets/sesiones_chile_pdfs/{filename}.pdf"
             })
+
         party_vote_details[party_str] = details
 
         if not party_rows.empty:
