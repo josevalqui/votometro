@@ -52,7 +52,7 @@
           "20211123_matrimonio_11422-07": 1,
           "20240124_pensiones_15480-13": 1,
           "20240807_plastico_16849-12": 0.5,
-          "20240826_datosPersonales_11092-07": "ausente"
+          "20240826_datosPersonales_11092-07": null
         }
       },
       "Álvaro Carter Fernández": {
@@ -60,7 +60,7 @@
         "party": "Independiente",
         "attendance": "4/5",
         "votes": {
-          "20191024_horasLaborales_11179-13": "ausente",
+          "20191024_horasLaborales_11179-13": null,
           "20211123_matrimonio_11422-07": 1,
           "20240124_pensiones_15480-13": 0,
           "20240807_plastico_16849-12": 0.5,
@@ -74,7 +74,7 @@
         "votes": {
           "20240124_pensiones_15480-13": 1,
           "20240807_plastico_16849-12": 0,
-          "20240826_datosPersonales_11092-07": "ausente"
+          "20240826_datosPersonales_11092-07": null
         }
       },
       "Andrés Celis Montt": {
@@ -86,7 +86,7 @@
           "20211123_matrimonio_11422-07": 1,
           "20240124_pensiones_15480-13": 0,
           "20240807_plastico_16849-12": 1,
-          "20240826_datosPersonales_11092-07": "ausente"
+          "20240826_datosPersonales_11092-07": null
         }
       },
       "Andrés Giordano Salazar": {
@@ -118,7 +118,7 @@
         "votes": {
           "20240124_pensiones_15480-13": 0,
           "20240807_plastico_16849-12": 1,
-          "20240826_datosPersonales_11092-07": "ausente"
+          "20240826_datosPersonales_11092-07": null
         }
       },
       "Bernardo Berger Fett": {
@@ -154,7 +154,7 @@
           "20191024_horasLaborales_11179-13": 0.5,
           "20211123_matrimonio_11422-07": 0,
           "20240124_pensiones_15480-13": 0,
-          "20240807_plastico_16849-12": "ausente",
+          "20240807_plastico_16849-12": null,
           "20240826_datosPersonales_11092-07": 0.5
         }
       },
@@ -208,7 +208,7 @@
           "20191024_horasLaborales_11179-13": 1,
           "20211123_matrimonio_11422-07": 1,
           "20240124_pensiones_15480-13": 1,
-          "20240807_plastico_16849-12": "ausente",
+          "20240807_plastico_16849-12": null,
           "20240826_datosPersonales_11092-07": 1
         }
       },
@@ -231,7 +231,7 @@
         "votes": {
           "20240124_pensiones_15480-13": 1,
           "20240807_plastico_16849-12": 0.5,
-          "20240826_datosPersonales_11092-07": "ausente"
+          "20240826_datosPersonales_11092-07": null
         }
       },
       "Catalina Del Real Mihovilovic": {
@@ -359,7 +359,7 @@
         "party": "Unión Demócrata Independiente",
         "attendance": "4/5",
         "votes": {
-          "20191024_horasLaborales_11179-13": "ausente",
+          "20191024_horasLaborales_11179-13": null,
           "20211123_matrimonio_11422-07": 1,
           "20240124_pensiones_15480-13": 0,
           "20240807_plastico_16849-12": 1,
@@ -391,11 +391,11 @@
         "party": "Independiente",
         "attendance": "3/5",
         "votes": {
-          "20191024_horasLaborales_11179-13": "ausente",
+          "20191024_horasLaborales_11179-13": null,
           "20211123_matrimonio_11422-07": 0,
           "20240124_pensiones_15480-13": 0,
           "20240807_plastico_16849-12": 1,
-          "20240826_datosPersonales_11092-07": "ausente"
+          "20240826_datosPersonales_11092-07": null
         }
       },
       "Daniel Lilayu Vivanco": {
@@ -663,7 +663,7 @@
         "party": "Renovación Nacional",
         "attendance": "5/6",
         "votes": {
-          "20141021_educación_93366-04": "ausente",
+          "20141021_educación_93366-04": null,
           "20191024_horasLaborales_11179-13": 0.5,
           "20211123_matrimonio_11422-07": 0,
           "20240124_pensiones_15480-13": 0,
@@ -690,7 +690,7 @@
         "votes": {
           "20141021_educación_93366-04": 0.5,
           "20240124_pensiones_15480-13": 0,
-          "20240807_plastico_16849-12": "ausente",
+          "20240807_plastico_16849-12": null,
           "20240826_datosPersonales_11092-07": 0.5
         }
       },
@@ -699,7 +699,7 @@
         "party": "Unión Demócrata Independiente",
         "attendance": "5/6",
         "votes": {
-          "20141021_educación_93366-04": "ausente",
+          "20141021_educación_93366-04": null,
           "20191024_horasLaborales_11179-13": 0,
           "20211123_matrimonio_11422-07": 0,
           "20240124_pensiones_15480-13": 0,
@@ -810,7 +810,7 @@
         "votes": {
           "20240124_pensiones_15480-13": 0,
           "20240807_plastico_16849-12": 1,
-          "20240826_datosPersonales_11092-07": "ausente"
+          "20240826_datosPersonales_11092-07": null
         }
       },
       "Hernán Palma Pérez": {
@@ -828,7 +828,7 @@
         "party": "Independiente",
         "attendance": "2/3",
         "votes": {
-          "20240124_pensiones_15480-13": "ausente",
+          "20240124_pensiones_15480-13": null,
           "20240807_plastico_16849-12": 1,
           "20240826_datosPersonales_11092-07": 0.5
         }
@@ -861,7 +861,7 @@
         "attendance": "4/5",
         "votes": {
           "20191024_horasLaborales_11179-13": 1,
-          "20211123_matrimonio_11422-07": "ausente",
+          "20211123_matrimonio_11422-07": null,
           "20240124_pensiones_15480-13": 1,
           "20240807_plastico_16849-12": 0,
           "20240826_datosPersonales_11092-07": 1
@@ -905,7 +905,7 @@
         "attendance": "4/5",
         "votes": {
           "20191024_horasLaborales_11179-13": 1,
-          "20211123_matrimonio_11422-07": "ausente",
+          "20211123_matrimonio_11422-07": null,
           "20240124_pensiones_15480-13": 1,
           "20240807_plastico_16849-12": 1,
           "20240826_datosPersonales_11092-07": 1
@@ -999,7 +999,7 @@
         "attendance": "2/3",
         "votes": {
           "20240124_pensiones_15480-13": 1,
-          "20240807_plastico_16849-12": "ausente",
+          "20240807_plastico_16849-12": null,
           "20240826_datosPersonales_11092-07": 1
         }
       },
@@ -1102,7 +1102,7 @@
           "20211123_matrimonio_11422-07": 1,
           "20240124_pensiones_15480-13": 1,
           "20240807_plastico_16849-12": 0,
-          "20240826_datosPersonales_11092-07": "ausente"
+          "20240826_datosPersonales_11092-07": null
         }
       },
       "Leonardo Soto Ferrada": {
@@ -1115,7 +1115,7 @@
           "20211123_matrimonio_11422-07": 1,
           "20240124_pensiones_15480-13": 1,
           "20240807_plastico_16849-12": 0,
-          "20240826_datosPersonales_11092-07": "ausente"
+          "20240826_datosPersonales_11092-07": null
         }
       },
       "Leonidas Romero Sáez": {
@@ -1186,10 +1186,10 @@
         "attendance": "3/5",
         "votes": {
           "20191024_horasLaborales_11179-13": 1,
-          "20211123_matrimonio_11422-07": "ausente",
+          "20211123_matrimonio_11422-07": null,
           "20240124_pensiones_15480-13": 1,
           "20240807_plastico_16849-12": 0.5,
-          "20240826_datosPersonales_11092-07": "ausente"
+          "20240826_datosPersonales_11092-07": null
         }
       },
       "Marcela Riquelme Aliaga": {
@@ -1199,7 +1199,7 @@
         "votes": {
           "20240124_pensiones_15480-13": 1,
           "20240807_plastico_16849-12": 0,
-          "20240826_datosPersonales_11092-07": "ausente"
+          "20240826_datosPersonales_11092-07": null
         }
       },
       "Marcia Raphael Mora": {
@@ -1250,7 +1250,7 @@
         "attendance": "2/3",
         "votes": {
           "20240124_pensiones_15480-13": 1,
-          "20240807_plastico_16849-12": "ausente",
+          "20240807_plastico_16849-12": null,
           "20240826_datosPersonales_11092-07": 0.5
         }
       },
@@ -1259,7 +1259,7 @@
         "party": "Independiente",
         "attendance": "2/3",
         "votes": {
-          "20240124_pensiones_15480-13": "ausente",
+          "20240124_pensiones_15480-13": null,
           "20240807_plastico_16849-12": 1,
           "20240826_datosPersonales_11092-07": 0.5
         }
@@ -1272,7 +1272,7 @@
           "20191024_horasLaborales_11179-13": 1,
           "20211123_matrimonio_11422-07": 1,
           "20240124_pensiones_15480-13": 1,
-          "20240807_plastico_16849-12": "ausente",
+          "20240807_plastico_16849-12": null,
           "20240826_datosPersonales_11092-07": 1
         }
       },
@@ -1303,7 +1303,7 @@
         "votes": {
           "20240124_pensiones_15480-13": 1,
           "20240807_plastico_16849-12": 0,
-          "20240826_datosPersonales_11092-07": "ausente"
+          "20240826_datosPersonales_11092-07": null
         }
       },
       "Matías Ramírez Pascal": {
@@ -1312,7 +1312,7 @@
         "attendance": "2/3",
         "votes": {
           "20240124_pensiones_15480-13": 1,
-          "20240807_plastico_16849-12": "ausente",
+          "20240807_plastico_16849-12": null,
           "20240826_datosPersonales_11092-07": 1
         }
       },
@@ -1342,7 +1342,7 @@
         "attendance": "2/3",
         "votes": {
           "20240124_pensiones_15480-13": 1,
-          "20240807_plastico_16849-12": "ausente",
+          "20240807_plastico_16849-12": null,
           "20240826_datosPersonales_11092-07": 0.5
         }
       },
@@ -1362,7 +1362,7 @@
         "attendance": "4/5",
         "votes": {
           "20191024_horasLaborales_11179-13": 1,
-          "20211123_matrimonio_11422-07": "ausente",
+          "20211123_matrimonio_11422-07": null,
           "20240124_pensiones_15480-13": 1,
           "20240807_plastico_16849-12": 1,
           "20240826_datosPersonales_11092-07": 1
@@ -1416,7 +1416,7 @@
         "attendance": "2/3",
         "votes": {
           "20240124_pensiones_15480-13": 1,
-          "20240807_plastico_16849-12": "ausente",
+          "20240807_plastico_16849-12": null,
           "20240826_datosPersonales_11092-07": 1
         }
       },
@@ -1471,9 +1471,9 @@
         "party": "Independiente",
         "attendance": "4/6",
         "votes": {
-          "20141021_educación_93366-04": "ausente",
+          "20141021_educación_93366-04": null,
           "20191024_horasLaborales_11179-13": 1,
-          "20211123_matrimonio_11422-07": "ausente",
+          "20211123_matrimonio_11422-07": null,
           "20240124_pensiones_15480-13": 1,
           "20240807_plastico_16849-12": 0,
           "20240826_datosPersonales_11092-07": 0
@@ -1485,7 +1485,7 @@
         "attendance": "5/6",
         "votes": {
           "20141021_educación_93366-04": 0.5,
-          "20191024_horasLaborales_11179-13": "ausente",
+          "20191024_horasLaborales_11179-13": null,
           "20211123_matrimonio_11422-07": 1,
           "20240124_pensiones_15480-13": 0,
           "20240807_plastico_16849-12": 1,
@@ -1517,9 +1517,9 @@
         "party": "Independiente",
         "attendance": "0/3",
         "votes": {
-          "20240124_pensiones_15480-13": "ausente",
-          "20240807_plastico_16849-12": "ausente",
-          "20240826_datosPersonales_11092-07": "ausente"
+          "20240124_pensiones_15480-13": null,
+          "20240807_plastico_16849-12": null,
+          "20240826_datosPersonales_11092-07": null
         }
       },
       "Rubén Darío Oyarzo Figueroa": {
@@ -1557,7 +1557,7 @@
         "party": "Unión Demócrata Independiente",
         "attendance": "5/6",
         "votes": {
-          "20141021_educación_93366-04": "ausente",
+          "20141021_educación_93366-04": null,
           "20191024_horasLaborales_11179-13": 0,
           "20211123_matrimonio_11422-07": 0,
           "20240124_pensiones_15480-13": 0,
@@ -1570,11 +1570,11 @@
         "party": "Independiente",
         "attendance": "3/5",
         "votes": {
-          "20191024_horasLaborales_11179-13": "ausente",
+          "20191024_horasLaborales_11179-13": null,
           "20211123_matrimonio_11422-07": 1,
           "20240124_pensiones_15480-13": 0,
           "20240807_plastico_16849-12": 1,
-          "20240826_datosPersonales_11092-07": "ausente"
+          "20240826_datosPersonales_11092-07": null
         }
       },
       "Stephan Schubert Rubio": {
@@ -1604,7 +1604,7 @@
         "votes": {
           "20240124_pensiones_15480-13": 1,
           "20240807_plastico_16849-12": 0.5,
-          "20240826_datosPersonales_11092-07": "ausente"
+          "20240826_datosPersonales_11092-07": null
         }
       },
       "Víctor Alejandro Pino Fuentes": {
@@ -1636,7 +1636,7 @@
           "20191024_horasLaborales_11179-13": 1,
           "20211123_matrimonio_11422-07": 1,
           "20240124_pensiones_15480-13": 1,
-          "20240807_plastico_16849-12": "ausente",
+          "20240807_plastico_16849-12": null,
           "20240826_datosPersonales_11092-07": 1
         }
       },
@@ -1705,7 +1705,7 @@
         "party": "Evolución Política",
         "attendance": "1/2",
         "votes": {
-          "20191024_horasLaborales_11179-13": "ausente",
+          "20191024_horasLaborales_11179-13": null,
           "20211123_matrimonio_11422-07": 1
         }
       },
@@ -1733,7 +1733,7 @@
         "party": "Renovación Nacional",
         "attendance": "1/2",
         "votes": {
-          "20191024_horasLaborales_11179-13": "ausente",
+          "20191024_horasLaborales_11179-13": null,
           "20211123_matrimonio_11422-07": 1
         }
       },
@@ -1763,7 +1763,7 @@
         "votes": {
           "20141021_educación_93366-04": 0,
           "20191024_horasLaborales_11179-13": 0,
-          "20211123_matrimonio_11422-07": "ausente"
+          "20211123_matrimonio_11422-07": null
         }
       },
       "Cristina Girardi Lavín": {
@@ -1783,7 +1783,7 @@
         "votes": {
           "20141021_educación_93366-04": 1,
           "20191024_horasLaborales_11179-13": 1,
-          "20211123_matrimonio_11422-07": "ausente"
+          "20211123_matrimonio_11422-07": null
         }
       },
       "Daniel Verdessi Belemmi": {
@@ -1821,7 +1821,7 @@
         "attendance": "1/2",
         "votes": {
           "20191024_horasLaborales_11179-13": 1,
-          "20211123_matrimonio_11422-07": "ausente"
+          "20211123_matrimonio_11422-07": null
         }
       },
       "Fernando Meza Moncada": {
@@ -1831,7 +1831,7 @@
         "votes": {
           "20141021_educación_93366-04": 1,
           "20191024_horasLaborales_11179-13": 1,
-          "20211123_matrimonio_11422-07": "ausente"
+          "20211123_matrimonio_11422-07": null
         }
       },
       "Fidel Espinoza Sandoval": {
@@ -1841,7 +1841,7 @@
         "votes": {
           "20141021_educación_93366-04": 1,
           "20191024_horasLaborales_11179-13": 1,
-          "20211123_matrimonio_11422-07": "ausente"
+          "20211123_matrimonio_11422-07": null
         }
       },
       "Francisco Eguiguren Correa": {
@@ -1858,7 +1858,7 @@
         "party": "Partido Demócrata Cristiano",
         "attendance": "2/3",
         "votes": {
-          "20141021_educación_93366-04": "ausente",
+          "20141021_educación_93366-04": null,
           "20191024_horasLaborales_11179-13": 1,
           "20211123_matrimonio_11422-07": 1
         }
@@ -1908,8 +1908,8 @@
         "attendance": "1/3",
         "votes": {
           "20141021_educación_93366-04": 0,
-          "20191024_horasLaborales_11179-13": "ausente",
-          "20211123_matrimonio_11422-07": "ausente"
+          "20191024_horasLaborales_11179-13": null,
+          "20211123_matrimonio_11422-07": null
         }
       },
       "Guillermo Teillier Del Valle": {
@@ -1927,7 +1927,7 @@
         "party": "Unión Demócrata Independiente",
         "attendance": "1/2",
         "votes": {
-          "20191024_horasLaborales_11179-13": "ausente",
+          "20191024_horasLaborales_11179-13": null,
           "20211123_matrimonio_11422-07": 1
         }
       },
@@ -1938,7 +1938,7 @@
         "votes": {
           "20141021_educación_93366-04": 1,
           "20191024_horasLaborales_11179-13": 1,
-          "20211123_matrimonio_11422-07": "ausente"
+          "20211123_matrimonio_11422-07": null
         }
       },
       "Ignacio Urrutia Bonilla": {
@@ -1958,7 +1958,7 @@
         "votes": {
           "20141021_educación_93366-04": 0,
           "20191024_horasLaborales_11179-13": 0,
-          "20211123_matrimonio_11422-07": "ausente"
+          "20211123_matrimonio_11422-07": null
         }
       },
       "Iván Flores García": {
@@ -1988,7 +1988,7 @@
         "votes": {
           "20141021_educación_93366-04": 0,
           "20191024_horasLaborales_11179-13": 0,
-          "20211123_matrimonio_11422-07": "ausente"
+          "20211123_matrimonio_11422-07": null
         }
       },
       "Jaime Tohá González": {
@@ -2005,7 +2005,7 @@
         "party": "Unión Demócrata Independiente",
         "attendance": "2/3",
         "votes": {
-          "20141021_educación_93366-04": "ausente",
+          "20141021_educación_93366-04": null,
           "20191024_horasLaborales_11179-13": 0,
           "20211123_matrimonio_11422-07": 0
         }
@@ -2057,7 +2057,7 @@
         "votes": {
           "20141021_educación_93366-04": 1,
           "20191024_horasLaborales_11179-13": 1,
-          "20211123_matrimonio_11422-07": "ausente"
+          "20211123_matrimonio_11422-07": null
         }
       },
       "Juan Luis Castro González": {
@@ -2075,7 +2075,7 @@
         "party": "Unión Demócrata Independiente",
         "attendance": "1/2",
         "votes": {
-          "20191024_horasLaborales_11179-13": "ausente",
+          "20191024_horasLaborales_11179-13": null,
           "20211123_matrimonio_11422-07": 1
         }
       },
@@ -2114,7 +2114,7 @@
         "votes": {
           "20141021_educación_93366-04": 1,
           "20191024_horasLaborales_11179-13": 1,
-          "20211123_matrimonio_11422-07": "ausente"
+          "20211123_matrimonio_11422-07": null
         }
       },
       "Luciano Cruz-Coke Carvallo": {
@@ -2132,7 +2132,7 @@
         "attendance": "1/2",
         "votes": {
           "20191024_horasLaborales_11179-13": 0.5,
-          "20211123_matrimonio_11422-07": "ausente"
+          "20211123_matrimonio_11422-07": null
         }
       },
       "Luis Rocafull López": {
@@ -2151,7 +2151,7 @@
         "attendance": "1/2",
         "votes": {
           "20191024_horasLaborales_11179-13": 0.5,
-          "20211123_matrimonio_11422-07": "ausente"
+          "20211123_matrimonio_11422-07": null
         }
       },
       "Manuel Monsalve Benavides": {
@@ -2171,7 +2171,7 @@
         "votes": {
           "20141021_educación_93366-04": 1,
           "20191024_horasLaborales_11179-13": 1,
-          "20211123_matrimonio_11422-07": "ausente"
+          "20211123_matrimonio_11422-07": null
         }
       },
       "Marcela Sabat Fernández": {
@@ -2179,9 +2179,9 @@
         "party": "Renovación Nacional",
         "attendance": "1/3",
         "votes": {
-          "20141021_educación_93366-04": "ausente",
+          "20141021_educación_93366-04": null,
           "20191024_horasLaborales_11179-13": 0.5,
-          "20211123_matrimonio_11422-07": "ausente"
+          "20211123_matrimonio_11422-07": null
         }
       },
       "Marcela Sandoval Osorio": {
@@ -2189,7 +2189,7 @@
         "party": "Revolución Democrática",
         "attendance": "1/2",
         "votes": {
-          "20191024_horasLaborales_11179-13": "ausente",
+          "20191024_horasLaborales_11179-13": null,
           "20211123_matrimonio_11422-07": 1
         }
       },
@@ -2198,7 +2198,7 @@
         "party": "Partido Socialista",
         "attendance": "2/3",
         "votes": {
-          "20141021_educación_93366-04": "ausente",
+          "20141021_educación_93366-04": null,
           "20191024_horasLaborales_11179-13": 1,
           "20211123_matrimonio_11422-07": 1
         }
@@ -2229,7 +2229,7 @@
         "attendance": "1/2",
         "votes": {
           "20191024_horasLaborales_11179-13": 0.5,
-          "20211123_matrimonio_11422-07": "ausente"
+          "20211123_matrimonio_11422-07": null
         }
       },
       "Mario Venegas Cárdenas": {
@@ -2239,7 +2239,7 @@
         "votes": {
           "20141021_educación_93366-04": 1,
           "20191024_horasLaborales_11179-13": 1,
-          "20211123_matrimonio_11422-07": "ausente"
+          "20211123_matrimonio_11422-07": null
         }
       },
       "Matías Walker Prieto": {
@@ -2285,7 +2285,7 @@
         "party": "Unión Demócrata Independiente",
         "attendance": "1/2",
         "votes": {
-          "20191024_horasLaborales_11179-13": "ausente",
+          "20191024_horasLaborales_11179-13": null,
           "20211123_matrimonio_11422-07": 1
         }
       },
@@ -2294,7 +2294,7 @@
         "party": "Unión Demócrata Independiente",
         "attendance": "2/3",
         "votes": {
-          "20141021_educación_93366-04": "ausente",
+          "20141021_educación_93366-04": null,
           "20191024_horasLaborales_11179-13": 0.5,
           "20211123_matrimonio_11422-07": 0
         }
@@ -2304,7 +2304,7 @@
         "party": "Unión Demócrata Independiente",
         "attendance": "1/2",
         "votes": {
-          "20191024_horasLaborales_11179-13": "ausente",
+          "20191024_horasLaborales_11179-13": null,
           "20211123_matrimonio_11422-07": 1
         }
       },
@@ -2323,7 +2323,7 @@
         "party": "Evolución Política",
         "attendance": "1/2",
         "votes": {
-          "20191024_horasLaborales_11179-13": "ausente",
+          "20191024_horasLaborales_11179-13": null,
           "20211123_matrimonio_11422-07": 1
         }
       },
@@ -2360,7 +2360,7 @@
         "party": "Partido por la Democracia",
         "attendance": "1/2",
         "votes": {
-          "20191024_horasLaborales_11179-13": "ausente",
+          "20191024_horasLaborales_11179-13": null,
           "20211123_matrimonio_11422-07": 1
         }
       },
@@ -2371,7 +2371,7 @@
         "votes": {
           "20141021_educación_93366-04": 0,
           "20191024_horasLaborales_11179-13": 0,
-          "20211123_matrimonio_11422-07": "ausente"
+          "20211123_matrimonio_11422-07": null
         }
       },
       "Paulina Núñez Urrutia": {
@@ -2399,9 +2399,9 @@
         "party": "Independiente",
         "attendance": "1/3",
         "votes": {
-          "20141021_educación_93366-04": "ausente",
+          "20141021_educación_93366-04": null,
           "20191024_horasLaborales_11179-13": 1,
-          "20211123_matrimonio_11422-07": "ausente"
+          "20211123_matrimonio_11422-07": null
         }
       },
       "Pepe Auth Stewart": {
@@ -2430,7 +2430,7 @@
         "attendance": "1/2",
         "votes": {
           "20191024_horasLaborales_11179-13": 1,
-          "20211123_matrimonio_11422-07": "ausente"
+          "20211123_matrimonio_11422-07": null
         }
       },
       "Raúl Saldívar Auger": {
@@ -2449,7 +2449,7 @@
         "attendance": "1/2",
         "votes": {
           "20191024_horasLaborales_11179-13": 1,
-          "20211123_matrimonio_11422-07": "ausente"
+          "20211123_matrimonio_11422-07": null
         }
       },
       "René Manuel García García": {
@@ -2505,7 +2505,7 @@
         "party": "Partido Comunista",
         "attendance": "1/2",
         "votes": {
-          "20191024_horasLaborales_11179-13": "ausente",
+          "20191024_horasLaborales_11179-13": null,
           "20211123_matrimonio_11422-07": 1
         }
       },
@@ -2514,7 +2514,7 @@
         "party": "Evolución Política",
         "attendance": "1/2",
         "votes": {
-          "20191024_horasLaborales_11179-13": "ausente",
+          "20191024_horasLaborales_11179-13": null,
           "20211123_matrimonio_11422-07": 1
         }
       },
@@ -2542,7 +2542,7 @@
         "party": "Unión Demócrata Independiente",
         "attendance": "1/2",
         "votes": {
-          "20191024_horasLaborales_11179-13": "ausente",
+          "20191024_horasLaborales_11179-13": null,
           "20211123_matrimonio_11422-07": 1
         }
       },
@@ -3276,7 +3276,7 @@
             "id": "20240826_datosPersonales_11092-07",
             "question": "Está bien que el Estado proteja los datos personales de las personas.",
             "date": "26.08.2024",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.rsm.global/chile/es/news/ley-21719-proteccion-de-datos-personales",
             "law": "Proposición de la Comisión Mixta recaída en el proyecto de ley, originado en moción y mensaje, que “Regula la protección y el tratamiento de los datos personales y crea la Agencia de Protección de Datos Personales.”. [Cabe hacer presente que por no alcanzar el quórum constitucional no se aprueba el artículo 55 propuesto por la Comisión] ",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20240826_datosPersonales_11092-07.pdf"
@@ -3329,7 +3329,7 @@
             "id": "20191024_horasLaborales_11179-13",
             "question": "Estuvo bien reducir las horas laborales a 40 horas por semana.",
             "date": "24.10.2019",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.bcn.cl/portal/leyfacil/recurso/reduccion-de-la-jornada-laboral-a-40-horas-semanales",
             "law": "Modifica el Código del Trabajo con el objeto de reducir la jornada laboral",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20191024_horasLaborales_11179-13.pdf"
@@ -3400,7 +3400,7 @@
             "id": "20240826_datosPersonales_11092-07",
             "question": "Está bien que el Estado proteja los datos personales de las personas.",
             "date": "26.08.2024",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.rsm.global/chile/es/news/ley-21719-proteccion-de-datos-personales",
             "law": "Proposición de la Comisión Mixta recaída en el proyecto de ley, originado en moción y mensaje, que “Regula la protección y el tratamiento de los datos personales y crea la Agencia de Protección de Datos Personales.”. [Cabe hacer presente que por no alcanzar el quórum constitucional no se aprueba el artículo 55 propuesto por la Comisión] ",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20240826_datosPersonales_11092-07.pdf"
@@ -3462,7 +3462,7 @@
             "id": "20240826_datosPersonales_11092-07",
             "question": "Está bien que el Estado proteja los datos personales de las personas.",
             "date": "26.08.2024",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.rsm.global/chile/es/news/ley-21719-proteccion-de-datos-personales",
             "law": "Proposición de la Comisión Mixta recaída en el proyecto de ley, originado en moción y mensaje, que “Regula la protección y el tratamiento de los datos personales y crea la Agencia de Protección de Datos Personales.”. [Cabe hacer presente que por no alcanzar el quórum constitucional no se aprueba el artículo 55 propuesto por la Comisión] ",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20240826_datosPersonales_11092-07.pdf"
@@ -3648,7 +3648,7 @@
             "id": "20240826_datosPersonales_11092-07",
             "question": "Está bien que el Estado proteja los datos personales de las personas.",
             "date": "26.08.2024",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.rsm.global/chile/es/news/ley-21719-proteccion-de-datos-personales",
             "law": "Proposición de la Comisión Mixta recaída en el proyecto de ley, originado en moción y mensaje, que “Regula la protección y el tratamiento de los datos personales y crea la Agencia de Protección de Datos Personales.”. [Cabe hacer presente que por no alcanzar el quórum constitucional no se aprueba el artículo 55 propuesto por la Comisión] ",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20240826_datosPersonales_11092-07.pdf"
@@ -3870,7 +3870,7 @@
             "id": "20240807_plastico_16849-12",
             "question": "El uso de plásticos de un solo uso debería ser reducido.",
             "date": "07.08.2024",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.example.com",
             "law": "Modifica la ley N° 21.368, que regula la entrega de plásticos de un solo uso y las botellas plásticas, y modifica los cuerpos legales que indica, en materia de plazos de entrada en vigencia de sus obligaciones",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20240807_plastico_16849-12.pdf"
@@ -4180,7 +4180,7 @@
             "id": "20240807_plastico_16849-12",
             "question": "El uso de plásticos de un solo uso debería ser reducido.",
             "date": "07.08.2024",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.example.com",
             "law": "Modifica la ley N° 21.368, que regula la entrega de plásticos de un solo uso y las botellas plásticas, y modifica los cuerpos legales que indica, en materia de plazos de entrada en vigencia de sus obligaciones",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20240807_plastico_16849-12.pdf"
@@ -4268,7 +4268,7 @@
             "id": "20240826_datosPersonales_11092-07",
             "question": "Está bien que el Estado proteja los datos personales de las personas.",
             "date": "26.08.2024",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.rsm.global/chile/es/news/ley-21719-proteccion-de-datos-personales",
             "law": "Proposición de la Comisión Mixta recaída en el proyecto de ley, originado en moción y mensaje, que “Regula la protección y el tratamiento de los datos personales y crea la Agencia de Protección de Datos Personales.”. [Cabe hacer presente que por no alcanzar el quórum constitucional no se aprueba el artículo 55 propuesto por la Comisión] ",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20240826_datosPersonales_11092-07.pdf"
@@ -5003,7 +5003,7 @@
             "id": "20191024_horasLaborales_11179-13",
             "question": "Estuvo bien reducir las horas laborales a 40 horas por semana.",
             "date": "24.10.2019",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.bcn.cl/portal/leyfacil/recurso/reduccion-de-la-jornada-laboral-a-40-horas-semanales",
             "law": "Modifica el Código del Trabajo con el objeto de reducir la jornada laboral",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20191024_horasLaborales_11179-13.pdf"
@@ -5189,7 +5189,7 @@
             "id": "20191024_horasLaborales_11179-13",
             "question": "Estuvo bien reducir las horas laborales a 40 horas por semana.",
             "date": "24.10.2019",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.bcn.cl/portal/leyfacil/recurso/reduccion-de-la-jornada-laboral-a-40-horas-semanales",
             "law": "Modifica el Código del Trabajo con el objeto de reducir la jornada laboral",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20191024_horasLaborales_11179-13.pdf"
@@ -5198,7 +5198,7 @@
             "id": "20240826_datosPersonales_11092-07",
             "question": "Está bien que el Estado proteja los datos personales de las personas.",
             "date": "26.08.2024",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.rsm.global/chile/es/news/ley-21719-proteccion-de-datos-personales",
             "law": "Proposición de la Comisión Mixta recaída en el proyecto de ley, originado en moción y mensaje, que “Regula la protección y el tratamiento de los datos personales y crea la Agencia de Protección de Datos Personales.”. [Cabe hacer presente que por no alcanzar el quórum constitucional no se aprueba el artículo 55 propuesto por la Comisión] ",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20240826_datosPersonales_11092-07.pdf"
@@ -6775,7 +6775,7 @@
             "id": "20141021_educación_93366-04",
             "question": "Fue buena la reforma de educación del 2015 que prohíbe que instituciones subvencionadas por el estado hagan ganancias, y que dicta que las admisiones sean basadas en el azar.",
             "date": "21.10.2014",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.example.com",
             "law": "Regula la admisión de los y las estudiantes, elimina el financiamiento compartido y prohíbe el lucro en establecimientos educacionales que reciben aportes del Estado.",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20141021_educación_93366-04.pdf"
@@ -6908,7 +6908,7 @@
             "id": "20240807_plastico_16849-12",
             "question": "El uso de plásticos de un solo uso debería ser reducido.",
             "date": "07.08.2024",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.example.com",
             "law": "Modifica la ley N° 21.368, que regula la entrega de plásticos de un solo uso y las botellas plásticas, y modifica los cuerpos legales que indica, en materia de plazos de entrada en vigencia de sus obligaciones",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20240807_plastico_16849-12.pdf"
@@ -6961,7 +6961,7 @@
             "id": "20141021_educación_93366-04",
             "question": "Fue buena la reforma de educación del 2015 que prohíbe que instituciones subvencionadas por el estado hagan ganancias, y que dicta que las admisiones sean basadas en el azar.",
             "date": "21.10.2014",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.example.com",
             "law": "Regula la admisión de los y las estudiantes, elimina el financiamiento compartido y prohíbe el lucro en establecimientos educacionales que reciben aportes del Estado.",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20141021_educación_93366-04.pdf"
@@ -7554,7 +7554,7 @@
             "id": "20240826_datosPersonales_11092-07",
             "question": "Está bien que el Estado proteja los datos personales de las personas.",
             "date": "26.08.2024",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.rsm.global/chile/es/news/ley-21719-proteccion-de-datos-personales",
             "law": "Proposición de la Comisión Mixta recaída en el proyecto de ley, originado en moción y mensaje, que “Regula la protección y el tratamiento de los datos personales y crea la Agencia de Protección de Datos Personales.”. [Cabe hacer presente que por no alcanzar el quórum constitucional no se aprueba el artículo 55 propuesto por la Comisión] ",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20240826_datosPersonales_11092-07.pdf"
@@ -7687,7 +7687,7 @@
             "id": "20240124_pensiones_15480-13",
             "question": "Fue buena la reforma de enero de 2025 que aumentó las contribuciones obligatorias de los empleadores al sistema de pensiones al 7%.",
             "date": "24.01.2025",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.ft.com/content/9e3ab931-eb05-4616-b8b7-0825cf9a690c?utm_source=chatgpt.com",
             "law": "Crea un nuevo Sistema Mixto de Pensiones y un Seguro Social en el pilar contributivo, mejora la Pensión Garantizada Universal y establece beneficios y modificaciones regulatorias que indica",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20240124_pensiones_15480-13.pdf"
@@ -7882,7 +7882,7 @@
             "id": "20211123_matrimonio_11422-07",
             "question": "El matrimonio entre personas del mismo género debería estar permitido.",
             "date": "23.11.2021",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.chileatiende.gob.cl/fichas/101164-ley-de-matrimonio-igualitario",
             "law": "Modifica diversos cuerpos legales para regular, en igualdad de condiciones, el matrimonio de parejas del mismo sexo.",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20211123_matrimonio_11422-07.pdf"
@@ -8130,7 +8130,7 @@
             "id": "20211123_matrimonio_11422-07",
             "question": "El matrimonio entre personas del mismo género debería estar permitido.",
             "date": "23.11.2021",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.chileatiende.gob.cl/fichas/101164-ley-de-matrimonio-igualitario",
             "law": "Modifica diversos cuerpos legales para regular, en igualdad de condiciones, el matrimonio de parejas del mismo sexo.",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20211123_matrimonio_11422-07.pdf"
@@ -8644,7 +8644,7 @@
             "id": "20240807_plastico_16849-12",
             "question": "El uso de plásticos de un solo uso debería ser reducido.",
             "date": "07.08.2024",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.example.com",
             "law": "Modifica la ley N° 21.368, que regula la entrega de plásticos de un solo uso y las botellas plásticas, y modifica los cuerpos legales que indica, en materia de plazos de entrada en vigencia de sus obligaciones",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20240807_plastico_16849-12.pdf"
@@ -9166,7 +9166,7 @@
             "id": "20240826_datosPersonales_11092-07",
             "question": "Está bien que el Estado proteja los datos personales de las personas.",
             "date": "26.08.2024",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.rsm.global/chile/es/news/ley-21719-proteccion-de-datos-personales",
             "law": "Proposición de la Comisión Mixta recaída en el proyecto de ley, originado en moción y mensaje, que “Regula la protección y el tratamiento de los datos personales y crea la Agencia de Protección de Datos Personales.”. [Cabe hacer presente que por no alcanzar el quórum constitucional no se aprueba el artículo 55 propuesto por la Comisión] ",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20240826_datosPersonales_11092-07.pdf"
@@ -9228,7 +9228,7 @@
             "id": "20240826_datosPersonales_11092-07",
             "question": "Está bien que el Estado proteja los datos personales de las personas.",
             "date": "26.08.2024",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.rsm.global/chile/es/news/ley-21719-proteccion-de-datos-personales",
             "law": "Proposición de la Comisión Mixta recaída en el proyecto de ley, originado en moción y mensaje, que “Regula la protección y el tratamiento de los datos personales y crea la Agencia de Protección de Datos Personales.”. [Cabe hacer presente que por no alcanzar el quórum constitucional no se aprueba el artículo 55 propuesto por la Comisión] ",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20240826_datosPersonales_11092-07.pdf"
@@ -9662,7 +9662,7 @@
             "id": "20240826_datosPersonales_11092-07",
             "question": "Está bien que el Estado proteja los datos personales de las personas.",
             "date": "26.08.2024",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.rsm.global/chile/es/news/ley-21719-proteccion-de-datos-personales",
             "law": "Proposición de la Comisión Mixta recaída en el proyecto de ley, originado en moción y mensaje, que “Regula la protección y el tratamiento de los datos personales y crea la Agencia de Protección de Datos Personales.”. [Cabe hacer presente que por no alcanzar el quórum constitucional no se aprueba el artículo 55 propuesto por la Comisión] ",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20240826_datosPersonales_11092-07.pdf"
@@ -9680,7 +9680,7 @@
             "id": "20211123_matrimonio_11422-07",
             "question": "El matrimonio entre personas del mismo género debería estar permitido.",
             "date": "23.11.2021",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.chileatiende.gob.cl/fichas/101164-ley-de-matrimonio-igualitario",
             "law": "Modifica diversos cuerpos legales para regular, en igualdad de condiciones, el matrimonio de parejas del mismo sexo.",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20211123_matrimonio_11422-07.pdf"
@@ -9724,7 +9724,7 @@
             "id": "20240826_datosPersonales_11092-07",
             "question": "Está bien que el Estado proteja los datos personales de las personas.",
             "date": "26.08.2024",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.rsm.global/chile/es/news/ley-21719-proteccion-de-datos-personales",
             "law": "Proposición de la Comisión Mixta recaída en el proyecto de ley, originado en moción y mensaje, que “Regula la protección y el tratamiento de los datos personales y crea la Agencia de Protección de Datos Personales.”. [Cabe hacer presente que por no alcanzar el quórum constitucional no se aprueba el artículo 55 propuesto por la Comisión] ",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20240826_datosPersonales_11092-07.pdf"
@@ -10070,7 +10070,7 @@
             "id": "20240807_plastico_16849-12",
             "question": "El uso de plásticos de un solo uso debería ser reducido.",
             "date": "07.08.2024",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.example.com",
             "law": "Modifica la ley N° 21.368, que regula la entrega de plásticos de un solo uso y las botellas plásticas, y modifica los cuerpos legales que indica, en materia de plazos de entrada en vigencia de sus obligaciones",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20240807_plastico_16849-12.pdf"
@@ -10105,7 +10105,7 @@
             "id": "20240124_pensiones_15480-13",
             "question": "Fue buena la reforma de enero de 2025 que aumentó las contribuciones obligatorias de los empleadores al sistema de pensiones al 7%.",
             "date": "24.01.2025",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.ft.com/content/9e3ab931-eb05-4616-b8b7-0825cf9a690c?utm_source=chatgpt.com",
             "law": "Crea un nuevo Sistema Mixto de Pensiones y un Seguro Social en el pilar contributivo, mejora la Pensión Garantizada Universal y establece beneficios y modificaciones regulatorias que indica",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20240124_pensiones_15480-13.pdf"
@@ -10194,7 +10194,7 @@
             "id": "20240807_plastico_16849-12",
             "question": "El uso de plásticos de un solo uso debería ser reducido.",
             "date": "07.08.2024",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.example.com",
             "law": "Modifica la ley N° 21.368, que regula la entrega de plásticos de un solo uso y las botellas plásticas, y modifica los cuerpos legales que indica, en materia de plazos de entrada en vigencia de sus obligaciones",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20240807_plastico_16849-12.pdf"
@@ -10344,7 +10344,7 @@
             "id": "20240826_datosPersonales_11092-07",
             "question": "Está bien que el Estado proteja los datos personales de las personas.",
             "date": "26.08.2024",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.rsm.global/chile/es/news/ley-21719-proteccion-de-datos-personales",
             "law": "Proposición de la Comisión Mixta recaída en el proyecto de ley, originado en moción y mensaje, que “Regula la protección y el tratamiento de los datos personales y crea la Agencia de Protección de Datos Personales.”. [Cabe hacer presente que por no alcanzar el quórum constitucional no se aprueba el artículo 55 propuesto por la Comisión] ",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20240826_datosPersonales_11092-07.pdf"
@@ -10442,7 +10442,7 @@
             "id": "20240807_plastico_16849-12",
             "question": "El uso de plásticos de un solo uso debería ser reducido.",
             "date": "07.08.2024",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.example.com",
             "law": "Modifica la ley N° 21.368, que regula la entrega de plásticos de un solo uso y las botellas plásticas, y modifica los cuerpos legales que indica, en materia de plazos de entrada en vigencia de sus obligaciones",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20240807_plastico_16849-12.pdf"
@@ -10628,7 +10628,7 @@
             "id": "20240807_plastico_16849-12",
             "question": "El uso de plásticos de un solo uso debería ser reducido.",
             "date": "07.08.2024",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.example.com",
             "law": "Modifica la ley N° 21.368, que regula la entrega de plásticos de un solo uso y las botellas plásticas, y modifica los cuerpos legales que indica, en materia de plazos de entrada en vigencia de sus obligaciones",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20240807_plastico_16849-12.pdf"
@@ -10734,7 +10734,7 @@
             "id": "20211123_matrimonio_11422-07",
             "question": "El matrimonio entre personas del mismo género debería estar permitido.",
             "date": "23.11.2021",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.chileatiende.gob.cl/fichas/101164-ley-de-matrimonio-igualitario",
             "law": "Modifica diversos cuerpos legales para regular, en igualdad de condiciones, el matrimonio de parejas del mismo sexo.",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20211123_matrimonio_11422-07.pdf"
@@ -11062,7 +11062,7 @@
             "id": "20240807_plastico_16849-12",
             "question": "El uso de plásticos de un solo uso debería ser reducido.",
             "date": "07.08.2024",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.example.com",
             "law": "Modifica la ley N° 21.368, que regula la entrega de plásticos de un solo uso y las botellas plásticas, y modifica los cuerpos legales que indica, en materia de plazos de entrada en vigencia de sus obligaciones",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20240807_plastico_16849-12.pdf"
@@ -11354,7 +11354,7 @@
             "id": "20211123_matrimonio_11422-07",
             "question": "El matrimonio entre personas del mismo género debería estar permitido.",
             "date": "23.11.2021",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.chileatiende.gob.cl/fichas/101164-ley-de-matrimonio-igualitario",
             "law": "Modifica diversos cuerpos legales para regular, en igualdad de condiciones, el matrimonio de parejas del mismo sexo.",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20211123_matrimonio_11422-07.pdf"
@@ -11363,7 +11363,7 @@
             "id": "20141021_educación_93366-04",
             "question": "Fue buena la reforma de educación del 2015 que prohíbe que instituciones subvencionadas por el estado hagan ganancias, y que dicta que las admisiones sean basadas en el azar.",
             "date": "21.10.2014",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.example.com",
             "law": "Regula la admisión de los y las estudiantes, elimina el financiamiento compartido y prohíbe el lucro en establecimientos educacionales que reciben aportes del Estado.",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20141021_educación_93366-04.pdf"
@@ -11389,7 +11389,7 @@
             "id": "20191024_horasLaborales_11179-13",
             "question": "Estuvo bien reducir las horas laborales a 40 horas por semana.",
             "date": "24.10.2019",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.bcn.cl/portal/leyfacil/recurso/reduccion-de-la-jornada-laboral-a-40-horas-semanales",
             "law": "Modifica el Código del Trabajo con el objeto de reducir la jornada laboral",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20191024_horasLaborales_11179-13.pdf"
@@ -11584,7 +11584,7 @@
             "id": "20240826_datosPersonales_11092-07",
             "question": "Está bien que el Estado proteja los datos personales de las personas.",
             "date": "26.08.2024",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.rsm.global/chile/es/news/ley-21719-proteccion-de-datos-personales",
             "law": "Proposición de la Comisión Mixta recaída en el proyecto de ley, originado en moción y mensaje, que “Regula la protección y el tratamiento de los datos personales y crea la Agencia de Protección de Datos Personales.”. [Cabe hacer presente que por no alcanzar el quórum constitucional no se aprueba el artículo 55 propuesto por la Comisión] ",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20240826_datosPersonales_11092-07.pdf"
@@ -11593,7 +11593,7 @@
             "id": "20240124_pensiones_15480-13",
             "question": "Fue buena la reforma de enero de 2025 que aumentó las contribuciones obligatorias de los empleadores al sistema de pensiones al 7%.",
             "date": "24.01.2025",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.ft.com/content/9e3ab931-eb05-4616-b8b7-0825cf9a690c?utm_source=chatgpt.com",
             "law": "Crea un nuevo Sistema Mixto de Pensiones y un Seguro Social en el pilar contributivo, mejora la Pensión Garantizada Universal y establece beneficios y modificaciones regulatorias que indica",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20240124_pensiones_15480-13.pdf"
@@ -11620,7 +11620,7 @@
             "id": "20240807_plastico_16849-12",
             "question": "El uso de plásticos de un solo uso debería ser reducido.",
             "date": "07.08.2024",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.example.com",
             "law": "Modifica la ley N° 21.368, que regula la entrega de plásticos de un solo uso y las botellas plásticas, y modifica los cuerpos legales que indica, en materia de plazos de entrada en vigencia de sus obligaciones",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20240807_plastico_16849-12.pdf"
@@ -11859,7 +11859,7 @@
             "id": "20141021_educación_93366-04",
             "question": "Fue buena la reforma de educación del 2015 que prohíbe que instituciones subvencionadas por el estado hagan ganancias, y que dicta que las admisiones sean basadas en el azar.",
             "date": "21.10.2014",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.example.com",
             "law": "Regula la admisión de los y las estudiantes, elimina el financiamiento compartido y prohíbe el lucro en establecimientos educacionales que reciben aportes del Estado.",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20141021_educación_93366-04.pdf"
@@ -11885,7 +11885,7 @@
             "id": "20191024_horasLaborales_11179-13",
             "question": "Estuvo bien reducir las horas laborales a 40 horas por semana.",
             "date": "24.10.2019",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.bcn.cl/portal/leyfacil/recurso/reduccion-de-la-jornada-laboral-a-40-horas-semanales",
             "law": "Modifica el Código del Trabajo con el objeto de reducir la jornada laboral",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20191024_horasLaborales_11179-13.pdf"
@@ -11894,7 +11894,7 @@
             "id": "20240826_datosPersonales_11092-07",
             "question": "Está bien que el Estado proteja los datos personales de las personas.",
             "date": "26.08.2024",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.rsm.global/chile/es/news/ley-21719-proteccion-de-datos-personales",
             "law": "Proposición de la Comisión Mixta recaída en el proyecto de ley, originado en moción y mensaje, que “Regula la protección y el tratamiento de los datos personales y crea la Agencia de Protección de Datos Personales.”. [Cabe hacer presente que por no alcanzar el quórum constitucional no se aprueba el artículo 55 propuesto por la Comisión] ",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20240826_datosPersonales_11092-07.pdf"
@@ -12080,7 +12080,7 @@
             "id": "20240826_datosPersonales_11092-07",
             "question": "Está bien que el Estado proteja los datos personales de las personas.",
             "date": "26.08.2024",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.rsm.global/chile/es/news/ley-21719-proteccion-de-datos-personales",
             "law": "Proposición de la Comisión Mixta recaída en el proyecto de ley, originado en moción y mensaje, que “Regula la protección y el tratamiento de los datos personales y crea la Agencia de Protección de Datos Personales.”. [Cabe hacer presente que por no alcanzar el quórum constitucional no se aprueba el artículo 55 propuesto por la Comisión] ",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20240826_datosPersonales_11092-07.pdf"
@@ -12302,7 +12302,7 @@
             "id": "20240807_plastico_16849-12",
             "question": "El uso de plásticos de un solo uso debería ser reducido.",
             "date": "07.08.2024",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.example.com",
             "law": "Modifica la ley N° 21.368, que regula la entrega de plásticos de un solo uso y las botellas plásticas, y modifica los cuerpos legales que indica, en materia de plazos de entrada en vigencia de sus obligaciones",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20240807_plastico_16849-12.pdf"
@@ -12691,7 +12691,7 @@
             "id": "20191024_horasLaborales_11179-13",
             "question": "Estuvo bien reducir las horas laborales a 40 horas por semana.",
             "date": "24.10.2019",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.bcn.cl/portal/leyfacil/recurso/reduccion-de-la-jornada-laboral-a-40-horas-semanales",
             "law": "Modifica el Código del Trabajo con el objeto de reducir la jornada laboral",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20191024_horasLaborales_11179-13.pdf"
@@ -12877,7 +12877,7 @@
             "id": "20191024_horasLaborales_11179-13",
             "question": "Estuvo bien reducir las horas laborales a 40 horas por semana.",
             "date": "24.10.2019",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.bcn.cl/portal/leyfacil/recurso/reduccion-de-la-jornada-laboral-a-40-horas-semanales",
             "law": "Modifica el Código del Trabajo con el objeto de reducir la jornada laboral",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20191024_horasLaborales_11179-13.pdf"
@@ -13090,7 +13090,7 @@
             "id": "20211123_matrimonio_11422-07",
             "question": "El matrimonio entre personas del mismo género debería estar permitido.",
             "date": "23.11.2021",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.chileatiende.gob.cl/fichas/101164-ley-de-matrimonio-igualitario",
             "law": "Modifica diversos cuerpos legales para regular, en igualdad de condiciones, el matrimonio de parejas del mismo sexo.",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20211123_matrimonio_11422-07.pdf"
@@ -13214,7 +13214,7 @@
             "id": "20211123_matrimonio_11422-07",
             "question": "El matrimonio entre personas del mismo género debería estar permitido.",
             "date": "23.11.2021",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.chileatiende.gob.cl/fichas/101164-ley-de-matrimonio-igualitario",
             "law": "Modifica diversos cuerpos legales para regular, en igualdad de condiciones, el matrimonio de parejas del mismo sexo.",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20211123_matrimonio_11422-07.pdf"
@@ -13462,7 +13462,7 @@
             "id": "20211123_matrimonio_11422-07",
             "question": "El matrimonio entre personas del mismo género debería estar permitido.",
             "date": "23.11.2021",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.chileatiende.gob.cl/fichas/101164-ley-de-matrimonio-igualitario",
             "law": "Modifica diversos cuerpos legales para regular, en igualdad de condiciones, el matrimonio de parejas del mismo sexo.",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20211123_matrimonio_11422-07.pdf"
@@ -13524,7 +13524,7 @@
             "id": "20211123_matrimonio_11422-07",
             "question": "El matrimonio entre personas del mismo género debería estar permitido.",
             "date": "23.11.2021",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.chileatiende.gob.cl/fichas/101164-ley-de-matrimonio-igualitario",
             "law": "Modifica diversos cuerpos legales para regular, en igualdad de condiciones, el matrimonio de parejas del mismo sexo.",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20211123_matrimonio_11422-07.pdf"
@@ -13586,7 +13586,7 @@
             "id": "20211123_matrimonio_11422-07",
             "question": "El matrimonio entre personas del mismo género debería estar permitido.",
             "date": "23.11.2021",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.chileatiende.gob.cl/fichas/101164-ley-de-matrimonio-igualitario",
             "law": "Modifica diversos cuerpos legales para regular, en igualdad de condiciones, el matrimonio de parejas del mismo sexo.",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20211123_matrimonio_11422-07.pdf"
@@ -13719,7 +13719,7 @@
             "id": "20141021_educación_93366-04",
             "question": "Fue buena la reforma de educación del 2015 que prohíbe que instituciones subvencionadas por el estado hagan ganancias, y que dicta que las admisiones sean basadas en el azar.",
             "date": "21.10.2014",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.example.com",
             "law": "Regula la admisión de los y las estudiantes, elimina el financiamiento compartido y prohíbe el lucro en establecimientos educacionales que reciben aportes del Estado.",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20141021_educación_93366-04.pdf"
@@ -13993,7 +13993,7 @@
             "id": "20191024_horasLaborales_11179-13",
             "question": "Estuvo bien reducir las horas laborales a 40 horas por semana.",
             "date": "24.10.2019",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.bcn.cl/portal/leyfacil/recurso/reduccion-de-la-jornada-laboral-a-40-horas-semanales",
             "law": "Modifica el Código del Trabajo con el objeto de reducir la jornada laboral",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20191024_horasLaborales_11179-13.pdf"
@@ -14020,7 +14020,7 @@
             "id": "20211123_matrimonio_11422-07",
             "question": "El matrimonio entre personas del mismo género debería estar permitido.",
             "date": "23.11.2021",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.chileatiende.gob.cl/fichas/101164-ley-de-matrimonio-igualitario",
             "law": "Modifica diversos cuerpos legales para regular, en igualdad de condiciones, el matrimonio de parejas del mismo sexo.",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20211123_matrimonio_11422-07.pdf"
@@ -14117,7 +14117,7 @@
             "id": "20191024_horasLaborales_11179-13",
             "question": "Estuvo bien reducir las horas laborales a 40 horas por semana.",
             "date": "24.10.2019",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.bcn.cl/portal/leyfacil/recurso/reduccion-de-la-jornada-laboral-a-40-horas-semanales",
             "law": "Modifica el Código del Trabajo con el objeto de reducir la jornada laboral",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20191024_horasLaborales_11179-13.pdf"
@@ -14206,7 +14206,7 @@
             "id": "20211123_matrimonio_11422-07",
             "question": "El matrimonio entre personas del mismo género debería estar permitido.",
             "date": "23.11.2021",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.chileatiende.gob.cl/fichas/101164-ley-de-matrimonio-igualitario",
             "law": "Modifica diversos cuerpos legales para regular, en igualdad de condiciones, el matrimonio de parejas del mismo sexo.",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20211123_matrimonio_11422-07.pdf"
@@ -14330,7 +14330,7 @@
             "id": "20211123_matrimonio_11422-07",
             "question": "El matrimonio entre personas del mismo género debería estar permitido.",
             "date": "23.11.2021",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.chileatiende.gob.cl/fichas/101164-ley-de-matrimonio-igualitario",
             "law": "Modifica diversos cuerpos legales para regular, en igualdad de condiciones, el matrimonio de parejas del mismo sexo.",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20211123_matrimonio_11422-07.pdf"
@@ -14516,7 +14516,7 @@
             "id": "20211123_matrimonio_11422-07",
             "question": "El matrimonio entre personas del mismo género debería estar permitido.",
             "date": "23.11.2021",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.chileatiende.gob.cl/fichas/101164-ley-de-matrimonio-igualitario",
             "law": "Modifica diversos cuerpos legales para regular, en igualdad de condiciones, el matrimonio de parejas del mismo sexo.",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20211123_matrimonio_11422-07.pdf"
@@ -14649,7 +14649,7 @@
             "id": "20141021_educación_93366-04",
             "question": "Fue buena la reforma de educación del 2015 que prohíbe que instituciones subvencionadas por el estado hagan ganancias, y que dicta que las admisiones sean basadas en el azar.",
             "date": "21.10.2014",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.example.com",
             "law": "Regula la admisión de los y las estudiantes, elimina el financiamiento compartido y prohíbe el lucro en establecimientos educacionales que reciben aportes del Estado.",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20141021_educación_93366-04.pdf"
@@ -14950,7 +14950,7 @@
             "id": "20211123_matrimonio_11422-07",
             "question": "El matrimonio entre personas del mismo género debería estar permitido.",
             "date": "23.11.2021",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.chileatiende.gob.cl/fichas/101164-ley-de-matrimonio-igualitario",
             "law": "Modifica diversos cuerpos legales para regular, en igualdad de condiciones, el matrimonio de parejas del mismo sexo.",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20211123_matrimonio_11422-07.pdf"
@@ -15047,7 +15047,7 @@
             "id": "20191024_horasLaborales_11179-13",
             "question": "Estuvo bien reducir las horas laborales a 40 horas por semana.",
             "date": "24.10.2019",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.bcn.cl/portal/leyfacil/recurso/reduccion-de-la-jornada-laboral-a-40-horas-semanales",
             "law": "Modifica el Código del Trabajo con el objeto de reducir la jornada laboral",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20191024_horasLaborales_11179-13.pdf"
@@ -15322,7 +15322,7 @@
             "id": "20211123_matrimonio_11422-07",
             "question": "El matrimonio entre personas del mismo género debería estar permitido.",
             "date": "23.11.2021",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.chileatiende.gob.cl/fichas/101164-ley-de-matrimonio-igualitario",
             "law": "Modifica diversos cuerpos legales para regular, en igualdad de condiciones, el matrimonio de parejas del mismo sexo.",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20211123_matrimonio_11422-07.pdf"
@@ -15446,7 +15446,7 @@
             "id": "20211123_matrimonio_11422-07",
             "question": "El matrimonio entre personas del mismo género debería estar permitido.",
             "date": "23.11.2021",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.chileatiende.gob.cl/fichas/101164-ley-de-matrimonio-igualitario",
             "law": "Modifica diversos cuerpos legales para regular, en igualdad de condiciones, el matrimonio de parejas del mismo sexo.",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20211123_matrimonio_11422-07.pdf"
@@ -15570,7 +15570,7 @@
             "id": "20211123_matrimonio_11422-07",
             "question": "El matrimonio entre personas del mismo género debería estar permitido.",
             "date": "23.11.2021",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.chileatiende.gob.cl/fichas/101164-ley-de-matrimonio-igualitario",
             "law": "Modifica diversos cuerpos legales para regular, en igualdad de condiciones, el matrimonio de parejas del mismo sexo.",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20211123_matrimonio_11422-07.pdf"
@@ -15694,7 +15694,7 @@
             "id": "20211123_matrimonio_11422-07",
             "question": "El matrimonio entre personas del mismo género debería estar permitido.",
             "date": "23.11.2021",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.chileatiende.gob.cl/fichas/101164-ley-de-matrimonio-igualitario",
             "law": "Modifica diversos cuerpos legales para regular, en igualdad de condiciones, el matrimonio de parejas del mismo sexo.",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20211123_matrimonio_11422-07.pdf"
@@ -15756,7 +15756,7 @@
             "id": "20211123_matrimonio_11422-07",
             "question": "El matrimonio entre personas del mismo género debería estar permitido.",
             "date": "23.11.2021",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.chileatiende.gob.cl/fichas/101164-ley-de-matrimonio-igualitario",
             "law": "Modifica diversos cuerpos legales para regular, en igualdad de condiciones, el matrimonio de parejas del mismo sexo.",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20211123_matrimonio_11422-07.pdf"
@@ -15765,7 +15765,7 @@
             "id": "20141021_educación_93366-04",
             "question": "Fue buena la reforma de educación del 2015 que prohíbe que instituciones subvencionadas por el estado hagan ganancias, y que dicta que las admisiones sean basadas en el azar.",
             "date": "21.10.2014",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.example.com",
             "law": "Regula la admisión de los y las estudiantes, elimina el financiamiento compartido y prohíbe el lucro en establecimientos educacionales que reciben aportes del Estado.",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20141021_educación_93366-04.pdf"
@@ -15791,7 +15791,7 @@
             "id": "20191024_horasLaborales_11179-13",
             "question": "Estuvo bien reducir las horas laborales a 40 horas por semana.",
             "date": "24.10.2019",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.bcn.cl/portal/leyfacil/recurso/reduccion-de-la-jornada-laboral-a-40-horas-semanales",
             "law": "Modifica el Código del Trabajo con el objeto de reducir la jornada laboral",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20191024_horasLaborales_11179-13.pdf"
@@ -15889,7 +15889,7 @@
             "id": "20141021_educación_93366-04",
             "question": "Fue buena la reforma de educación del 2015 que prohíbe que instituciones subvencionadas por el estado hagan ganancias, y que dicta que las admisiones sean basadas en el azar.",
             "date": "21.10.2014",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.example.com",
             "law": "Regula la admisión de los y las estudiantes, elimina el financiamiento compartido y prohíbe el lucro en establecimientos educacionales que reciben aportes del Estado.",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20141021_educación_93366-04.pdf"
@@ -16066,7 +16066,7 @@
             "id": "20211123_matrimonio_11422-07",
             "question": "El matrimonio entre personas del mismo género debería estar permitido.",
             "date": "23.11.2021",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.chileatiende.gob.cl/fichas/101164-ley-de-matrimonio-igualitario",
             "law": "Modifica diversos cuerpos legales para regular, en igualdad de condiciones, el matrimonio de parejas del mismo sexo.",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20211123_matrimonio_11422-07.pdf"
@@ -16128,7 +16128,7 @@
             "id": "20211123_matrimonio_11422-07",
             "question": "El matrimonio entre personas del mismo género debería estar permitido.",
             "date": "23.11.2021",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.chileatiende.gob.cl/fichas/101164-ley-de-matrimonio-igualitario",
             "law": "Modifica diversos cuerpos legales para regular, en igualdad de condiciones, el matrimonio de parejas del mismo sexo.",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20211123_matrimonio_11422-07.pdf"
@@ -16411,7 +16411,7 @@
             "id": "20191024_horasLaborales_11179-13",
             "question": "Estuvo bien reducir las horas laborales a 40 horas por semana.",
             "date": "24.10.2019",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.bcn.cl/portal/leyfacil/recurso/reduccion-de-la-jornada-laboral-a-40-horas-semanales",
             "law": "Modifica el Código del Trabajo con el objeto de reducir la jornada laboral",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20191024_horasLaborales_11179-13.pdf"
@@ -16509,7 +16509,7 @@
             "id": "20141021_educación_93366-04",
             "question": "Fue buena la reforma de educación del 2015 que prohíbe que instituciones subvencionadas por el estado hagan ganancias, y que dicta que las admisiones sean basadas en el azar.",
             "date": "21.10.2014",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.example.com",
             "law": "Regula la admisión de los y las estudiantes, elimina el financiamiento compartido y prohíbe el lucro en establecimientos educacionales que reciben aportes del Estado.",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20141021_educación_93366-04.pdf"
@@ -16535,7 +16535,7 @@
             "id": "20191024_horasLaborales_11179-13",
             "question": "Estuvo bien reducir las horas laborales a 40 horas por semana.",
             "date": "24.10.2019",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.bcn.cl/portal/leyfacil/recurso/reduccion-de-la-jornada-laboral-a-40-horas-semanales",
             "law": "Modifica el Código del Trabajo con el objeto de reducir la jornada laboral",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20191024_horasLaborales_11179-13.pdf"
@@ -16659,7 +16659,7 @@
             "id": "20191024_horasLaborales_11179-13",
             "question": "Estuvo bien reducir las horas laborales a 40 horas por semana.",
             "date": "24.10.2019",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.bcn.cl/portal/leyfacil/recurso/reduccion-de-la-jornada-laboral-a-40-horas-semanales",
             "law": "Modifica el Código del Trabajo con el objeto de reducir la jornada laboral",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20191024_horasLaborales_11179-13.pdf"
@@ -16907,7 +16907,7 @@
             "id": "20191024_horasLaborales_11179-13",
             "question": "Estuvo bien reducir las horas laborales a 40 horas por semana.",
             "date": "24.10.2019",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.bcn.cl/portal/leyfacil/recurso/reduccion-de-la-jornada-laboral-a-40-horas-semanales",
             "law": "Modifica el Código del Trabajo con el objeto de reducir la jornada laboral",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20191024_horasLaborales_11179-13.pdf"
@@ -16996,7 +16996,7 @@
             "id": "20211123_matrimonio_11422-07",
             "question": "El matrimonio entre personas del mismo género debería estar permitido.",
             "date": "23.11.2021",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.chileatiende.gob.cl/fichas/101164-ley-de-matrimonio-igualitario",
             "law": "Modifica diversos cuerpos legales para regular, en igualdad de condiciones, el matrimonio de parejas del mismo sexo.",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20211123_matrimonio_11422-07.pdf"
@@ -17182,7 +17182,7 @@
             "id": "20211123_matrimonio_11422-07",
             "question": "El matrimonio entre personas del mismo género debería estar permitido.",
             "date": "23.11.2021",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.chileatiende.gob.cl/fichas/101164-ley-de-matrimonio-igualitario",
             "law": "Modifica diversos cuerpos legales para regular, en igualdad de condiciones, el matrimonio de parejas del mismo sexo.",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20211123_matrimonio_11422-07.pdf"
@@ -17191,7 +17191,7 @@
             "id": "20141021_educación_93366-04",
             "question": "Fue buena la reforma de educación del 2015 que prohíbe que instituciones subvencionadas por el estado hagan ganancias, y que dicta que las admisiones sean basadas en el azar.",
             "date": "21.10.2014",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.example.com",
             "law": "Regula la admisión de los y las estudiantes, elimina el financiamiento compartido y prohíbe el lucro en establecimientos educacionales que reciben aportes del Estado.",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20141021_educación_93366-04.pdf"
@@ -17368,7 +17368,7 @@
             "id": "20211123_matrimonio_11422-07",
             "question": "El matrimonio entre personas del mismo género debería estar permitido.",
             "date": "23.11.2021",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.chileatiende.gob.cl/fichas/101164-ley-de-matrimonio-igualitario",
             "law": "Modifica diversos cuerpos legales para regular, en igualdad de condiciones, el matrimonio de parejas del mismo sexo.",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20211123_matrimonio_11422-07.pdf"
@@ -17492,7 +17492,7 @@
             "id": "20211123_matrimonio_11422-07",
             "question": "El matrimonio entre personas del mismo género debería estar permitido.",
             "date": "23.11.2021",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.chileatiende.gob.cl/fichas/101164-ley-de-matrimonio-igualitario",
             "law": "Modifica diversos cuerpos legales para regular, en igualdad de condiciones, el matrimonio de parejas del mismo sexo.",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20211123_matrimonio_11422-07.pdf"
@@ -17837,7 +17837,7 @@
             "id": "20191024_horasLaborales_11179-13",
             "question": "Estuvo bien reducir las horas laborales a 40 horas por semana.",
             "date": "24.10.2019",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.bcn.cl/portal/leyfacil/recurso/reduccion-de-la-jornada-laboral-a-40-horas-semanales",
             "law": "Modifica el Código del Trabajo con el objeto de reducir la jornada laboral",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20191024_horasLaborales_11179-13.pdf"
@@ -17899,7 +17899,7 @@
             "id": "20191024_horasLaborales_11179-13",
             "question": "Estuvo bien reducir las horas laborales a 40 horas por semana.",
             "date": "24.10.2019",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.bcn.cl/portal/leyfacil/recurso/reduccion-de-la-jornada-laboral-a-40-horas-semanales",
             "law": "Modifica el Código del Trabajo con el objeto de reducir la jornada laboral",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20191024_horasLaborales_11179-13.pdf"
@@ -18085,7 +18085,7 @@
             "id": "20191024_horasLaborales_11179-13",
             "question": "Estuvo bien reducir las horas laborales a 40 horas por semana.",
             "date": "24.10.2019",
-            "vote": "ausente",
+            "vote": null,
             "source": "https://www.bcn.cl/portal/leyfacil/recurso/reduccion-de-la-jornada-laboral-a-40-horas-semanales",
             "law": "Modifica el Código del Trabajo con el objeto de reducir la jornada laboral",
             "pdf_link": "src/assets/sesiones_chile_pdfs/20191024_horasLaborales_11179-13.pdf"
