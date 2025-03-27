@@ -13584,6 +13584,12 @@
           "question": "Estuvo bien reducir las horas laborales a 40 horas por semana.",
           "date": "24.10.2019",
           "vote": "Abstención",
+          "vote_counts": {
+            "A favor": 0,
+            "En contra": 0,
+            "Abstención": 8,
+            "No presente": 0
+          },
           "source": "https://www.bcn.cl/portal/leyfacil/recurso/reduccion-de-la-jornada-laboral-a-40-horas-semanales",
           "law": "Modifica el Código del Trabajo con el objeto de reducir la jornada laboral",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20191024_horasLaborales_11179-13.pdf"
@@ -13593,6 +13599,12 @@
           "question": "Está bien que el Estado proteja los datos personales de las personas.",
           "date": "26.08.2024",
           "vote": "En contra",
+          "vote_counts": {
+            "A favor": 0,
+            "En contra": 6,
+            "Abstención": 1,
+            "No presente": 1
+          },
           "source": "https://www.rsm.global/chile/es/news/ley-21719-proteccion-de-datos-personales",
           "law": "Proposición de la Comisión Mixta recaída en el proyecto de ley, originado en moción y mensaje, que “Regula la protección y el tratamiento de los datos personales y crea la Agencia de Protección de Datos Personales.”. [Cabe hacer presente que por no alcanzar el quórum constitucional no se aprueba el artículo 55 propuesto por la Comisión] ",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20240826_datosPersonales_11092-07.pdf"
@@ -13602,6 +13614,12 @@
           "question": "Fue buena la reforma de enero de 2025 que aumentó las contribuciones obligatorias de los empleadores al sistema de pensiones al 7%.",
           "date": "24.01.2025",
           "vote": "En contra",
+          "vote_counts": {
+            "A favor": 0,
+            "En contra": 7,
+            "Abstención": 1,
+            "No presente": 0
+          },
           "source": "https://www.ft.com/content/9e3ab931-eb05-4616-b8b7-0825cf9a690c?utm_source=chatgpt.com",
           "law": "Crea un nuevo Sistema Mixto de Pensiones y un Seguro Social en el pilar contributivo, mejora la Pensión Garantizada Universal y establece beneficios y modificaciones regulatorias que indica",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20240124_pensiones_15480-13.pdf"
@@ -13611,6 +13629,12 @@
           "question": "El matrimonio entre personas del mismo género debería estar permitido.",
           "date": "23.11.2021",
           "vote": "Abstención",
+          "vote_counts": {
+            "A favor": 0,
+            "En contra": 0,
+            "Abstención": 8,
+            "No presente": 0
+          },
           "source": "https://www.chileatiende.gob.cl/fichas/101164-ley-de-matrimonio-igualitario",
           "law": "Modifica diversos cuerpos legales para regular, en igualdad de condiciones, el matrimonio de parejas del mismo sexo.",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20211123_matrimonio_11422-07.pdf"
@@ -13620,6 +13644,12 @@
           "question": "Fue buena la reforma de educación del 2015 que prohíbe que instituciones subvencionadas por el estado hagan ganancias, y que dicta que las admisiones sean basadas en el azar.",
           "date": "21.10.2014",
           "vote": "Abstención",
+          "vote_counts": {
+            "A favor": 0,
+            "En contra": 1,
+            "Abstención": 7,
+            "No presente": 0
+          },
           "source": "https://www.example.com",
           "law": "Regula la admisión de los y las estudiantes, elimina el financiamiento compartido y prohíbe el lucro en establecimientos educacionales que reciben aportes del Estado.",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20141021_educación_93366-04.pdf"
@@ -13629,6 +13659,12 @@
           "question": "El uso de plásticos de un solo uso debería ser reducido.",
           "date": "07.08.2024",
           "vote": "A favor",
+          "vote_counts": {
+            "A favor": 7,
+            "En contra": 0,
+            "Abstención": 1,
+            "No presente": 0
+          },
           "source": "https://www.example.com",
           "law": "Modifica la ley N° 21.368, que regula la entrega de plásticos de un solo uso y las botellas plásticas, y modifica los cuerpos legales que indica, en materia de plazos de entrada en vigencia de sus obligaciones",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20240807_plastico_16849-12.pdf"
@@ -13640,6 +13676,12 @@
           "question": "Estuvo bien reducir las horas laborales a 40 horas por semana.",
           "date": "24.10.2019",
           "vote": "Abstención",
+          "vote_counts": {
+            "A favor": 9,
+            "En contra": 0,
+            "Abstención": 17,
+            "No presente": 0
+          },
           "source": "https://www.bcn.cl/portal/leyfacil/recurso/reduccion-de-la-jornada-laboral-a-40-horas-semanales",
           "law": "Modifica el Código del Trabajo con el objeto de reducir la jornada laboral",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20191024_horasLaborales_11179-13.pdf"
@@ -13649,6 +13691,12 @@
           "question": "Está bien que el Estado proteja los datos personales de las personas.",
           "date": "26.08.2024",
           "vote": "Abstención",
+          "vote_counts": {
+            "A favor": 4,
+            "En contra": 0,
+            "Abstención": 22,
+            "No presente": 0
+          },
           "source": "https://www.rsm.global/chile/es/news/ley-21719-proteccion-de-datos-personales",
           "law": "Proposición de la Comisión Mixta recaída en el proyecto de ley, originado en moción y mensaje, que “Regula la protección y el tratamiento de los datos personales y crea la Agencia de Protección de Datos Personales.”. [Cabe hacer presente que por no alcanzar el quórum constitucional no se aprueba el artículo 55 propuesto por la Comisión] ",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20240826_datosPersonales_11092-07.pdf"
@@ -13658,6 +13706,12 @@
           "question": "Fue buena la reforma de enero de 2025 que aumentó las contribuciones obligatorias de los empleadores al sistema de pensiones al 7%.",
           "date": "24.01.2025",
           "vote": "Abstención",
+          "vote_counts": {
+            "A favor": 4,
+            "En contra": 0,
+            "Abstención": 22,
+            "No presente": 0
+          },
           "source": "https://www.ft.com/content/9e3ab931-eb05-4616-b8b7-0825cf9a690c?utm_source=chatgpt.com",
           "law": "Crea un nuevo Sistema Mixto de Pensiones y un Seguro Social en el pilar contributivo, mejora la Pensión Garantizada Universal y establece beneficios y modificaciones regulatorias que indica",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20240124_pensiones_15480-13.pdf"
@@ -13667,6 +13721,12 @@
           "question": "El matrimonio entre personas del mismo género debería estar permitido.",
           "date": "23.11.2021",
           "vote": "Abstención",
+          "vote_counts": {
+            "A favor": 7,
+            "En contra": 1,
+            "Abstención": 16,
+            "No presente": 2
+          },
           "source": "https://www.chileatiende.gob.cl/fichas/101164-ley-de-matrimonio-igualitario",
           "law": "Modifica diversos cuerpos legales para regular, en igualdad de condiciones, el matrimonio de parejas del mismo sexo.",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20211123_matrimonio_11422-07.pdf"
@@ -13676,6 +13736,12 @@
           "question": "Fue buena la reforma de educación del 2015 que prohíbe que instituciones subvencionadas por el estado hagan ganancias, y que dicta que las admisiones sean basadas en el azar.",
           "date": "21.10.2014",
           "vote": "A favor",
+          "vote_counts": {
+            "A favor": 19,
+            "En contra": 0,
+            "Abstención": 6,
+            "No presente": 1
+          },
           "source": "https://www.example.com",
           "law": "Regula la admisión de los y las estudiantes, elimina el financiamiento compartido y prohíbe el lucro en establecimientos educacionales que reciben aportes del Estado.",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20141021_educación_93366-04.pdf"
@@ -13685,6 +13751,12 @@
           "question": "El uso de plásticos de un solo uso debería ser reducido.",
           "date": "07.08.2024",
           "vote": "Abstención",
+          "vote_counts": {
+            "A favor": 1,
+            "En contra": 2,
+            "Abstención": 23,
+            "No presente": 0
+          },
           "source": "https://www.example.com",
           "law": "Modifica la ley N° 21.368, que regula la entrega de plásticos de un solo uso y las botellas plásticas, y modifica los cuerpos legales que indica, en materia de plazos de entrada en vigencia de sus obligaciones",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20240807_plastico_16849-12.pdf"
@@ -13696,6 +13768,12 @@
           "question": "Estuvo bien reducir las horas laborales a 40 horas por semana.",
           "date": "24.10.2019",
           "vote": "A favor",
+          "vote_counts": {
+            "A favor": 8,
+            "En contra": 0,
+            "Abstención": 8,
+            "No presente": 1
+          },
           "source": "https://www.bcn.cl/portal/leyfacil/recurso/reduccion-de-la-jornada-laboral-a-40-horas-semanales",
           "law": "Modifica el Código del Trabajo con el objeto de reducir la jornada laboral",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20191024_horasLaborales_11179-13.pdf"
@@ -13705,6 +13783,12 @@
           "question": "Está bien que el Estado proteja los datos personales de las personas.",
           "date": "26.08.2024",
           "vote": "A favor",
+          "vote_counts": {
+            "A favor": 9,
+            "En contra": 0,
+            "Abstención": 7,
+            "No presente": 1
+          },
           "source": "https://www.rsm.global/chile/es/news/ley-21719-proteccion-de-datos-personales",
           "law": "Proposición de la Comisión Mixta recaída en el proyecto de ley, originado en moción y mensaje, que “Regula la protección y el tratamiento de los datos personales y crea la Agencia de Protección de Datos Personales.”. [Cabe hacer presente que por no alcanzar el quórum constitucional no se aprueba el artículo 55 propuesto por la Comisión] ",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20240826_datosPersonales_11092-07.pdf"
@@ -13714,6 +13798,12 @@
           "question": "Fue buena la reforma de enero de 2025 que aumentó las contribuciones obligatorias de los empleadores al sistema de pensiones al 7%.",
           "date": "24.01.2025",
           "vote": "A favor",
+          "vote_counts": {
+            "A favor": 10,
+            "En contra": 0,
+            "Abstención": 7,
+            "No presente": 0
+          },
           "source": "https://www.ft.com/content/9e3ab931-eb05-4616-b8b7-0825cf9a690c?utm_source=chatgpt.com",
           "law": "Crea un nuevo Sistema Mixto de Pensiones y un Seguro Social en el pilar contributivo, mejora la Pensión Garantizada Universal y establece beneficios y modificaciones regulatorias que indica",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20240124_pensiones_15480-13.pdf"
@@ -13723,6 +13813,12 @@
           "question": "El matrimonio entre personas del mismo género debería estar permitido.",
           "date": "23.11.2021",
           "vote": "Abstención",
+          "vote_counts": {
+            "A favor": 7,
+            "En contra": 0,
+            "Abstención": 8,
+            "No presente": 2
+          },
           "source": "https://www.chileatiende.gob.cl/fichas/101164-ley-de-matrimonio-igualitario",
           "law": "Modifica diversos cuerpos legales para regular, en igualdad de condiciones, el matrimonio de parejas del mismo sexo.",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20211123_matrimonio_11422-07.pdf"
@@ -13732,6 +13828,12 @@
           "question": "Fue buena la reforma de educación del 2015 que prohíbe que instituciones subvencionadas por el estado hagan ganancias, y que dicta que las admisiones sean basadas en el azar.",
           "date": "21.10.2014",
           "vote": "Abstención",
+          "vote_counts": {
+            "A favor": 6,
+            "En contra": 0,
+            "Abstención": 11,
+            "No presente": 0
+          },
           "source": "https://www.example.com",
           "law": "Regula la admisión de los y las estudiantes, elimina el financiamiento compartido y prohíbe el lucro en establecimientos educacionales que reciben aportes del Estado.",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20141021_educación_93366-04.pdf"
@@ -13741,6 +13843,12 @@
           "question": "El uso de plásticos de un solo uso debería ser reducido.",
           "date": "07.08.2024",
           "vote": "En contra",
+          "vote_counts": {
+            "A favor": 1,
+            "En contra": 7,
+            "Abstención": 7,
+            "No presente": 2
+          },
           "source": "https://www.example.com",
           "law": "Modifica la ley N° 21.368, que regula la entrega de plásticos de un solo uso y las botellas plásticas, y modifica los cuerpos legales que indica, en materia de plazos de entrada en vigencia de sus obligaciones",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20240807_plastico_16849-12.pdf"
@@ -13752,6 +13860,12 @@
           "question": "Estuvo bien reducir las horas laborales a 40 horas por semana.",
           "date": "24.10.2019",
           "vote": "A favor",
+          "vote_counts": {
+            "A favor": 2,
+            "En contra": 0,
+            "Abstención": 1,
+            "No presente": 0
+          },
           "source": "https://www.bcn.cl/portal/leyfacil/recurso/reduccion-de-la-jornada-laboral-a-40-horas-semanales",
           "law": "Modifica el Código del Trabajo con el objeto de reducir la jornada laboral",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20191024_horasLaborales_11179-13.pdf"
@@ -13761,6 +13875,12 @@
           "question": "Está bien que el Estado proteja los datos personales de las personas.",
           "date": "26.08.2024",
           "vote": "A favor",
+          "vote_counts": {
+            "A favor": 3,
+            "En contra": 0,
+            "Abstención": 0,
+            "No presente": 0
+          },
           "source": "https://www.rsm.global/chile/es/news/ley-21719-proteccion-de-datos-personales",
           "law": "Proposición de la Comisión Mixta recaída en el proyecto de ley, originado en moción y mensaje, que “Regula la protección y el tratamiento de los datos personales y crea la Agencia de Protección de Datos Personales.”. [Cabe hacer presente que por no alcanzar el quórum constitucional no se aprueba el artículo 55 propuesto por la Comisión] ",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20240826_datosPersonales_11092-07.pdf"
@@ -13770,6 +13890,12 @@
           "question": "Fue buena la reforma de enero de 2025 que aumentó las contribuciones obligatorias de los empleadores al sistema de pensiones al 7%.",
           "date": "24.01.2025",
           "vote": "A favor",
+          "vote_counts": {
+            "A favor": 3,
+            "En contra": 0,
+            "Abstención": 0,
+            "No presente": 0
+          },
           "source": "https://www.ft.com/content/9e3ab931-eb05-4616-b8b7-0825cf9a690c?utm_source=chatgpt.com",
           "law": "Crea un nuevo Sistema Mixto de Pensiones y un Seguro Social en el pilar contributivo, mejora la Pensión Garantizada Universal y establece beneficios y modificaciones regulatorias que indica",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20240124_pensiones_15480-13.pdf"
@@ -13779,6 +13905,12 @@
           "question": "El matrimonio entre personas del mismo género debería estar permitido.",
           "date": "23.11.2021",
           "vote": "A favor",
+          "vote_counts": {
+            "A favor": 2,
+            "En contra": 0,
+            "Abstención": 1,
+            "No presente": 0
+          },
           "source": "https://www.chileatiende.gob.cl/fichas/101164-ley-de-matrimonio-igualitario",
           "law": "Modifica diversos cuerpos legales para regular, en igualdad de condiciones, el matrimonio de parejas del mismo sexo.",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20211123_matrimonio_11422-07.pdf"
@@ -13788,6 +13920,12 @@
           "question": "Fue buena la reforma de educación del 2015 que prohíbe que instituciones subvencionadas por el estado hagan ganancias, y que dicta que las admisiones sean basadas en el azar.",
           "date": "21.10.2014",
           "vote": "Abstención",
+          "vote_counts": {
+            "A favor": 1,
+            "En contra": 0,
+            "Abstención": 2,
+            "No presente": 0
+          },
           "source": "https://www.example.com",
           "law": "Regula la admisión de los y las estudiantes, elimina el financiamiento compartido y prohíbe el lucro en establecimientos educacionales que reciben aportes del Estado.",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20141021_educación_93366-04.pdf"
@@ -13797,6 +13935,12 @@
           "question": "El uso de plásticos de un solo uso debería ser reducido.",
           "date": "07.08.2024",
           "vote": "A favor",
+          "vote_counts": {
+            "A favor": 2,
+            "En contra": 0,
+            "Abstención": 0,
+            "No presente": 1
+          },
           "source": "https://www.example.com",
           "law": "Modifica la ley N° 21.368, que regula la entrega de plásticos de un solo uso y las botellas plásticas, y modifica los cuerpos legales que indica, en materia de plazos de entrada en vigencia de sus obligaciones",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20240807_plastico_16849-12.pdf"
@@ -13808,6 +13952,12 @@
           "question": "Estuvo bien reducir las horas laborales a 40 horas por semana.",
           "date": "24.10.2019",
           "vote": "A favor",
+          "vote_counts": {
+            "A favor": 6,
+            "En contra": 0,
+            "Abstención": 2,
+            "No presente": 0
+          },
           "source": "https://www.bcn.cl/portal/leyfacil/recurso/reduccion-de-la-jornada-laboral-a-40-horas-semanales",
           "law": "Modifica el Código del Trabajo con el objeto de reducir la jornada laboral",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20191024_horasLaborales_11179-13.pdf"
@@ -13817,6 +13967,12 @@
           "question": "Está bien que el Estado proteja los datos personales de las personas.",
           "date": "26.08.2024",
           "vote": "Abstención",
+          "vote_counts": {
+            "A favor": 1,
+            "En contra": 0,
+            "Abstención": 6,
+            "No presente": 1
+          },
           "source": "https://www.rsm.global/chile/es/news/ley-21719-proteccion-de-datos-personales",
           "law": "Proposición de la Comisión Mixta recaída en el proyecto de ley, originado en moción y mensaje, que “Regula la protección y el tratamiento de los datos personales y crea la Agencia de Protección de Datos Personales.”. [Cabe hacer presente que por no alcanzar el quórum constitucional no se aprueba el artículo 55 propuesto por la Comisión] ",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20240826_datosPersonales_11092-07.pdf"
@@ -13826,6 +13982,12 @@
           "question": "Fue buena la reforma de enero de 2025 que aumentó las contribuciones obligatorias de los empleadores al sistema de pensiones al 7%.",
           "date": "24.01.2025",
           "vote": "Abstención",
+          "vote_counts": {
+            "A favor": 2,
+            "En contra": 0,
+            "Abstención": 6,
+            "No presente": 0
+          },
           "source": "https://www.ft.com/content/9e3ab931-eb05-4616-b8b7-0825cf9a690c?utm_source=chatgpt.com",
           "law": "Crea un nuevo Sistema Mixto de Pensiones y un Seguro Social en el pilar contributivo, mejora la Pensión Garantizada Universal y establece beneficios y modificaciones regulatorias que indica",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20240124_pensiones_15480-13.pdf"
@@ -13835,6 +13997,12 @@
           "question": "El matrimonio entre personas del mismo género debería estar permitido.",
           "date": "23.11.2021",
           "vote": "A favor",
+          "vote_counts": {
+            "A favor": 3,
+            "En contra": 0,
+            "Abstención": 2,
+            "No presente": 3
+          },
           "source": "https://www.chileatiende.gob.cl/fichas/101164-ley-de-matrimonio-igualitario",
           "law": "Modifica diversos cuerpos legales para regular, en igualdad de condiciones, el matrimonio de parejas del mismo sexo.",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20211123_matrimonio_11422-07.pdf"
@@ -13844,6 +14012,12 @@
           "question": "Fue buena la reforma de educación del 2015 que prohíbe que instituciones subvencionadas por el estado hagan ganancias, y que dicta que las admisiones sean basadas en el azar.",
           "date": "21.10.2014",
           "vote": "A favor",
+          "vote_counts": {
+            "A favor": 6,
+            "En contra": 0,
+            "Abstención": 2,
+            "No presente": 0
+          },
           "source": "https://www.example.com",
           "law": "Regula la admisión de los y las estudiantes, elimina el financiamiento compartido y prohíbe el lucro en establecimientos educacionales que reciben aportes del Estado.",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20141021_educación_93366-04.pdf"
@@ -13853,6 +14027,12 @@
           "question": "El uso de plásticos de un solo uso debería ser reducido.",
           "date": "07.08.2024",
           "vote": "Abstención",
+          "vote_counts": {
+            "A favor": 1,
+            "En contra": 0,
+            "Abstención": 7,
+            "No presente": 0
+          },
           "source": "https://www.example.com",
           "law": "Modifica la ley N° 21.368, que regula la entrega de plásticos de un solo uso y las botellas plásticas, y modifica los cuerpos legales que indica, en materia de plazos de entrada en vigencia de sus obligaciones",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20240807_plastico_16849-12.pdf"
@@ -13864,6 +14044,12 @@
           "question": "Estuvo bien reducir las horas laborales a 40 horas por semana.",
           "date": "24.10.2019",
           "vote": "Abstención",
+          "vote_counts": {
+            "A favor": 8,
+            "En contra": 1,
+            "Abstención": 41,
+            "No presente": 4
+          },
           "source": "https://www.bcn.cl/portal/leyfacil/recurso/reduccion-de-la-jornada-laboral-a-40-horas-semanales",
           "law": "Modifica el Código del Trabajo con el objeto de reducir la jornada laboral",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20191024_horasLaborales_11179-13.pdf"
@@ -13873,6 +14059,12 @@
           "question": "Está bien que el Estado proteja los datos personales de las personas.",
           "date": "26.08.2024",
           "vote": "Abstención",
+          "vote_counts": {
+            "A favor": 15,
+            "En contra": 5,
+            "Abstención": 29,
+            "No presente": 5
+          },
           "source": "https://www.rsm.global/chile/es/news/ley-21719-proteccion-de-datos-personales",
           "law": "Proposición de la Comisión Mixta recaída en el proyecto de ley, originado en moción y mensaje, que “Regula la protección y el tratamiento de los datos personales y crea la Agencia de Protección de Datos Personales.”. [Cabe hacer presente que por no alcanzar el quórum constitucional no se aprueba el artículo 55 propuesto por la Comisión] ",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20240826_datosPersonales_11092-07.pdf"
@@ -13882,6 +14074,12 @@
           "question": "Fue buena la reforma de enero de 2025 que aumentó las contribuciones obligatorias de los empleadores al sistema de pensiones al 7%.",
           "date": "24.01.2025",
           "vote": "A favor",
+          "vote_counts": {
+            "A favor": 20,
+            "En contra": 18,
+            "Abstención": 13,
+            "No presente": 3
+          },
           "source": "https://www.ft.com/content/9e3ab931-eb05-4616-b8b7-0825cf9a690c?utm_source=chatgpt.com",
           "law": "Crea un nuevo Sistema Mixto de Pensiones y un Seguro Social en el pilar contributivo, mejora la Pensión Garantizada Universal y establece beneficios y modificaciones regulatorias que indica",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20240124_pensiones_15480-13.pdf"
@@ -13891,6 +14089,12 @@
           "question": "El matrimonio entre personas del mismo género debería estar permitido.",
           "date": "23.11.2021",
           "vote": "Abstención",
+          "vote_counts": {
+            "A favor": 10,
+            "En contra": 4,
+            "Abstención": 36,
+            "No presente": 4
+          },
           "source": "https://www.chileatiende.gob.cl/fichas/101164-ley-de-matrimonio-igualitario",
           "law": "Modifica diversos cuerpos legales para regular, en igualdad de condiciones, el matrimonio de parejas del mismo sexo.",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20211123_matrimonio_11422-07.pdf"
@@ -13900,6 +14104,12 @@
           "question": "Fue buena la reforma de educación del 2015 que prohíbe que instituciones subvencionadas por el estado hagan ganancias, y que dicta que las admisiones sean basadas en el azar.",
           "date": "21.10.2014",
           "vote": "Abstención",
+          "vote_counts": {
+            "A favor": 4,
+            "En contra": 4,
+            "Abstención": 44,
+            "No presente": 2
+          },
           "source": "https://www.example.com",
           "law": "Regula la admisión de los y las estudiantes, elimina el financiamiento compartido y prohíbe el lucro en establecimientos educacionales que reciben aportes del Estado.",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20141021_educación_93366-04.pdf"
@@ -13909,6 +14119,12 @@
           "question": "El uso de plásticos de un solo uso debería ser reducido.",
           "date": "07.08.2024",
           "vote": "A favor",
+          "vote_counts": {
+            "A favor": 28,
+            "En contra": 7,
+            "Abstención": 15,
+            "No presente": 4
+          },
           "source": "https://www.example.com",
           "law": "Modifica la ley N° 21.368, que regula la entrega de plásticos de un solo uso y las botellas plásticas, y modifica los cuerpos legales que indica, en materia de plazos de entrada en vigencia de sus obligaciones",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20240807_plastico_16849-12.pdf"
@@ -13920,6 +14136,12 @@
           "question": "Estuvo bien reducir las horas laborales a 40 horas por semana.",
           "date": "24.10.2019",
           "vote": "A favor",
+          "vote_counts": {
+            "A favor": 18,
+            "En contra": 0,
+            "Abstención": 12,
+            "No presente": 0
+          },
           "source": "https://www.bcn.cl/portal/leyfacil/recurso/reduccion-de-la-jornada-laboral-a-40-horas-semanales",
           "law": "Modifica el Código del Trabajo con el objeto de reducir la jornada laboral",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20191024_horasLaborales_11179-13.pdf"
@@ -13929,6 +14151,12 @@
           "question": "Está bien que el Estado proteja los datos personales de las personas.",
           "date": "26.08.2024",
           "vote": "Abstención",
+          "vote_counts": {
+            "A favor": 8,
+            "En contra": 0,
+            "Abstención": 20,
+            "No presente": 2
+          },
           "source": "https://www.rsm.global/chile/es/news/ley-21719-proteccion-de-datos-personales",
           "law": "Proposición de la Comisión Mixta recaída en el proyecto de ley, originado en moción y mensaje, que “Regula la protección y el tratamiento de los datos personales y crea la Agencia de Protección de Datos Personales.”. [Cabe hacer presente que por no alcanzar el quórum constitucional no se aprueba el artículo 55 propuesto por la Comisión] ",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20240826_datosPersonales_11092-07.pdf"
@@ -13938,6 +14166,12 @@
           "question": "Fue buena la reforma de enero de 2025 que aumentó las contribuciones obligatorias de los empleadores al sistema de pensiones al 7%.",
           "date": "24.01.2025",
           "vote": "Abstención",
+          "vote_counts": {
+            "A favor": 13,
+            "En contra": 0,
+            "Abstención": 17,
+            "No presente": 0
+          },
           "source": "https://www.ft.com/content/9e3ab931-eb05-4616-b8b7-0825cf9a690c?utm_source=chatgpt.com",
           "law": "Crea un nuevo Sistema Mixto de Pensiones y un Seguro Social en el pilar contributivo, mejora la Pensión Garantizada Universal y establece beneficios y modificaciones regulatorias que indica",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20240124_pensiones_15480-13.pdf"
@@ -13947,6 +14181,12 @@
           "question": "El matrimonio entre personas del mismo género debería estar permitido.",
           "date": "23.11.2021",
           "vote": "A favor",
+          "vote_counts": {
+            "A favor": 17,
+            "En contra": 0,
+            "Abstención": 12,
+            "No presente": 1
+          },
           "source": "https://www.chileatiende.gob.cl/fichas/101164-ley-de-matrimonio-igualitario",
           "law": "Modifica diversos cuerpos legales para regular, en igualdad de condiciones, el matrimonio de parejas del mismo sexo.",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20211123_matrimonio_11422-07.pdf"
@@ -13956,6 +14196,12 @@
           "question": "Fue buena la reforma de educación del 2015 que prohíbe que instituciones subvencionadas por el estado hagan ganancias, y que dicta que las admisiones sean basadas en el azar.",
           "date": "21.10.2014",
           "vote": "A favor",
+          "vote_counts": {
+            "A favor": 17,
+            "En contra": 0,
+            "Abstención": 12,
+            "No presente": 1
+          },
           "source": "https://www.example.com",
           "law": "Regula la admisión de los y las estudiantes, elimina el financiamiento compartido y prohíbe el lucro en establecimientos educacionales que reciben aportes del Estado.",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20141021_educación_93366-04.pdf"
@@ -13965,6 +14211,12 @@
           "question": "El uso de plásticos de un solo uso debería ser reducido.",
           "date": "07.08.2024",
           "vote": "Abstención",
+          "vote_counts": {
+            "A favor": 0,
+            "En contra": 11,
+            "Abstención": 18,
+            "No presente": 1
+          },
           "source": "https://www.example.com",
           "law": "Modifica la ley N° 21.368, que regula la entrega de plásticos de un solo uso y las botellas plásticas, y modifica los cuerpos legales que indica, en materia de plazos de entrada en vigencia de sus obligaciones",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20240807_plastico_16849-12.pdf"
@@ -13976,6 +14228,12 @@
           "question": "Estuvo bien reducir las horas laborales a 40 horas por semana.",
           "date": "24.10.2019",
           "vote": "Abstención",
+          "vote_counts": {
+            "A favor": 4,
+            "En contra": 1,
+            "Abstención": 31,
+            "No presente": 2
+          },
           "source": "https://www.bcn.cl/portal/leyfacil/recurso/reduccion-de-la-jornada-laboral-a-40-horas-semanales",
           "law": "Modifica el Código del Trabajo con el objeto de reducir la jornada laboral",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20191024_horasLaborales_11179-13.pdf"
@@ -13985,6 +14243,12 @@
           "question": "Está bien que el Estado proteja los datos personales de las personas.",
           "date": "26.08.2024",
           "vote": "Abstención",
+          "vote_counts": {
+            "A favor": 1,
+            "En contra": 1,
+            "Abstención": 35,
+            "No presente": 1
+          },
           "source": "https://www.rsm.global/chile/es/news/ley-21719-proteccion-de-datos-personales",
           "law": "Proposición de la Comisión Mixta recaída en el proyecto de ley, originado en moción y mensaje, que “Regula la protección y el tratamiento de los datos personales y crea la Agencia de Protección de Datos Personales.”. [Cabe hacer presente que por no alcanzar el quórum constitucional no se aprueba el artículo 55 propuesto por la Comisión] ",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20240826_datosPersonales_11092-07.pdf"
@@ -13994,6 +14258,12 @@
           "question": "Fue buena la reforma de enero de 2025 que aumentó las contribuciones obligatorias de los empleadores al sistema de pensiones al 7%.",
           "date": "24.01.2025",
           "vote": "Abstención",
+          "vote_counts": {
+            "A favor": 0,
+            "En contra": 15,
+            "Abstención": 23,
+            "No presente": 0
+          },
           "source": "https://www.ft.com/content/9e3ab931-eb05-4616-b8b7-0825cf9a690c?utm_source=chatgpt.com",
           "law": "Crea un nuevo Sistema Mixto de Pensiones y un Seguro Social en el pilar contributivo, mejora la Pensión Garantizada Universal y establece beneficios y modificaciones regulatorias que indica",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20240124_pensiones_15480-13.pdf"
@@ -14003,6 +14273,12 @@
           "question": "El matrimonio entre personas del mismo género debería estar permitido.",
           "date": "23.11.2021",
           "vote": "En contra",
+          "vote_counts": {
+            "A favor": 9,
+            "En contra": 12,
+            "Abstención": 12,
+            "No presente": 5
+          },
           "source": "https://www.chileatiende.gob.cl/fichas/101164-ley-de-matrimonio-igualitario",
           "law": "Modifica diversos cuerpos legales para regular, en igualdad de condiciones, el matrimonio de parejas del mismo sexo.",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20211123_matrimonio_11422-07.pdf"
@@ -14012,6 +14288,12 @@
           "question": "Fue buena la reforma de educación del 2015 que prohíbe que instituciones subvencionadas por el estado hagan ganancias, y que dicta que las admisiones sean basadas en el azar.",
           "date": "21.10.2014",
           "vote": "Abstención",
+          "vote_counts": {
+            "A favor": 0,
+            "En contra": 12,
+            "Abstención": 24,
+            "No presente": 2
+          },
           "source": "https://www.example.com",
           "law": "Regula la admisión de los y las estudiantes, elimina el financiamiento compartido y prohíbe el lucro en establecimientos educacionales que reciben aportes del Estado.",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20141021_educación_93366-04.pdf"
@@ -14021,6 +14303,12 @@
           "question": "El uso de plásticos de un solo uso debería ser reducido.",
           "date": "07.08.2024",
           "vote": "Abstención",
+          "vote_counts": {
+            "A favor": 15,
+            "En contra": 0,
+            "Abstención": 22,
+            "No presente": 1
+          },
           "source": "https://www.example.com",
           "law": "Modifica la ley N° 21.368, que regula la entrega de plásticos de un solo uso y las botellas plásticas, y modifica los cuerpos legales que indica, en materia de plazos de entrada en vigencia de sus obligaciones",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20240807_plastico_16849-12.pdf"
@@ -14032,6 +14320,12 @@
           "question": "Estuvo bien reducir las horas laborales a 40 horas por semana.",
           "date": "24.10.2019",
           "vote": "Abstención",
+          "vote_counts": {
+            "A favor": 10,
+            "En contra": 0,
+            "Abstención": 11,
+            "No presente": 0
+          },
           "source": "https://www.bcn.cl/portal/leyfacil/recurso/reduccion-de-la-jornada-laboral-a-40-horas-semanales",
           "law": "Modifica el Código del Trabajo con el objeto de reducir la jornada laboral",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20191024_horasLaborales_11179-13.pdf"
@@ -14041,6 +14335,12 @@
           "question": "Está bien que el Estado proteja los datos personales de las personas.",
           "date": "26.08.2024",
           "vote": "A favor",
+          "vote_counts": {
+            "A favor": 14,
+            "En contra": 0,
+            "Abstención": 4,
+            "No presente": 3
+          },
           "source": "https://www.rsm.global/chile/es/news/ley-21719-proteccion-de-datos-personales",
           "law": "Proposición de la Comisión Mixta recaída en el proyecto de ley, originado en moción y mensaje, que “Regula la protección y el tratamiento de los datos personales y crea la Agencia de Protección de Datos Personales.”. [Cabe hacer presente que por no alcanzar el quórum constitucional no se aprueba el artículo 55 propuesto por la Comisión] ",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20240826_datosPersonales_11092-07.pdf"
@@ -14050,6 +14350,12 @@
           "question": "Fue buena la reforma de enero de 2025 que aumentó las contribuciones obligatorias de los empleadores al sistema de pensiones al 7%.",
           "date": "24.01.2025",
           "vote": "A favor",
+          "vote_counts": {
+            "A favor": 20,
+            "En contra": 0,
+            "Abstención": 1,
+            "No presente": 0
+          },
           "source": "https://www.ft.com/content/9e3ab931-eb05-4616-b8b7-0825cf9a690c?utm_source=chatgpt.com",
           "law": "Crea un nuevo Sistema Mixto de Pensiones y un Seguro Social en el pilar contributivo, mejora la Pensión Garantizada Universal y establece beneficios y modificaciones regulatorias que indica",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20240124_pensiones_15480-13.pdf"
@@ -14059,6 +14365,12 @@
           "question": "El matrimonio entre personas del mismo género debería estar permitido.",
           "date": "23.11.2021",
           "vote": "Abstención",
+          "vote_counts": {
+            "A favor": 8,
+            "En contra": 0,
+            "Abstención": 12,
+            "No presente": 1
+          },
           "source": "https://www.chileatiende.gob.cl/fichas/101164-ley-de-matrimonio-igualitario",
           "law": "Modifica diversos cuerpos legales para regular, en igualdad de condiciones, el matrimonio de parejas del mismo sexo.",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20211123_matrimonio_11422-07.pdf"
@@ -14068,6 +14380,12 @@
           "question": "Fue buena la reforma de educación del 2015 que prohíbe que instituciones subvencionadas por el estado hagan ganancias, y que dicta que las admisiones sean basadas en el azar.",
           "date": "21.10.2014",
           "vote": "Abstención",
+          "vote_counts": {
+            "A favor": 1,
+            "En contra": 0,
+            "Abstención": 20,
+            "No presente": 0
+          },
           "source": "https://www.example.com",
           "law": "Regula la admisión de los y las estudiantes, elimina el financiamiento compartido y prohíbe el lucro en establecimientos educacionales que reciben aportes del Estado.",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20141021_educación_93366-04.pdf"
@@ -14077,6 +14395,12 @@
           "question": "El uso de plásticos de un solo uso debería ser reducido.",
           "date": "07.08.2024",
           "vote": "En contra",
+          "vote_counts": {
+            "A favor": 5,
+            "En contra": 10,
+            "Abstención": 5,
+            "No presente": 1
+          },
           "source": "https://www.example.com",
           "law": "Modifica la ley N° 21.368, que regula la entrega de plásticos de un solo uso y las botellas plásticas, y modifica los cuerpos legales que indica, en materia de plazos de entrada en vigencia de sus obligaciones",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20240807_plastico_16849-12.pdf"
@@ -14088,6 +14412,12 @@
           "question": "Estuvo bien reducir las horas laborales a 40 horas por semana.",
           "date": "24.10.2019",
           "vote": "Abstención",
+          "vote_counts": {
+            "A favor": 9,
+            "En contra": 0,
+            "Abstención": 11,
+            "No presente": 1
+          },
           "source": "https://www.bcn.cl/portal/leyfacil/recurso/reduccion-de-la-jornada-laboral-a-40-horas-semanales",
           "law": "Modifica el Código del Trabajo con el objeto de reducir la jornada laboral",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20191024_horasLaborales_11179-13.pdf"
@@ -14097,6 +14427,12 @@
           "question": "Está bien que el Estado proteja los datos personales de las personas.",
           "date": "26.08.2024",
           "vote": "Abstención",
+          "vote_counts": {
+            "A favor": 2,
+            "En contra": 0,
+            "Abstención": 19,
+            "No presente": 0
+          },
           "source": "https://www.rsm.global/chile/es/news/ley-21719-proteccion-de-datos-personales",
           "law": "Proposición de la Comisión Mixta recaída en el proyecto de ley, originado en moción y mensaje, que “Regula la protección y el tratamiento de los datos personales y crea la Agencia de Protección de Datos Personales.”. [Cabe hacer presente que por no alcanzar el quórum constitucional no se aprueba el artículo 55 propuesto por la Comisión] ",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20240826_datosPersonales_11092-07.pdf"
@@ -14106,6 +14442,12 @@
           "question": "Fue buena la reforma de enero de 2025 que aumentó las contribuciones obligatorias de los empleadores al sistema de pensiones al 7%.",
           "date": "24.01.2025",
           "vote": "Abstención",
+          "vote_counts": {
+            "A favor": 3,
+            "En contra": 0,
+            "Abstención": 18,
+            "No presente": 0
+          },
           "source": "https://www.ft.com/content/9e3ab931-eb05-4616-b8b7-0825cf9a690c?utm_source=chatgpt.com",
           "law": "Crea un nuevo Sistema Mixto de Pensiones y un Seguro Social en el pilar contributivo, mejora la Pensión Garantizada Universal y establece beneficios y modificaciones regulatorias que indica",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20240124_pensiones_15480-13.pdf"
@@ -14115,6 +14457,12 @@
           "question": "El matrimonio entre personas del mismo género debería estar permitido.",
           "date": "23.11.2021",
           "vote": "Abstención",
+          "vote_counts": {
+            "A favor": 9,
+            "En contra": 0,
+            "Abstención": 11,
+            "No presente": 1
+          },
           "source": "https://www.chileatiende.gob.cl/fichas/101164-ley-de-matrimonio-igualitario",
           "law": "Modifica diversos cuerpos legales para regular, en igualdad de condiciones, el matrimonio de parejas del mismo sexo.",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20211123_matrimonio_11422-07.pdf"
@@ -14124,6 +14472,12 @@
           "question": "Fue buena la reforma de educación del 2015 que prohíbe que instituciones subvencionadas por el estado hagan ganancias, y que dicta que las admisiones sean basadas en el azar.",
           "date": "21.10.2014",
           "vote": "A favor",
+          "vote_counts": {
+            "A favor": 15,
+            "En contra": 0,
+            "Abstención": 6,
+            "No presente": 0
+          },
           "source": "https://www.example.com",
           "law": "Regula la admisión de los y las estudiantes, elimina el financiamiento compartido y prohíbe el lucro en establecimientos educacionales que reciben aportes del Estado.",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20141021_educación_93366-04.pdf"
@@ -14133,6 +14487,12 @@
           "question": "El uso de plásticos de un solo uso debería ser reducido.",
           "date": "07.08.2024",
           "vote": "Abstención",
+          "vote_counts": {
+            "A favor": 1,
+            "En contra": 1,
+            "Abstención": 19,
+            "No presente": 0
+          },
           "source": "https://www.example.com",
           "law": "Modifica la ley N° 21.368, que regula la entrega de plásticos de un solo uso y las botellas plásticas, y modifica los cuerpos legales que indica, en materia de plazos de entrada en vigencia de sus obligaciones",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20240807_plastico_16849-12.pdf"
@@ -14144,6 +14504,12 @@
           "question": "Estuvo bien reducir las horas laborales a 40 horas por semana.",
           "date": "24.10.2019",
           "vote": "Abstención",
+          "vote_counts": {
+            "A favor": 1,
+            "En contra": 20,
+            "Abstención": 25,
+            "No presente": 6
+          },
           "source": "https://www.bcn.cl/portal/leyfacil/recurso/reduccion-de-la-jornada-laboral-a-40-horas-semanales",
           "law": "Modifica el Código del Trabajo con el objeto de reducir la jornada laboral",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20191024_horasLaborales_11179-13.pdf"
@@ -14153,6 +14519,12 @@
           "question": "Está bien que el Estado proteja los datos personales de las personas.",
           "date": "26.08.2024",
           "vote": "Abstención",
+          "vote_counts": {
+            "A favor": 0,
+            "En contra": 10,
+            "Abstención": 41,
+            "No presente": 1
+          },
           "source": "https://www.rsm.global/chile/es/news/ley-21719-proteccion-de-datos-personales",
           "law": "Proposición de la Comisión Mixta recaída en el proyecto de ley, originado en moción y mensaje, que “Regula la protección y el tratamiento de los datos personales y crea la Agencia de Protección de Datos Personales.”. [Cabe hacer presente que por no alcanzar el quórum constitucional no se aprueba el artículo 55 propuesto por la Comisión] ",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20240826_datosPersonales_11092-07.pdf"
@@ -14162,6 +14534,12 @@
           "question": "Fue buena la reforma de enero de 2025 que aumentó las contribuciones obligatorias de los empleadores al sistema de pensiones al 7%.",
           "date": "24.01.2025",
           "vote": "Abstención",
+          "vote_counts": {
+            "A favor": 0,
+            "En contra": 18,
+            "Abstención": 34,
+            "No presente": 0
+          },
           "source": "https://www.ft.com/content/9e3ab931-eb05-4616-b8b7-0825cf9a690c?utm_source=chatgpt.com",
           "law": "Crea un nuevo Sistema Mixto de Pensiones y un Seguro Social en el pilar contributivo, mejora la Pensión Garantizada Universal y establece beneficios y modificaciones regulatorias que indica",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20240124_pensiones_15480-13.pdf"
@@ -14171,6 +14549,12 @@
           "question": "El matrimonio entre personas del mismo género debería estar permitido.",
           "date": "23.11.2021",
           "vote": "Abstención",
+          "vote_counts": {
+            "A favor": 14,
+            "En contra": 12,
+            "Abstención": 22,
+            "No presente": 4
+          },
           "source": "https://www.chileatiende.gob.cl/fichas/101164-ley-de-matrimonio-igualitario",
           "law": "Modifica diversos cuerpos legales para regular, en igualdad de condiciones, el matrimonio de parejas del mismo sexo.",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20211123_matrimonio_11422-07.pdf"
@@ -14180,6 +14564,12 @@
           "question": "Fue buena la reforma de educación del 2015 que prohíbe que instituciones subvencionadas por el estado hagan ganancias, y que dicta que las admisiones sean basadas en el azar.",
           "date": "21.10.2014",
           "vote": "En contra",
+          "vote_counts": {
+            "A favor": 0,
+            "En contra": 26,
+            "Abstención": 22,
+            "No presente": 4
+          },
           "source": "https://www.example.com",
           "law": "Regula la admisión de los y las estudiantes, elimina el financiamiento compartido y prohíbe el lucro en establecimientos educacionales que reciben aportes del Estado.",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20141021_educación_93366-04.pdf"
@@ -14189,6 +14579,12 @@
           "question": "El uso de plásticos de un solo uso debería ser reducido.",
           "date": "07.08.2024",
           "vote": "Abstención",
+          "vote_counts": {
+            "A favor": 19,
+            "En contra": 0,
+            "Abstención": 33,
+            "No presente": 0
+          },
           "source": "https://www.example.com",
           "law": "Modifica la ley N° 21.368, que regula la entrega de plásticos de un solo uso y las botellas plásticas, y modifica los cuerpos legales que indica, en materia de plazos de entrada en vigencia de sus obligaciones",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20240807_plastico_16849-12.pdf"
@@ -14200,6 +14596,12 @@
           "question": "Estuvo bien reducir las horas laborales a 40 horas por semana.",
           "date": "24.10.2019",
           "vote": "A favor",
+          "vote_counts": {
+            "A favor": 2,
+            "En contra": 0,
+            "Abstención": 2,
+            "No presente": 0
+          },
           "source": "https://www.bcn.cl/portal/leyfacil/recurso/reduccion-de-la-jornada-laboral-a-40-horas-semanales",
           "law": "Modifica el Código del Trabajo con el objeto de reducir la jornada laboral",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20191024_horasLaborales_11179-13.pdf"
@@ -14209,6 +14611,12 @@
           "question": "Está bien que el Estado proteja los datos personales de las personas.",
           "date": "26.08.2024",
           "vote": "A favor",
+          "vote_counts": {
+            "A favor": 3,
+            "En contra": 0,
+            "Abstención": 1,
+            "No presente": 0
+          },
           "source": "https://www.rsm.global/chile/es/news/ley-21719-proteccion-de-datos-personales",
           "law": "Proposición de la Comisión Mixta recaída en el proyecto de ley, originado en moción y mensaje, que “Regula la protección y el tratamiento de los datos personales y crea la Agencia de Protección de Datos Personales.”. [Cabe hacer presente que por no alcanzar el quórum constitucional no se aprueba el artículo 55 propuesto por la Comisión] ",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20240826_datosPersonales_11092-07.pdf"
@@ -14218,6 +14626,12 @@
           "question": "Fue buena la reforma de enero de 2025 que aumentó las contribuciones obligatorias de los empleadores al sistema de pensiones al 7%.",
           "date": "24.01.2025",
           "vote": "A favor",
+          "vote_counts": {
+            "A favor": 4,
+            "En contra": 0,
+            "Abstención": 0,
+            "No presente": 0
+          },
           "source": "https://www.ft.com/content/9e3ab931-eb05-4616-b8b7-0825cf9a690c?utm_source=chatgpt.com",
           "law": "Crea un nuevo Sistema Mixto de Pensiones y un Seguro Social en el pilar contributivo, mejora la Pensión Garantizada Universal y establece beneficios y modificaciones regulatorias que indica",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20240124_pensiones_15480-13.pdf"
@@ -14227,6 +14641,12 @@
           "question": "El matrimonio entre personas del mismo género debería estar permitido.",
           "date": "23.11.2021",
           "vote": "Abstención",
+          "vote_counts": {
+            "A favor": 1,
+            "En contra": 0,
+            "Abstención": 2,
+            "No presente": 1
+          },
           "source": "https://www.chileatiende.gob.cl/fichas/101164-ley-de-matrimonio-igualitario",
           "law": "Modifica diversos cuerpos legales para regular, en igualdad de condiciones, el matrimonio de parejas del mismo sexo.",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20211123_matrimonio_11422-07.pdf"
@@ -14236,6 +14656,12 @@
           "question": "Fue buena la reforma de educación del 2015 que prohíbe que instituciones subvencionadas por el estado hagan ganancias, y que dicta que las admisiones sean basadas en el azar.",
           "date": "21.10.2014",
           "vote": "Abstención",
+          "vote_counts": {
+            "A favor": 0,
+            "En contra": 0,
+            "Abstención": 4,
+            "No presente": 0
+          },
           "source": "https://www.example.com",
           "law": "Regula la admisión de los y las estudiantes, elimina el financiamiento compartido y prohíbe el lucro en establecimientos educacionales que reciben aportes del Estado.",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20141021_educación_93366-04.pdf"
@@ -14245,6 +14671,12 @@
           "question": "El uso de plásticos de un solo uso debería ser reducido.",
           "date": "07.08.2024",
           "vote": "A favor",
+          "vote_counts": {
+            "A favor": 2,
+            "En contra": 0,
+            "Abstención": 1,
+            "No presente": 1
+          },
           "source": "https://www.example.com",
           "law": "Modifica la ley N° 21.368, que regula la entrega de plásticos de un solo uso y las botellas plásticas, y modifica los cuerpos legales que indica, en materia de plazos de entrada en vigencia de sus obligaciones",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20240807_plastico_16849-12.pdf"
@@ -14256,6 +14688,12 @@
           "question": "Estuvo bien reducir las horas laborales a 40 horas por semana.",
           "date": "24.10.2019",
           "vote": "Abstención",
+          "vote_counts": {
+            "A favor": 1,
+            "En contra": 0,
+            "Abstención": 3,
+            "No presente": 0
+          },
           "source": "https://www.bcn.cl/portal/leyfacil/recurso/reduccion-de-la-jornada-laboral-a-40-horas-semanales",
           "law": "Modifica el Código del Trabajo con el objeto de reducir la jornada laboral",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20191024_horasLaborales_11179-13.pdf"
@@ -14265,6 +14703,12 @@
           "question": "Está bien que el Estado proteja los datos personales de las personas.",
           "date": "26.08.2024",
           "vote": "Abstención",
+          "vote_counts": {
+            "A favor": 0,
+            "En contra": 0,
+            "Abstención": 4,
+            "No presente": 0
+          },
           "source": "https://www.rsm.global/chile/es/news/ley-21719-proteccion-de-datos-personales",
           "law": "Proposición de la Comisión Mixta recaída en el proyecto de ley, originado en moción y mensaje, que “Regula la protección y el tratamiento de los datos personales y crea la Agencia de Protección de Datos Personales.”. [Cabe hacer presente que por no alcanzar el quórum constitucional no se aprueba el artículo 55 propuesto por la Comisión] ",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20240826_datosPersonales_11092-07.pdf"
@@ -14274,6 +14718,12 @@
           "question": "Fue buena la reforma de enero de 2025 que aumentó las contribuciones obligatorias de los empleadores al sistema de pensiones al 7%.",
           "date": "24.01.2025",
           "vote": "En contra",
+          "vote_counts": {
+            "A favor": 1,
+            "En contra": 3,
+            "Abstención": 0,
+            "No presente": 0
+          },
           "source": "https://www.ft.com/content/9e3ab931-eb05-4616-b8b7-0825cf9a690c?utm_source=chatgpt.com",
           "law": "Crea un nuevo Sistema Mixto de Pensiones y un Seguro Social en el pilar contributivo, mejora la Pensión Garantizada Universal y establece beneficios y modificaciones regulatorias que indica",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20240124_pensiones_15480-13.pdf"
@@ -14283,6 +14733,12 @@
           "question": "El matrimonio entre personas del mismo género debería estar permitido.",
           "date": "23.11.2021",
           "vote": "Abstención",
+          "vote_counts": {
+            "A favor": 0,
+            "En contra": 1,
+            "Abstención": 3,
+            "No presente": 0
+          },
           "source": "https://www.chileatiende.gob.cl/fichas/101164-ley-de-matrimonio-igualitario",
           "law": "Modifica diversos cuerpos legales para regular, en igualdad de condiciones, el matrimonio de parejas del mismo sexo.",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20211123_matrimonio_11422-07.pdf"
@@ -14292,6 +14748,12 @@
           "question": "Fue buena la reforma de educación del 2015 que prohíbe que instituciones subvencionadas por el estado hagan ganancias, y que dicta que las admisiones sean basadas en el azar.",
           "date": "21.10.2014",
           "vote": "Abstención",
+          "vote_counts": {
+            "A favor": 0,
+            "En contra": 0,
+            "Abstención": 4,
+            "No presente": 0
+          },
           "source": "https://www.example.com",
           "law": "Regula la admisión de los y las estudiantes, elimina el financiamiento compartido y prohíbe el lucro en establecimientos educacionales que reciben aportes del Estado.",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20141021_educación_93366-04.pdf"
@@ -14301,6 +14763,12 @@
           "question": "El uso de plásticos de un solo uso debería ser reducido.",
           "date": "07.08.2024",
           "vote": "A favor",
+          "vote_counts": {
+            "A favor": 3,
+            "En contra": 0,
+            "Abstención": 1,
+            "No presente": 0
+          },
           "source": "https://www.example.com",
           "law": "Modifica la ley N° 21.368, que regula la entrega de plásticos de un solo uso y las botellas plásticas, y modifica los cuerpos legales que indica, en materia de plazos de entrada en vigencia de sus obligaciones",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20240807_plastico_16849-12.pdf"
@@ -14312,6 +14780,12 @@
           "question": "Estuvo bien reducir las horas laborales a 40 horas por semana.",
           "date": "24.10.2019",
           "vote": "No presente",
+          "vote_counts": {
+            "A favor": 0,
+            "En contra": 2,
+            "Abstención": 2,
+            "No presente": 3
+          },
           "source": "https://www.bcn.cl/portal/leyfacil/recurso/reduccion-de-la-jornada-laboral-a-40-horas-semanales",
           "law": "Modifica el Código del Trabajo con el objeto de reducir la jornada laboral",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20191024_horasLaborales_11179-13.pdf"
@@ -14321,6 +14795,12 @@
           "question": "Está bien que el Estado proteja los datos personales de las personas.",
           "date": "26.08.2024",
           "vote": "Abstención",
+          "vote_counts": {
+            "A favor": 1,
+            "En contra": 0,
+            "Abstención": 6,
+            "No presente": 0
+          },
           "source": "https://www.rsm.global/chile/es/news/ley-21719-proteccion-de-datos-personales",
           "law": "Proposición de la Comisión Mixta recaída en el proyecto de ley, originado en moción y mensaje, que “Regula la protección y el tratamiento de los datos personales y crea la Agencia de Protección de Datos Personales.”. [Cabe hacer presente que por no alcanzar el quórum constitucional no se aprueba el artículo 55 propuesto por la Comisión] ",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20240826_datosPersonales_11092-07.pdf"
@@ -14330,6 +14810,12 @@
           "question": "Fue buena la reforma de enero de 2025 que aumentó las contribuciones obligatorias de los empleadores al sistema de pensiones al 7%.",
           "date": "24.01.2025",
           "vote": "Abstención",
+          "vote_counts": {
+            "A favor": 0,
+            "En contra": 2,
+            "Abstención": 5,
+            "No presente": 0
+          },
           "source": "https://www.ft.com/content/9e3ab931-eb05-4616-b8b7-0825cf9a690c?utm_source=chatgpt.com",
           "law": "Crea un nuevo Sistema Mixto de Pensiones y un Seguro Social en el pilar contributivo, mejora la Pensión Garantizada Universal y establece beneficios y modificaciones regulatorias que indica",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20240124_pensiones_15480-13.pdf"
@@ -14339,6 +14825,12 @@
           "question": "El matrimonio entre personas del mismo género debería estar permitido.",
           "date": "23.11.2021",
           "vote": "A favor",
+          "vote_counts": {
+            "A favor": 5,
+            "En contra": 0,
+            "Abstención": 2,
+            "No presente": 0
+          },
           "source": "https://www.chileatiende.gob.cl/fichas/101164-ley-de-matrimonio-igualitario",
           "law": "Modifica diversos cuerpos legales para regular, en igualdad de condiciones, el matrimonio de parejas del mismo sexo.",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20211123_matrimonio_11422-07.pdf"
@@ -14348,6 +14840,12 @@
           "question": "Fue buena la reforma de educación del 2015 que prohíbe que instituciones subvencionadas por el estado hagan ganancias, y que dicta que las admisiones sean basadas en el azar.",
           "date": "21.10.2014",
           "vote": "Abstención",
+          "vote_counts": {
+            "A favor": 0,
+            "En contra": 1,
+            "Abstención": 6,
+            "No presente": 0
+          },
           "source": "https://www.example.com",
           "law": "Regula la admisión de los y las estudiantes, elimina el financiamiento compartido y prohíbe el lucro en establecimientos educacionales que reciben aportes del Estado.",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20141021_educación_93366-04.pdf"
@@ -14357,6 +14855,12 @@
           "question": "El uso de plásticos de un solo uso debería ser reducido.",
           "date": "07.08.2024",
           "vote": "Abstención",
+          "vote_counts": {
+            "A favor": 2,
+            "En contra": 0,
+            "Abstención": 5,
+            "No presente": 0
+          },
           "source": "https://www.example.com",
           "law": "Modifica la ley N° 21.368, que regula la entrega de plásticos de un solo uso y las botellas plásticas, y modifica los cuerpos legales que indica, en materia de plazos de entrada en vigencia de sus obligaciones",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20240807_plastico_16849-12.pdf"
@@ -14368,6 +14872,12 @@
           "question": "Estuvo bien reducir las horas laborales a 40 horas por semana.",
           "date": "24.10.2019",
           "vote": "A favor",
+          "vote_counts": {
+            "A favor": 3,
+            "En contra": 0,
+            "Abstención": 0,
+            "No presente": 0
+          },
           "source": "https://www.bcn.cl/portal/leyfacil/recurso/reduccion-de-la-jornada-laboral-a-40-horas-semanales",
           "law": "Modifica el Código del Trabajo con el objeto de reducir la jornada laboral",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20191024_horasLaborales_11179-13.pdf"
@@ -14377,6 +14887,12 @@
           "question": "Está bien que el Estado proteja los datos personales de las personas.",
           "date": "26.08.2024",
           "vote": "Abstención",
+          "vote_counts": {
+            "A favor": 1,
+            "En contra": 0,
+            "Abstención": 2,
+            "No presente": 0
+          },
           "source": "https://www.rsm.global/chile/es/news/ley-21719-proteccion-de-datos-personales",
           "law": "Proposición de la Comisión Mixta recaída en el proyecto de ley, originado en moción y mensaje, que “Regula la protección y el tratamiento de los datos personales y crea la Agencia de Protección de Datos Personales.”. [Cabe hacer presente que por no alcanzar el quórum constitucional no se aprueba el artículo 55 propuesto por la Comisión] ",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20240826_datosPersonales_11092-07.pdf"
@@ -14386,6 +14902,12 @@
           "question": "Fue buena la reforma de enero de 2025 que aumentó las contribuciones obligatorias de los empleadores al sistema de pensiones al 7%.",
           "date": "24.01.2025",
           "vote": "Abstención",
+          "vote_counts": {
+            "A favor": 1,
+            "En contra": 0,
+            "Abstención": 2,
+            "No presente": 0
+          },
           "source": "https://www.ft.com/content/9e3ab931-eb05-4616-b8b7-0825cf9a690c?utm_source=chatgpt.com",
           "law": "Crea un nuevo Sistema Mixto de Pensiones y un Seguro Social en el pilar contributivo, mejora la Pensión Garantizada Universal y establece beneficios y modificaciones regulatorias que indica",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20240124_pensiones_15480-13.pdf"
@@ -14395,6 +14917,12 @@
           "question": "El matrimonio entre personas del mismo género debería estar permitido.",
           "date": "23.11.2021",
           "vote": "No presente",
+          "vote_counts": {
+            "A favor": 1,
+            "En contra": 0,
+            "Abstención": 0,
+            "No presente": 2
+          },
           "source": "https://www.chileatiende.gob.cl/fichas/101164-ley-de-matrimonio-igualitario",
           "law": "Modifica diversos cuerpos legales para regular, en igualdad de condiciones, el matrimonio de parejas del mismo sexo.",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20211123_matrimonio_11422-07.pdf"
@@ -14404,6 +14932,12 @@
           "question": "Fue buena la reforma de educación del 2015 que prohíbe que instituciones subvencionadas por el estado hagan ganancias, y que dicta que las admisiones sean basadas en el azar.",
           "date": "21.10.2014",
           "vote": "Abstención",
+          "vote_counts": {
+            "A favor": 1,
+            "En contra": 0,
+            "Abstención": 2,
+            "No presente": 0
+          },
           "source": "https://www.example.com",
           "law": "Regula la admisión de los y las estudiantes, elimina el financiamiento compartido y prohíbe el lucro en establecimientos educacionales que reciben aportes del Estado.",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20141021_educación_93366-04.pdf"
@@ -14413,6 +14947,12 @@
           "question": "El uso de plásticos de un solo uso debería ser reducido.",
           "date": "07.08.2024",
           "vote": "Abstención",
+          "vote_counts": {
+            "A favor": 0,
+            "En contra": 1,
+            "Abstención": 2,
+            "No presente": 0
+          },
           "source": "https://www.example.com",
           "law": "Modifica la ley N° 21.368, que regula la entrega de plásticos de un solo uso y las botellas plásticas, y modifica los cuerpos legales que indica, en materia de plazos de entrada en vigencia de sus obligaciones",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20240807_plastico_16849-12.pdf"
@@ -14424,6 +14964,12 @@
           "question": "Estuvo bien reducir las horas laborales a 40 horas por semana.",
           "date": "24.10.2019",
           "vote": "A favor",
+          "vote_counts": {
+            "A favor": 4,
+            "En contra": 0,
+            "Abstención": 0,
+            "No presente": 1
+          },
           "source": "https://www.bcn.cl/portal/leyfacil/recurso/reduccion-de-la-jornada-laboral-a-40-horas-semanales",
           "law": "Modifica el Código del Trabajo con el objeto de reducir la jornada laboral",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20191024_horasLaborales_11179-13.pdf"
@@ -14433,6 +14979,12 @@
           "question": "Está bien que el Estado proteja los datos personales de las personas.",
           "date": "26.08.2024",
           "vote": "Abstención",
+          "vote_counts": {
+            "A favor": 0,
+            "En contra": 0,
+            "Abstención": 5,
+            "No presente": 0
+          },
           "source": "https://www.rsm.global/chile/es/news/ley-21719-proteccion-de-datos-personales",
           "law": "Proposición de la Comisión Mixta recaída en el proyecto de ley, originado en moción y mensaje, que “Regula la protección y el tratamiento de los datos personales y crea la Agencia de Protección de Datos Personales.”. [Cabe hacer presente que por no alcanzar el quórum constitucional no se aprueba el artículo 55 propuesto por la Comisión] ",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20240826_datosPersonales_11092-07.pdf"
@@ -14442,6 +14994,12 @@
           "question": "Fue buena la reforma de enero de 2025 que aumentó las contribuciones obligatorias de los empleadores al sistema de pensiones al 7%.",
           "date": "24.01.2025",
           "vote": "Abstención",
+          "vote_counts": {
+            "A favor": 0,
+            "En contra": 0,
+            "Abstención": 5,
+            "No presente": 0
+          },
           "source": "https://www.ft.com/content/9e3ab931-eb05-4616-b8b7-0825cf9a690c?utm_source=chatgpt.com",
           "law": "Crea un nuevo Sistema Mixto de Pensiones y un Seguro Social en el pilar contributivo, mejora la Pensión Garantizada Universal y establece beneficios y modificaciones regulatorias que indica",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20240124_pensiones_15480-13.pdf"
@@ -14451,6 +15009,12 @@
           "question": "El matrimonio entre personas del mismo género debería estar permitido.",
           "date": "23.11.2021",
           "vote": "A favor",
+          "vote_counts": {
+            "A favor": 5,
+            "En contra": 0,
+            "Abstención": 0,
+            "No presente": 0
+          },
           "source": "https://www.chileatiende.gob.cl/fichas/101164-ley-de-matrimonio-igualitario",
           "law": "Modifica diversos cuerpos legales para regular, en igualdad de condiciones, el matrimonio de parejas del mismo sexo.",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20211123_matrimonio_11422-07.pdf"
@@ -14460,6 +15024,12 @@
           "question": "Fue buena la reforma de educación del 2015 que prohíbe que instituciones subvencionadas por el estado hagan ganancias, y que dicta que las admisiones sean basadas en el azar.",
           "date": "21.10.2014",
           "vote": "Abstención",
+          "vote_counts": {
+            "A favor": 1,
+            "En contra": 0,
+            "Abstención": 4,
+            "No presente": 0
+          },
           "source": "https://www.example.com",
           "law": "Regula la admisión de los y las estudiantes, elimina el financiamiento compartido y prohíbe el lucro en establecimientos educacionales que reciben aportes del Estado.",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20141021_educación_93366-04.pdf"
@@ -14469,6 +15039,12 @@
           "question": "El uso de plásticos de un solo uso debería ser reducido.",
           "date": "07.08.2024",
           "vote": "Abstención",
+          "vote_counts": {
+            "A favor": 0,
+            "En contra": 0,
+            "Abstención": 5,
+            "No presente": 0
+          },
           "source": "https://www.example.com",
           "law": "Modifica la ley N° 21.368, que regula la entrega de plásticos de un solo uso y las botellas plásticas, y modifica los cuerpos legales que indica, en materia de plazos de entrada en vigencia de sus obligaciones",
           "pdf_link": "src/assets/sesiones_chile_pdfs/20240807_plastico_16849-12.pdf"
