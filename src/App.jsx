@@ -267,7 +267,7 @@ export default function App() {
             </button>
           )}
           {state.questions.length === 0 ? (
-            <h2>Loading...</h2>
+            <h2>Cargando...</h2>
           ) : state.currentQuestionIndex < state.questions.length ? (
             <>
               <div style={{ marginBottom: "10px" }}>

@@ -33,7 +33,9 @@ def map_csv_answer_numeric(vote):
 def generate_combined_questions_json():
     if not os.path.exists(EXCEL_FILE):
         return
-    df = pd.read_excel(EXCEL_FILE).head(6)
+    df = pd.read_excel(EXCEL_FILE)
+    # Filter rows where the 'Question' column is not null
+    df = df[df['Question'].notnull()]
     combined_questions = []
     for _, row in df.iterrows():
         filename = str(row["Filename"]).strip()
@@ -134,7 +136,9 @@ def generate_combined_votes_json():
     }
 
     # Process vote details from Excel.
-    df_excel = pd.read_excel(EXCEL_FILE).head(6)
+    df_excel = pd.read_excel(EXCEL_FILE)
+    # Filter rows where the 'Question' column is not null
+    df_excel = df_excel[df_excel['Question'].notnull()]
     candidate_details = {}
     for _, row in df_votes.iterrows():
         candidate_name = str(row["Nombre completo"]).strip()
