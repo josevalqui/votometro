@@ -130,7 +130,6 @@ def generate_combined_votes_json():
             "total_congresistas": len(data["ages"])
         }
 
-    # Process vote details from Excel (similar to generate_vote_details_json)
     df_excel = pd.read_excel(EXCEL_FILE).head(5)
     candidate_details = {}
     for _, row in df_votes.iterrows():

@@ -14,17 +14,6 @@ def clean_value(val):
         return None
     return val
 
-# For Chile, the preguntas file already provides a date in dd.mm.yyyy format.
-# This function optionally reformats it.
-def format_date(date_str):
-    try:
-        dt = datetime.strptime(date_str, "%d.%m.%Y")
-        months = ["enero", "febrero", "marzo", "abril", "mayo", "junio",
-                  "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
-        return f"{dt.day}. de {months[dt.month - 1]} de {dt.year}"
-    except Exception:
-        return date_str  # fallback if parsing fails
-
 def map_csv_answer_numeric(vote):
     # Map vote strings to numeric values.
     if isinstance(vote, str):
@@ -33,9 +22,12 @@ def map_csv_answer_numeric(vote):
             return 1
         elif vote == "en contra":
             return 0
-        elif vote in ["abstención","pareo"]:
+        elif vote in ["abstención", "pareo"]:
             return 0.5
+        elif vote == "ausente":
+            return "ausente"
     return None
+
 
 # Adapted combined questions generator for Chile.
 def generate_combined_questions_json():
@@ -44,15 +36,15 @@ def generate_combined_questions_json():
     df = pd.read_excel(EXCEL_FILE).head(6)
     combined_questions = []
     for _, row in df.iterrows():
-        pdf_name = str(row["Filename"]).strip()
+        filename = str(row["Filename"]).strip()
         combined_questions.append({
-            "id": pdf_name,
+            "id": filename,
             "question": row["Question"],
             "polarity": clean_value(row.get("Polarity")),
             "options": ["Estoy de acuerdo", "Neutral", "No estoy de acuerdo"],
             "source": clean_value(row.get("Source", "N/A")),
             "law": clean_value(row.get("Law", "N/A")),
-            "pdf_link": f"src/assets/sesiones_chile_pdfs/{pdf_name}.pdf",
+            "pdf_link": f"src/assets/sesiones_chile_pdfs/{filename}.pdf",
             "date": clean_value(row.get("Date", "N/A"))
         })
     with open(os.path.join(OUTPUT_DIR, "combined_questions_chile_2025.json"), "w", encoding="utf-8") as f:
@@ -68,6 +60,7 @@ def generate_combined_votes_json():
         return
     # Process CSV votes
     df_votes = pd.read_csv(COMPARISON_CSV)
+    df_votes["Attendance"] = None  # ✅ ensures column exists
     processed_candidates = {}
     parties_processed = {}
     # Exclude columns not related to votes.
@@ -100,7 +93,9 @@ def generate_combined_votes_json():
             "attendance": attendance_str,
             "votes": candidate_votes
         }
+        # Only include candidates from valid parties
         processed_candidates[candidate_name] = candidate_info
+        df_votes.at[row.name, "Attendance"] = attendance_str  # row.name gives index
 
         party = candidate_info["party"]
         if party not in parties_processed:
@@ -123,33 +118,53 @@ def generate_combined_votes_json():
             "average_attendance_percentage": avg_attendance,
             "total_congresistas": party_rows_count(data["attendance"])
         }
+    # Identify parties with more than 2 members
+    valid_parties = {p for p, v in aggregated_parties.items() if v["total_congresistas"] > 2}
+
+    # Drop candidates from parties not in valid_parties
+    processed_candidates = {
+        name: info for name, info in processed_candidates.items()
+        if info["party"] in valid_parties
+    }
+
+    # Filter out invalid parties from the party-level structures
+    aggregated_parties = {
+        p: v for p, v in aggregated_parties.items()
+        if p in valid_parties
+    }
 
     # Process vote details from Excel.
     df_excel = pd.read_excel(EXCEL_FILE).head(6)
     candidate_details = {}
     for _, row in df_votes.iterrows():
         candidate_name = str(row["Nombre completo"]).strip()
+        party = str(row["Partido"]).strip()
+        if party not in valid_parties:
+            continue
+
         attendance_val = processed_candidates.get(candidate_name, {}).get("attendance", "N/A")
         details = []
         for _, q_row in df_excel.iterrows():
-            pdf_name = str(q_row["Filename"]).strip()
+            filename = str(q_row["Filename"]).strip()
             vote_value = "N/A"
             date_value = "N/A"
             for col in row.index:
                 if col in exclude_cols:
                     continue
-                if col == pdf_name:
-                    vote_value = row[col] if not pd.isna(row[col]) else "N/A"
-                    date_value = format_date(str(q_row["Date"]))  # read directly from Excel "Date" column
+                if col == filename:
+                    # In candidate_details loop inside generate_combined_votes_json:
+                    vote_value = map_csv_answer_numeric(row[col]) if not pd.isna(row[col]) else "N/A"
+
+                    date_value = str(q_row["Date"])  # read directly from Excel "Date" column
                     break
             details.append({
-                "id": pdf_name,
+                "id": filename,
                 "question": q_row["Question"],
                 "date": date_value,
                 "vote": vote_value,
                 "source": clean_value(q_row.get("Source", "N/A")),
                 "law": clean_value(q_row.get("Law", "N/A")),
-                "pdf_link": f"src/assets/sesiones_chile_pdfs/{pdf_name}.pdf"
+                "pdf_link": f"src/assets/sesiones_chile_pdfs/{filename}.pdf"
             })
         candidate_details[candidate_name] = {
             "candidate_meta": {
@@ -163,39 +178,41 @@ def generate_combined_votes_json():
     party_meta = {}
     for party in df_votes["Partido"].dropna().unique():
         party_str = str(party).strip()
+        if party_str not in valid_parties:
+            continue
         party_rows = df_votes[df_votes["Partido"].str.strip() == party_str]
         details = []
         for _, q_row in df_excel.iterrows():
-            pdf_name = str(q_row["Filename"]).strip()
+            filename = str(q_row["Filename"]).strip()
             vote_value = "N/A"
             date_value = "N/A"
-            for col in party_rows.columns:
-                if col in exclude_cols:
-                    continue
-                csv_pdf_id = col
-                csv_date = format_date(str(q_row["Date"]))
-                if csv_pdf_id == pdf_name:
-                    votes = party_rows[col].dropna().tolist()
-                    vote_counts = {
-                        "A favor": 0,
-                        "En contra": 0,
-                        "Abstención/Sin respuesta": 0,
-                        "No presente": 0
-                    }
-                    for vote in votes:
-                        if vote in vote_counts:
-                            vote_counts[vote] += 1
-                    vote_value = max(vote_counts.items(), key=lambda x: x[1])[0] if any(vote_counts.values()) else "N/A"
-                    date_value = format_date(csv_date)
-                    break
+            col_name = filename  # assume column name in CSV matches the 'Filename' in Excel
+            if col_name in party_rows.columns:
+                votes = party_rows[col_name].dropna().tolist()
+                vote_counts = {
+                    "A favor": 0,
+                    "En contra": 0,
+                    "Abstención": 0,
+                    "No presente": 0
+                }
+                for vote in votes:
+                    vote = str(vote).strip().capitalize()
+                    if vote == "Ausente":
+                        vote_counts["No presente"] += 1
+                    elif vote in vote_counts:
+                        vote_counts[vote] += 1
+                    else:
+                        vote_counts["Abstención"] += 1
+                vote_value = max(vote_counts.items(), key=lambda x: x[1])[0] if any(vote_counts.values()) else "N/A"
+                date_value = str(q_row["Date"])
             details.append({
-                "id": pdf_name,
+                "id": filename,
                 "question": q_row["Question"],
                 "date": date_value,
                 "vote": vote_value,
                 "source": clean_value(q_row.get("Source", "N/A")),
                 "law": clean_value(q_row.get("Law", "N/A")),
-                "pdf_link": f"src/assets/sesiones_chile_pdfs/{pdf_name}.pdf"
+                "pdf_link": f"src/assets/sesiones_chile_pdfs/{filename}.pdf"
             })
         party_vote_details[party_str] = details
 
