@@ -2,29 +2,25 @@ import React from "react";
 
 export default function Methodology() {
   return (
-    // Outer wrapper: fills the viewport and centers its child horizontally
+    // Outer wrapper: fills the viewport with no width restrictions
     <div
       style={{
-        display: "flex",
         justifyContent: "center",
-        alignItems: "flex-start", // or "center" if you want vertical centering
-        backgroundColor: "#222",
         minHeight: "100vh",
-        minWidth: "100vw",
-        padding: "1rem",
+        width: "100vw",         // Force full page width
         margin: 0,
+        padding: "0",          // Remove extra padding if needed
         boxSizing: "border-box",
       }}
     >
-      {/* Inner container: restricted max width, centered by parent flexbox */}
+      {/* Inner container: now takes up 100% width */}
       <div
         style={{
-          width: "70%",
-          minHeight: "100vh",
-          borderRadius: "8px",
+          width: "70%",        // Full width (remove any maxWidth or percentage limitations)
+          margin: "0 auto", // Centers the inner container horizontally
           color: "#fff",
           padding: "40px 20px",
-          boxShadow: "0 2px 10px rgba(0, 0, 0, 0.1)",
+          boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
           fontFamily: "Arial, sans-serif",
           lineHeight: 1.6,
         }}
@@ -32,13 +28,21 @@ export default function Methodology() {
         <header
           style={{
             textAlign: "left",
+            marginBottom: "40px",
             borderBottom: "2px solid #f0f0f0",
+            paddingBottom: "20px",
           }}
         >
-          <h1>Methodología</h1>
+          <h1 style={{ marginBottom: "10px" }}>Methodology</h1>
         </header>
+
         <section style={{ marginBottom: "40px" }}>
-          <h2>
+          <h2
+            style={{
+              fontSize: "1.5em",
+              marginBottom: "10px",
+            }}
+          >
             Elecciones parlamentarias
           </h2>
           <p style={{ marginBottom: "20px" }}>
@@ -69,15 +73,6 @@ export default function Methodology() {
             3. Para cada persona, extraje su voto (a favor, en contra, abstención, ausencia), y los combiné por partido político.
             <br />
             4. La aplicación compara los votos de cada parlamentario y con los votos del usuario, y determina qué tan similares son.
-          </p>
-          <p>
-
-          </p>
-        </section>
-        <section>
-          <h2>Elecciones presidenciales</h2>
-          <p>
-            Para determinar la posición de los candidatos parlamentarios, usé una mezcla de los votos parlamentarios de su partido y las opiniones y planes comunicados por esa persona en entrevistas o debates.
           </p>
         </section>
       </div>
