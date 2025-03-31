@@ -1,27 +1,26 @@
 import React from "react";
 
 export default function Methodology() {
-  /*
-    If you want the container to span nearly the entire screen but still be centered, 
-    use width: "90%" (or any percentage you like) with margin: "0 auto".
-    If you want a fixed max width, add maxWidth: "1200px" or similar. 
-    If you want it truly full-width, remove width and margin and use width: "100%".
-  */
   return (
+    // Outer wrapper: fills the viewport and centers its child horizontally
     <div
       style={{
-        backgroundColor: "#222",   // dark background for the entire page
-        minHeight: "100vh",        // fill at least full screen height
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "flex-start", // or "center" if you want vertical centering
+        backgroundColor: "#222",
+        minHeight: "100vh",
+        minWidth: "100vw",
+        padding: "1rem",
         margin: 0,
-        padding: "2rem 0",        // top/bottom padding
         boxSizing: "border-box",
       }}
     >
+      {/* Inner container: restricted max width, centered by parent flexbox */}
       <div
         style={{
-          width: "90%",            // occupies 90% of the page width
-          margin: "0 auto",        // centers horizontally
-          backgroundColor: "darkslategray",
+          width: "70%",
+          minHeight: "100vh",
           borderRadius: "8px",
           color: "#fff",
           padding: "40px 20px",
@@ -32,26 +31,14 @@ export default function Methodology() {
       >
         <header
           style={{
-            textAlign: "center",
-            marginBottom: "40px",
+            textAlign: "left",
             borderBottom: "2px solid #f0f0f0",
-            paddingBottom: "20px",
           }}
         >
-          <h1 style={{ marginBottom: "10px" }}>Methodology</h1>
-          <p>Esta página describe la metodología del Votómetro.</p>
+          <h1>Methodología</h1>
         </header>
-
         <section style={{ marginBottom: "40px" }}>
-          <h2
-            style={{
-              fontSize: "1.5em",
-              marginBottom: "10px",
-              borderLeft: "4px solid #007BFF",
-              paddingLeft: "10px",
-              color: "#007BFF",
-            }}
-          >
+          <h2>
             Elecciones parlamentarias
           </h2>
           <p style={{ marginBottom: "20px" }}>
@@ -83,15 +70,17 @@ export default function Methodology() {
             <br />
             4. La aplicación compara los votos de cada parlamentario y con los votos del usuario, y determina qué tan similares son.
           </p>
+          <p>
+
+          </p>
+        </section>
+        <section>
+          <h2>Elecciones presidenciales</h2>
+          <p>
+            Para determinar la posición de los candidatos parlamentarios, usé una mezcla de los votos parlamentarios de su partido y las opiniones y planes comunicados por esa persona en entrevistas o debates.
+          </p>
         </section>
       </div>
     </div>
   );
 }
-
-/*
-NOTES:
-- With width: "90%" and margin: "0 auto", the container will be nearly full-width but remain centered.
-- If you want it fully edge-to-edge, remove width: "90%" and margin: "0 auto", and use width: "100%" in the inner div.
-- If you want a fixed max width, e.g. 1200px, add maxWidth: "1200px" to the inner div.
-*/
