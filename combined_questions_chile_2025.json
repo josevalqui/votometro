@@ -98,7 +98,7 @@
     "date": "28.09.2021"
   },
   {
-    "id": "20140514_impuestos_9290-05",
+    "id": "nan",
     "question": "Estuvo bien la reforma tributaria del 2014, que aumentó los impuestos a las compañías y a los más ricos",
     "polarity": "+",
     "options": [
@@ -108,21 +108,7 @@
     ],
     "source": "https://www.bbc.com/mundo/ultimas_noticias/2014/07/140709_ultnot_chile_acuerdo_allana_camino_a_reforma_tributaria_lv",
     "law": "Reforma tributaria que modifica el sistema de tributación de la renta e introduce diversos ajustes en el sistema tributario. ",
-    "pdf_link": "src/assets/sesiones_chile_pdfs/20140514_impuestos_9290-05.pdf",
+    "pdf_link": "src/assets/sesiones_chile_pdfs/nan.pdf",
     "date": "14.05.2014"
-  },
-  {
-    "id": "20240604_discriminación_12748-17",
-    "question": "Debería haber una mayor protección de los derechos LGBTIQ+ en Chile",
-    "polarity": "+",
-    "options": [
-      "Estoy de acuerdo",
-      "Neutral",
-      "No estoy de acuerdo"
-    ],
-    "source": "https://www.washingtonblade.com/2024/06/05/chilean-lawmakers-reject-proposed-nondiscrimination-law-reforms-amid-tense-anti-lgbtq-debate/?utm_source=chatgpt.com",
-    "law": "Proyecto de ley que modifica y fortalece la ley N° 20.609, que establece medidas contra la discriminación.",
-    "pdf_link": "src/assets/sesiones_chile_pdfs/20240604_discriminación_12748-17.pdf",
-    "date": "04.06.2024"
   }
 ]
