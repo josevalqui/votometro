@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Prevents the browser from requesting a non-existent favicon.ico -->
+    <link rel="icon" href="data:;base64,=">
+    <!-- Updated CSP: allows scripts and frames from Google (for recaptcha) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.google.com https://www.gstatic.com; style-src 'self' 'unsafe-inline'; frame-src 'self' https://www.google.com https://www.gstatic.com;">
     <title>Votómetro</title>
     <script type="module" crossorigin src="/votometro/assets/index-nH-vP5az.js"></script>
     <link rel="modulepreload" crossorigin href="/votometro/assets/vendor-B4Q6vpuu.js">
