@@ -109,7 +109,7 @@ export default function App() {
     });
 
     // Fetch candidate votes and compute similarity scores.
-    fetch(config.votesURL)
+    fetch(import.meta.env.BASE_URL + config.votesFile)
       .then((res) => res.json())
       .then((data) => {
         const processedCandidates = Object.values(data.candidates.processed);
@@ -166,7 +166,7 @@ export default function App() {
 
   const handleEntityClick = (entity, type) => {
     dispatch({ type: "SET_SELECTED_ENTITY", payload: entity });
-    fetch(config.votesURL)
+    fetch(import.meta.env.BASE_URL + config.votesFile)
       .then((res) => res.json())
       .then((data) => {
         if (type === "individual") {

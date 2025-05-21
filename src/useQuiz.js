@@ -68,7 +68,8 @@ export function useQuiz(election) {
 
   useEffect(() => {
     if (!election) return;
-    fetch(config.questionsURL)
+    fetch(import.meta.env.BASE_URL + config.questionsFile)   /* dev: '/', GH Pages: '/votometro/' */
+
       .then((res) => res.json())
       .then((data) => {
         if (Array.isArray(data) && data.length > 0) {
