@@ -13,11 +13,13 @@ const firebaseConfig = {
 };
 
 
-const app = initializeApp(firebaseConfig);
-export const db = getFirestore(app);  
+const app = initializeApp(firebaseConfig)
 
-export const auth = getAuth(app); // Only once!
+// initialize App Check before any other Firebase service
+initializeAppCheck(app, {
+  provider: new ReCaptchaV3Provider('6LegC-4qAAAAAD_uSa8RMbWNYBh2wDbQ8HCPELAi'),
+  isTokenAutoRefreshEnabled: true
+})
 
-const appCheck = initializeAppCheck(app, {
-  provider: new ReCaptchaV3Provider('6LegC-4qAAAAAD_uSa8RMbWNYBh2wDbQ8HCPELAi'), // <-- Use the site key only
-});
+export const db   = getFirestore(app)
+export const auth = getAuth(app)

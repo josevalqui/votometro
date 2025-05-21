@@ -3,11 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Prevents the browser from requesting a non-existent favicon.ico -->
+    <link rel="icon" href="data:;base64,=">
+    <!--
+      CSP:
+        • default-src 'self'
+        • scripts from self + Google (recaptcha)
+        • XHR/fetch to App-Check, Firestore, recaptcha endpoints
+        • images from self + Google (cleardot.gif)
+        • inline styles
+        • frames for recaptcha
+    -->
+    <meta http-equiv="Content-Security-Policy" content="
+      default-src 'self';
+      script-src 'self' https://www.google.com https://www.gstatic.com;
+      connect-src 'self' https://content-firebaseappcheck.googleapis.com https://firestore.googleapis.com https://www.google.com https://www.gstatic.com;
+      img-src 'self' https://www.google.com;
+      style-src 'self' 'unsafe-inline';
+      frame-src 'self' https://www.google.com/recaptcha/;
+    ">
     <title>Votómetro</title>
   </head>
   <body>
     <div id="root"></div>
+    <!-- reCAPTCHA v3 -->
     <script src="https://www.google.com/recaptcha/api.js?render=6LegC-4qAAAAAD_uSa8RMbWNYBh2wDbQ8HCPELAi"></script>
+    <!-- React entrypoint -->
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

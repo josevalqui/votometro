@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useQuiz } from "./useQuiz";
 import { db } from "./firebase"; // adjust path if needed
 import { collection, addDoc } from "firebase/firestore";
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { HashRouter as Router, Routes, Route, Navigate, Link } from "react-router-dom";
 import Methodology from "./metodologia";
 
 export default function App() {
@@ -217,8 +217,8 @@ export default function App() {
   // Replace your App.js return block with the following code:
 
   return (
-    <Router>
-      <>
+    <Router>   
+    <>
         {/* Global Menu Button */}
         <button 
           onClick={() => setShowMenu(!showMenu)} 
@@ -249,20 +249,23 @@ export default function App() {
             <ul style={{ listStyle: 'none', margin: 0, padding: '10px' }}>
               <li 
                 style={{ marginBottom: '10px', cursor: 'pointer' }}
-                onClick={() => { setShowMenu(false); window.location.href = '/'; }}>
+                onClick={() => { setShowMenu(false); window.location.href = `${import.meta.env.BASE_URL}`; }}>
                 Votómetro
               </li>
-              <li 
-                style={{ marginBottom: '10px', cursor: 'pointer' }}
-                onClick={() => { setShowMenu(false); window.location.href = '/votometro/metodologia'; }}>
-                Metodología
+              <li style={{ marginBottom: "10px", cursor: "pointer" }}>
+                <Link
+                  to="/metodologia"
+                  onClick={() => setShowMenu(false)}
+                  style={{ color: "inherit", textDecoration: "none" }}
+                >
+                  Metodología
+                </Link>
               </li>
             </ul>
           </div>
         )}
 
         <Routes>
-          <Route path="/votometro" element={<Navigate to="/" replace />} />
           <Route 
             path="/" 
             element={
@@ -769,10 +772,7 @@ export default function App() {
               </div>
             }
           />
-          <Route 
-            path="/votometro/metodologia" 
-            element={<Methodology />} 
-          />
+          <Route path="/metodologia" element={<Methodology />} />
         </Routes>
       </>
     </Router>
