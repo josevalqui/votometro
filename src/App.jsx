@@ -17,22 +17,29 @@ export default function App() {
     "No estoy de acuerdo": "En contra" 
   };
 
-  // Preselect an entity based on available results.
-  useEffect(() => {
-    if (state.comparisonResults) {
-      const currConfig = electionConfigs[election];
-      const resultsArray = !currConfig.isPresidentialElection
-        ? state.comparisonResults.party_results
-        : state.comparisonResults.individual_results;
-      if (resultsArray && resultsArray.length > 0) {
-        handleEntityClick(
-          resultsArray[0],
-          !currConfig.isPresidentialElection ? "party" : "individual"
-        );
-      }
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [state.comparisonResults]);
+// In your App component, delete the two separate useEffect hooks and paste this instead:
+useEffect(() => {
+  if (!state.comparisonResults) return;
+
+  // Determine which array to use (individual vs. party)
+  const currConfig = electionConfigs[election];
+  const resultsArray = state.showIndividualResults
+    ? state.comparisonResults.individual_results
+    : state.comparisonResults.party_results;
+
+  // If there’s at least one entity, select the first
+  if (resultsArray && resultsArray.length > 0) {
+    const type = state.showIndividualResults ? "individual" : "party";
+    handleEntityClick(resultsArray[0], type);
+  }
+}, [
+  state.comparisonResults,
+  state.showIndividualResults,
+  electionConfigs, // make sure these are defined where you need them
+  election,        // (this assumes electionConfigs[election] must be up to date)
+]);
+// eslint-disable-next-line react-hooks/exhaustive-deps
+
 
   const handleAnswerClick = (selectedOption) => {
     dispatch({ type: "ANSWER", index: state.currentQuestionIndex, answer: selectedOption });

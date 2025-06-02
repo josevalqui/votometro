@@ -5,5 +5,5 @@ export default {
   votesFile:     "combined_votes_chile_2025.json",
   processCandidateVote: v => v,  // votes are already numeric
   showLawInfo: true,
-  isPresidentialElection: false,
-};
+  isPresidentialElection: false
+}

@@ -5,8 +5,8 @@ import math
 from datetime import datetime
 
 # Define file paths – adjust as needed.
-EXCEL_FILE = r"C:\Users\josem\OneDrive\Proyectos\Wahl O Mat Peru\Peru\Votaciones parlamentarias 2026\preguntas_20250311.xlsx"
-COMPARISON_CSV = r"C:\Users\josem\OneDrive\Proyectos\Wahl O Mat Peru\Peru\Votaciones parlamentarias 2026\votes.csv"
+EXCEL_FILE = r"C:\Users\josem\OneDrive\Proyectos\Votometro\Peru\Votaciones parlamentarias 2026\preguntas_20250311.xlsx"
+COMPARISON_CSV = r"C:\Users\josem\OneDrive\Proyectos\Votometro\Peru\Votaciones parlamentarias 2026\votes.csv"
 # Output files (placed into the frontend public folder)
 OUTPUT_DIR = "public/"
 
@@ -49,11 +49,25 @@ def map_vote_value(vote):
             return "No presente"
     return "-"
 
-# New combined questions generator – replace generate_questions_json and generate_question_details_json
 def generate_combined_questions_json():
     if not os.path.exists(EXCEL_FILE):
         return
-    df = pd.read_excel(EXCEL_FILE).head(5)
+
+    df = pd.read_excel(EXCEL_FILE).head(11)
+
+    # ─── INSERT THIS BLOCK ───
+    # Build a mapping from each PDF filename to its date (extracted from the CSV column names)
+    votes_header = pd.read_csv(COMPARISON_CSV, nrows=0).columns
+    pdf_date_map = {}
+    for pdf in df["Filename"].astype(str).str.strip():
+        matches = [c for c in votes_header if c.startswith(f"{pdf}_")]
+        if matches:
+            date_raw = matches[0].split("_")[-1]
+            pdf_date_map[pdf] = format_date(date_raw)  # <-- formatted date
+        else:
+            pdf_date_map[pdf] = "N/A"
+    # ──────────────────────────
+
     combined_questions = []
     for _, row in df.iterrows():
         pdf_name = str(row["Filename"]).strip()
@@ -65,7 +79,9 @@ def generate_combined_questions_json():
             "source": clean_value(row.get("Sources", "N/A")),
             "law": clean_value(row.get("Law", "N/A")),
             "pdf_link": f"src/assets/sesiones_parlamentarias_2021-2025_pdfs/{pdf_name}.pdf",
-            "date": "N/A"  # Adjust if you want to compute a date
+            # ─── MODIFY THIS LINE ───
+            "date": pdf_date_map.get(pdf_name, "N/A"),
+            # ───────────────────────
         })
     with open(OUTPUT_DIR + "combined_questions_peru_2026.json", "w", encoding="utf-8") as f:
         json.dump(combined_questions, f, ensure_ascii=False, indent=2)
@@ -130,7 +146,7 @@ def generate_combined_votes_json():
             "total_congresistas": len(data["ages"])
         }
 
-    df_excel = pd.read_excel(EXCEL_FILE).head(5)
+    df_excel = pd.read_excel(EXCEL_FILE).head(11)
     candidate_details = {}
     for _, row in df_votes.iterrows():
         candidate_name = str(row["Name Comercio"]).strip()
@@ -140,25 +156,31 @@ def generate_combined_votes_json():
             pdf_name = str(q_row["Filename"]).strip()
             vote_value = "N/A"
             date_value = "N/A"
+
+            # ------------------ Updated column‐scanning logic ------------------
             for col in row.index:
-                if col in ["Name Comercio", "Party", "Name in pdf"]:
-                    continue
-                parts = col.split("_")
-                csv_pdf_id = "_".join(parts[:-1])
-                csv_date = parts[-1]
-                if csv_pdf_id == pdf_name:
+                col_str = str(col).strip()
+                if col_str.startswith(f"{pdf_name}_"):
+                    # split on all underscores and take the last element
+                    parts = col_str.split("_")
+                    date_str = parts[-1]  # último elemento de la cabecera
+                    date_value = format_date(date_str)
                     vote_value = map_vote_value(row[col])
-                    date_value = format_date(csv_date)
+                    # debug: imprime fecha extraída y versión formateada
+                    print(f"Debug: candidate={candidate_name}, pdf_name={pdf_name}, date_str={date_str}, date_value={date_value}")
                     break
+            # --------------------------------------------------------------------
+
             details.append({
                 "id": pdf_name,
                 "question": q_row["Question"],
                 "date": date_value,
                 "vote": vote_value,
-                "source": clean_value(q_row.get("Sources", "N/A")),
+                "source": clean_value(q_row.get("Source", "N/A")),
                 "law": clean_value(q_row.get("Law", "N/A")),
                 "pdf_link": f"src/assets/sesiones_parlamentarias_2021-2025_pdfs/{pdf_name}.pdf"
             })
+
         candidate_details[candidate_name] = {
             "candidate_meta": {
                 "age": int(row["Age (2024)"]) if not pd.isna(row["Age (2024)"]) else None,
@@ -183,10 +205,9 @@ def generate_combined_votes_json():
             for col in party_rows.columns:
                 if col in ["Name Comercio", "Party", "Name in pdf"]:
                     continue
-                parts = col.split("_")
-                csv_pdf_id = "_".join(parts[:-1])
-                csv_date = parts[-1]
-                if csv_pdf_id == pdf_name:
+                # match any column that begins with “pdf_name_”
+                if col.startswith(f"{pdf_name}_"):
+                    csv_date = col.rsplit("_", 1)[-1]
                     votes = party_rows[col].dropna().tolist()
                     vote_counts = {
                         "A favor": 0,

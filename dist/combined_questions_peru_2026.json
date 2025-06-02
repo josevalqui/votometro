@@ -1,5 +1,33 @@
 [
   {
+    "id": "PL 6084",
+    "question": "Está bien la ley que excluye de responsabilidad penal a los partidos políticos.",
+    "polarity": "+",
+    "options": [
+      "Estoy de acuerdo",
+      "Neutral",
+      "No estoy de acuerdo"
+    ],
+    "source": "https://www.infobae.com/peru/2024/06/19/ley-que-excluye-a-partidos-politicos-de-responsabilidad-penal-estos-son-los-pros-y-contras-segun-especialistas/",
+    "law": "LEY QUE RECONOCE A LOS PARTIDOS POLÍTICOS COMO ASOCIACIONES DE INTERÉS PÚBLICO Y SU NO CRIMINALIZACIÓN",
+    "pdf_link": "src/assets/sesiones_parlamentarias_2021-2025_pdfs/PL 6084.pdf",
+    "date": "10. de mayo de 2024"
+  },
+  {
+    "id": "PL 6162 TS",
+    "question": "Estuvo bien la ley que restringe el financiamiento de ONGs que demandan al estado peruano y sus actividades políticas.",
+    "polarity": "+",
+    "options": [
+      "Estoy de acuerdo",
+      "Neutral",
+      "No estoy de acuerdo"
+    ],
+    "source": "https://www.hrw.org/es/news/2025/03/20/peru-boluarte-deberia-vetar-la-ley-anti-ong",
+    "law": "LEY QUE MODIFICA LA LEY N°27692, A FIN DE FORTALECER LAS FUNCIONES DE LA AGENCIA PERUANA DE COOPERACIÓN INTERNACIONAL EN EL SECTOR AGROPECUARIO",
+    "pdf_link": "src/assets/sesiones_parlamentarias_2021-2025_pdfs/PL 6162 TS.pdf",
+    "date": "12. de marzo de 2025"
+  },
+  {
     "id": "PL 649 INS",
     "question": "Está bien reducir las protecciones a los bosques para impulsar el desarrollo económico, a pesar de que pueda provocar mayor destrucción ambiental",
     "polarity": "+",
@@ -11,7 +39,7 @@
     "source": "https://www.infobae.com/peru/2024/09/17/estas-bancadas-promovieron-ley-que-incrementa-el-riesgo-de-incendios-forestales-en-la-amazonia/#:~:text=Esta%20norma%20facilita%20la%20destrucci%C3%B3n,Acci%C3%B3n%20Popular%20y%20Per%C3%BA%20Bicentenario",
     "law": "LEY QUE FACILITA LAS CONDICIONES PARA LA PROMOCIÓN DE LAS INVERSIONES EN EL SECTOR AGRARIO, AFECTADAS POR LA PANDEMIA Y PREVENIR LA CRISIS ALIMENTARIA",
     "pdf_link": "src/assets/sesiones_parlamentarias_2021-2025_pdfs/PL 649 INS.pdf",
-    "date": "N/A"
+    "date": "14. de diciembre de 2023"
   },
   {
     "id": "PL 6589",
@@ -25,7 +53,21 @@
     "source": "https://www.infobae.com/peru/2024/06/30/ley-soto-gobierno-y-poder-judicial-a-favor-de-que-el-congreso-derogue-cuestionada-norma/",
     "law": "LEY DE INTERPRETACIÓN AUTÉNTICA DEL ARTICULO 1 DE LA LEY 31751",
     "pdf_link": "src/assets/sesiones_parlamentarias_2021-2025_pdfs/PL 6589.pdf",
-    "date": "N/A"
+    "date": "30. de mayo de 2024"
+  },
+  {
+    "id": "PL 660 TEXTO SUST",
+    "question": "Estuvo bien hacer que el congreso, sin hacer un referendum, haya reinstituído a un sistema con senado a partir de 2026, y que los congresistas puedan ser reelectos.",
+    "polarity": "+",
+    "options": [
+      "Estoy de acuerdo",
+      "Neutral",
+      "No estoy de acuerdo"
+    ],
+    "source": "https://facultad-derecho.pucp.edu.pe/ventana-juridica/retorno-a-la-bicameralidad-y-otras-reformas-constitucionales-la-voz-del-pueblo-ya-no-es-la-voz-de-dios/",
+    "law": "LEY DE REFORMA CONSTITUCIONAL QUE ESTABLEZCA LA BICAMERALIDAD EN EL CONGRESO DE LA REPÚBLICA",
+    "pdf_link": "src/assets/sesiones_parlamentarias_2021-2025_pdfs/PL 660 TEXTO SUST.pdf",
+    "date": "16. de noviembre de 2023"
   },
   {
     "id": "PL 6951",
@@ -39,34 +81,76 @@
     "source": "https://news.un.org/es/story/2024/08/1531901",
     "law": "LEY QUE PRECISA LA APLICACIÓN Y ALCANCES DEL DELITO DE LESA HUMANIDAD Y CRÍMENES DE GUERRA EN LA LEGISLACIÓN PERUANA",
     "pdf_link": "src/assets/sesiones_parlamentarias_2021-2025_pdfs/PL 6951.pdf",
+    "date": "6. de junio de 2024"
+  },
+  {
+    "id": "PL 7462 TS",
+    "question": "Está bien la ley que amplió hasta junio de 2025 el plazo para que mineros pequeños y artesanales se formalicen, permitiéndoles seguir operando legalmente, pero también prolonga la falta de sanciones penales para quienes siguen en la minería ilegal, lo que podría aumentar la contaminación y los conflictos sociales.",
+    "polarity": "+",
+    "options": [
+      "Estoy de acuerdo",
+      "Neutral",
+      "No estoy de acuerdo"
+    ],
+    "source": "https://lpderecho.pe/congreso-aprueba-extender-proceso-formalizacion-minera-reinfo-amplia-junio-2025/",
+    "law": "LEY QUE MODIFICA EL ARTÍCULO 6° DEL DECRETO LEGISLATIVO N° 1293, CON LA FINALIDAD DE AMPLIAR EL PLAZO DE VIGENCIA DEL PROCESO DE FORMALIZACIÓN MINERA INTEGRAL DE LAS ACTIVIDADES DE LA PEQUEÑA MINERÍA Y MINERÍA ARTESANAL PARA REESTRUCTURAR Y SINCERAR EL REGISTRO INTEGRAL DE FORMALIZACIÓN MINERA - REINFO",
+    "pdf_link": "src/assets/sesiones_parlamentarias_2021-2025_pdfs/PL 7462 TS.pdf",
+    "date": "29. de noviembre de 2024"
+  },
+  {
+    "id": "PL 9055",
+    "question": "Estuvo bien aprobar la Ley 32108, que cambia el concepto de organización criminal, limitando su aplicación a delitos con penas mayores a seis años. Así, quedan excluidos los delitos que tienen menos de 6 años de condena, como trata de personas, extorsión, tráfico de órganos, estafa agravada, tala ilegal, tortura y corrupción de funcionarios.",
+    "polarity": "+",
+    "options": [
+      "Estoy de acuerdo",
+      "Neutral",
+      "No estoy de acuerdo"
+    ],
+    "source": "https://puntoedu.pucp.edu.pe/coyuntura/ley-32108-crimen-organizado-congreso-ha-generado-incentivos-para-organizaciones-delictivas/",
+    "law": "LEY QUE MODIFICA LA LEY 27379, LEY DE PROCEDIMIENTO PARA ADOPTAR MEDIDAS EXCEPCIONALES DE LIMITACION DE DERECHOS EN INVESTIGACIONES PRELIMINARES, Y LA LEY 32108, LEY QUE MODIFICA EL CÓDIGO PENAL, DECRETO LEGISLATIVO 635; LA LEY 30077, LEY CONTRA EL CRIMEN ORGANIZADO; Y LA LEY 27379, LEY DE PROCEDIMIENTO PARA ADOPTAR MEDIDAS EXCEPCIONALES DE LIMITACION DE DERECHOS EN INVESTIGACIONES PRELIMINARES, A FIN DE DETERMINAR LAS CARACTERÍSTICAS CONCURRENTES PARA LA TIPICIDAD DE UNA ORGANIZACION CRIMINAL, PARA PRECISAR DISPOSICIONES SOBRE EL ALLANAMIENTO DE INMUEBLES",
+    "pdf_link": "src/assets/sesiones_parlamentarias_2021-2025_pdfs/PL 9055.pdf",
+    "date": "16. de octubre de 2024"
+  },
+  {
+    "id": "PL 9385",
+    "question": "Estuvo bien volver a poner la firma de Alberto Fujimori en la constitución del 1993.",
+    "polarity": "+",
+    "options": [
+      "Estoy de acuerdo",
+      "Neutral",
+      "No estoy de acuerdo"
+    ],
+    "source": "https://www.infobae.com/peru/2025/03/22/firma-de-alberto-fujimori-volvera-a-aparecer-en-la-constitucion-dina-boluarte-promulgo-la-polemica-ley/",
+    "law": "LEY QUE DEROGA LA LEY 27600, LEY QUE SUPRIME FIRMA Y ESTABLECE PROCESO DE REFORMA CONSTITUCIONAL, RESTITUYENDO LA FIRMA DE ALBERTO FUJIMORI FUJIMORI EN LA CONSTITUCIÓN POLÍTICA DEL PERÚ",
+    "pdf_link": "src/assets/sesiones_parlamentarias_2021-2025_pdfs/PL 9385.pdf",
+    "date": "6. de marzo de 2025"
+  },
+  {
+    "id": "PL_5632",
+    "question": "Estuvo bien la ley que le dio al gobierno de Dina Boluarte facultades para decidir sobre la seguridad ciudadana y desastres como el Niño Global durante 120 días.",
+    "polarity": "+",
+    "options": [
+      "Estoy de acuerdo",
+      "Neutral",
+      "No estoy de acuerdo"
+    ],
+    "source": "https://www.estudiorodrigo.com/ley-que-delega-en-el-poder-ejecutivo-la-facultad-de-legislar-en-materias-de-seguridad-ciudadana-gestion-del-riesgo-de-desastres-nino-global-infraestructura-social-calidad-de-proyectos-y-meritocra/",
+    "law": "LEY QUE DELEGA EN EL PODER EJECUTIVO LA FACULTAD DE LEGISLAR EN MATERIAS DE SEGURIDAD CIUDADANA, GESTIÓN DEL RIESGO DE DESASTRES - NIÑO GLOBAL, MERITOCRACIA E INFRAESTRUCTURA SOCIAL Y CALIDAD DE PROYECTOS",
+    "pdf_link": "src/assets/sesiones_parlamentarias_2021-2025_pdfs/PL_5632.pdf",
     "date": "N/A"
   },
   {
     "id": "PL_697_2DA_VOTAC",
-    "question": "Los políticos y las universidades deberían tener más poder sobre la SUNEDU",
+    "question": "La SUNEDU debería tener menos poder",
     "polarity": "+",
     "options": [
       "Estoy de acuerdo",
       "Neutral",
       "No estoy de acuerdo"
     ],
-    "source": "https://www.example.com/peru/2024",
+    "source": "https://www.infobae.com/america/peru/2022/05/05/sunedu-que-significa-la-nueva-ley-que-debilita-esta-superintendencia-y-devuelve-autonomia-a-las-universidades/",
     "law": "Ley que modifica el artículo 17 de la Ley 30220, Ley universitaria, sobre requisito para ser miembro del Consejo Directivo de la Sunedu.",
     "pdf_link": "src/assets/sesiones_parlamentarias_2021-2025_pdfs/PL_697_2DA_VOTAC.pdf",
-    "date": "N/A"
-  },
-  {
-    "id": "PL_74",
-    "question": "El Perú debería ser más estricto respecto a la migración",
-    "polarity": "+",
-    "options": [
-      "Estoy de acuerdo",
-      "Neutral",
-      "No estoy de acuerdo"
-    ],
-    "source": "https://www.infobae.com/peru/2023/02/17/que-implica-la-promulgacion-de-la-ley-que-puede-limitar-el-ingreso-y-transito-de-extranjeros-en-peru/",
-    "law": "LEY QUE MODIFICA LOS ARTÍCULOS 10, 45, 61 Y 63 DEL DECRETO LEGISLATIVO 1350, DECRETO LEGISLATIVO DE MIGRACIONES, EN EL MARCO DE LA SEGURIDAD",
-    "pdf_link": "src/assets/sesiones_parlamentarias_2021-2025_pdfs/PL_74.pdf",
-    "date": "N/A"
+    "date": "4. de mayo de 2022"
   }
 ]

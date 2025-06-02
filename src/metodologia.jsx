@@ -33,7 +33,7 @@ export default function Methodology() {
             paddingBottom: "20px",
           }}
         >
-          <h1 style={{ marginBottom: "10px" }}>Methodology</h1>
+          <h1 style={{ marginBottom: "10px" }}>Metodología</h1>
         </header>
 
         <section style={{ marginBottom: "40px" }}>
@@ -48,9 +48,9 @@ export default function Methodology() {
           <p style={{ marginBottom: "20px" }}>
             Para determinar la posición de los partidos en las elecciones parlamentarias, seguí estos pasos:
             <br />
-            1. Busqué los documentos que contienen las votaciones para propuestas legislativas (
+            1. Busqué los documentos que contienen las votaciones para propuestas legislativas polarizantes (
             <a
-              href="https://wb2server.congreso.gob.pe/spley-portal/#/expediente/search"
+              href="https://leyes.congreso.gob.pe/"
               target="_blank"
               rel="noopener noreferrer"
               style={{ color: "#00CED1" }}
@@ -68,9 +68,9 @@ export default function Methodology() {
             </a>
             )
             <br />
-            2. Extraje los nombres de los congresistas presentes en esas votaciones, y le asigné a cada persona su partido político actual.
+            2. Extraje los nombres de los parlamentarios presentes en esas votaciones, y le asigné a cada persona el partido político actual.
             <br />
-            3. Para cada persona, extraje su voto (a favor, en contra, abstención, ausencia), y los combiné por partido político.
+            3. Extraje el voto de cada parlamentario (a favor, en contra, abstención, ausencia), y los combiné por partido político.
             <br />
             4. La aplicación compara los votos de cada parlamentario y con los votos del usuario, y determina qué tan similares son.
           </p>
