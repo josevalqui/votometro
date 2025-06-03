@@ -73,9 +73,18 @@ useEffect(() => {
   };
 
   const submitAnswersToFirebase = async () => {
+    const answersMap = state.questions.reduce((acc, q, i) => {
+      acc[q.id] = {
+        answer: state.answers[i] || "Sin respuesta",  // fallback if no answer
+        weight: state.weights[i],
+      };
+      return acc;
+    }, {});
+
+    // 2. send exactly one addDoc payload
     const answersData = {
       userId: localStorage.getItem("userId") || Date.now(),
-      answers: state.answers,
+      responses: answersMap,
       createdAt: new Date(),
     };
     localStorage.setItem("userId", answersData.userId);

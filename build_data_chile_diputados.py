@@ -4,8 +4,8 @@ import json
 from datetime import datetime
 
 # Define file paths – adjust as needed.
-EXCEL_FILE = r"C:\Users\josem\OneDrive\Proyectos\Wahl O Mat Peru\Chile\Elecciones parlamentarias 2025\preguntas_chile_diputados.xlsx"  # Excel with preguntas
-COMPARISON_CSV = r"C:\Users\josem\OneDrive\Proyectos\Wahl O Mat Peru\Chile\Elecciones parlamentarias 2025\Candidatos_20250326.csv"  # CSV with votes
+EXCEL_FILE = r"C:\Users\josem\OneDrive\Proyectos\Votometro\Chile\Elecciones parlamentarias 2025\preguntas_chile_diputados.xlsx"  # Excel with preguntas
+COMPARISON_CSV = r"C:\Users\josem\OneDrive\Proyectos\Votometro\Chile\Elecciones parlamentarias 2025\Candidatos_20250326.csv"  # CSV with votes
 OUTPUT_DIR = "public/"  # output directory
 
 def clean_value(val):

@@ -1,25 +1,26 @@
+// firebase.js
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
 import { initializeAppCheck, ReCaptchaV3Provider } from 'firebase/app-check';
 
+// Use environment variables for config
 const firebaseConfig = {
-  apiKey: "AIzaSyD73NUn3dESrSkAFBQfywqJmAjyDKDGzeE",
-  authDomain: "votometro-5dec8.firebaseapp.com",
-  projectId: "votometro-5dec8",
-  storageBucket: "votometro-5dec8.firebasestorage.app",
-  messagingSenderId: "410453365556",
-  appId: "1:410453365556:web:670182c618218ca1220b61"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
+const app = initializeApp(firebaseConfig);
 
-const app = initializeApp(firebaseConfig)
-
-// initialize App Check before any other Firebase service
+// Initialize App Check
 initializeAppCheck(app, {
-  provider: new ReCaptchaV3Provider('6LegC-4qAAAAAD_uSa8RMbWNYBh2wDbQ8HCPELAi'),
-  isTokenAutoRefreshEnabled: true
-})
+  provider: new ReCaptchaV3Provider(import.meta.env.VITE_RECAPTCHA_KEY),
+  isTokenAutoRefreshEnabled: true,
+});
 
-export const db   = getFirestore(app)
-export const auth = getAuth(app)
+export const db = getFirestore(app);
+export const auth = getAuth(app);
