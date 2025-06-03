@@ -4,6 +4,7 @@ import { db } from "./firebase"; // adjust path if needed
 import { collection, addDoc } from "firebase/firestore";
 import { HashRouter as Router, Routes, Route, Navigate, Link } from "react-router-dom";
 import Methodology from "./metodologia";
+import Contacto from "./contacto";
 
 export default function App() {
   const [election, setElection] = useState(null);
@@ -39,6 +40,7 @@ useEffect(() => {
   election,        // (this assumes electionConfigs[election] must be up to date)
 ]);
 // eslint-disable-next-line react-hooks/exhaustive-deps
+
 
 
   const handleAnswerClick = (selectedOption) => {
@@ -268,6 +270,15 @@ useEffect(() => {
                   Metodología
                 </Link>
               </li>
+              <li style={{ marginBottom: "10px", cursor: "pointer" }}>
+                <Link
+                  to="/contacto"
+                  onClick={() => setShowMenu(false)}
+                  style={{ color: "inherit", textDecoration: "none" }}
+                >
+                  Contacto
+                </Link>
+              </li>
             </ul>
           </div>
         )}
@@ -299,11 +310,11 @@ useEffect(() => {
                     }}
                   >
                     <h2>Selecciona una elección</h2>
-                    <button onClick={() => setElection("peru_parl_2026")}>
-                      Perú: Elección parlamentaria (12.04.2026)
-                    </button>
                     <button onClick={() => setElection("chile_diputados_2025")}>
                       Chile: Elección parlamentaria (15.11.2025)
+                    </button>
+                    <button onClick={() => setElection("peru_parl_2026")}>
+                      Perú: Elección parlamentaria (12.04.2026)
                     </button>
                   </div>
                 ) : (
@@ -780,6 +791,7 @@ useEffect(() => {
             }
           />
           <Route path="/metodologia" element={<Methodology />} />
+          <Route path="/contacto" element={<Contacto />} />
         </Routes>
       </>
     </Router>

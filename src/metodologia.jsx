@@ -37,12 +37,7 @@ export default function Methodology() {
         </header>
 
         <section style={{ marginBottom: "40px" }}>
-          <h2
-            style={{
-              fontSize: "1.5em",
-              marginBottom: "10px",
-            }}
-          >
+          <h2 style={{fontSize: "1.5em",marginBottom: "10px"}}>
             Elecciones parlamentarias
           </h2>
           <p style={{ marginBottom: "20px" }}>
@@ -74,6 +69,22 @@ export default function Methodology() {
             <br />
             4. La aplicación compara los votos de cada parlamentario y con los votos del usuario, y determina qué tan similares son.
           </p>
+
+          <h2 style={{fontSize: "1.5em",marginBottom: "10px"}}>
+            Elecciones presidenciales
+          </h2>
+          <p style={{ marginBottom: "20px" }}>
+            Para las elecciones presidenciales, hice lo siguiente:
+            <br />
+            1. Busqué entrevistas, reportajes y programas del gobierno de los candidatos presidenciales.
+            <br />
+            2. Determiné los temas más presentes en el discurso de los candidatos en los cuales no están de acuerdo.
+            <br />
+            3. Le asigné a cada candidato una posición (A favor, En contra, Abstención) en cada tema.
+            <br/>
+            4. La aplicación compara las respuestas del usuario con las de los candidatos, y determina qué tan alineadas están.
+          </p>
+
         </section>
       </div>
     </div>

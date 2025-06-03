@@ -166,8 +166,6 @@ def generate_combined_votes_json():
                     date_str = parts[-1]  # último elemento de la cabecera
                     date_value = format_date(date_str)
                     vote_value = map_vote_value(row[col])
-                    # debug: imprime fecha extraída y versión formateada
-                    print(f"Debug: candidate={candidate_name}, pdf_name={pdf_name}, date_str={date_str}, date_value={date_value}")
                     break
             # --------------------------------------------------------------------
 

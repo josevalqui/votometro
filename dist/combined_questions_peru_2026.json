@@ -15,7 +15,7 @@
   },
   {
     "id": "PL 6162 TS",
-    "question": "Estuvo bien la ley que restringe el financiamiento de ONGs que demandan al estado peruano y sus actividades políticas.",
+    "question": "Estuvo bien la ley que restringe las actividades políticas y el financiamiento de ONGs que tienen procesos legales contral el estado peruano.",
     "polarity": "+",
     "options": [
       "Estoy de acuerdo",
@@ -57,7 +57,7 @@
   },
   {
     "id": "PL 660 TEXTO SUST",
-    "question": "Estuvo bien hacer que el congreso, sin hacer un referendum, haya reinstituído a un sistema con senado a partir de 2026, y que los congresistas puedan ser reelectos.",
+    "question": "Estuvo bien que el congreso, sin hacer un referendum, haya reinstituído a un sistema con senado a partir de 2026, y que los congresistas puedan ser reelectos.",
     "polarity": "+",
     "options": [
       "Estoy de acuerdo",
@@ -85,7 +85,7 @@
   },
   {
     "id": "PL 7462 TS",
-    "question": "Está bien la ley que amplió hasta junio de 2025 el plazo para que mineros pequeños y artesanales se formalicen, permitiéndoles seguir operando legalmente, pero también prolonga la falta de sanciones penales para quienes siguen en la minería ilegal, lo que podría aumentar la contaminación y los conflictos sociales.",
+    "question": "Está bien la ley que amplió hasta junio de 2025 el plazo para que mineros pequeños y artesanales se formalicen, permitiéndoles seguir operando legalmente, aunque prolonga la falta de sanciones penales para quienes siguen en la minería ilegal, lo que podría aumentar la contaminación y los conflictos sociales.",
     "polarity": "+",
     "options": [
       "Estoy de acuerdo",
@@ -99,7 +99,7 @@
   },
   {
     "id": "PL 9055",
-    "question": "Estuvo bien aprobar la Ley 32108, que cambia el concepto de organización criminal, limitando su aplicación a delitos con penas mayores a seis años. Así, quedan excluidos los delitos que tienen menos de 6 años de condena, como trata de personas, extorsión, tráfico de órganos, estafa agravada, tala ilegal, tortura y corrupción de funcionarios.",
+    "question": "Estuvo bien aprobar la ley que cambia el concepto de organización criminal, limitando su aplicación a delitos con penas mayores a seis años, excluyendo delitos como trata de personas, extorsión, tráfico de órganos, estafa agravada, tala ilegal, tortura y corrupción de funcionarios.",
     "polarity": "+",
     "options": [
       "Estoy de acuerdo",
@@ -113,7 +113,7 @@
   },
   {
     "id": "PL 9385",
-    "question": "Estuvo bien volver a poner la firma de Alberto Fujimori en la constitución del 1993.",
+    "question": "Fue bueno reinstatar la firma de Alberto Fujimori en la constitución del 1993.",
     "polarity": "+",
     "options": [
       "Estoy de acuerdo",
@@ -141,7 +141,7 @@
   },
   {
     "id": "PL_697_2DA_VOTAC",
-    "question": "La SUNEDU debería tener menos poder",
+    "question": "La SUNEDU debería tener menos poder sobre las universidades.",
     "polarity": "+",
     "options": [
       "Estoy de acuerdo",
