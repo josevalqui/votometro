@@ -125,21 +125,20 @@ useEffect(() => {
         const individualResults = processedCandidates.map((candidate) => {
           let weightedDiff = 0,
             totalWeight = 0;
-          Object.entries(candidate.votes).forEach(([voteCol, candidateVote]) => {
-            if (candidateVote === null) return;
-            // Process candidate vote using the election-specific function.
-            let numericCandidateVote = config.processCandidateVote(candidateVote);
-            if (typeof numericCandidateVote !== "number") return; // Skip invalid votes like "ausente"
-            const pdf_id =
-              config.name === "ecuador" || config.name === "chile"
-                ? voteCol
-                : voteCol.split("_").slice(0, -1).join("_");
-            if (userAnswers[pdf_id]) {
-              const { answer: userAns, weight } = userAnswers[pdf_id];
-              weightedDiff += Math.abs(userAns - numericCandidateVote) * weight;
-              totalWeight += weight;
-            }
-          });
+        Object.entries(candidate.votes).forEach(([voteCol, candidateVote]) => {
+          if (candidateVote === null) return;
+          // Process candidate vote using the election-specific function.
+          let numericCandidateVote = config.processCandidateVote(candidateVote);
+          if (typeof numericCandidateVote !== "number") return; // Skip invalid votes like "ausente"
+          const pdf_id = config.name === "chile" ? voteCol: voteCol.split("_").slice(0, -1).join("_");
+
+          if (userAnswers[pdf_id]) {
+            const { answer: userAns, weight } = userAnswers[pdf_id];
+            weightedDiff += Math.abs(userAns - numericCandidateVote) * weight;
+            totalWeight += weight;
+          }
+        });
+
           const similarity =
             totalWeight > 0 ? Math.round((1 - weightedDiff / totalWeight) * 100) : 0;
           return { name: candidate.name, party: candidate.party || candidate.candidate_meta?.party, similarity_score: similarity };
@@ -637,29 +636,21 @@ useEffect(() => {
                                 {state.entityDetails.candidate_meta && (
                                   <div style={{ marginBottom: "4px" }}>
                                     <p style={{ margin: "2px 0" }}>
-                                      {config.name === "chile" ? (
+                                    <>
+                                      <strong>Edad:</strong> {state.entityDetails.candidate_meta.age}
+                                      <br />
+                                      {!electionConfigs[election].isPresidentialElection && (
                                         <>
+                                          <strong>Sentencia penal:</strong> {state.entityDetails.candidate_meta.sentencia_penal}
+                                          <br />
                                           <strong>Asistencia:</strong> {state.entityDetails.candidate_meta.attendance || "N/A"}
                                           <br />
-                                          <strong>Partido:</strong> {state.entityDetails.candidate_meta.party}
-                                          <br /><br />
-                                        </>
-                                      ) : (
-                                        <>
-                                          <strong>Edad:</strong> {state.entityDetails.candidate_meta.age}
-                                          <br />
-                                          {!electionConfigs[election].isPresidentialElection && (
-                                            <>
-                                              <strong>Sentencia penal:</strong> {state.entityDetails.candidate_meta.sentencia_penal}
-                                              <br />
-                                              <strong>Asistencia:</strong> {state.entityDetails.candidate_meta.attendance || "N/A"}
-                                              <br />
-                                            </>
-                                          )}
-                                          <strong>Partido:</strong> {state.entityDetails.candidate_meta.party}
-                                          <br /><br />
                                         </>
                                       )}
+                                      <strong>Partido:</strong> {state.entityDetails.candidate_meta.party}
+                                      <br /><br />
+                                    </>
+
                                     </p>
                                   </div>
                                 )}
@@ -683,7 +674,7 @@ useEffect(() => {
                                     state.questionDetails.map((qd, idx) => {
                                       const detail = state.entityDetails.details.find((d) => d.id === qd.id);
                                       if (!detail || !detail.vote || detail.vote === "N/A") return null;
-                                      const actualSource = config.name === "ecuador" ? detail.source : qd.source;
+                                      const actualSource = qd.source;
                                       return (
                                         <div key={idx} style={{ marginBottom: "2px", lineHeight: "1.2" }}>
                                           <p style={{ margin: "2px 0" }}>
@@ -715,11 +706,7 @@ useEffect(() => {
                                               )
                                             ) : (
                                               <>
-                                                <strong>
-                                                  {config.name === "ecuador"
-                                                    ? "Opinión del candidato:"
-                                                    : "Voto del congresista:"}
-                                                </strong>{" "}
+                                                <strong>Voto del congresista:</strong>{" "}
                                                 {detail.vote} <br />
                                               </>
                                             )}

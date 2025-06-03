@@ -1,13 +1,11 @@
 // useQuiz.js
 import { useReducer, useMemo, useEffect } from "react";
 import peruConfig from "./elections/peru_parl_2026";
-import ecuadorConfig from "./elections/ecuador_pres_2025";
 import chileConfig from "./elections/chile_diputados_2025";
 
 // Map election types to their configuration objects.
 const electionConfigs = {
   peru_parl_2026: peruConfig,
-  ecuador_pres_2025: ecuadorConfig,
   chile_diputados_2025: chileConfig,
 };
 
