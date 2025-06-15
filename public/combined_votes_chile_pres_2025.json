@@ -283,6 +283,77 @@
           "source": null
         }
       }
+    },
+    "Francesca Muñoz": {
+      "party": "Partido Social Cristiano",
+      "votes": {
+        "Aborto": {
+          "question": "El aborto debería estar despenalizado",
+          "vote": "0",
+          "comment": "Votó en contra del proyecto de aborto libre en la Cámara y defendió “el derecho a la vida desde la concepción”.",
+          "source": "https://www.bcn.cl/laborparlamentaria/participacion?idParticipacion=2361175"
+        },
+        "Matrimonio": {
+          "question": "Está bien que esté permitido el matrimonio homosexual",
+          "vote": "0",
+          "comment": "Afirmó que “Chile no lo está pidiendo” y que es “un grave error” dar urgencia al matrimonio igualitario.",
+          "source": "https://www.chilevision.cl/contigo-en-directo/mejores-momentos/diputada-francesca-munoz-sobre-matrimonio-igualitario-chile-no-lo-esta"
+        },
+        "Impuestos progresivos": {
+          "question": "Debería haber un sistema de impuestos progresivos, donde los más ricos paguen un mayor porcentaje",
+          "vote": "0",
+          "comment": "Votó en contra de la reforma tributaria del Gobierno y plantea recortar el gasto público antes que subir impuestos.",
+          "source": "https://www.emol.com/noticias/Economia/2023/03/08/1088739/votacion-diputados-reforma-tributaria-boric.html"
+        },
+        "Pensiones": {
+          "question": "Las contribuciones de pensiones deberían ir a cuentas individuales y no a un fondo común (PAYGO)",
+          "vote": "1",
+          "comment": "Rechazó la reforma oficial y exige que el 6 % adicional vaya íntegramente a capitalización individual.",
+          "source": "https://www.biobiochile.cl/noticias/nacional/chile/2025/01/17/partido-social-cristiano-anuncia-que-votara-en-contra-de-la-reforma-de-pensiones-es-un-mal-acuerdo.shtml"
+        },
+        "Cambio climático": {
+          "question": "El cambio climático es uno de los problemas centrales de los cuales se debería encargar el gobierno.",
+          "vote": "nan",
+          "comment": "No se encontró información pública sobre su postura.",
+          "source": null
+        },
+        "Autonomía Mapuche": {
+          "question": "El pueblo Mapuche debería tener más autonomía y tierras.",
+          "vote": "nan",
+          "comment": "No se encontró información pública clara sobre su posición.",
+          "source": null
+        },
+        "Migración irregular": {
+          "question": "Debería ser más fácil regularizarse para los migrantes irregulares.",
+          "vote": "0",
+          "comment": "En visita al paso Colchane prometió “cerrar nuestras fronteras” y no facilitar la regularización de migrantes irregulares.",
+          "source": "https://www.instagram.com/reel/DKVwpgnN9Q8/"
+        },
+        "Sueldo mínimo": {
+          "question": "Se debería aumentar el sueldo mínimo.",
+          "vote": "nan",
+          "comment": "No se encontró información verificada sobre su posición.",
+          "source": null
+        },
+        "Litio": {
+          "question": "La extracción del litio debería permanecer bajo el control del estado.",
+          "vote": "nan",
+          "comment": "No ha fijado posición pública reciente sobre este tema.",
+          "source": null
+        },
+        "Constitución": {
+          "question": "Chile debería tener una nueva constitución.",
+          "vote": "0",
+          "comment": "Lideró campañas por el “Rechazo” y sostiene que no se necesita una nueva Constitución.",
+          "source": "https://www.biobiochile.cl/especial/una-constitucion-para-chile/noticias/2022/05/28/se-entregan-derechos-con-letra-chica-diputadas-emprenden-campana-del-rechazo-en-bio-bio-y-nuble.shtml"
+        },
+        "Welfare state": {
+          "question": "El Estado Chileno tiene la responsabilidad de proveer servicios básicos gratuitos",
+          "vote": "nan",
+          "comment": null,
+          "source": null
+        }
+      }
     }
   }
 }

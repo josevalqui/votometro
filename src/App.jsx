@@ -10,7 +10,17 @@ import './App.css';
 export default function App() {
   const [election, setElection] = useState(null);
   const { state, dispatch, config, electionConfigs } = useQuiz(election);
+  const resultTypes = config.resultTypes || [];
   const [showMenu, setShowMenu] = useState(false); // <-- add near your other useState hooks
+
+  const [selectedResultType, setSelectedResultType] = 
+    useState(resultTypes[0] || null);              // ← start with first available
+
+  useEffect(() => {                                
+    if (resultTypes.length) {                      
+      setSelectedResultType(resultTypes[0]);       // ← reset when available types change
+    }
+  }, [resultTypes]);
 
   // Map quiz options to labels.
   const userAnswerMapping = { 
@@ -105,7 +115,9 @@ useEffect(() => {
     dispatch({ type: "SET_SHOW_INDIVIDUAL_RESULTS", payload: config.isPresidentialElection });
     // Mark quiz end by setting currentQuestionIndex beyond last question.
     dispatch({ type: "SET_CURRENT_QUESTION_INDEX", payload: state.questions.length });
-
+    const base = import.meta.env.BASE_URL;
+    console.log("Parliamentary votes URL:", base + config.parlVotesFile);
+    console.log("Presidential votes URL: ", base + config.presVotesFile);
     // Process user answers into numeric values.
     const userAnswers = {};
     state.questions.forEach((q, i) => {
@@ -128,122 +140,174 @@ useEffect(() => {
     });
 
     // Fetch candidate votes and compute similarity scores.
-    fetch(import.meta.env.BASE_URL + config.votesFile)
-      .then((res) => res.json())
-      .then((data) => {
-        const processedCandidates = config.isPresidentialElection
-          // For presidential: data.candidates is { "Name": { party, votes }, ... }
-          ? Object.entries(data.candidates).map(([name, info]) => ({
-              name,
-              party: info.party,
-              votes: info.votes
-            }))
-          // For non‐presidential: keep existing behavior
-          : Object.values(data.candidates.processed);
-        const individualResults = processedCandidates.map((candidate) => {
-          let weightedDiff = 0,
-            totalWeight = 0;
-          Object.entries(candidate.votes).forEach(([voteCol, candidateVote]) => {
-            if (candidateVote === null) return;
 
-          let numericCandidateVote;
-          if (config.isPresidentialElection) {
-            // vote is now a string, so parse it
-            numericCandidateVote = parseFloat(candidateVote.vote);
-          } else {
-            numericCandidateVote = config.processCandidateVote(candidateVote);
+
+    // only fetch parliamentary votes when needed
+    const parlPromise = config.questionTypes.includes("parliamentary")
+      ? fetch(base + config.parlVotesFile)
+          .then(r => { if (!r.ok) throw new Error("Parl fetch failed"); return r.json() })
+      : Promise.resolve(null);
+
+    // only fetch presidential votes when needed
+    const presPromise = config.questionTypes.includes("presidential") && config.presVotesFile
+      ? fetch(base + config.presVotesFile)
+          .then(r => { if (!r.ok) throw new Error("Pres fetch failed"); return r.json() })
+      : Promise.resolve(null);
+
+    Promise.all([parlPromise, presPromise])
+      .then(([parlData, presData]) => {
+        // 1) parliamentaryResults
+        const parliamentaryResults = parlData
+          ? Object.values(parlData.candidates.processed || {}).map(cand => {
+              let weightedDiff = 0;
+              let totalWeight = 0;
+              Object.entries(cand.votes).forEach(([qid, vote]) => {
+                const nv = config.processCandidateVote(vote);
+                const ua = userAnswers[qid];
+                if (ua != null && !Number.isNaN(nv)) {
+                  weightedDiff += Math.abs(ua.answer - nv) * ua.weight;
+                  totalWeight += ua.weight;
+                }
+              });
+              return {
+                name: cand.name,
+                party: cand.party || cand.candidate_meta?.party,
+                similarity_score: totalWeight
+                  ? Math.round((1 - weightedDiff / totalWeight) * 100)
+                  : 0
+              };
+            }).sort((a, b) => b.similarity_score - a.similarity_score)
+          : [];
+
+        // 2) partyResults
+        const partyResults = config.resultTypes.includes("party")
+          ? (() => {
+              const agg = {};
+              parliamentaryResults.forEach(({ party, similarity_score }) => {
+                if (!agg[party]) agg[party] = { total: 0, count: 0 };
+                agg[party].total += similarity_score;
+                agg[party].count += 1;
+              });
+              return Object.entries(agg)
+                .map(([party, stats]) => ({
+                  party,
+                  average_similarity_score: Math.round(stats.total / stats.count)
+                }))
+                .sort((a, b) => b.average_similarity_score - a.average_similarity_score);
+            })()
+          : [];
+
+        // 3) presidentialResults
+        const presidentialResults = presData
+          ? Object.entries(presData.candidates).map(([name, info]) => {
+              let weightedDiff = 0;
+              let totalWeight = 0;
+              Object.entries(info.votes).forEach(([qid, qobj]) => {
+                const nv = parseFloat(qobj.vote);
+                const ua = userAnswers[qid];
+                if (ua != null && !Number.isNaN(nv)) {
+                  weightedDiff += Math.abs(ua.answer - nv) * ua.weight;
+                  totalWeight += ua.weight;
+                }
+              });
+              return {
+                name,
+                party: info.party,
+                similarity_score: totalWeight
+                  ? Math.round((1 - weightedDiff / totalWeight) * 100)
+                  : 0
+              };
+            }).sort((a, b) => b.similarity_score - a.similarity_score)
+          : [];
+
+        // dispatch all three result sets
+        dispatch({
+          type: "SET_COMPARISON_RESULTS",
+          payload: {
+            individual_results:   parliamentaryResults,
+            party_results:        partyResults,
+            presidential_results: presidentialResults
           }
-          if (Number.isNaN(numericCandidateVote)) return;
-
-
-            const pdf_id = voteCol; // as you changed already
-
-            if (userAnswers[pdf_id]) {
-              const { answer: userAns, weight } = userAnswers[pdf_id];
-              weightedDiff += Math.abs(userAns - numericCandidateVote) * weight;
-              totalWeight += weight;
-            }
-          });
-
-          const similarity =
-            totalWeight > 0 ? Math.round((1 - weightedDiff / totalWeight) * 100) : 0;
-          return { name: candidate.name, party: candidate.party || candidate.candidate_meta?.party, similarity_score: similarity };
         });
-        individualResults.sort((a, b) => b.similarity_score - a.similarity_score);
-        if (!config.isPresidentialElection) {
-          const partyAggregation = {};
-          individualResults.forEach((cand) => {
-            if (!partyAggregation[cand.party]) {
-              partyAggregation[cand.party] = { total: 0, count: 0 };
-            }
-            partyAggregation[cand.party].total += cand.similarity_score;
-            partyAggregation[cand.party].count += 1;
-          });
-          const partyResults = Object.entries(partyAggregation).map(([party, stats]) => ({
-            party,
-            average_similarity_score: Math.round(stats.total / stats.count),
-          }));
-          partyResults.sort((a, b) => b.average_similarity_score - a.average_similarity_score);
-          dispatch({
-            type: "SET_COMPARISON_RESULTS",
-            payload: { individual_results: individualResults, party_results: partyResults },
-          });
-        } else {
-          dispatch({
-            type: "SET_COMPARISON_RESULTS",
-            payload: { individual_results: individualResults, party_results: [] },
-          });
-        }
       })
-      .catch((err) => console.error("Error fetching combined votes:", err));
+      .catch(err => console.error("Error fetching votes:", err));
   };
 
   const handleEntityClick = (entity, type) => {
     dispatch({ type: "SET_SELECTED_ENTITY", payload: entity });
+    const base = import.meta.env.BASE_URL;
+    const file = type === "presidential"
+      ? config.presVotesFile
+      : config.parlVotesFile;
 
-    fetch(import.meta.env.BASE_URL + config.votesFile)
-      .then(res => res.json())
+    fetch(base + file)
+      .then(r => {
+        if (!r.ok) throw new Error(`Fetch failed for ${file}`);
+        return r.json();
+      })
       .then(data => {
-        if (type === "individual") {
-          if (config.isPresidentialElection) {
-            const candObj = data.candidates[entity.name];
-            if (!candObj) {
-              console.error("No candidate data for", entity.name);
-              return;
-            }
-            // Build details array from each question in candObj.votes
-            const detailsArr = Object.entries(candObj.votes).map(
-              ([qid, qobj]) => ({
-                id:       qid,
-                question: qobj.question,
-                vote:     qobj.vote,
-                comment:  qobj.comment,
-                source:   qobj.source
-              })
-            );
-            dispatch({
-              type: "SET_ENTITY_DETAILS",
-              payload: { candidate_meta: { party: candObj.party }, details: detailsArr }
-            });
-          } else {
-            // parliamentary: use precomputed "data.candidates.details"
-            dispatch({
-              type: "SET_ENTITY_DETAILS",
-              payload: data.candidates.details[entity.name] || {}
-            });
+        if (type === "presidential") {
+          const candObj = data.candidates[entity.name];
+          if (!candObj) {
+            console.error("No candidate data for", entity.name);
+            return;
           }
+          const detailsArr = Object.entries(candObj.votes).map(
+            ([qid, qobj]) => ({
+              id:       qid,
+              question: qobj.question,
+              vote:     qobj.vote,
+              comment:  qobj.comment,
+              source:   qobj.source
+            })
+          );
+          dispatch({
+            type: "SET_ENTITY_DETAILS",
+            payload: {
+              candidate_meta: { party: candObj.party },
+              details:        detailsArr
+            }
+          });
         } else if (type === "party") {
           dispatch({
             type: "SET_ENTITY_DETAILS",
             payload: {
-              party_meta: data.parties.meta[entity.party] || {},
+              party_meta: data.parties.meta[entity.party]   || {},
               details:    data.parties.details[entity.party] || []
             }
           });
+        } else {
+          // individual (parliamentary) candidate
+          dispatch({
+            type: "SET_ENTITY_DETAILS",
+            payload: data.candidates.details[entity.name] || {}
+          });
         }
       })
-      .catch(err => console.error("Error fetching combined votes:", err));
+      .catch(err => console.error("Error fetching votes:", err));
   };
+
+  useEffect(() => {
+    if (!state.comparisonResults || !selectedResultType) return;
+
+    let list = [];
+    let type = "";
+
+    if (selectedResultType === "party") {
+      list = state.comparisonResults.party_results;
+      type = "party";
+    } else if (selectedResultType === "parliamentaryCandidates") {
+      list = state.comparisonResults.individual_results;
+      type = "individual";
+    } else if (selectedResultType === "presidentialCandidates") {
+      list = state.comparisonResults.presidential_results;
+      type = "presidential";
+    }
+
+    if (list.length > 0) {
+      handleEntityClick(list[0], type);
+    }
+  }, [state.comparisonResults, selectedResultType]);
 
   const handleReset = () => {
     setElection(null);
@@ -327,7 +391,7 @@ useEffect(() => {
                 {!election ? (
                   <div className="election-selection-container">
                     <h2>Selecciona una elección</h2>
-                    <button onClick={() => setElection("chile_combinada_2025")}>
+                    <button onClick={() => setElection("chile_2025")}>
                       Chile: Parlamentaria + Presidencial (15.11.2025)
                     </button>
                     <button onClick={() => setElection("chile_diputados_2025")}>
@@ -377,7 +441,7 @@ useEffect(() => {
                             <span>Muy importante</span>
                           </div>
                         </div>
-                        <div class = "question-text-container">
+                        <div className = "question-text-container">
                           <h2>{state.questions[state.currentQuestionIndex].question}</h2>
                         </div>
                         <div >
@@ -395,7 +459,7 @@ useEffect(() => {
                                 backgroundColor:
                                   state.answers[state.currentQuestionIndex] === option ||
                                   state.hoveredOption === option
-                                    ? "black"
+                                    ? "#20292e"
                                     : "darkslategrey"
                               }}
                             >
@@ -429,93 +493,50 @@ useEffect(() => {
                       <>
                         <div id="recaptcha-container"></div>
                         <h2>Resultados</h2>
-                        <div className = "results-toggle-container">
-                          {!electionConfigs[election].isPresidentialElection && (
-                            <button className = "results-toggle-button"
-                              onClick={() =>
-                                dispatch({ type: "SET_SHOW_INDIVIDUAL_RESULTS", payload: false })
-                              }
-                              onMouseEnter={(e) => {
-                                e.target.style.backgroundColor = "black";
-                                e.target.style.color = "white";
-                              }}
-                              onMouseLeave={(e) => {
-                                e.target.style.backgroundColor = state.showIndividualResults
-                                  ? "darkslategrey"
-                                  : "black";
-                              }}
-                              style={{
-                                backgroundColor: state.showIndividualResults ? "darkslategrey" : "black",
-                                transition: "background-color 0.2s ease-in-out, color 0.2s ease-in-out",
-                              }}
-                            >
-                              Partidos políticos
-                            </button>
-                          )}
-                          {!config.isPresidentialElection && (
-                            <button className="results-toggle-button"
-                              onClick={() =>
-                                dispatch({ type: "SET_SHOW_INDIVIDUAL_RESULTS", payload: true })
-                              }
-                              onMouseEnter={(e) => {
-                                e.target.style.backgroundColor = "black";
-                                e.target.style.color = "white";
-                              }}
-                              onMouseLeave={(e) => {
-                                e.target.style.backgroundColor = state.showIndividualResults
-                                  ? "black"
-                                  : "darkslategrey";
-                              }}
-                              style={{
-                                backgroundColor: state.showIndividualResults ? "black" : "darkslategrey",
-                                transition: "background-color 0.2s ease-in-out, color 0.2s ease-in-out",
-                              }}
-                            >
-                              Candidatos
-                            </button>
-                          )}
-                        </div>
+                        {resultTypes.length > 1 && (
+                          <div className="results-toggle-container">
+                            {resultTypes.map(rt => (
+                              <button
+                                key={rt}
+                                className="option-button"
+                                onClick={() => setSelectedResultType(rt)}
+                                onMouseEnter={() => dispatch({ type: "SET_HOVERED_OPTION", payload: rt })}
+                                onMouseLeave={() => dispatch({ type: "SET_HOVERED_OPTION", payload: null })}
+                                style={{
+                                  backgroundColor:
+                                    selectedResultType === rt || state.hoveredOption === rt
+                                      ? "#20292e"
+                                      : "darkslategrey"
+                                }}
+                              >
+                                {rt === "party"                   && "Partidos políticos"}
+                                {rt === "parliamentaryCandidates" && "Candidatos parlamentarios"}
+                                {rt === "presidentialCandidates"  && "Candidatos presidenciales"}
+                              </button>
+                            ))}
+                          </div>
+                        )}
+
                         <div style={{ display: "flex", width: "100%" }}>
                           <div style={{ flex: 1 }}>
                             {state.comparisonResults && (
-                              <div style={{ marginTop: "20px", width: "100%" }}>
-                                {state.showIndividualResults ? (
-                                  <ul className = "parties-and-candidates-list">
-                                    <div className = "candidate-party-similarity-header">
-                                      <span>Candidato</span>
-                                      <span>
-                                        Similaridad
-                                      </span>
-                                    </div>
-                                    {state.comparisonResults.individual_results.map((result, index) => (
-                                      <li className = "candidate-party-similarity-item"
-                                        key={index}
-                                        onClick={() => handleEntityClick(result, "individual")}
-                                      >
-                                        <span>{result.names?.join(", ") || result.name}</span>
-                                        <span className = "result-score">
-                                          {result.similarity_score}%
-                                        </span>
-                                      </li>
-                                    ))}
-                                  </ul>
-                                ) : (
+                              <>
+                                {selectedResultType === "party" && (
                                   <>
-                                    <div className = "candidate-party-similarity-header">
+                                    <div className="candidate-party-similarity-header">
                                       <span>Partido</span>
                                       <span>Similaridad</span>
                                     </div>
                                     <ul style={{ listStyleType: "none", padding: 0, textAlign: "left", width: "100%" }}>
                                       {state.comparisonResults.party_results.map((partyResult, index) => (
-                                        <li className = "candidate-party-similarity-item"
+                                        <li
+                                          className="candidate-party-similarity-item"
                                           key={index}
                                           onClick={() => handleEntityClick(partyResult, "party")}
                                         >
-                                          <div className = "candidate-party-similarity-item">
-                                            <span>
-                                              <strong>{partyResult.party}</strong>
-                                            </span>
-                                            <span className = "result-score">
+                                          <div className="candidate-party-similarity-item">
+                                            <span><strong>{partyResult.party}</strong></span>
+                                            <span className="result-score">
                                               {partyResult.average_similarity_score}%
                                             </span>
                                           </div>
@@ -524,7 +545,53 @@ useEffect(() => {
                                     </ul>
                                   </>
                                 )}
-                              </div>
+                      
+                                {selectedResultType === "parliamentaryCandidates" && (
+                                  <>
+                                    <div className="candidate-party-similarity-header">
+                                      <span>Candidatos parlamentarios</span>
+                                      <span>Similaridad</span>
+                                    </div>
+                                    <ul className="parties-and-candidates-list">
+                                      {state.comparisonResults.individual_results.map((result, index) => (
+                                        <li
+                                          className="candidate-party-similarity-item"
+                                          key={index}
+                                          onClick={() => handleEntityClick(result, "individual")}
+                                        >
+                                          <span>{result.names?.join(", ") || result.name}</span>
+                                          <span className="result-score">
+                                            {result.similarity_score}%
+                                          </span>
+                                        </li>
+                                      ))}
+                                    </ul>
+                                  </>
+                                )}
+                      
+                                {selectedResultType === "presidentialCandidates" && (
+                                  <>
+                                    <div className="candidate-party-similarity-header">
+                                      <span>Candidatos presidenciales</span>
+                                      <span>Similaridad</span>
+                                    </div>
+                                    <ul className="parties-and-candidates-list">
+                                      {state.comparisonResults.presidential_results.map((result, index) => (
+                                        <li
+                                          className="candidate-party-similarity-item"
+                                          key={index}
+                                          onClick={() => handleEntityClick(result, "presidential")}
+                                        >
+                                          <span>{result.name}</span>
+                                          <span className="result-score">
+                                            {result.similarity_score}%
+                                          </span>
+                                        </li>
+                                      ))}
+                                    </ul>
+                                  </>
+                                )}
+                              </>
                             )}
                           </div>
                           <div className = "entity-details-container">
@@ -540,8 +607,6 @@ useEffect(() => {
                                       {!config.isPresidentialElection && (
                                         <>
                                           <strong>Edad:</strong> {state.entityDetails.candidate_meta.age}
-                                          <br />
-                                          <strong>Sentencia penal:</strong> {state.entityDetails.candidate_meta.sentencia_penal}
                                           <br />
                                           <strong>Asistencia:</strong> {state.entityDetails.candidate_meta.attendance || "N/A"}
                                           <br />
@@ -561,8 +626,6 @@ useEffect(() => {
                                       <strong>Edad promedio:</strong> {state.entityDetails.party_meta.average_age}
                                       <br />
                                       <strong>Asistencia promedio:</strong> {state.entityDetails.party_meta.average_attendance_percentage || "N/A"}%
-                                      <br />
-                                      <strong>Sentencia penal:</strong> {state.entityDetails.party_meta.sentencia_penal.yes}/{state.entityDetails.party_meta.sentencia_penal.total} congresistas
                                       <br />
                                     </p>
                                     <br />
@@ -684,7 +747,7 @@ useEffect(() => {
                             onClick={() =>
                               dispatch({ type: "SET_CURRENT_QUESTION_INDEX", payload: state.questions.length - 1 })
                             }
-                            onMouseEnter={(e) => (e.target.style.backgroundColor = "black")}
+                            onMouseEnter={(e) => (e.target.style.backgroundColor = "#20292e")}
                             onMouseLeave={(e) => (e.target.style.backgroundColor = "darkslategrey")}
                             style={{
                               backgroundColor: "darkslategrey",

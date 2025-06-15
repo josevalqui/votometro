@@ -1,9 +1,10 @@
 // elections/peru_parl_2026.js
 export default {
-  name: 'peru',
-  questionsFile: 'combined_questions_peru_2026.json',   // ← just the filename
-  votesFile:     'combined_votes_peru_2026.json',
+  name: "peru",
+  parlQuestionsFile: "combined_questions_peru_2026.json",  // ← parliamentary questions
+  parlVotesFile:     "combined_votes_peru_2026.json",      // ← parliamentary votes
   processCandidateVote: v => v,
   showLawInfo: true,
-  isPresidentialElection: false
+  questionTypes: ["parliamentary"],
+  resultTypes:   ["party", "parliamentaryCandidates"]
 }

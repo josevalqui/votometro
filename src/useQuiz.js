@@ -3,12 +3,14 @@ import { useReducer, useMemo, useEffect } from "react";
 import peruConfig from "./elections/peru_parl_2026";
 import chileConfig from "./elections/chile_diputados_2025";
 import chilePresidencial2025 from "./elections/chile_presidencial_2025";
+import chile2025     from "./elections/chile_2025";  // ← PASTE HERE
 
 // Map election types to their configuration objects.
 const electionConfigs = {
   peru_parl_2026: peruConfig,
   chile_diputados_2025: chileConfig,
-  chile_presidencial_2025: chilePresidencial2025, 
+  chile_presidencial_2025: chilePresidencial2025,
+  chile_2025: chile2025,
 };
 
 const initialState = {
@@ -69,53 +71,41 @@ export function useQuiz(election) {
 
   useEffect(() => {
     if (!election) return;
+    // load parliamentary questions if requested
+    // inside useEffect(…) in useQuiz.js, replace the old fetches with:
+    const loadParlQs = config.questionTypes.includes("parliamentary")
+      ? fetch(import.meta.env.BASE_URL + config.parlQuestionsFile).then(r => r.json())
+      : Promise.resolve([]);
 
-    if (config.isPresidentialElection) {
-      // Presidential: derive questions from the first candidate’s votes object
-      fetch(import.meta.env.BASE_URL + config.votesFile)
-        .then(res => res.json())
-        .then(data => {
-          const candidatesArr = Object.values(data.candidates);
-          if (candidatesArr.length === 0) {
-            console.error("No candidates in votesFile for presidential election");
-            return;
-          }
-          const firstVotes = candidatesArr[0].votes;
-          const questionsArr = Object.entries(firstVotes).map(
-            ([qid, qobj]) => ({
-              id:        qid,
-              question:  qobj.question,
+    const loadPresQs = config.questionTypes.includes("presidential")
+      ? fetch(import.meta.env.BASE_URL + config.presVotesFile)
+          .then(r => r.json())
+          .then(data => {
+            // build questions array from the first candidate’s votes
+            const sample = Object.values(data.candidates)[0].votes;
+            return Object.entries(sample).map(([id, q]) => ({
+              id,
+              question: q.question,
               options: [
                 "Estoy de acuerdo",
                 "No tengo una opinión sobre este tema",
                 "No estoy de acuerdo"
               ],
-              polarity: ""  // no polarity info for presidential
-            })
-          );
-          dispatch({ type: "SET_QUESTIONS", payload: questionsArr });
-        })
-        .catch(err =>
-          console.error("Error fetching votesFile for presidential:", err)
-        );
-    } else {
-      // Non-presidential (diputados, etc.): fetch a separate questionsFile
-      fetch(import.meta.env.BASE_URL + config.questionsFile)
-        .then(res => res.json())
-        .then(data => {
-          if (Array.isArray(data) && data.length > 0) {
-            dispatch({ type: "SET_QUESTIONS", payload: data });
-          } else {
-            console.error("Invalid combined questions data:", data);
-          }
-        })
-        .catch(err => console.error("Error fetching questionsFile:", err));
-    }
+              polarity: ""
+            }));
+          })
+      : Promise.resolve([]);
+
+    Promise.all([loadParlQs, loadPresQs])
+      .then(([parlQs, presQs]) =>
+        dispatch({ type: "SET_QUESTIONS", payload: [...parlQs, ...presQs] })
+      )
+      .catch(err => console.error("Error loading questions:", err));
   }, [
     election,
-    config.isPresidentialElection,
     config.questionsFile,
-    config.votesFile
+    config.votesFile,
+    config.questionTypes
   ]);
 
   return { state, dispatch, config, electionConfigs };

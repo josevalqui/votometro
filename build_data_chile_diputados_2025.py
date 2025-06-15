@@ -49,7 +49,7 @@ def generate_combined_questions_json():
             "pdf_link": f"src/assets/sesiones_chile_pdfs/{filename}.pdf",
             "date": clean_value(row.get("Date", "N/A"))
         })
-    with open(os.path.join(OUTPUT_DIR, "combined_questions_chile_2025.json"), "w", encoding="utf-8") as f:
+    with open(os.path.join(OUTPUT_DIR, "combined_questions_chile_parl_2025.json"), "w", encoding="utf-8") as f:
         json.dump(combined_questions, f, ensure_ascii=False, indent=2)
 
 # Helper to count candidates based on attendance records.
@@ -254,7 +254,7 @@ def generate_combined_votes_json():
             "meta": party_meta
         }
     }
-    with open(os.path.join(OUTPUT_DIR, "combined_votes_chile_2025.json"), "w", encoding="utf-8") as f:
+    with open(os.path.join(OUTPUT_DIR, "combined_votes_chile_parl_2025.json"), "w", encoding="utf-8") as f:
         json.dump(combined_output, f, ensure_ascii=False, indent=2)
 
 if __name__ == "__main__":
