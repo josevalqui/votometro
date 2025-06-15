@@ -5,6 +5,7 @@ import { collection, addDoc } from "firebase/firestore";
 import { HashRouter as Router, Routes, Route, Navigate, Link } from "react-router-dom";
 import Methodology from "./metodologia";
 import Contacto from "./contacto";
+import './App.css';
 
 export default function App() {
   const [election, setElection] = useState(null);
@@ -277,39 +278,25 @@ useEffect(() => {
     <Router>   
     <>
         {/* Global Menu Button */}
-        <button 
+        <button className="menu-button"
           onClick={() => setShowMenu(!showMenu)} 
-          style={{
-            position: 'absolute', 
-            top: '20px', 
-            right: '20px', 
-            zIndex: 1000, 
-            padding: '5px 10px', 
-            fontSize: '18px', 
-            cursor: 'pointer'
-          }}>
+          >
           Menu
         </button> 
 
         {showMenu && (
-          <div 
-            style={{
-              position: 'absolute', 
-              top: '60px', 
-              right: '20px', 
-              backgroundColor: 'black', 
-              border: '1px solid #ccc', 
-              borderRadius: '5px', 
-              boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
-              zIndex: 1000,
-            }}>
+          <div className="menu-panel">
             <ul style={{ listStyle: 'none', margin: 0, padding: '10px' }}>
-              <li 
-                style={{ marginBottom: '10px', cursor: 'pointer' }}
-                onClick={() => { setShowMenu(false); window.location.href = `${import.meta.env.BASE_URL}`; }}>
-                Votómetro
+              <li className="menu-list-item">
+                <Link
+                  to="/"
+                  onClick={() => setShowMenu(false)}
+                  style={{ color: "inherit", textDecoration: "none" }}
+                >
+                  Encuesta
+                </Link>
               </li>
-              <li style={{ marginBottom: "10px", cursor: "pointer" }}>
+              <li className="menu-list-item">
                 <Link
                   to="/metodologia"
                   onClick={() => setShowMenu(false)}
@@ -318,7 +305,7 @@ useEffect(() => {
                   Metodología
                 </Link>
               </li>
-              <li style={{ marginBottom: "10px", cursor: "pointer" }}>
+              <li className="menu-list-item">
                 <Link
                   to="/contacto"
                   onClick={() => setShowMenu(false)}
@@ -335,29 +322,14 @@ useEffect(() => {
           <Route 
             path="/" 
             element={
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  justifyContent: "flex-start",
-                  minHeight: "90vh",
-                  width: "100vw",
-                  overflowY: "auto",
-                  padding: "20px",
-                }}
+              <div className="main-container"
               >
                 {!election ? (
-                  <div
-                    style={{
-                      textAlign: "center",
-                      marginTop: "50px",
-                      display: "flex",
-                      flexDirection: "column",
-                      gap: "10px",
-                    }}
-                  >
+                  <div className="election-selection-container">
                     <h2>Selecciona una elección</h2>
+                    <button onClick={() => setElection("chile_combinada_2025")}>
+                      Chile: Parlamentaria + Presidencial (15.11.2025)
+                    </button>
                     <button onClick={() => setElection("chile_diputados_2025")}>
                       Chile: Elección parlamentaria (15.11.2025)
                     </button>
@@ -369,28 +341,9 @@ useEffect(() => {
                     </button>
                   </div>
                 ) : (
-                  <div
-                    style={{
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "center",
-                      textAlign: "center",
-                      maxWidth: "1100px",
-                    }}
-                  >
+                  <div className = "election-content-area">
                     {election && (
-                      <button
-                        onClick={handleReset}
-                        style={{
-                          position: "absolute",
-                          top: "20px",
-                          left: "20px",
-                          zIndex: 1000,
-                          padding: "5px 10px",
-                          fontSize: "18px",
-                          cursor: "pointer",
-                        }}
-                      >
+                      <button onClick={handleReset} className = "reset-button">
                         Reiniciar
                       </button>
                     )}
@@ -398,16 +351,16 @@ useEffect(() => {
                       <h2>Cargando...</h2>
                     ) : state.currentQuestionIndex < state.questions.length ? (
                       <>
-                        <div style={{ marginBottom: "10px" }}>
+                        <div>
                           <h3>
                             {state.currentQuestionIndex + 1} / {state.questions.length}
                           </h3>
                         </div>
-                        <div style={{ marginBottom: "20px" }}>
+                        <div>
                           <label>Qué tan importante te parece este tema?</label>
                           <br />
-                          <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                            <span style={{ fontSize: "14px" }}>Poco importante</span>
+                          <div className = "importance-slider-container">
+                            <span>Poco importante</span>
                             <input
                               type="range"
                               min="1"
@@ -420,17 +373,16 @@ useEffect(() => {
                                   weight: Number(e.target.value),
                                 })
                               }
-                              style={{ flexGrow: 1.5 }}
                             />
-                            <span style={{ fontSize: "14px" }}>Muy importante</span>
+                            <span>Muy importante</span>
                           </div>
                         </div>
-                        <div style={{ minHeight: "7em", display: "flex", alignItems: "center" }}>
+                        <div class = "question-text-container">
                           <h2>{state.questions[state.currentQuestionIndex].question}</h2>
                         </div>
-                        <div style={{ width: "400px", maxWidth: "100%" }}>
+                        <div >
                           {state.questions[state.currentQuestionIndex].options.map((option, index) => (
-                            <button
+                            <button className = "option-button"
                               key={index}
                               onClick={() => handleAnswerClick(option)}
                               onMouseEnter={() =>
@@ -440,41 +392,24 @@ useEffect(() => {
                                 dispatch({ type: "SET_HOVERED_OPTION", payload: null })
                               }
                               style={{
-                                margin: "10px",
-                                padding: "10px 40px",
-                                fontSize: "16px",
-                                cursor: "pointer",
-                                display: "block",
-                                width: "100%",
                                 backgroundColor:
                                   state.answers[state.currentQuestionIndex] === option ||
                                   state.hoveredOption === option
                                     ? "black"
-                                    : "darkslategrey",
-                                color: "white",
-                                border: "1px solid #ccc",
-                                borderRadius: "5px",
+                                    : "darkslategrey"
                               }}
                             >
                               {option}
                             </button>
                           ))}
                         </div>
-                        <div style={{ marginTop: "20px" }}>
-                          <button
-                            onClick={handleGoBack}
-                            disabled={state.currentQuestionIndex === 0}
-                            style={{
-                              marginRight: "10px",
-                              padding: "10px 20px",
-                              fontSize: "16px",
-                              cursor: state.currentQuestionIndex === 0 ? "not-allowed" : "pointer",
-                              opacity: state.currentQuestionIndex === 0 ? 0.5 : 1,
-                            }}
+                        <div>
+                          <button className = "back-and-skip-buttons"
+                          onClick={handleGoBack} disabled={state.currentQuestionIndex === 0}
                           >
                             Volver
                           </button>
-                          <button
+                          <button className = "back-and-skip-buttons"
                             onClick={() => {
                               if (state.currentQuestionIndex === state.questions.length - 1) {
                                 handleEndQuiz();
@@ -482,8 +417,8 @@ useEffect(() => {
                                 handleSkip();
                               }
                             }}
-                            style={{ padding: "10px 20px", fontSize: "16px", cursor: "pointer" }}
-                          >
+
+                            >
                             {state.currentQuestionIndex === state.questions.length - 1
                               ? "Terminar encuesta"
                               : "Saltar"}
@@ -494,17 +429,9 @@ useEffect(() => {
                       <>
                         <div id="recaptcha-container"></div>
                         <h2>Resultados</h2>
-                        <div
-                          style={{
-                            marginTop: "20px",
-                            display: "flex",
-                            gap: "10px",
-                            justifyContent: "flex-start",
-                            width: "100%",
-                          }}
-                        >
+                        <div className = "results-toggle-container">
                           {!electionConfigs[election].isPresidentialElection && (
-                            <button
+                            <button className = "results-toggle-button"
                               onClick={() =>
                                 dispatch({ type: "SET_SHOW_INDIVIDUAL_RESULTS", payload: false })
                               }
@@ -518,13 +445,7 @@ useEffect(() => {
                                   : "black";
                               }}
                               style={{
-                                padding: "10px 20px",
-                                fontSize: "16px",
-                                cursor: "pointer",
                                 backgroundColor: state.showIndividualResults ? "darkslategrey" : "black",
-                                color: "white",
-                                border: "1px solid #ccc",
-                                borderRadius: "5px",
                                 transition: "background-color 0.2s ease-in-out, color 0.2s ease-in-out",
                               }}
                             >
@@ -532,7 +453,7 @@ useEffect(() => {
                             </button>
                           )}
                           {!config.isPresidentialElection && (
-                            <button
+                            <button className="results-toggle-button"
                               onClick={() =>
                                 dispatch({ type: "SET_SHOW_INDIVIDUAL_RESULTS", payload: true })
                               }
@@ -546,13 +467,7 @@ useEffect(() => {
                                   : "darkslategrey";
                               }}
                               style={{
-                                padding: "10px 20px",
-                                fontSize: "16px",
-                                cursor: "pointer",
                                 backgroundColor: state.showIndividualResults ? "black" : "darkslategrey",
-                                color: "white",
-                                border: "1px solid #ccc",
-                                borderRadius: "5px",
                                 transition: "background-color 0.2s ease-in-out, color 0.2s ease-in-out",
                               }}
                             >
@@ -565,49 +480,20 @@ useEffect(() => {
                             {state.comparisonResults && (
                               <div style={{ marginTop: "20px", width: "100%" }}>
                                 {state.showIndividualResults ? (
-                                  <ul
-                                    style={{
-                                      listStyleType: "none",
-                                      padding: 0,
-                                      textAlign: "left",
-                                      maxHeight: "60vh",
-                                      overflowY: "auto",
-                                    }}
-                                  >
-                                    <div
-                                      style={{
-                                        display: "flex",
-                                        justifyContent: "space-between",
-                                        fontWeight: "bold",
-                                        paddingBottom: "5px",
-                                        borderBottom: "1px solid #ccc",
-                                        paddingRight: "10px",
-                                      }}
-                                    >
+                                  <ul className = "parties-and-candidates-list">
+                                    <div className = "candidate-party-similarity-header">
                                       <span>Candidato</span>
-                                      <span style={{ marginLeft: "auto", paddingRight: "10px" }}>
+                                      <span>
                                         Similaridad
                                       </span>
                                     </div>
                                     {state.comparisonResults.individual_results.map((result, index) => (
-                                      <li
+                                      <li className = "candidate-party-similarity-item"
                                         key={index}
-                                        style={{
-                                          cursor: "pointer",
-                                          display: "flex",
-                                          justifyContent: "space-between",
-                                          alignItems: "center",
-                                        }}
                                         onClick={() => handleEntityClick(result, "individual")}
                                       >
                                         <span>{result.names?.join(", ") || result.name}</span>
-                                        <span
-                                          style={{
-                                            marginLeft: "auto",
-                                            fontWeight: "bold",
-                                            paddingRight: "15px",
-                                          }}
-                                        >
+                                        <span className = "result-score">
                                           {result.similarity_score}%
                                         </span>
                                       </li>
@@ -615,50 +501,21 @@ useEffect(() => {
                                   </ul>
                                 ) : (
                                   <>
-                                    <div
-                                      style={{
-                                        display: "flex",
-                                        justifyContent: "space-between",
-                                        fontWeight: "bold",
-                                        paddingBottom: "5px",
-                                        borderBottom: "1px solid #ccc",
-                                        paddingRight: "10px",
-                                      }}
-                                    >
+                                    <div className = "candidate-party-similarity-header">
                                       <span>Partido</span>
-                                      <span style={{ marginLeft: "auto", paddingRight: "10px" }}>
-                                        Similaridad
-                                      </span>
+                                      <span>Similaridad</span>
                                     </div>
                                     <ul style={{ listStyleType: "none", padding: 0, textAlign: "left", width: "100%" }}>
                                       {state.comparisonResults.party_results.map((partyResult, index) => (
-                                        <li
+                                        <li className = "candidate-party-similarity-item"
                                           key={index}
-                                          style={{
-                                            cursor: "pointer",
-                                            display: "flex",
-                                            flexDirection: "column",
-                                            alignItems: "flex-start",
-                                            padding: "5px 0",
-                                          }}
                                           onClick={() => handleEntityClick(partyResult, "party")}
                                         >
-                                          <div
-                                            style={{
-                                              width: "100%",
-                                              display: "flex",
-                                              justifyContent: "space-between",
-                                            }}
-                                          >
+                                          <div className = "candidate-party-similarity-item">
                                             <span>
                                               <strong>{partyResult.party}</strong>
                                             </span>
-                                            <span
-                                              style={{
-                                                fontWeight: "bold",
-                                                paddingRight: "15px",
-                                              }}
-                                            >
+                                            <span className = "result-score">
                                               {partyResult.average_similarity_score}%
                                             </span>
                                           </div>
@@ -670,19 +527,10 @@ useEffect(() => {
                               </div>
                             )}
                           </div>
-                          <div
-                            style={{
-                              width: "60%",
-                              padding: "0px 0px 0px 15px",
-                              borderLeft: "1px solid #ccc",
-                              overflowY: "auto",
-                              maxHeight: "60vh",
-                              textAlign: "left",
-                            }}
-                          >
+                          <div className = "entity-details-container">
                             {state.selectedEntity ? (
                               <>
-                                <h2 style={{ margin: "2px 0" }}>
+                                <h2 style={{ margin: "8px 0" }}>
                                   {state.selectedEntity.name ? state.selectedEntity.name : state.selectedEntity.party}
                                 </h2>
                                 {state.entityDetails.candidate_meta && (
@@ -831,21 +679,15 @@ useEffect(() => {
                             )}
                           </div>
                         </div>
-                        <div style={{ marginTop: "20px", display: "flex", gap: "10px" }}>
-                          <button
+                        <div>
+                          <button className = "back-to-survey-button"
                             onClick={() =>
                               dispatch({ type: "SET_CURRENT_QUESTION_INDEX", payload: state.questions.length - 1 })
                             }
                             onMouseEnter={(e) => (e.target.style.backgroundColor = "black")}
                             onMouseLeave={(e) => (e.target.style.backgroundColor = "darkslategrey")}
                             style={{
-                              padding: "10px 20px",
-                              fontSize: "16px",
-                              cursor: "pointer",
                               backgroundColor: "darkslategrey",
-                              color: "white",
-                              border: "1px solid #ccc",
-                              borderRadius: "5px",
                               transition: "background-color 0.2s ease-in-out",
                             }}
                           >
