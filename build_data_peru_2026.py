@@ -95,6 +95,7 @@ def party_rows_count(ages):
 def generate_combined_votes_json():
     if not os.path.exists(EXCEL_FILE) or not os.path.exists(COMPARISON_CSV):
         return
+    df_excel = pd.read_excel(EXCEL_FILE).head(11)
     # Process CSV votes (similar to your generate_processed_votes_json)
     df_votes = pd.read_csv(COMPARISON_CSV)
     processed_candidates = {}
@@ -110,9 +111,20 @@ def generate_combined_votes_json():
             "sentencia_penal": clean_value(row.get("Sentencia penal")),
             "votes": {}
         }
-        for col in df_votes.columns:
-            if col not in exclude_cols:
-                candidate_info["votes"][col] = map_csv_answer_numeric(row[col])
+        # ─── NEW: iterate over each PDF name (q.id) rather than all CSV columns ───
+        for _, q_row in df_excel.iterrows():
+            pdf_name = str(q_row["Filename"]).strip()   # e.g. "S1", "S2", etc.
+
+            # find exactly the CSV column that begins with "S1_"
+            matching_cols = [c for c in df_votes.columns if isinstance(c, str) and c.startswith(f"{pdf_name}_")]
+            if matching_cols:
+                raw = row[matching_cols[0]]
+                candidate_info["votes"][pdf_name] = map_csv_answer_numeric(raw)
+            else:
+                # no vote recorded → treat as None
+                candidate_info["votes"][pdf_name] = None
+        # ────────────────────────────────────────────────────────────────────────────
+
         processed_candidates[candidate_name] = candidate_info
 
         party = candidate_info["party"]
@@ -145,8 +157,6 @@ def generate_combined_votes_json():
             "sentencia_penal_counts": data["sentencia_penal"],
             "total_congresistas": len(data["ages"])
         }
-
-    df_excel = pd.read_excel(EXCEL_FILE).head(11)
     candidate_details = {}
     for _, row in df_votes.iterrows():
         candidate_name = str(row["Name Comercio"]).strip()

@@ -1,0 +1,288 @@
+{
+  "candidates": {
+    "Evelyn Matthei": {
+      "party": "Chile Vamos",
+      "votes": {
+        "Aborto": {
+          "question": "El aborto debería estar despenalizado",
+          "vote": "0",
+          "comment": "A favor de los límites actuales, pero no de la despenalización hasta las 14 semanas",
+          "source": "https://www.t13.cl/noticia/politica/eso-no-derecho-reproductivo-evelyn-matthei-descarta-despenalizar-aborto-libre-s-5-4-2025"
+        },
+        "Matrimonio": {
+          "question": "Está bien que esté permitido el matrimonio homosexual",
+          "vote": "1",
+          "comment": "A favor",
+          "source": "https://www.13.cl/programas/juego-textual/momentos/mi-postura-ha-cambiado-evelyn-matthei-sobre-el-matrimonio"
+        },
+        "Impuestos progresivos": {
+          "question": "Debería haber un sistema de impuestos progresivos, donde los más ricos paguen un mayor porcentaje",
+          "vote": "0",
+          "comment": "Aims to lower the corporate tax rate to 18%",
+          "source": "https://www.df.cl/economia-y-politica/politica/evelyn-matthei-afirma-que-la-tasa-corporativa-no-debiera-exceder-el-18-e"
+        },
+        "Pensiones": {
+          "question": "Las contribuciones de pensiones deberían ir a cuentas individuales y no a un fondo común (PAYGO)",
+          "vote": "1",
+          "comment": "Favours keeping individual accounts; supports directing the extra 6 % contribution to each worker, not to a PAYGO fund",
+          "source": "https://www.ex-ante.cl/evelyn-matthei-revela-sus-reparos-a-reforma-de-pensiones-y-apoya-que-los-6-puntos-adicionales-vayan-a-cuentas-individuales/"
+        },
+        "Cambio climático": {
+          "question": "El cambio climático es uno de los problemas centrales de los cuales se debería encargar el gobierno.",
+          "vote": "1",
+          "comment": "Menciona el cambio climático como uno de los ejes del gobierno.",
+          "source": "https://www.theclinic.cl/2023/10/01/el-reposicionamiento-de-evelyn-matthei-como-candiadata-presidencial-y-su-programa-de-gobierno/"
+        },
+        "Autonomía Mapuche": {
+          "question": "El pueblo Mapuche debería tener más autonomía y tierras.",
+          "vote": "0",
+          "comment": "Probablemente en contra, porque comentó que darles más tierras a los Mapuches no necesariamente traería paz, y que hay que reconocer que hubo terorismo.",
+          "source": "https://www.latercera.com/politica/noticia/matthei-por-acuerdo-de-comision-para-la-paz-es-imposible-el-entendimiento-si-no-se-reconoce-que-ha-habido-terrorismo/"
+        },
+        "Migración irregular": {
+          "question": "Debería ser más fácil regularizarse para los migrantes irregulares.",
+          "vote": "0",
+          "comment": "Plan para que los migrantes irregulares no reciban beneficios sociales",
+          "source": "https://www.meganoticias.cl/nacional/480826-matthei-migrantes-irregulares-sin-beneficios-sociales-proyecto-registro-de-hogares-bonos-brk-01-04-2025.html"
+        },
+        "Sueldo mínimo": {
+          "question": "Se debería aumentar el sueldo mínimo.",
+          "vote": "0.5",
+          "comment": "No en contra, pero dice que \"hay que ir negociándolo cada vez\".",
+          "source": "https://www.emol.com/noticias/Nacional/2025/05/01/1165107/matthei-jara-por-salario-minimo.html"
+        },
+        "Litio": {
+          "question": "La extracción del litio debería permanecer bajo el control del estado.",
+          "vote": "0",
+          "comment": "En contra de Codelco y SQM",
+          "source": "https://www.mining.com/web/sqm-codelco-in-crosshairs-of-chile-presidential-frontrunner/"
+        },
+        "Constitución": {
+          "question": "Chile debería tener una nueva constitución.",
+          "vote": "0",
+          "comment": "Lo llama una \"discusión cerrada\".",
+          "source": "https://www.eldinamo.cl/politica/2025/03/31/discusion-cerrada-matthei-y-el-gobierno-se-alinean-en-rechazo-a-una-nueva-constitucion-sugerida-por-el-pc/"
+        },
+        "Welfare state": {
+          "question": "El Estado Chileno tiene la responsabilidad de proveer servicios básicos gratuitos",
+          "vote": "nan",
+          "comment": null,
+          "source": null
+        }
+      }
+    },
+    "José Antonio Kast": {
+      "party": "Partido Republicano",
+      "votes": {
+        "Aborto": {
+          "question": "El aborto debería estar despenalizado",
+          "vote": "0",
+          "comment": "Completamente en contra de más liberalización",
+          "source": "https://english.elpais.com/international/2023-05-14/jose-antonio-kast-the-far-right-catholic-who-seduces-chile.html"
+        },
+        "Matrimonio": {
+          "question": "Está bien que esté permitido el matrimonio homosexual",
+          "vote": "0",
+          "comment": "En contra de la homosexualidad.",
+          "source": "https://english.elpais.com/international/2023-05-14/jose-antonio-kast-the-far-right-catholic-who-seduces-chile.html?"
+        },
+        "Impuestos progresivos": {
+          "question": "Debería haber un sistema de impuestos progresivos, donde los más ricos paguen un mayor porcentaje",
+          "vote": "0",
+          "comment": "Le pidió a los senadores que voten en contra de la reforma tributaria",
+          "source": "https://www.latercera.com/politica/noticia/kast-llama-a-senadores-de-chile-vamos-a-no-concurrir-con-sus-votos-en-caso-de-que-el-gobierno-insista-con-la-reforma-tributaria/NHPUMABIC5GTHBOB6S33SQTRKQ/"
+        },
+        "Pensiones": {
+          "question": "Las contribuciones de pensiones deberían ir a cuentas individuales y no a un fondo común (PAYGO)",
+          "vote": "1",
+          "comment": "A favor de cuentas individuales",
+          "source": "https://www.emol.com/noticias/Nacional/2024/12/10/1150942/kast-por-pensiones-udimatthei.html"
+        },
+        "Cambio climático": {
+          "question": "El cambio climático es uno de los problemas centrales de los cuales se debería encargar el gobierno.",
+          "vote": "0.5",
+          "comment": "No es una prioridad, pero no niega que haya cambio climático",
+          "source": "https://www.ex-ante.cl/la-apuesta-de-kast-por-la-agenda-medioambiental-y-el-cambio-climatico-tras-las-criticas-de-primera-vuelta/"
+        },
+        "Autonomía Mapuche": {
+          "question": "El pueblo Mapuche debería tener más autonomía y tierras.",
+          "vote": "0",
+          "comment": "En contra del acuerdo de la comisión de la Paz y el Entendimiento",
+          "source": "https://www.theclinic.cl/2025/05/02/el-conflicto-que-se-armo-en-la-derecha-por-el-acuerdo-de-la-comision-para-la-paz-y-el-entendimiento/"
+        },
+        "Migración irregular": {
+          "question": "Debería ser más fácil regularizarse para los migrantes irregulares.",
+          "vote": "0",
+          "comment": "Propuso armar una pared en la frontera norte",
+          "source": "https://www.eldinamo.cl/politica/2024/05/02/jose-antonio-kast-propone-construir-muro-frontera-bolivia-zanja-migracion-irregular/"
+        },
+        "Sueldo mínimo": {
+          "question": "Se debería aumentar el sueldo mínimo.",
+          "vote": "0",
+          "comment": "Su bancada votó en contra de subir el sueldo mínimo a 500 000 CLP",
+          "source": "https://www.elmostrador.cl/mercados/2023/05/10/bancada-de-republicanos-anuncia-que-votara-en-contra-de-proyecto-de-aumento-del-salario-minimo/"
+        },
+        "Litio": {
+          "question": "La extracción del litio debería permanecer bajo el control del estado.",
+          "vote": "0",
+          "comment": "En contra de Codelco y SQM",
+          "source": "https://www.latercera.com/pulso/noticia/presidenciales-y-sqm-codelco-respaldo-casi-total-en-el-oficialismo-y-revision-de-matthei-kast-y-kaiser/"
+        },
+        "Constitución": {
+          "question": "Chile debería tener una nueva constitución.",
+          "vote": "0",
+          "comment": "Contra una nueva constitución",
+          "source": "https://www.latercera.com/la-tercera-domingo/noticia/jose-antonio-kast-no-necesitamos-una-nueva-constitucion/WZEZITGFNND4JNMDAJY4IINXE4/"
+        },
+        "Welfare state": {
+          "question": "El Estado Chileno tiene la responsabilidad de proveer servicios básicos gratuitos",
+          "vote": "nan",
+          "comment": null,
+          "source": null
+        }
+      }
+    },
+    "Johannes Kaiser": {
+      "party": "Partido Nacional Libertario",
+      "votes": {
+        "Aborto": {
+          "question": "El aborto debería estar despenalizado",
+          "vote": "0",
+          "comment": "Completamente en contra; se retiró de la Cuenta Pública cuando Boric anunció un proyecto de aborto libre",
+          "source": "https://www.latercera.com/politica/noticia/kaiser-abandona-cuenta-publica-tras-anuncio-de-boric-por-ley-de-aborto-habla-de-unidad-pero-miente-nos-insulta/"
+        },
+        "Matrimonio": {
+          "question": "Está bien que esté permitido el matrimonio homosexual",
+          "vote": "0",
+          "comment": "Rechaza el matrimonio igualitario y propone derogarlo",
+          "source": "https://www.laizquierdadiario.cl/Detras-de-Milei-Kaiser-plantea-eliminar-el-Ministerio-de-la-Mujer-y-el-matrimonio-igualitario"
+        },
+        "Impuestos progresivos": {
+          "question": "Debería haber un sistema de impuestos progresivos, donde los más ricos paguen un mayor porcentaje",
+          "vote": "0",
+          "comment": "Propone bajar impuestos corporativos y eliminar contribuciones",
+          "source": "https://johanneskaiser.cl/2025/05/15/johannes-kaiser-propone-plan-historico-para-superar-deficit-habitacional-un-millon-de-subsidios-en-los-primeros-90-dias-de-gobierno/"
+        },
+        "Pensiones": {
+          "question": "Las contribuciones de pensiones deberían ir a cuentas individuales y no a un fondo común (PAYGO)",
+          "vote": "1",
+          "comment": "“El 6 % debe ir completo a cuentas individuales; lo otro es robo”",
+          "source": "https://www.latercera.com/politica/noticia/johannes-kaiser-confirmo-que-no-participara-en-primarias-con-chile-vamos/OJ75O4HAFVFE7KIIGDJ7P654JQ/"
+        },
+        "Cambio climático": {
+          "question": "El cambio climático es uno de los problemas centrales de los cuales se debería encargar el gobierno.",
+          "vote": "0",
+          "comment": "Califica el cambio climático como “un negocio” y rechaza enfoque estatal",
+          "source": "https://johanneskaiser.cl/2024/10/15/el-cambio-climatico-es-un-negocio-que-nos-afecta-a-todos/"
+        },
+        "Autonomía Mapuche": {
+          "question": "El pueblo Mapuche debería tener más autonomía y tierras.",
+          "vote": "0",
+          "comment": "Rechazó el informe de la Comisión de Paz y acusó “burocracia indigenista”",
+          "source": "https://www.latercera.com/politica/noticia/pnl-rechaza-informe-de-comision-por-la-paz-y-el-entendimiento-acusa-descabellado-plan-de-compra-de-tierras/"
+        },
+        "Migración irregular": {
+          "question": "Debería ser más fácil regularizarse para los migrantes irregulares.",
+          "vote": "0",
+          "comment": "Propone “migración ilegal cero” y expulsión inmediata",
+          "source": "https://johanneskaiser.cl/migracion-ilegal-cero/"
+        },
+        "Sueldo mínimo": {
+          "question": "Se debería aumentar el sueldo mínimo.",
+          "vote": "0",
+          "comment": "Votó en contra del aumento a $500 000 junto a su bancada",
+          "source": "https://www.elmostrador.cl/mercados/2023/05/10/bancada-de-republicanos-anuncia-que-votara-en-contra-de-proyecto-de-aumento-del-salario-minimo/"
+        },
+        "Litio": {
+          "question": "La extracción del litio debería permanecer bajo el control del estado.",
+          "vote": "0",
+          "comment": "Cuestiona el acuerdo Codelco-SQM y promete revisarlo",
+          "source": "https://www.latercera.com/pulso/noticia/presidenciales-y-sqm-codelco-respaldo-casi-total-en-el-oficialismo-y-revision-de-matthei-kast-y-kaiser/"
+        },
+        "Constitución": {
+          "question": "Chile debería tener una nueva constitución.",
+          "vote": "0",
+          "comment": "Se declaró “En contra” en el plebiscito y dice que es una discusión cerrada",
+          "source": "https://www.latercera.com/politica/noticia/segundo-parlamentario-republicano-que-se-desmarca-del-sector-johannes-kaiser-se-manifiesta-por-el-en-contra/ER7XLUF52BA65K2XZ22ONZ4NAI/"
+        },
+        "Welfare state": {
+          "question": "El Estado Chileno tiene la responsabilidad de proveer servicios básicos gratuitos",
+          "vote": "nan",
+          "comment": null,
+          "source": null
+        }
+      }
+    },
+    "Franco Parisi": {
+      "party": "Partido de la Gente",
+      "votes": {
+        "Aborto": {
+          "question": "El aborto debería estar despenalizado",
+          "vote": "0",
+          "comment": "Rechaza incluso el aborto en 3 causales y dice volver a la ley de 1988.",
+          "source": "https://www.emol.com/noticias/Nacional/2017/04/04/852743/Parisi-rechaza-aprobar-aborto-por-violacion-y-matrimonio-entre-personas-del-mismo-sexo.html"
+        },
+        "Matrimonio": {
+          "question": "Está bien que esté permitido el matrimonio homosexual",
+          "vote": "0",
+          "comment": "“El matrimonio es un sacramento; las leyes deben ser sobre uniones civiles”.",
+          "source": "https://www.emol.com/noticias/Nacional/2017/04/04/852743/Parisi-rechaza-aprobar-aborto-por-violacion-y-matrimonio-entre-personas-del-mismo-sexo.html"
+        },
+        "Impuestos progresivos": {
+          "question": "Debería haber un sistema de impuestos progresivos, donde los más ricos paguen un mayor porcentaje",
+          "vote": "0",
+          "comment": "En vez de subir el impuesto a los ricos, propone rebajar el gasto fiscal",
+          "source": "https://www.instagram.com/reel/DKKy_9TPRAJ/?hl=en"
+        },
+        "Pensiones": {
+          "question": "Las contribuciones de pensiones deberían ir a cuentas individuales y no a un fondo común (PAYGO)",
+          "vote": "1",
+          "comment": "El PDG exige que el 6 % adicional vaya “íntegramente a capitalización individual”.",
+          "source": "https://www.elmostrador.cl/noticias/pais/2022/11/03/libertad-de-eleccion-en-la-reforma-de-pensiones-la-discusion-que-enreda-a-la-derecha/"
+        },
+        "Cambio climático": {
+          "question": "El cambio climático es uno de los problemas centrales de los cuales se debería encargar el gobierno.",
+          "vote": "1",
+          "comment": "Menciona problemas ambientales que surgen por el cambio climático",
+          "source": "https://centrocompetencia.com/wp-content/uploads/2021/10/Franco-Parisi-Programa-de-gobierno-2022-2026.pdf"
+        },
+        "Autonomía Mapuche": {
+          "question": "El pueblo Mapuche debería tener más autonomía y tierras.",
+          "vote": "0.5",
+          "comment": "Dijo que deberían haber tests de ADN para determinar si alguien es Mapuche; en otra entrevista dijo que los Mapuches deberían tener beneficios para no perder esa parte de la cultura",
+          "source": "https://www.laopinon.cl/noticia/politica/franco-parisi-demandas-mapuche-y-sus-medidas-para-el-desarrollo-de-la-araucania"
+        },
+        "Migración irregular": {
+          "question": "Debería ser más fácil regularizarse para los migrantes irregulares.",
+          "vote": "0",
+          "comment": "Antes de 2017 apoyaba fronteras libres, pero en una entrevista en 2023 acusó al gobierno de ser muy permisivo",
+          "source": "https://eldesconcierto.cl/2023/04/25/el-radical-giro-de-parisi-en-migracion-el-dia-que-propuso-libre-transito-sin-fronteras"
+        },
+        "Sueldo mínimo": {
+          "question": "Se debería aumentar el sueldo mínimo.",
+          "vote": "0",
+          "comment": "Dice que hay que generar más trabajo en vez de subir el sueldo mínimo, porque aunque se suba no es suficiente",
+          "source": "https://www.tiktok.com/@fr_parisi/video/7507466467990932741"
+        },
+        "Litio": {
+          "question": "La extracción del litio debería permanecer bajo el control del estado.",
+          "vote": "0.5",
+          "comment": "No ha comentado sobre esto en los últimos años",
+          "source": "x"
+        },
+        "Constitución": {
+          "question": "Chile debería tener una nueva constitución.",
+          "vote": "1",
+          "comment": "A favor de una nueva constitución",
+          "source": "https://www.latercera.com/politica/noticia/por-el-a-favor-franco-parisi-define-su-postura-para-el-plebiscito-del-17-de-diciembre/MXWLLBNVP5BFTKHPSB5FWKL7QU/?utm_source=chatgpt.com"
+        },
+        "Welfare state": {
+          "question": "El Estado Chileno tiene la responsabilidad de proveer servicios básicos gratuitos",
+          "vote": "nan",
+          "comment": null,
+          "source": null
+        }
+      }
+    }
+  }
+}

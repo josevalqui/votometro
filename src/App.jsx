@@ -130,23 +130,39 @@ useEffect(() => {
     fetch(import.meta.env.BASE_URL + config.votesFile)
       .then((res) => res.json())
       .then((data) => {
-        const processedCandidates = Object.values(data.candidates.processed);
+        const processedCandidates = config.isPresidentialElection
+          // For presidential: data.candidates is { "Name": { party, votes }, ... }
+          ? Object.entries(data.candidates).map(([name, info]) => ({
+              name,
+              party: info.party,
+              votes: info.votes
+            }))
+          // For non‐presidential: keep existing behavior
+          : Object.values(data.candidates.processed);
         const individualResults = processedCandidates.map((candidate) => {
           let weightedDiff = 0,
             totalWeight = 0;
-        Object.entries(candidate.votes).forEach(([voteCol, candidateVote]) => {
-          if (candidateVote === null) return;
-          // Process candidate vote using the election-specific function.
-          let numericCandidateVote = config.processCandidateVote(candidateVote);
-          if (typeof numericCandidateVote !== "number") return; // Skip invalid votes like "ausente"
-          const pdf_id = config.name === "chile" ? voteCol: voteCol.split("_").slice(0, -1).join("_");
+          Object.entries(candidate.votes).forEach(([voteCol, candidateVote]) => {
+            if (candidateVote === null) return;
 
-          if (userAnswers[pdf_id]) {
-            const { answer: userAns, weight } = userAnswers[pdf_id];
-            weightedDiff += Math.abs(userAns - numericCandidateVote) * weight;
-            totalWeight += weight;
+          let numericCandidateVote;
+          if (config.isPresidentialElection) {
+            // vote is now a string, so parse it
+            numericCandidateVote = parseFloat(candidateVote.vote);
+          } else {
+            numericCandidateVote = config.processCandidateVote(candidateVote);
           }
-        });
+          if (Number.isNaN(numericCandidateVote)) return;
+
+
+            const pdf_id = voteCol; // as you changed already
+
+            if (userAnswers[pdf_id]) {
+              const { answer: userAns, weight } = userAnswers[pdf_id];
+              weightedDiff += Math.abs(userAns - numericCandidateVote) * weight;
+              totalWeight += weight;
+            }
+          });
 
           const similarity =
             totalWeight > 0 ? Math.round((1 - weightedDiff / totalWeight) * 100) : 0;
@@ -183,25 +199,49 @@ useEffect(() => {
 
   const handleEntityClick = (entity, type) => {
     dispatch({ type: "SET_SELECTED_ENTITY", payload: entity });
+
     fetch(import.meta.env.BASE_URL + config.votesFile)
-      .then((res) => res.json())
-      .then((data) => {
+      .then(res => res.json())
+      .then(data => {
         if (type === "individual") {
-          dispatch({
-            type: "SET_ENTITY_DETAILS",
-            payload: data.candidates.details[entity.name] || {},
-          });
+          if (config.isPresidentialElection) {
+            const candObj = data.candidates[entity.name];
+            if (!candObj) {
+              console.error("No candidate data for", entity.name);
+              return;
+            }
+            // Build details array from each question in candObj.votes
+            const detailsArr = Object.entries(candObj.votes).map(
+              ([qid, qobj]) => ({
+                id:       qid,
+                question: qobj.question,
+                vote:     qobj.vote,
+                comment:  qobj.comment,
+                source:   qobj.source
+              })
+            );
+            dispatch({
+              type: "SET_ENTITY_DETAILS",
+              payload: { candidate_meta: { party: candObj.party }, details: detailsArr }
+            });
+          } else {
+            // parliamentary: use precomputed "data.candidates.details"
+            dispatch({
+              type: "SET_ENTITY_DETAILS",
+              payload: data.candidates.details[entity.name] || {}
+            });
+          }
         } else if (type === "party") {
           dispatch({
             type: "SET_ENTITY_DETAILS",
             payload: {
               party_meta: data.parties.meta[entity.party] || {},
-              details: data.parties.details[entity.party] || [],
-            },
+              details:    data.parties.details[entity.party] || []
+            }
           });
         }
       })
-      .catch((err) => console.error("Error fetching combined votes:", err));
+      .catch(err => console.error("Error fetching combined votes:", err));
   };
 
   const handleReset = () => {
@@ -320,6 +360,9 @@ useEffect(() => {
                     <h2>Selecciona una elección</h2>
                     <button onClick={() => setElection("chile_diputados_2025")}>
                       Chile: Elección parlamentaria (15.11.2025)
+                    </button>
+                    <button onClick={() => setElection("chile_presidencial_2025")}>
+                      Chile: Elección presidencial (15.11.2025)
                     </button>
                     <button onClick={() => setElection("peru_parl_2026")}>
                       Perú: Elección parlamentaria (12.04.2026)
@@ -646,10 +689,10 @@ useEffect(() => {
                                   <div style={{ marginBottom: "4px" }}>
                                     <p style={{ margin: "2px 0" }}>
                                     <>
-                                      <strong>Edad:</strong> {state.entityDetails.candidate_meta.age}
-                                      <br />
-                                      {!electionConfigs[election].isPresidentialElection && (
+                                      {!config.isPresidentialElection && (
                                         <>
+                                          <strong>Edad:</strong> {state.entityDetails.candidate_meta.age}
+                                          <br />
                                           <strong>Sentencia penal:</strong> {state.entityDetails.candidate_meta.sentencia_penal}
                                           <br />
                                           <strong>Asistencia:</strong> {state.entityDetails.candidate_meta.attendance || "N/A"}
@@ -682,12 +725,12 @@ useEffect(() => {
                                   state.questionDetails.length > 0 ? (
                                     state.questionDetails.map((qd, idx) => {
                                       const detail = state.entityDetails.details.find((d) => d.id === qd.id);
-                                      if (!detail || !detail.vote || detail.vote === "N/A") return null;
+                                      if (!detail) return null;
                                       const actualSource = qd.source;
                                       return (
                                         <div key={idx} style={{ marginBottom: "2px", lineHeight: "1.2" }}>
                                           <p style={{ margin: "2px 0" }}>
-                                            <strong>Statement:</strong> {qd.question} <br />
+                                            <strong>Opinión:</strong> {qd.question} <br />
                                             {config.showLawInfo && qd.law && (
                                               <small style={{ color: "gray", fontSize: "0.9em" }}>
                                                 <strong>Proyecto de ley:</strong> {qd.law}
@@ -699,6 +742,9 @@ useEffect(() => {
                                               <strong>Fecha de la votación:</strong> {detail.date || "N/A"} <br />
                                             </p>
                                           )}
+                                          <p style={{ margin: "2px 0" }}>
+                                            <strong>Tu respuesta:</strong> {userAnswerMapping[state.answers[idx]] || "Sin respuesta"}
+                                          </p>
                                           <p style={{ margin: "2px 0" }}>
                                             {state.entityDetails.party_meta ? (
                                               detail.vote_counts ? (
@@ -713,15 +759,42 @@ useEffect(() => {
                                                   <strong>Voto más común del partido:</strong> {detail.vote || "N/A"} <br />
                                                 </>
                                               )
-                                            ) : (
-                                              <>
-                                                <strong>Voto del congresista:</strong>{" "}
-                                                {detail.vote} <br />
-                                              </>
-                                            )}
-                                          </p>
-                                          <p style={{ margin: "2px 0" }}>
-                                            <strong>Tu respuesta:</strong> {userAnswerMapping[state.answers[idx]] || "Sin respuesta"}
+                                              
+                                              ) : (
+                                                <>
+                                                  {config.isPresidentialElection ? (
+                                                    <>
+                                                      <p style={{ margin: "2px 0" }}>
+                                                        <strong>Opinión del candidato:</strong>{" "}
+                                                        {detail.vote === "1"
+                                                          ? "A favor"
+                                                          : detail.vote === "0.5"
+                                                          ? "Neutral"
+                                                          : detail.vote === "0"
+                                                          ? "En contra"
+                                                          : detail.vote}
+                                                      </p>
+                                                      {detail.comment && (
+                                                        <p style={{ margin: "2px 0" }}>
+                                                          <strong>Comentario:</strong> {detail.comment}
+                                                        </p>
+                                                      )}
+                                                      {detail.source && (
+                                                        <p style={{ margin: "2px 0" }}>
+                                                          <strong>Fuente:</strong>{" "}
+                                                          <a href={detail.source} target="_blank" rel="noopener noreferrer">
+                                                            {detail.source.slice(0, 40) + (detail.source.length > 30 ? "..." : "")}
+                                                          </a>
+                                                        </p>
+                                                      )}
+                                                    </>
+                                                  ) : (
+                                                    <p style={{ margin: "2px 0" }}>
+                                                      <strong>Voto del congresista:</strong> {detail.vote} <br />
+                                                    </p>
+                                                  )}
+                                                </>
+                                              )}
                                           </p>
                                           {actualSource && actualSource.startsWith("http") && (
                                             <p style={{ margin: "2px 0" }}>
