@@ -2,10 +2,22 @@ import React, { useState, useEffect } from "react";
 import { useQuiz } from "./useQuiz";
 import { db } from "./firebase"; // adjust path if needed
 import { collection, addDoc } from "firebase/firestore";
-import { HashRouter as Router, Routes, Route, Navigate, Link } from "react-router-dom";
+import { HashRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Methodology from "./metodologia";
 import Contacto from "./contacto";
 import './App.css';
+
+function Menu({ open, onClose }) {
+  return open ? (
+    <div className="menu-panel">
+      <ul style={{textDecoration: "none", listStyle: "none", margin: 0, padding: 10 }}>
+        <li className="menu-list-item"><Link to="/" onClick={onClose}>Encuesta</Link></li>
+        <li className="menu-list-item"><Link to="/metodologia" onClick={onClose}>Metodología</Link></li>
+        <li className="menu-list-item"><Link to="/contacto"    onClick={onClose}>Contacto</Link></li>
+      </ul>
+    </div>
+  ) : null;
+}
 
 export default function App() {
   const [election, setElection] = useState(null);
@@ -30,28 +42,132 @@ export default function App() {
     });
   };
 
-  const detailConfigs = {
-    party: [
-      { label: 'Votos del partido', key: 'vote_counts',
-        // vote_counts is an object, so render it specially
-        render: counts =>
-          `A favor: ${counts['A favor'] || 0}, En contra: ${counts['En contra'] || 0}, Abstención: ${counts['Abstención'] || 0}` 
-      },
-      { label: 'Fuente', key: 'source', isLink: true }
-    ],
-    parliamentaryCandidates: [
-      { label: 'Voto del congresista', key: 'vote' },
-      { label: 'Fuente', key: 'source', isLink: true }
-    ],
-    presidentialCandidates: [
-      { label: 'Opinión del candidato', key: 'vote',
-        // normalize numeric strings into text
-        render: v => v === '1' ? 'A favor' : v === '0.5' ? 'Neutral' : v === '0' ? 'En contra' : v
-      },
-      { label: 'Comentario', key: 'comment' },
-      { label: 'Fuente', key: 'source', isLink: true }
-    ]
-  };
+  // helper for both mobile (inline) and desktop details
+  const EntityDetails = ({ inline = false }) => {
+    if (!state.selectedEntity) return null
+
+    const wrapperClass = inline
+      ? "entity-details-inline"
+      : "entity-details-container"
+    const { candidate_meta, party_meta, details } = state.entityDetails
+
+    return (
+      <div className={wrapperClass}>
+        <h2 style={{ margin: inline ? "4px 0" : "8px 0" }}>
+          {state.selectedEntity.name || state.selectedEntity.party}
+        </h2>
+
+        {candidate_meta && (
+          <>
+            {!config.isPresidentialElection && (
+              <>
+                <strong>Edad:</strong> {candidate_meta.age}<br/>
+                <strong>Asistencia:</strong> {candidate_meta.attendance || "N/A"}<br/>
+              </>
+            )}
+            <strong>Partido:</strong> {candidate_meta.party}<br/><br/>
+          </>
+        )}
+
+        {party_meta && config.name !== "chile" && !config.isPresidentialElection && (
+          <>
+            <strong>Edad promedio:</strong> {party_meta.average_age}<br/>
+            <strong>Asistencia promedio:</strong> {party_meta.average_attendance_percentage || "N/A"}%<br/><br/>
+          </>
+        )}
+
+        {details && details.length > 0 ? (
+          state.questionDetails.length > 0 ? (
+            state.questionDetails.map((qd, idx) => {
+              const d = details.find(x => x.id === qd.id)
+              if (!d) return null
+              const src = qd.source
+
+              return (
+                <div key={idx} style={{ marginBottom: inline ? "4px" : "2px", lineHeight: "1.2" }}>
+                  <p style={{ margin: "2px 0" }}>
+                    <strong>Tema:</strong> {qd.question}<br/>
+                    {config.showLawInfo && qd.law && (
+                      <small style={{ color: "gray", fontSize: "0.9em" }}>
+                        <strong>Proyecto de ley:</strong> {qd.law}
+                      </small>
+                    )}
+                  </p>
+
+                  {config.showLawInfo && !config.isPresidentialElection && (
+                    <p style={{ margin: "2px 0" }}>
+                      <strong>Fecha:</strong> {d.date || "N/A"}<br/>
+                    </p>
+                  )}
+
+                  <p style={{ margin: "2px 0" }}>
+                    <strong>Tu respuesta:</strong> {userAnswerMapping[state.answers[idx]] || "Sin respuesta"}<br/>
+                  </p>
+
+                  <p style={{ margin: "2px 0" }}>
+                    {party_meta ? (
+                      d.vote_counts ? (
+                        <>
+                          <strong>Votos del partido:</strong> A favor: {d.vote_counts["A favor"] || 0}, En contra: {d.vote_counts["En contra"] || 0}, Abstención: {d.vote_counts["Abstención"] || 0}<br/>
+                        </>
+                      ) : (
+                        <>
+                          <strong>Voto más común:</strong> {d.vote || "N/A"}<br/>
+                        </>
+                      )
+                    ) : config.isPresidentialElection ? (
+                      <>
+                        <strong>Opinión del candidato:</strong>{" "}
+                          {d.vote === "1" ? "A favor" : d.vote === "0.5" ? "Neutral" : "En contra"}<br/>
+                        {d.comment && (<><strong>Comentario:</strong> {d.comment}<br/></>)}
+                        {d.source  && (<><strong>Fuente:</strong>{" "}
+                          <a href={d.source} target="_blank" rel="noopener noreferrer">
+                            {d.source.slice(0,40)}…
+                          </a><br/>
+                        </>)}
+                      </>
+                    ) : (
+                      <>
+                        <strong>Voto del congresista:</strong> {d.vote}<br/>
+                      </>
+                    )}
+                  </p>
+
+                  {src && src.startsWith("http") && (
+                    <p style={{ margin: "2px 0" }}>
+                      {config.showLawInfo ? (
+                        <>
+                          <strong>Documento y noticias:</strong>{" "}
+                          <a href={src} target="_blank" rel="noopener noreferrer">
+                            {new URL(src).hostname.replace("www.","")}…
+                          </a><br/>
+                        </>
+                      ) : (
+                        <>
+                          <strong>Noticias:</strong>{" "}
+                          <a href={src} target="_blank" rel="noopener noreferrer">
+                            {new URL(src).hostname.replace("www.","")}…
+                          </a><br/>
+                        </>
+                      )}
+                    </p>
+                  )}
+
+                  <br/>
+                </div>
+              )
+            })
+          ) : (
+            <p style={{ margin: "2px 0" }}>No vote details available.</p>
+          )
+        ) : (
+          <p style={{ margin: "2px 0" }}>No vote details available.</p>
+        )}
+      </div>
+    )
+  }
+
+
   
   useEffect(() => {                                
     if (resultTypes.length) {                      
@@ -91,23 +207,19 @@ useEffect(() => {
 
 
 
-  const handleAnswerClick = (selectedOption) => {
-    dispatch({ type: "ANSWER", index: state.currentQuestionIndex, answer: selectedOption });
-    if (state.currentQuestionIndex < state.questions.length - 1) {
-      dispatch({ type: "SET_CURRENT_QUESTION_INDEX", payload: state.currentQuestionIndex + 1 });
-    }
-  };
+  // Paste inside App(), alongside your other handlers:
+  const goTo = idx =>
+    dispatch({ type: "SET_CURRENT_QUESTION_INDEX", payload: idx });
 
-  const handleSkip = () => {
-    if (state.currentQuestionIndex < state.questions.length - 1) {
-      dispatch({ type: "SET_CURRENT_QUESTION_INDEX", payload: state.currentQuestionIndex + 1 });
-    }
-  };
+  // Replace handleSkip and handleGoBack with these:
+  const handleSkip    = () => goTo(state.currentQuestionIndex + 1);
+  const handleGoBack  = () => goTo(state.currentQuestionIndex - 1);
 
-  const handleGoBack = () => {
-    if (state.currentQuestionIndex > 0) {
-      dispatch({ type: "SET_CURRENT_QUESTION_INDEX", payload: state.currentQuestionIndex - 1 });
-    }
+  // And shrink handleAnswerClick to:
+  const handleAnswerClick = option => {
+    dispatch({ type: "ANSWER", index: state.currentQuestionIndex, answer: option });
+    if (state.currentQuestionIndex < state.questions.length - 1)
+      goTo(state.currentQuestionIndex + 1);
   };
 
   const submitAnswers = () => {
@@ -379,45 +491,10 @@ useEffect(() => {
     <Router>   
     <>
         {/* Global Menu Button */}
-        <button className="menu-button"
-          onClick={() => setShowMenu(!showMenu)} 
-          >
-          Menu
-        </button> 
-
-        {showMenu && (
-          <div className="menu-panel">
-            <ul style={{ listStyle: 'none', margin: 0, padding: '10px' }}>
-              <li className="menu-list-item">
-                <Link
-                  to="/"
-                  onClick={() => setShowMenu(false)}
-                  style={{ color: "inherit", textDecoration: "none" }}
-                >
-                  Encuesta
-                </Link>
-              </li>
-              <li className="menu-list-item">
-                <Link
-                  to="/metodologia"
-                  onClick={() => setShowMenu(false)}
-                  style={{ color: "inherit", textDecoration: "none" }}
-                >
-                  Metodología
-                </Link>
-              </li>
-              <li className="menu-list-item">
-                <Link
-                  to="/contacto"
-                  onClick={() => setShowMenu(false)}
-                  style={{ color: "inherit", textDecoration: "none" }}
-                >
-                  Contacto
-                </Link>
-              </li>
-            </ul>
-          </div>
-        )}
+          <button className="menu-button" onClick={() => setShowMenu(!showMenu)}>
+            Menu
+          </button>
+        <Menu open={showMenu} onClose={() => setShowMenu(false)} />
 
         <Routes>
           <Route 
@@ -584,17 +661,7 @@ useEffect(() => {
                                           </div>
                                         </li>
 
-                                        {isMobile && mobileOpen === partyResult.party && (
-                                          <div className="entity-details-inline">
-                                            <h2>{partyResult.party}</h2>
-                                            {state.entityDetails.details.map(detail => (
-                                              <p key={detail.id}>
-                                                <strong>{detail.question}</strong><br/>
-                                                {detail.vote || detail.comment}
-                                              </p>
-                                            ))}
-                                          </div>
-                                        )}
+                                        {isMobile && mobileOpen === partyResult.party && <EntityDetails inline />}
                                       </>
                                       ))}
                                     </ul>
@@ -625,17 +692,7 @@ useEffect(() => {
                                           </span>
                                         </li>
 
-                                        {isMobile && mobileOpen === result.name && (
-                                          <div className="entity-details-inline">
-                                            <h2>{result.name}</h2>
-                                            {state.entityDetails.details.map(detail => (
-                                              <p key={detail.id}>
-                                                <strong>{detail.question}</strong><br/>
-                                                {detail.vote || detail.comment}
-                                              </p>
-                                            ))}
-                                          </div>
-                                        )}
+                                        {isMobile && mobileOpen === result.name && <EntityDetails inline />}
                                       </>
                                       ))}
                                     </ul>
@@ -666,24 +723,7 @@ useEffect(() => {
                                         </span>
                                       </li>
 
-                                      {isMobile && mobileOpen === result.name && (
-                                        <div className="entity-details-inline">
-                                          <h2>{result.name}</h2>
-                                          {state.entityDetails.details.map(detail => (
-                                            <p key={detail.id}>
-                                              <strong>{detail.question}</strong><br/>
-                                              {detail.vote === "1"
-                                                ? "A favor"
-                                                : detail.vote === "0.5"
-                                                ? "Neutral"
-                                                : detail.vote === "0"
-                                                ? "En contra"
-                                                : detail.vote}
-                                              {detail.comment && <><br/>{detail.comment}</>}
-                                            </p>
-                                          ))}
-                                        </div>
-                                      )}
+                                      {isMobile && mobileOpen === result.name && <EntityDetails inline />}
                                     </>
                                       ))}
                                     </ul>
@@ -692,153 +732,9 @@ useEffect(() => {
                               </>
                             )}
                           </div>
-                          <div className = "entity-details-container">
-                            {state.selectedEntity ? (
-                              <>
-                                <h2 style={{ margin: "8px 0" }}>
-                                  {state.selectedEntity.name ? state.selectedEntity.name : state.selectedEntity.party}
-                                </h2>
-                                {state.entityDetails.candidate_meta && (
-                                  <div style={{ marginBottom: "4px" }}>
-                                    <p style={{ margin: "2px 0" }}>
-                                    <>
-                                      {!config.isPresidentialElection && (
-                                        <>
-                                          <strong>Edad:</strong> {state.entityDetails.candidate_meta.age}
-                                          <br />
-                                          <strong>Asistencia:</strong> {state.entityDetails.candidate_meta.attendance || "N/A"}
-                                          <br />
-                                        </>
-                                      )}
-                                      <strong>Partido:</strong> {state.entityDetails.candidate_meta.party}
-                                      <br /><br />
-                                    </>
 
-                                    </p>
-                                  </div>
-                                )}
+                          <EntityDetails />
 
-                                {state.entityDetails.party_meta && config.name !== "chile" && (
-                                  <div style={{ marginBottom: "4px" }}>
-                                    <p style={{ margin: "2px 0" }}>
-                                      <strong>Edad promedio:</strong> {state.entityDetails.party_meta.average_age}
-                                      <br />
-                                      <strong>Asistencia promedio:</strong> {state.entityDetails.party_meta.average_attendance_percentage || "N/A"}%
-                                      <br />
-                                    </p>
-                                    <br />
-                                  </div>
-                                )}
-
-                                {state.entityDetails.details && state.entityDetails.details.length > 0 ? (
-                                  state.questionDetails.length > 0 ? (
-                                    state.questionDetails.map((qd, idx) => {
-                                      const detail = state.entityDetails.details.find((d) => d.id === qd.id);
-                                      if (!detail) return null;
-                                      const actualSource = qd.source;
-                                      return (
-                                        <div key={idx} style={{ marginBottom: "2px", lineHeight: "1.2" }}>
-                                          <p style={{ margin: "2px 0" }}>
-                                            <strong>Opinión:</strong> {qd.question} <br />
-                                            {config.showLawInfo && qd.law && (
-                                              <small style={{ color: "gray", fontSize: "0.9em" }}>
-                                                <strong>Proyecto de ley:</strong> {qd.law}
-                                              </small>
-                                            )}
-                                          </p>
-                                          {config.showLawInfo && (
-                                            <p style={{ margin: "2px 0" }}>
-                                              <strong>Fecha de la votación:</strong> {detail.date || "N/A"} <br />
-                                            </p>
-                                          )}
-                                          <p style={{ margin: "2px 0" }}>
-                                            <strong>Tu respuesta:</strong> {userAnswerMapping[state.answers[idx]] || "Sin respuesta"}
-                                          </p>
-                                          <p style={{ margin: "2px 0" }}>
-                                            {state.entityDetails.party_meta ? (
-                                              detail.vote_counts ? (
-                                                <>
-                                                  <strong>Votos del partido:</strong> A favor: {detail.vote_counts["A favor"] || 0},{" "}
-                                                  En contra: {detail.vote_counts["En contra"] || 0},{" "}
-                                                  Abstención: {detail.vote_counts["Abstención"] || 0}
-                                                  <br />
-                                                </>
-                                              ) : (
-                                                <>
-                                                  <strong>Voto más común del partido:</strong> {detail.vote || "N/A"} <br />
-                                                </>
-                                              )
-                                              
-                                              ) : (
-                                                <>
-                                                  {config.isPresidentialElection ? (
-                                                    <>
-                                                      <p style={{ margin: "2px 0" }}>
-                                                        <strong>Opinión del candidato:</strong>{" "}
-                                                        {detail.vote === "1"
-                                                          ? "A favor"
-                                                          : detail.vote === "0.5"
-                                                          ? "Neutral"
-                                                          : detail.vote === "0"
-                                                          ? "En contra"
-                                                          : detail.vote}
-                                                      </p>
-                                                      {detail.comment && (
-                                                        <p style={{ margin: "2px 0" }}>
-                                                          <strong>Comentario:</strong> {detail.comment}
-                                                        </p>
-                                                      )}
-                                                      {detail.source && (
-                                                        <p style={{ margin: "2px 0" }}>
-                                                          <strong>Fuente:</strong>{" "}
-                                                          <a href={detail.source} target="_blank" rel="noopener noreferrer">
-                                                            {detail.source.slice(0, 40) + (detail.source.length > 30 ? "..." : "")}
-                                                          </a>
-                                                        </p>
-                                                      )}
-                                                    </>
-                                                  ) : (
-                                                    <p style={{ margin: "2px 0" }}>
-                                                      <strong>Voto del congresista:</strong> {detail.vote} <br />
-                                                    </p>
-                                                  )}
-                                                </>
-                                              )}
-                                          </p>
-                                          {actualSource && actualSource.startsWith("http") && (
-                                            <p style={{ margin: "2px 0" }}>
-                                              {config.showLawInfo ? (
-                                                <>
-                                                  <strong>Documento y noticias:</strong>{" "}
-                                                  <a href={actualSource} target="_blank" rel="noopener noreferrer">
-                                                    {new URL(actualSource).hostname.replace("www.", "") + "/..."}
-                                                  </a>
-                                                </>
-                                              ) : (
-                                                <>
-                                                  <strong>Noticias:</strong>{" "}
-                                                  <a href={actualSource} target="_blank" rel="noopener noreferrer">
-                                                    {new URL(actualSource).hostname.replace("www.", "") + "/..."}
-                                                  </a>
-                                                </>
-                                              )}
-                                            </p>
-                                          )}
-                                          <br />
-                                        </div>
-                                      );
-                                    })
-                                  ) : (
-                                    <p style={{ margin: "2px 0" }}>No vote details available.</p>
-                                  )
-                                ) : (
-                                  <p style={{ margin: "2px 0" }}>No vote details available.</p>
-                                )}
-                              </>
-                            ) : (
-                              <p> </p>
-                            )}
-                          </div>
                         </div>
                         <div>
                           <button className = "back-to-survey-button"
