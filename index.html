@@ -3,17 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Prevents the browser from requesting a non-existent favicon.ico -->
-    <link rel="icon" href="data:;base64,=">
-    <!--
-      CSP:
-        • default-src 'self'
-        • scripts from self + Google (recaptcha)
-        • XHR/fetch to App-Check, Firestore, recaptcha endpoints
-        • images from self + Google (cleardot.gif)
-        • inline styles
-        • frames for recaptcha
-    -->
+    <link rel="icon" type="image/svg+xml" href="/votometro/favicon.svg" />
     <meta http-equiv="Content-Security-Policy" content="
       default-src 'self';
       script-src 'self' https://www.google.com https://www.gstatic.com;
@@ -22,10 +12,10 @@
       style-src 'self' 'unsafe-inline';
       frame-src 'self' https://www.google.com/recaptcha/;
     ">
-    <title>Votómetro</title>
-    <script type="module" crossorigin src="/votometro/assets/index-BwK4BYcX.js"></script>
+    <title>Tú decides</title>
+    <script type="module" crossorigin src="/votometro/assets/index-D-SlPDGt.js"></script>
     <link rel="modulepreload" crossorigin href="/votometro/assets/vendor-B4Q6vpuu.js">
-    <link rel="stylesheet" crossorigin href="/votometro/assets/index-DR5-nTqr.css">
+    <link rel="stylesheet" crossorigin href="/votometro/assets/index--M15366-.css">
   </head>
   <body>
     <div id="root"></div>
