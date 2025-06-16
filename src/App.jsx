@@ -83,6 +83,16 @@ export default function App() {
               if (!d) return null
               const src = qd.source
 
+              const voteMapping = {
+                "1":         "A favor",
+                "0.5":       "Neutral",
+                "0":         "En contra",
+                "A favor":   "A favor",
+                "En contra": "En contra",
+                "Neutral":   "Neutral",
+                "Ausente":   "Ausente"
+              };
+
               return (
                 <div key={idx} style={{ marginBottom: inline ? "4px" : "2px", lineHeight: "1.2" }}>
                   <p style={{ margin: "2px 0" }}>
@@ -115,18 +125,22 @@ export default function App() {
                           <strong>Voto más común:</strong> {d.vote || "N/A"}<br/>
                         </>
                       )
-                    ) : config.isPresidentialElection ? (
-                      <>
-                        <strong>Opinión del candidato:</strong>{" "}
-                          {d.vote === "1" ? "A favor" : d.vote === "0.5" ? "Neutral" : "En contra"}<br/>
-                        {d.comment && (<><strong>Comentario:</strong> {d.comment}<br/></>)}
-                        {d.source  && (<><strong>Fuente:</strong>{" "}
-                          <a href={d.source} target="_blank" rel="noopener noreferrer">
-                            {d.source.slice(0,40)}…
-                          </a><br/>
-                        </>)}
-                      </>
-                    ) : (
+                      
+                      ) : config.isPresidentialElection ? (
+                        <>
+                          <strong>Opinión del candidato:</strong> {voteMapping[d.vote] || "N/A"}<br/>
+                          {d.comment && (
+                            <><strong>Comentario:</strong> {d.comment}<br/></>
+                          )}
+                          {d.source && (
+                            <><strong>Fuente:</strong>{" "}
+                              <a href={d.source} target="_blank" rel="noopener noreferrer">
+                                {d.source.slice(0,40)}…
+                              </a><br/>
+                            </>
+                          )}
+                        </>
+                      ) : (
                       <>
                         <strong>Voto del congresista:</strong> {d.vote}<br/>
                       </>
@@ -203,24 +217,85 @@ useEffect(() => {
   electionConfigs, // make sure these are defined where you need them
   election,        // (this assumes electionConfigs[election] must be up to date)
 ]);
-// eslint-disable-next-line react-hooks/exhaustive-deps
 
 
 
-  // Paste inside App(), alongside your other handlers:
+  // find the next question whose text differs from the one at `index`
+  const goToNextUnique = index => {
+    const curr = state.questions[index]?.question
+    let next = index + 1
+    while (next < state.questions.length && state.questions[next].question === curr) {
+      next++
+    }
+    return next
+  }
+
   const goTo = idx =>
     dispatch({ type: "SET_CURRENT_QUESTION_INDEX", payload: idx });
 
-  // Replace handleSkip and handleGoBack with these:
-  const handleSkip    = () => goTo(state.currentQuestionIndex + 1);
-  const handleGoBack  = () => goTo(state.currentQuestionIndex - 1);
 
-  // And shrink handleAnswerClick to:
-  const handleAnswerClick = option => {
-    dispatch({ type: "ANSWER", index: state.currentQuestionIndex, answer: option });
-    if (state.currentQuestionIndex < state.questions.length - 1)
-      goTo(state.currentQuestionIndex + 1);
-  };
+
+
+  // find the previous question whose text differs from the one at `index`
+  const goToPrevUnique = index => {
+    const curr = state.questions[index]?.question
+    let prev = index - 1
+    while (prev >= 0 && state.questions[prev].question === curr) {
+      prev--
+    }
+    return prev
+  }
+
+  const uniqueIndices = React.useMemo(() => {
+    const seen = new Set()
+    return state.questions.reduce((arr, q, i) => {
+      if (!seen.has(q.question)) {
+        seen.add(q.question)
+        arr.push(i)
+      }
+      return arr
+    }, [])
+  }, [state.questions])
+  const totalQuestions = uniqueIndices.length
+  const displayIndex = uniqueIndices.indexOf(state.currentQuestionIndex) + 1
+
+// jump to the next unique question
+const handleSkip = () => {
+  // find the first full‐array index > current
+  const next = uniqueIndices.find(i => i > state.currentQuestionIndex)
+  if (next !== undefined) {
+    dispatch({
+      type: "SET_CURRENT_QUESTION_INDEX",
+      payload: next
+    })
+  }
+}
+
+// go back to the previous unique question
+const handleGoBack = () => {
+  // scan from the end for the last index < current
+  const prev = [...uniqueIndices].reverse().find(i => i < state.currentQuestionIndex)
+  if (prev !== undefined) {
+    dispatch({
+      type: "SET_CURRENT_QUESTION_INDEX",
+      payload: prev
+    })
+  }
+}
+
+const handleAnswerClick = option => {
+  const text = state.questions[state.currentQuestionIndex].question
+  state.questions.forEach((q, i) => {
+    if (q.question === text) {
+      dispatch({ type: "ANSWER", index: i, answer: option })
+    }
+  })
+  // find next full‐array index in uniqueIndices
+  const next = uniqueIndices.find(i => i > state.currentQuestionIndex)
+  if (next !== undefined) {
+    dispatch({ type: "SET_CURRENT_QUESTION_INDEX", payload: next })
+  }
+}
 
   const submitAnswers = () => {
     const answersData = state.questions.map((q, i) => ({
@@ -485,8 +560,6 @@ useEffect(() => {
     return `${day} de ${months[month - 1]} de ${year}`;
   }
 
-  // Replace your App.js return block with the following code:
-
   return (
     <Router>   
     <>
@@ -531,7 +604,7 @@ useEffect(() => {
                       <>
                         <div>
                           <h3>
-                            {state.currentQuestionIndex + 1} / {state.questions.length}
+                            {displayIndex} / {totalQuestions}
                           </h3>
                         </div>
                         <div>

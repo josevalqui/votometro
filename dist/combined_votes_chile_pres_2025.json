@@ -4,25 +4,25 @@
       "party": "Chile Vamos",
       "votes": {
         "Aborto": {
-          "question": "El aborto debería estar despenalizado",
+          "question": "El aborto debería ser despenalizado dentro de las primeras 14 semanas de gestación.",
           "vote": "0",
           "comment": "A favor de los límites actuales, pero no de la despenalización hasta las 14 semanas",
           "source": "https://www.t13.cl/noticia/politica/eso-no-derecho-reproductivo-evelyn-matthei-descarta-despenalizar-aborto-libre-s-5-4-2025"
         },
         "Matrimonio": {
-          "question": "Está bien que esté permitido el matrimonio homosexual",
+          "question": "Está bien que esté permitido el matrimonio igualitario, independientemente del género.",
           "vote": "1",
           "comment": "A favor",
           "source": "https://www.13.cl/programas/juego-textual/momentos/mi-postura-ha-cambiado-evelyn-matthei-sobre-el-matrimonio"
         },
         "Impuestos progresivos": {
-          "question": "Debería haber un sistema de impuestos progresivos, donde los más ricos paguen un mayor porcentaje",
+          "question": "Debería haber un sistema de impuestos progresivos, donde los más ricos paguen un mayor porcentaje.",
           "vote": "0",
           "comment": "Aims to lower the corporate tax rate to 18%",
           "source": "https://www.df.cl/economia-y-politica/politica/evelyn-matthei-afirma-que-la-tasa-corporativa-no-debiera-exceder-el-18-e"
         },
         "Pensiones": {
-          "question": "Las contribuciones de pensiones deberían ir a cuentas individuales y no a un fondo común (PAYGO)",
+          "question": "Las contribuciones de pensiones deberían ir a cuentas individuales y no a un fondo común (PAYGO).",
           "vote": "1",
           "comment": "Favours keeping individual accounts; supports directing the extra 6 % contribution to each worker, not to a PAYGO fund",
           "source": "https://www.ex-ante.cl/evelyn-matthei-revela-sus-reparos-a-reforma-de-pensiones-y-apoya-que-los-6-puntos-adicionales-vayan-a-cuentas-individuales/"
@@ -62,12 +62,6 @@
           "vote": "0",
           "comment": "Lo llama una \"discusión cerrada\".",
           "source": "https://www.eldinamo.cl/politica/2025/03/31/discusion-cerrada-matthei-y-el-gobierno-se-alinean-en-rechazo-a-una-nueva-constitucion-sugerida-por-el-pc/"
-        },
-        "Welfare state": {
-          "question": "El Estado Chileno tiene la responsabilidad de proveer servicios básicos gratuitos",
-          "vote": "nan",
-          "comment": null,
-          "source": null
         }
       }
     },
@@ -75,25 +69,25 @@
       "party": "Partido Republicano",
       "votes": {
         "Aborto": {
-          "question": "El aborto debería estar despenalizado",
+          "question": "El aborto debería ser despenalizado dentro de las primeras 14 semanas de gestación.",
           "vote": "0",
           "comment": "Completamente en contra de más liberalización",
           "source": "https://english.elpais.com/international/2023-05-14/jose-antonio-kast-the-far-right-catholic-who-seduces-chile.html"
         },
         "Matrimonio": {
-          "question": "Está bien que esté permitido el matrimonio homosexual",
+          "question": "Está bien que esté permitido el matrimonio igualitario, independientemente del género.",
           "vote": "0",
           "comment": "En contra de la homosexualidad.",
           "source": "https://english.elpais.com/international/2023-05-14/jose-antonio-kast-the-far-right-catholic-who-seduces-chile.html?"
         },
         "Impuestos progresivos": {
-          "question": "Debería haber un sistema de impuestos progresivos, donde los más ricos paguen un mayor porcentaje",
+          "question": "Debería haber un sistema de impuestos progresivos, donde los más ricos paguen un mayor porcentaje.",
           "vote": "0",
           "comment": "Le pidió a los senadores que voten en contra de la reforma tributaria",
           "source": "https://www.latercera.com/politica/noticia/kast-llama-a-senadores-de-chile-vamos-a-no-concurrir-con-sus-votos-en-caso-de-que-el-gobierno-insista-con-la-reforma-tributaria/NHPUMABIC5GTHBOB6S33SQTRKQ/"
         },
         "Pensiones": {
-          "question": "Las contribuciones de pensiones deberían ir a cuentas individuales y no a un fondo común (PAYGO)",
+          "question": "Las contribuciones de pensiones deberían ir a cuentas individuales y no a un fondo común (PAYGO).",
           "vote": "1",
           "comment": "A favor de cuentas individuales",
           "source": "https://www.emol.com/noticias/Nacional/2024/12/10/1150942/kast-por-pensiones-udimatthei.html"
@@ -133,12 +127,6 @@
           "vote": "0",
           "comment": "Contra una nueva constitución",
           "source": "https://www.latercera.com/la-tercera-domingo/noticia/jose-antonio-kast-no-necesitamos-una-nueva-constitucion/WZEZITGFNND4JNMDAJY4IINXE4/"
-        },
-        "Welfare state": {
-          "question": "El Estado Chileno tiene la responsabilidad de proveer servicios básicos gratuitos",
-          "vote": "nan",
-          "comment": null,
-          "source": null
         }
       }
     },
@@ -146,25 +134,25 @@
       "party": "Partido Nacional Libertario",
       "votes": {
         "Aborto": {
-          "question": "El aborto debería estar despenalizado",
+          "question": "El aborto debería ser despenalizado dentro de las primeras 14 semanas de gestación.",
           "vote": "0",
           "comment": "Completamente en contra; se retiró de la Cuenta Pública cuando Boric anunció un proyecto de aborto libre",
           "source": "https://www.latercera.com/politica/noticia/kaiser-abandona-cuenta-publica-tras-anuncio-de-boric-por-ley-de-aborto-habla-de-unidad-pero-miente-nos-insulta/"
         },
         "Matrimonio": {
-          "question": "Está bien que esté permitido el matrimonio homosexual",
+          "question": "Está bien que esté permitido el matrimonio igualitario, independientemente del género.",
           "vote": "0",
           "comment": "Rechaza el matrimonio igualitario y propone derogarlo",
           "source": "https://www.laizquierdadiario.cl/Detras-de-Milei-Kaiser-plantea-eliminar-el-Ministerio-de-la-Mujer-y-el-matrimonio-igualitario"
         },
         "Impuestos progresivos": {
-          "question": "Debería haber un sistema de impuestos progresivos, donde los más ricos paguen un mayor porcentaje",
+          "question": "Debería haber un sistema de impuestos progresivos, donde los más ricos paguen un mayor porcentaje.",
           "vote": "0",
           "comment": "Propone bajar impuestos corporativos y eliminar contribuciones",
           "source": "https://johanneskaiser.cl/2025/05/15/johannes-kaiser-propone-plan-historico-para-superar-deficit-habitacional-un-millon-de-subsidios-en-los-primeros-90-dias-de-gobierno/"
         },
         "Pensiones": {
-          "question": "Las contribuciones de pensiones deberían ir a cuentas individuales y no a un fondo común (PAYGO)",
+          "question": "Las contribuciones de pensiones deberían ir a cuentas individuales y no a un fondo común (PAYGO).",
           "vote": "1",
           "comment": "“El 6 % debe ir completo a cuentas individuales; lo otro es robo”",
           "source": "https://www.latercera.com/politica/noticia/johannes-kaiser-confirmo-que-no-participara-en-primarias-con-chile-vamos/OJ75O4HAFVFE7KIIGDJ7P654JQ/"
@@ -204,12 +192,6 @@
           "vote": "0",
           "comment": "Se declaró “En contra” en el plebiscito y dice que es una discusión cerrada",
           "source": "https://www.latercera.com/politica/noticia/segundo-parlamentario-republicano-que-se-desmarca-del-sector-johannes-kaiser-se-manifiesta-por-el-en-contra/ER7XLUF52BA65K2XZ22ONZ4NAI/"
-        },
-        "Welfare state": {
-          "question": "El Estado Chileno tiene la responsabilidad de proveer servicios básicos gratuitos",
-          "vote": "nan",
-          "comment": null,
-          "source": null
         }
       }
     },
@@ -217,25 +199,25 @@
       "party": "Partido de la Gente",
       "votes": {
         "Aborto": {
-          "question": "El aborto debería estar despenalizado",
+          "question": "El aborto debería ser despenalizado dentro de las primeras 14 semanas de gestación.",
           "vote": "0",
           "comment": "Rechaza incluso el aborto en 3 causales y dice volver a la ley de 1988.",
           "source": "https://www.emol.com/noticias/Nacional/2017/04/04/852743/Parisi-rechaza-aprobar-aborto-por-violacion-y-matrimonio-entre-personas-del-mismo-sexo.html"
         },
         "Matrimonio": {
-          "question": "Está bien que esté permitido el matrimonio homosexual",
+          "question": "Está bien que esté permitido el matrimonio igualitario, independientemente del género.",
           "vote": "0",
           "comment": "“El matrimonio es un sacramento; las leyes deben ser sobre uniones civiles”.",
           "source": "https://www.emol.com/noticias/Nacional/2017/04/04/852743/Parisi-rechaza-aprobar-aborto-por-violacion-y-matrimonio-entre-personas-del-mismo-sexo.html"
         },
         "Impuestos progresivos": {
-          "question": "Debería haber un sistema de impuestos progresivos, donde los más ricos paguen un mayor porcentaje",
+          "question": "Debería haber un sistema de impuestos progresivos, donde los más ricos paguen un mayor porcentaje.",
           "vote": "0",
           "comment": "En vez de subir el impuesto a los ricos, propone rebajar el gasto fiscal",
           "source": "https://www.instagram.com/reel/DKKy_9TPRAJ/?hl=en"
         },
         "Pensiones": {
-          "question": "Las contribuciones de pensiones deberían ir a cuentas individuales y no a un fondo común (PAYGO)",
+          "question": "Las contribuciones de pensiones deberían ir a cuentas individuales y no a un fondo común (PAYGO).",
           "vote": "1",
           "comment": "El PDG exige que el 6 % adicional vaya “íntegramente a capitalización individual”.",
           "source": "https://www.elmostrador.cl/noticias/pais/2022/11/03/libertad-de-eleccion-en-la-reforma-de-pensiones-la-discusion-que-enreda-a-la-derecha/"
@@ -274,13 +256,7 @@
           "question": "Chile debería tener una nueva constitución.",
           "vote": "1",
           "comment": "A favor de una nueva constitución",
-          "source": "https://www.latercera.com/politica/noticia/por-el-a-favor-franco-parisi-define-su-postura-para-el-plebiscito-del-17-de-diciembre/MXWLLBNVP5BFTKHPSB5FWKL7QU/?utm_source=chatgpt.com"
-        },
-        "Welfare state": {
-          "question": "El Estado Chileno tiene la responsabilidad de proveer servicios básicos gratuitos",
-          "vote": "nan",
-          "comment": null,
-          "source": null
+          "source": "https://www.latercera.com/politica/noticia/por-el-a-favor-franco-parisi-define-su-postura-para-el-plebiscito-del-17-de-diciembre/MXWLLBNVP5BFTKHPSB5FWKL7QU/"
         }
       }
     },
@@ -288,38 +264,38 @@
       "party": "Partido Social Cristiano",
       "votes": {
         "Aborto": {
-          "question": "El aborto debería estar despenalizado",
+          "question": "El aborto debería ser despenalizado dentro de las primeras 14 semanas de gestación.",
           "vote": "0",
           "comment": "Votó en contra del proyecto de aborto libre en la Cámara y defendió “el derecho a la vida desde la concepción”.",
           "source": "https://www.bcn.cl/laborparlamentaria/participacion?idParticipacion=2361175"
         },
         "Matrimonio": {
-          "question": "Está bien que esté permitido el matrimonio homosexual",
+          "question": "Está bien que esté permitido el matrimonio igualitario, independientemente del género.",
           "vote": "0",
           "comment": "Afirmó que “Chile no lo está pidiendo” y que es “un grave error” dar urgencia al matrimonio igualitario.",
           "source": "https://www.chilevision.cl/contigo-en-directo/mejores-momentos/diputada-francesca-munoz-sobre-matrimonio-igualitario-chile-no-lo-esta"
         },
         "Impuestos progresivos": {
-          "question": "Debería haber un sistema de impuestos progresivos, donde los más ricos paguen un mayor porcentaje",
+          "question": "Debería haber un sistema de impuestos progresivos, donde los más ricos paguen un mayor porcentaje.",
           "vote": "0",
           "comment": "Votó en contra de la reforma tributaria del Gobierno y plantea recortar el gasto público antes que subir impuestos.",
           "source": "https://www.emol.com/noticias/Economia/2023/03/08/1088739/votacion-diputados-reforma-tributaria-boric.html"
         },
         "Pensiones": {
-          "question": "Las contribuciones de pensiones deberían ir a cuentas individuales y no a un fondo común (PAYGO)",
+          "question": "Las contribuciones de pensiones deberían ir a cuentas individuales y no a un fondo común (PAYGO).",
           "vote": "1",
           "comment": "Rechazó la reforma oficial y exige que el 6 % adicional vaya íntegramente a capitalización individual.",
           "source": "https://www.biobiochile.cl/noticias/nacional/chile/2025/01/17/partido-social-cristiano-anuncia-que-votara-en-contra-de-la-reforma-de-pensiones-es-un-mal-acuerdo.shtml"
         },
         "Cambio climático": {
           "question": "El cambio climático es uno de los problemas centrales de los cuales se debería encargar el gobierno.",
-          "vote": "nan",
+          "vote": "0.5",
           "comment": "No se encontró información pública sobre su postura.",
           "source": null
         },
         "Autonomía Mapuche": {
           "question": "El pueblo Mapuche debería tener más autonomía y tierras.",
-          "vote": "nan",
+          "vote": "0.5",
           "comment": "No se encontró información pública clara sobre su posición.",
           "source": null
         },
@@ -331,13 +307,13 @@
         },
         "Sueldo mínimo": {
           "question": "Se debería aumentar el sueldo mínimo.",
-          "vote": "nan",
+          "vote": "0.5",
           "comment": "No se encontró información verificada sobre su posición.",
           "source": null
         },
         "Litio": {
           "question": "La extracción del litio debería permanecer bajo el control del estado.",
-          "vote": "nan",
+          "vote": "0.5",
           "comment": "No ha fijado posición pública reciente sobre este tema.",
           "source": null
         },
@@ -346,12 +322,71 @@
           "vote": "0",
           "comment": "Lideró campañas por el “Rechazo” y sostiene que no se necesita una nueva Constitución.",
           "source": "https://www.biobiochile.cl/especial/una-constitucion-para-chile/noticias/2022/05/28/se-entregan-derechos-con-letra-chica-diputadas-emprenden-campana-del-rechazo-en-bio-bio-y-nuble.shtml"
+        }
+      }
+    },
+    "Félix González": {
+      "party": "Partido Ecologista Verde",
+      "votes": {
+        "Aborto": {
+          "question": "El aborto debería ser despenalizado dentro de las primeras 14 semanas de gestación.",
+          "vote": "1",
+          "comment": "Votó a favor del proyecto que despenaliza el aborto hasta las 14 semanas",
+          "source": "https://www.bcn.cl/obtienearchivo?id=recursoslegales/10221.3/66695/1/4554_369.pdf"
         },
-        "Welfare state": {
-          "question": "El Estado Chileno tiene la responsabilidad de proveer servicios básicos gratuitos",
-          "vote": "nan",
-          "comment": null,
+        "Matrimonio": {
+          "question": "Está bien que esté permitido el matrimonio igualitario, independientemente del género.",
+          "vote": "1",
+          "comment": "Votó a favor del matrimonio igualitario y lo defendió en el debate",
+          "source": "https://www.infobae.com/america/america-latina/2021/11/23/el-matrimonio-gay-quedo-mas-cerca-de-ser-una-realidad-en-chile-fue-aprobado-por-la-camara-de-diputados/"
+        },
+        "Impuestos progresivos": {
+          "question": "Debería haber un sistema de impuestos progresivos, donde los más ricos paguen un mayor porcentaje.",
+          "vote": "1",
+          "comment": "Votó a favor de legislar la reforma tributaria del Gobierno, que incluía alza de impuestos a altos ingresos",
+          "source": "https://www.biobiochile.cl/noticias/nacional/chile/2023/03/08/faltaron-2-votos-el-resultado-en-la-camara-que-rechazo-idea-de-legislar-reforma-tributaria.shtml"
+        },
+        "Pensiones": {
+          "question": "Las contribuciones de pensiones deberían ir a cuentas individuales y no a un fondo común (PAYGO).",
+          "vote": "0",
+          "comment": "Ha planteado “cero AFP” y un sistema solidario tripartito",
+          "source": "https://www.diarioconcepcion.cl/politica/2017/11/12/programas-de-los-candidatos-lo-que-hay-que-saber-antes-de-votar.html"
+        },
+        "Cambio climático": {
+          "question": "El cambio climático es uno de los problemas centrales de los cuales se debería encargar el gobierno.",
+          "vote": "1",
+          "comment": "Impulsor de la declaración de emergencia climática desde la Cámara de Diputados",
+          "source": "https://www.latercera.com/que-pasa/noticia/presidente-la-camara-diputados-ingresa-resolucion-pinera-declare-emergencia-climatica-ecologica-chile/782991/"
+        },
+        "Autonomía Mapuche": {
+          "question": "El pueblo Mapuche debería tener más autonomía y tierras.",
+          "vote": "1",
+          "comment": "Ha criticado el maltrato de la población mapuche por el Estado Chileno",
           "source": null
+        },
+        "Migración irregular": {
+          "question": "Debería ser más fácil regularizarse para los migrantes irregulares.",
+          "vote": "1",
+          "comment": "Solicitó regularización por razones humanitarias y laborales",
+          "source": "https://www.diarioconcepcion.cl/politica/2022/05/17/diputado-felix-gonzalez-pide-regularizacion-de-migrantes-ante-crisis-humanitaria.html"
+        },
+        "Sueldo mínimo": {
+          "question": "Se debería aumentar el sueldo mínimo.",
+          "vote": "1",
+          "comment": "Defendió subir el salario mínimo a al menos 450 000 CLP en 2020 y ha respaldado los reajustes posteriores",
+          "source": "https://assets.diarioconcepcion.cl/2020/02/Diario-Concepcion-28-02-2020.pdf"
+        },
+        "Litio": {
+          "question": "La extracción del litio debería permanecer bajo el control del estado.",
+          "vote": "1",
+          "comment": "Como presidente de la Comisión de Medioambiente respaldó la Estrategia Nacional del Litio con protagonismo estatal",
+          "source": "https://www.camara.cl/verDoc.aspx?prmID=307381&prmTipo=DOCUMENTO_COMISION"
+        },
+        "Constitución": {
+          "question": "Chile debería tener una nueva constitución.",
+          "vote": "1",
+          "comment": "Se declaró públicamente por el “Apruebo” y critica el actual proceso por falta de participación",
+          "source": "https://www.diarioconcepcion.cl/ciudad/2022/07/12/felix-gonzalez-los-municipios-de-chile-tienen-que-salir-de-este-secuestro-de-la-basura.html"
         }
       }
     }

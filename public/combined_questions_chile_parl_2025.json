@@ -1,7 +1,7 @@
 [
   {
     "id": "20191024_horasLaborales_11179-13",
-    "question": "Estuvo bien reducir las horas laborales a 40 horas por semana en 2019",
+    "question": "Estuvo bien reducir las horas laborales a 40 horas por semana en 2019.",
     "polarity": "+",
     "options": [
       "Estoy de acuerdo",
@@ -43,7 +43,7 @@
   },
   {
     "id": "20211123_matrimonio_11422-07",
-    "question": "El matrimonio entre personas del mismo género debería estar permitido.",
+    "question": "Está bien que esté permitido el matrimonio igualitario, independientemente del género.",
     "polarity": "+",
     "options": [
       "Estoy de acuerdo",
@@ -85,7 +85,7 @@
   },
   {
     "id": "20210928_aborto_12038-34",
-    "question": "El aborto debería ser despenalizado dentro de las primeras 14 semanas de gestación",
+    "question": "El aborto debería ser despenalizado dentro de las primeras 14 semanas de gestación.",
     "polarity": "+",
     "options": [
       "Estoy de acuerdo",
@@ -99,7 +99,7 @@
   },
   {
     "id": "20140514_impuestos_9290-05",
-    "question": "Estuvo bien la reforma tributaria del 2014, que aumentó los impuestos a las compañías y a los más ricos",
+    "question": "Estuvo bien la reforma tributaria del 2014, que aumentó los impuestos a las compañías y a los más ricos.",
     "polarity": "+",
     "options": [
       "Estoy de acuerdo",
@@ -113,7 +113,7 @@
   },
   {
     "id": "20240604_discriminación_12748-17",
-    "question": "Debería haber una mayor protección de los derechos LGBTIQ+ en Chile",
+    "question": "Debería haber una mayor protección de los derechos LGBTIQ+ en Chile.",
     "polarity": "+",
     "options": [
       "Estoy de acuerdo",
