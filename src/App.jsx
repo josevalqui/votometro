@@ -12,13 +12,50 @@ export default function App() {
   const { state, dispatch, config, electionConfigs } = useQuiz(election);
   const resultTypes = config.resultTypes || [];
   const [showMenu, setShowMenu] = useState(false); // <-- add near your other useState hooks
-
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  useEffect(() => {
+    const onResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
   const [selectedResultType, setSelectedResultType] = 
-    useState(resultTypes[0] || null);              // ← start with first available
+    useState(resultTypes[0] || null);
+  const [mobileOpen, setMobileOpen] = useState(null);
+  const handleMobileToggle = (entity, type) => {
+    const id = type === "party" ? entity.party : entity.name;
+    setMobileOpen(prev => {
+      const isSame = prev === id;
+      if (!isSame) handleEntityClick(entity, type);
+      return isSame ? null : id;
+    });
+  };
 
+  const detailConfigs = {
+    party: [
+      { label: 'Votos del partido', key: 'vote_counts',
+        // vote_counts is an object, so render it specially
+        render: counts =>
+          `A favor: ${counts['A favor'] || 0}, En contra: ${counts['En contra'] || 0}, Abstención: ${counts['Abstención'] || 0}` 
+      },
+      { label: 'Fuente', key: 'source', isLink: true }
+    ],
+    parliamentaryCandidates: [
+      { label: 'Voto del congresista', key: 'vote' },
+      { label: 'Fuente', key: 'source', isLink: true }
+    ],
+    presidentialCandidates: [
+      { label: 'Opinión del candidato', key: 'vote',
+        // normalize numeric strings into text
+        render: v => v === '1' ? 'A favor' : v === '0.5' ? 'Neutral' : v === '0' ? 'En contra' : v
+      },
+      { label: 'Comentario', key: 'comment' },
+      { label: 'Fuente', key: 'source', isLink: true }
+    ]
+  };
+  
   useEffect(() => {                                
     if (resultTypes.length) {                      
-      setSelectedResultType(resultTypes[0]);       // ← reset when available types change
+      setSelectedResultType(resultTypes[0]);
     }
   }, [resultTypes]);
 
@@ -390,16 +427,16 @@ useEffect(() => {
               >
                 {!election ? (
                   <div className="election-selection-container">
-                    <h2>Selecciona una elección</h2>
+                    <h2>Elecciones</h2>
                     <button onClick={() => setElection("chile_2025")}>
-                      Chile: Parlamentaria + Presidencial (15.11.2025)
+                      Chile: Elecciones generales (15.11.2025)
                     </button>
-                    <button onClick={() => setElection("chile_diputados_2025")}>
+                    {/* <button onClick={() => setElection("chile_diputados_2025")}>
                       Chile: Elección parlamentaria (15.11.2025)
                     </button>
                     <button onClick={() => setElection("chile_presidencial_2025")}>
                       Chile: Elección presidencial (15.11.2025)
-                    </button>
+                    </button> */}
                     <button onClick={() => setElection("peru_parl_2026")}>
                       Perú: Elección parlamentaria (12.04.2026)
                     </button>
@@ -510,14 +547,14 @@ useEffect(() => {
                                 }}
                               >
                                 {rt === "party"                   && "Partidos políticos"}
-                                {rt === "parliamentaryCandidates" && "Candidatos parlamentarios"}
+                                {rt === "parliamentaryCandidates" && "Diputados"}
                                 {rt === "presidentialCandidates"  && "Candidatos presidenciales"}
                               </button>
                             ))}
                           </div>
                         )}
 
-                        <div style={{ display: "flex", width: "100%" }}>
+                        <div style={{display: "flex", flexDirection: isMobile ? "column" : "row", width: "100%"}}>
                           <div style={{ flex: 1 }}>
                             {state.comparisonResults && (
                               <>
@@ -529,10 +566,15 @@ useEffect(() => {
                                     </div>
                                     <ul style={{ listStyleType: "none", padding: 0, textAlign: "left", width: "100%" }}>
                                       {state.comparisonResults.party_results.map((partyResult, index) => (
+                                      <>
                                         <li
                                           className="candidate-party-similarity-item"
                                           key={index}
-                                          onClick={() => handleEntityClick(partyResult, "party")}
+                                          onClick={() =>
+                                            isMobile
+                                              ? handleMobileToggle(partyResult, "party")
+                                              : handleEntityClick(partyResult, "party")
+                                          }
                                         >
                                           <div className="candidate-party-similarity-item">
                                             <span><strong>{partyResult.party}</strong></span>
@@ -541,6 +583,19 @@ useEffect(() => {
                                             </span>
                                           </div>
                                         </li>
+
+                                        {isMobile && mobileOpen === partyResult.party && (
+                                          <div className="entity-details-inline">
+                                            <h2>{partyResult.party}</h2>
+                                            {state.entityDetails.details.map(detail => (
+                                              <p key={detail.id}>
+                                                <strong>{detail.question}</strong><br/>
+                                                {detail.vote || detail.comment}
+                                              </p>
+                                            ))}
+                                          </div>
+                                        )}
+                                      </>
                                       ))}
                                     </ul>
                                   </>
@@ -554,16 +609,34 @@ useEffect(() => {
                                     </div>
                                     <ul className="parties-and-candidates-list">
                                       {state.comparisonResults.individual_results.map((result, index) => (
+                                      <>
                                         <li
                                           className="candidate-party-similarity-item"
                                           key={index}
-                                          onClick={() => handleEntityClick(result, "individual")}
+                                          onClick={() =>
+                                            isMobile
+                                              ? handleMobileToggle(result, "individual")
+                                              : handleEntityClick(result, "individual")
+                                          }
                                         >
                                           <span>{result.names?.join(", ") || result.name}</span>
                                           <span className="result-score">
                                             {result.similarity_score}%
                                           </span>
                                         </li>
+
+                                        {isMobile && mobileOpen === result.name && (
+                                          <div className="entity-details-inline">
+                                            <h2>{result.name}</h2>
+                                            {state.entityDetails.details.map(detail => (
+                                              <p key={detail.id}>
+                                                <strong>{detail.question}</strong><br/>
+                                                {detail.vote || detail.comment}
+                                              </p>
+                                            ))}
+                                          </div>
+                                        )}
+                                      </>
                                       ))}
                                     </ul>
                                   </>
@@ -577,16 +650,41 @@ useEffect(() => {
                                     </div>
                                     <ul className="parties-and-candidates-list">
                                       {state.comparisonResults.presidential_results.map((result, index) => (
-                                        <li
-                                          className="candidate-party-similarity-item"
-                                          key={index}
-                                          onClick={() => handleEntityClick(result, "presidential")}
-                                        >
-                                          <span>{result.name}</span>
-                                          <span className="result-score">
-                                            {result.similarity_score}%
-                                          </span>
-                                        </li>
+                                    <>
+                                      <li
+                                        className="candidate-party-similarity-item"
+                                        key={index}
+                                        onClick={() =>
+                                          isMobile
+                                            ? handleMobileToggle(result, "presidential")
+                                            : handleEntityClick(result, "presidential")
+                                        }
+                                      >
+                                        <span>{result.name}</span>
+                                        <span className="result-score">
+                                          {result.similarity_score}%
+                                        </span>
+                                      </li>
+
+                                      {isMobile && mobileOpen === result.name && (
+                                        <div className="entity-details-inline">
+                                          <h2>{result.name}</h2>
+                                          {state.entityDetails.details.map(detail => (
+                                            <p key={detail.id}>
+                                              <strong>{detail.question}</strong><br/>
+                                              {detail.vote === "1"
+                                                ? "A favor"
+                                                : detail.vote === "0.5"
+                                                ? "Neutral"
+                                                : detail.vote === "0"
+                                                ? "En contra"
+                                                : detail.vote}
+                                              {detail.comment && <><br/>{detail.comment}</>}
+                                            </p>
+                                          ))}
+                                        </div>
+                                      )}
+                                    </>
                                       ))}
                                     </ul>
                                   </>
