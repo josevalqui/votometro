@@ -84,14 +84,14 @@ export default function App() {
               const src = qd.source
 
               const voteMapping = {
-                "1":         "A favor",
-                "0.5":       "Neutral",
-                "0":         "En contra",
-                "A favor":   "A favor",
-                "En contra": "En contra",
-                "Neutral":   "Neutral",
-                "Ausente":   "Ausente"
-              };
+              "1":         "A favor",
+              "0.5":       "Neutral",
+              "0":         "En contra",
+              "A favor":   "A favor",
+              "En contra": "En contra",
+              "Neutral":   "Neutral",
+              "Ausente":   "Ausente"
+            };
 
               return (
                 <div key={idx} style={{ marginBottom: inline ? "4px" : "2px", lineHeight: "1.2" }}>
@@ -192,7 +192,7 @@ export default function App() {
   // Map quiz options to labels.
   const userAnswerMapping = { 
     "Estoy de acuerdo": "A favor", 
-    "No tengo una opinión sobre este tema": "Neutral", 
+    "Neutral": "Neutral", 
     "No estoy de acuerdo": "En contra" 
   };
 
@@ -345,11 +345,11 @@ const handleAnswerClick = option => {
     // Process user answers into numeric values.
     const userAnswers = {};
     state.questions.forEach((q, i) => {
-      const rawAnswer = state.answers[i] || "No tengo una opinión sobre este tema";
+      const rawAnswer = state.answers[i] || "Neutral";
       const normalizedAnswer = rawAnswer.trim().toLowerCase();
       const userMapping = { 
         "estoy de acuerdo": 1, 
-        "no tengo una opinión sobre este tema": 0.5, 
+        "neutral": 0.5, 
         "no estoy de acuerdo": 0 
       };
       let numericAnswer = userMapping[normalizedAnswer];

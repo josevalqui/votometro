@@ -88,7 +88,7 @@ export function useQuiz(election) {
               question: q.question,
               options: [
                 "Estoy de acuerdo",
-                "No tengo una opinión sobre este tema",
+                "Neutral",
                 "No estoy de acuerdo"
               ],
               polarity: ""
