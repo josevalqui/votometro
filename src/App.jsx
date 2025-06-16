@@ -612,7 +612,7 @@ useEffect(() => {
                             {resultTypes.map(rt => (
                               <button
                                 key={rt}
-                                className="option-button"
+                                className="toggle-option-button"
                                 onClick={() => setSelectedResultType(rt)}
                                 onMouseEnter={() => dispatch({ type: "SET_HOVERED_OPTION", payload: rt })}
                                 onMouseLeave={() => dispatch({ type: "SET_HOVERED_OPTION", payload: null })}
@@ -641,28 +641,26 @@ useEffect(() => {
                                       <span>Partido</span>
                                       <span>Similaridad</span>
                                     </div>
-                                    <ul style={{ listStyleType: "none", padding: 0, textAlign: "left", width: "100%" }}>
-                                      {state.comparisonResults.party_results.map((partyResult, index) => (
-                                      <>
-                                        <li
-                                          className="candidate-party-similarity-item"
-                                          key={index}
-                                          onClick={() =>
-                                            isMobile
-                                              ? handleMobileToggle(partyResult, "party")
-                                              : handleEntityClick(partyResult, "party")
-                                          }
-                                        >
-                                          <div className="candidate-party-similarity-item">
-                                            <span><strong>{partyResult.party}</strong></span>
-                                            <span className="result-score">
-                                              {partyResult.average_similarity_score}%
-                                            </span>
-                                          </div>
-                                        </li>
 
-                                        {isMobile && mobileOpen === partyResult.party && <EntityDetails inline />}
-                                      </>
+
+                                    <ul className="parties-and-candidates-list" style={{ textAlign: "left" }}>
+                                      {state.comparisonResults.party_results.map((partyResult, idx) => (
+                                        <React.Fragment key={idx}>
+                                          <li
+                                            className={`candidate-party-similarity-item ${
+                                              mobileOpen === partyResult.party ? "open" : ""
+                                            }`}
+                                            onClick={() =>
+                                              isMobile
+                                                ? handleMobileToggle(partyResult, "party")
+                                                : handleEntityClick(partyResult, "party")
+                                            }
+                                          >
+                                            <span>{partyResult.party}</span>
+                                            <span className="result-score">{partyResult.average_similarity_score}%</span>
+                                          </li>
+                                          {isMobile && mobileOpen === partyResult.party && <EntityDetails inline />}
+                                        </React.Fragment>
                                       ))}
                                     </ul>
                                   </>
@@ -675,11 +673,12 @@ useEffect(() => {
                                       <span>Similaridad</span>
                                     </div>
                                     <ul className="parties-and-candidates-list">
-                                      {state.comparisonResults.individual_results.map((result, index) => (
-                                      <>
+                                    {state.comparisonResults.individual_results.map((result, idx) => (
+                                      <React.Fragment key={idx}>
                                         <li
-                                          className="candidate-party-similarity-item"
-                                          key={index}
+                                            className={`candidate-party-similarity-item ${
+                                              mobileOpen === result.name ? "open" : ""  
+                                          }`}
                                           onClick={() =>
                                             isMobile
                                               ? handleMobileToggle(result, "individual")
@@ -687,14 +686,11 @@ useEffect(() => {
                                           }
                                         >
                                           <span>{result.names?.join(", ") || result.name}</span>
-                                          <span className="result-score">
-                                            {result.similarity_score}%
-                                          </span>
+                                          <span className="result-score">{result.similarity_score}%</span>
                                         </li>
-
                                         {isMobile && mobileOpen === result.name && <EntityDetails inline />}
-                                      </>
-                                      ))}
+                                      </React.Fragment>
+                                    ))}
                                     </ul>
                                   </>
                                 )}
@@ -706,26 +702,24 @@ useEffect(() => {
                                       <span>Similaridad</span>
                                     </div>
                                     <ul className="parties-and-candidates-list">
-                                      {state.comparisonResults.presidential_results.map((result, index) => (
-                                    <>
-                                      <li
-                                        className="candidate-party-similarity-item"
-                                        key={index}
-                                        onClick={() =>
-                                          isMobile
-                                            ? handleMobileToggle(result, "presidential")
-                                            : handleEntityClick(result, "presidential")
-                                        }
-                                      >
-                                        <span>{result.name}</span>
-                                        <span className="result-score">
-                                          {result.similarity_score}%
-                                        </span>
-                                      </li>
-
-                                      {isMobile && mobileOpen === result.name && <EntityDetails inline />}
-                                    </>
-                                      ))}
+                                    {state.comparisonResults.presidential_results.map((result, idx) => (
+                                      <React.Fragment key={idx}>
+                                        <li
+                                          className={`candidate-party-similarity-item ${
+                                            mobileOpen === result.name ? "open" : ""
+                                          }`}
+                                          onClick={() =>
+                                            isMobile
+                                              ? handleMobileToggle(result, "presidential")
+                                              : handleEntityClick(result, "presidential")
+                                          }
+                                        >
+                                          <span>{result.name}</span>
+                                          <span className="result-score">{result.similarity_score}%</span>
+                                        </li>
+                                        {isMobile && mobileOpen === result.name && <EntityDetails inline />}
+                                      </React.Fragment>
+                                    ))}
                                     </ul>
                                   </>
                                 )}
