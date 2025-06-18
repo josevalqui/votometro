@@ -1,0 +1,182 @@
+{
+  "candidates": {
+    "César Acuña": {
+      "party": "Alianza para el Progreso",
+      "votes": {
+        "Aborto": {
+          "question": "El aborto debería estar permitido en casos de violación.",
+          "vote": "0",
+          "comment": "Rechaza la legalización del aborto; se declara “defensor de la vida desde la concepción”.",
+          "source": "https://larepublica.pe/elecciones/2021/03/17/yoprometo-el-compromiso-de-cesar-acuna-candidato-de-alianza-para-el-progreso-pltc"
+        },
+        "Matrimonio": {
+          "question": "Está bien que esté permitido el matrimonio igualitario, independientemente del género.",
+          "vote": "0.5",
+          "comment": "En 2021 dijo que es “una decisión personal y así lo aceptarán”, pero en 2016 se le vinculó a la oposición a la unión civil; postura ambigua.",
+          "source": "https://larepublica.pe/elecciones/2021/03/17/yoprometo-el-compromiso-de-cesar-acuna-candidato-de-alianza-para-el-progreso-pltc https://canaln.pe/actualidad/julio-rosas-acepte-ir-cesar-acuna-porque-esta-contra-union-civil-n216346"
+        },
+        "Adopción": {
+          "question": "Las parejas homosexuales deberían poder adoptar.",
+          "vote": "0",
+          "comment": "Declaró estar “totalmente en desacuerdo” con la adopción homoparental.",
+          "source": "https://www.masigualdad.pe/post/derechos-lgtbiq-no-son-parte-del-debate-ni-de-los-planes-de-gobierno-de-la-mayor%C3%ADa-de-candidatxs"
+        },
+        "Eutanasia": {
+          "question": "Cuando una persona tiene una enfermedad que no tiene cura, debería poder elegir acabar con su vida.",
+          "vote": "0",
+          "comment": "Expresó que no está de acuerdo con permitir la eutanasia.",
+          "source": "https://larepublica.pe/elecciones/2021/03/17/yoprometo-el-compromiso-de-cesar-acuna-candidato-de-alianza-para-el-progreso-pltc"
+        },
+        "Pena de muerte": {
+          "question": "Está bien que haya pena de muerte.",
+          "vote": "0.5",
+          "comment": "Propone que “el pueblo decida” sobre aplicarla a violadores; no se pronuncia a favor ni en contra de fondo.",
+          "source": "https://www.laindustria.pe/nota/27226-csar-acua-el-pueblo-decidir-si-se-aplica-o-no-la-pena-de-muerte-a-violadores"
+        },
+        "Impuestos progresivos": {
+          "question": "Debería haber un sistema de impuestos progresivos, donde los más ricos paguen un mayor porcentaje.",
+          "vote": "0.5",
+          "comment": "No se encontró postura pública verificable sobre un sistema más progresivo de impuestos.",
+          "source": null
+        },
+        "Tratados": {
+          "question": "Deberían haber más acuerdos de libre comercio con otros países.",
+          "vote": "1",
+          "comment": "Propuso “actualizar” y profundizar el TLC Perú-China para ampliar oportunidades comerciales.",
+          "source": "https://www.regionlalibertad.gob.pe/NOTICIAS/regionales/14646-gore-la-libertad-impulsa-alianzas-internacionales-y-la-cooperacion-educativa-en-china"
+        },
+        "Pueblos indígenas": {
+          "question": "Los pueblos indígenas deberían recibir títulos de propiedad para sus tierras.",
+          "vote": "0.5",
+          "comment": "No se halló posición concreta acerca de otorgar títulos a comunidades indígenas.",
+          "source": null
+        },
+        "Minería": {
+          "question": "Se deberían poder expropiar las tierras de los pueblos indígenas para hacer proyectos mineros.",
+          "vote": "1",
+          "comment": "Favorece la inversión minera mientras se cuide el ambiente y genere desarrollo en la zona.",
+          "source": "https://larepublica.pe/elecciones/2021/03/17/yoprometo-el-compromiso-de-cesar-acuna-candidato-de-alianza-para-el-progreso-pltc"
+        },
+        "Migración": {
+          "question": "Debería ser más fácil que los migrantes ilegales se regularicen, en vez de ser expulsados.",
+          "vote": "0.5",
+          "comment": "No se encontró declaración específica sobre regularizar vs. expulsar migrantes irregulares.",
+          "source": null
+        },
+        "Educación de género": {
+          "question": "Debería haber educación sexual en los colegios.",
+          "vote": "1",
+          "comment": "Propuso que la educación sexual sea obligatoria en inicial, primaria y secundaria.",
+          "source": "https://regionlalibertad.gob.pe/noticiaS/regionales/15403-cesar-acuna-hay-que-educar-para-erradicar-la-violencia-hacia-la-mujer"
+        },
+        "Profesores": {
+          "question": "Se debería subir el sueldo de los profesores escolares.",
+          "vote": "1",
+          "comment": "Señaló que es “momento de reivindicar a los maestros” y pidió mayores sueldos docentes.",
+          "source": "https://tvcosmos.pe/cesar-acuna-pide-mayor-sueldo-para-los-docentes/"
+        },
+        "Sueldo mínimo": {
+          "question": "El sueldo mínimo debería ser más alto.",
+          "vote": "1",
+          "comment": "Prometió elevar el salario mínimo a S/ 1 000 (y luego a S/ 1 380) en su eventual gobierno.",
+          "source": "https://gestion.pe/peru/politica/acuna-promete-subir-el-sueldo-minimo-el-2021-pero-no-explica-donde-saldra-financiamiento-noticia/"
+        },
+        "Defensa": {
+          "question": "Se debería aumentar el presupuesto de los militares en Perú.",
+          "vote": "1",
+          "comment": "Exigió mayor inversión y la intervención de las Fuerzas Armadas para seguridad interna.",
+          "source": "https://www.regionlalibertad.gob.pe/noticias/regionales/15171-cesar-acuna-por-insistencia-consigue-que-las-fuerzas-armadas-tomen-el-control-de-la-seguridad-en-trujillo"
+        }
+      }
+    },
+    "Rafael López Aliaga": {
+      "party": "Renovación Popular",
+      "votes": {
+        "Aborto": {
+          "question": "El aborto debería estar permitido en casos de violación.",
+          "vote": "0",
+          "comment": "Rechaza la despenalización incluso en casos de violación; propuso hospedar a niñas violadas en un “hotel cinco estrellas” en lugar de permitir el aborto.",
+          "source": "https://larepublica.pe/politica/2021/02/21/rafael-lopez-aliaga-perfil-del-candidato-presidencial-de-renovacion-popular-pltc"
+        },
+        "Matrimonio": {
+          "question": "Está bien que esté permitido el matrimonio igualitario, independientemente del género.",
+          "vote": "0",
+          "comment": "Se sumó a la marcha “Por la Vida y la Familia” contra la unión civil para parejas del mismo sexo y vetó eventos LGBT en Lima.",
+          "source": "https://www.infobae.com/peru/2024/11/24/rafael-lopez-aliaga-llama-a-sus-seguidores-a-marchar-contra-la-union-civil-el-7-de-diciembre/"
+        },
+        "Adopción": {
+          "question": "Las parejas homosexuales deberían poder adoptar.",
+          "vote": "0",
+          "comment": "Defiende que los niños “necesitan mamá y papá” y se opone a la adopción homoparental.",
+          "source": "https://www.infobae.com/america/mundo/2024/12/05/lara-trump-bolsonaro-un-mega-influencer-y-el-creador-del-tea-party-una-por-una-las-figuras-internacionales-de-la-cpac-argentina/"
+        },
+        "Eutanasia": {
+          "question": "Cuando una persona tiene una enfermedad que no tiene cura, debería poder elegir acabar con su vida.",
+          "vote": "0",
+          "comment": "Sobre el caso Ana Estrada dijo: “Si te quieres matar, súbete a un edificio y te tiras; ¿para qué mete el Estado?”.",
+          "source": "https://www.infobae.com/peru/2024/02/03/ana-estrada-lamenta-que-rafael-lopez-aliaga-quiera-que-tenga-una-muerte-violenta-esta-repitiendo-lo-que-mucha-gente-dice/"
+        },
+        "Pena de muerte": {
+          "question": "Está bien que haya pena de muerte.",
+          "vote": "1",
+          "comment": "Respaldó abrir el debate para aplicar la pena de muerte a violadores de menores.",
+          "source": "https://www.infobae.com/peru/2024/12/10/rafael-lopez-aliaga-respalda-propuesta-de-abrir-el-debate-para-la-pena-de-muerte-a-violadores-de-menores/"
+        },
+        "Impuestos progresivos": {
+          "question": "Debería haber un sistema de impuestos progresivos, donde los más ricos paguen un mayor porcentaje.",
+          "vote": "0.5",
+          "comment": "No se encontró postura pública verificable sobre un sistema más progresivo de impuestos.",
+          "source": null
+        },
+        "Tratados": {
+          "question": "Deberían haber más acuerdos de libre comercio con otros países.",
+          "vote": "0.5",
+          "comment": "Propuso “revisar” el TLC Perú-China para introducir salvaguardias que protejan a productores locales; no rechaza los TLC, pero cuestiona sus condiciones actuales.",
+          "source": "https://www.swissinfo.ch/spa/candidato-ultraconservador-peruano-promete-revisar-tratado-comercial-con-china/46485738"
+        },
+        "Pueblos indígenas": {
+          "question": "Los pueblos indígenas deberían recibir títulos de propiedad para sus tierras.",
+          "vote": "0.5",
+          "comment": "No se halló posición concreta acerca de otorgar títulos a comunidades indígenas.",
+          "source": null
+        },
+        "Minería": {
+          "question": "Se deberían poder expropiar las tierras de los pueblos indígenas para hacer proyectos mineros.",
+          "vote": "0.5",
+          "comment": "No se encontró declaración específica sobre expropiar tierras indígenas para minería.",
+          "source": null
+        },
+        "Migración": {
+          "question": "Debería ser más fácil que los migrantes ilegales se regularicen, en vez de ser expulsados.",
+          "vote": "0",
+          "comment": "Exigió la deportación de extranjeros indocumentados, afirmando “hay que sacarlos a patadas”.",
+          "source": "https://www.infobae.com/peru/2025/01/09/rafael-lopez-aliaga-exige-a-dina-boluarte-deportar-a-extranjeros-indocumentados-hay-que-sacarlos-a-patadas/"
+        },
+        "Educación de género": {
+          "question": "Debería haber educación sexual en los colegios.",
+          "vote": "0",
+          "comment": "Prometió “exterminar” la “doctrina de género” y se opone a la inclusión del enfoque de género en la educación.",
+          "source": "https://elcomercio.pe/elecciones-2021/rafael-lopez-aliaga-toda-la-doctrina-de-genero-evidentemente-va-a-ser-exterminada-renovacion-popular-entrevista-elecciones-2021-noticia/"
+        },
+        "Profesores": {
+          "question": "Se debería subir el sueldo de los profesores escolares.",
+          "vote": "0.5",
+          "comment": "No se encontró propuesta específica de aumento salarial docente.",
+          "source": null
+        },
+        "Sueldo mínimo": {
+          "question": "El sueldo mínimo debería ser más alto.",
+          "vote": "0.5",
+          "comment": "No se encontró postura pública sobre elevar la remuneración mínima vital.",
+          "source": null
+        },
+        "Defensa": {
+          "question": "Se debería aumentar el presupuesto de los militares en Perú.",
+          "vote": "0.5",
+          "comment": "No se identificó declaración acerca de incrementar el presupuesto militar nacional.",
+          "source": null
+        }
+      }
+    }
+  }
+}
