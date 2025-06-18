@@ -586,9 +586,13 @@ const handleAnswerClick = option => {
                     </button>
                     <button onClick={() => setElection("chile_presidencial_2025")}>
                       Chile: Elección presidencial (15.11.2025)
-                    </button> */}
+                    </button>
                     <button onClick={() => setElection("peru_parl_2026")}>
                       Perú: Elección parlamentaria (12.04.2026)
+                    </button> */}
+
+                    <button onClick={() => setElection("peru_2026")}>
+                      Perú: Elecciones generales (12.04.2026)
                     </button>
                   </div>
                 ) : (

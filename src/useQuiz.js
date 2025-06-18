@@ -3,7 +3,9 @@ import { useReducer, useMemo, useEffect } from "react";
 import peruConfig from "./elections/peru_parl_2026";
 import chileConfig from "./elections/chile_diputados_2025";
 import chilePresidencial2025 from "./elections/chile_presidencial_2025";
-import chile2025     from "./elections/chile_2025";  // ← PASTE HERE
+import chile2025 from "./elections/chile_2025";  // ← PASTE HERE
+import peru2026 from "./elections/peru_2026";  // ← PASTE HERE
+
 
 // Map election types to their configuration objects.
 const electionConfigs = {
@@ -11,6 +13,7 @@ const electionConfigs = {
   chile_diputados_2025: chileConfig,
   chile_presidencial_2025: chilePresidencial2025,
   chile_2025: chile2025,
+  peru_2026: peru2026,
 };
 
 const initialState = {
