@@ -41,8 +41,8 @@ export default function Contacto() {
             Sobre mí
           </h2>
           <p style={{ marginBottom: "20px" }}>
-            Soy Jose Valqui Pastor, y estudié sociología en Heidelberg. Decidí crear esta página porque para votar en la elección de Heidelberg, usé una aplicación parecida (Wahl-O-Mat).
-            <br/>La idea es contribuir a que la gente vote por partidos que están alineados con sus intereses y opiniones, sin necesidad de invertir muchas horas en investigar las posiciones de todos los partidos inscritos en una elección.
+            Soy Jose, y estudié sociología en Heidelberg. Decidí crear esta página porque para votar en la elección de Heidelberg, usé una aplicación parecida (Wahl-O-Mat).
+            <br/>La idea es contribuir a que la gente vote por partidos que están alineados con sus propios intereses y opiniones, sin necesidad de invertir muchas horas en investigar las posiciones de todos los partidos y candidatos inscritos en una elección.
             <br/>La meta de la aplicación no es convencer a nadie de votar por un partido específico, sino ayudar a que las personas tengan una primera idea de cuáles partidos están alineados con sus opiniones, para que luego puedan informarse más antes de votar.
           </p>
 
@@ -50,7 +50,7 @@ export default function Contacto() {
             Contacto
           </h2>
           <p>
-            Si tienes ideas, sugerencia o comentarios sobre la aplicación, me alegraría leerlos en este correo: <br/>
+            Si tienes ideas, sugerencia o comentarios sobre la aplicación, me alegraría leerlos: <br/>
             <a href="mailto:decid.es@outlook.com" style={{ color: "#00CED1" }}>
               decid.es@outlook.com
             </a>

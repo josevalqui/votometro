@@ -11,7 +11,7 @@ function Menu({ open, onClose }) {
   return open ? (
     <div className="menu-panel">
       <ul style={{textDecoration: "none", listStyle: "none", margin: 0, padding: 10 }}>
-        <li className="menu-list-item"><Link to="/" onClick={onClose}>Encuesta</Link></li>
+        <li className="menu-list-item"><Link to="/" onClick={onClose}>Encuestas</Link></li>
         <li className="menu-list-item"><Link to="/metodologia" onClick={onClose}>Metodología</Link></li>
         <li className="menu-list-item"><Link to="/contacto"    onClick={onClose}>Contacto</Link></li>
       </ul>
@@ -93,10 +93,40 @@ export default function App() {
               "Ausente":   "Ausente"
             };
 
+            const voteToNum = v => {
+              const m = { "A favor": 1, "Neutral": 0.5, "En contra": 0 };
+              const n = parseFloat(v);
+              return !isNaN(n) ? n : (m[v] ?? 0.5);
+            };
+            const candVal  = voteToNum(d.vote);
+
+            const userText  = userAnswerMapping[state.answers[idx]] || "Sin respuesta"
+            const userMap   = { "A favor": 1, "Neutral": 0.5, "En contra": 0 }
+            const userVal   = userMap[userText] ?? 0.5
+            const diff      = Math.abs(candVal - userVal)
+            let icon = "", color = ""
+            if (diff === 0)      { icon = "✔"; color = "green" }
+            else if (diff === 1) { icon = "✖"; color = "red"   }
+            else if (diff === 0.5){ icon = "~"; color = "gold"  }
+
               return (
                 <div key={idx} style={{ marginBottom: inline ? "4px" : "2px", lineHeight: "1.2" }}>
                   <p style={{ margin: "2px 0" }}>
-                    <strong>Tema:</strong> {qd.question}<br/>
+                    <span
+                      onClick={() => isMobile && alert(
+                        `Opinión del ${party_meta ? 'partido' : 'candidato'}: ${voteMapping[d.vote]}\nTu opinión: ${userText}`
+                      )}
+                      title={`Opinión del ${party_meta ? 'partido' : 'candidato'}: ${voteMapping[d.vote]}\nTu opinión: ${userText}`}
+                      style={{
+                        cursor: isMobile ? 'pointer' : 'default',
+                        color,
+                        marginRight: '4px'
+                      }}
+                    >
+                      {icon} <strong style={{ color }}>Tema:</strong>
+                    </span>
+                     {qd.question}
+                    <br/>
                     {config.showLawInfo && qd.law && (
                       <small style={{ color: "gray", fontSize: "0.9em" }}>
                         <strong>Proyecto de ley:</strong> {qd.law}
@@ -109,10 +139,6 @@ export default function App() {
                       <strong>Fecha:</strong> {d.date || "N/A"}<br/>
                     </p>
                   )}
-
-                  <p style={{ margin: "2px 0" }}>
-                    <strong>Tu respuesta:</strong> {userAnswerMapping[state.answers[idx]] || "Sin respuesta"}<br/>
-                  </p>
 
                   <p style={{ margin: "2px 0" }}>
                     {party_meta ? (
@@ -128,16 +154,25 @@ export default function App() {
                       
                       ) : config.isPresidentialElection ? (
                         <>
-                          <strong>Opinión del candidato:</strong> {voteMapping[d.vote] || "N/A"}<br/>
+
                           {d.comment && (
-                            <><strong>Comentario:</strong> {d.comment}<br/></>
-                          )}
-                          {d.source && (
-                            <><strong>Fuente:</strong>{" "}
-                              <a href={d.source} target="_blank" rel="noopener noreferrer">
-                                {d.source.slice(0,40)}…
-                              </a><br/>
-                            </>
+                            <p style={{ margin: "2px 0" }}>
+                              <strong>Comentario:</strong> {d.comment}
+                              {d.source && (
+                                // source marker at end of comment
+                                <sup>
+                                  <a
+                                    href={d.source}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    title="Ver fuente"
+                                  >
+                                    *
+                                  </a>
+                                </sup>
+                              )}
+                              <br/>
+                            </p>
                           )}
                         </>
                       ) : (
@@ -577,7 +612,7 @@ const handleAnswerClick = option => {
               >
                 {!election ? (
                   <div className="election-selection-container">
-                    <h2>Elecciones</h2>
+                    <h2>Encuestas</h2>
                     <button onClick={() => setElection("chile_2025")}>
                       Chile: Elecciones generales (15.11.2025)
                     </button>

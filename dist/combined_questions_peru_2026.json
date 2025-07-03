@@ -15,7 +15,7 @@
   },
   {
     "id": "PL 6162 TS",
-    "question": "Estuvo bien la ley que restringe las actividades políticas y el financiamiento de ONGs que tienen procesos legales contral el estado peruano.",
+    "question": "Estuvo bien la ley que restringe las actividades políticas y el financiamiento de ONGs que tienen procesos legales contra el estado peruano.",
     "polarity": "+",
     "options": [
       "Estoy de acuerdo",
@@ -29,7 +29,7 @@
   },
   {
     "id": "PL 649 INS",
-    "question": "Está bien reducir las protecciones a los bosques para impulsar el desarrollo económico, a pesar de que pueda provocar mayor destrucción ambiental",
+    "question": "Está bien reducir las protecciones a los bosques para impulsar el desarrollo económico, a pesar de que pueda provocar mayor destrucción ambiental.",
     "polarity": "+",
     "options": [
       "Estoy de acuerdo",
@@ -85,7 +85,7 @@
   },
   {
     "id": "PL 7462 TS",
-    "question": "Está bien la ley que amplió hasta junio de 2025 el plazo para que mineros pequeños y artesanales se formalicen, permitiéndoles seguir operando legalmente, aunque prolonga la falta de sanciones penales para quienes siguen en la minería ilegal, lo que podría aumentar la contaminación y los conflictos sociales.",
+    "question": "Está bien la ley que amplió hasta junio de 2025 el plazo para que mineros pequeños y artesanales se formalicen.",
     "polarity": "+",
     "options": [
       "Estoy de acuerdo",
@@ -99,7 +99,7 @@
   },
   {
     "id": "PL 9055",
-    "question": "Estuvo bien aprobar la ley que cambia el concepto de organización criminal, limitando su aplicación a delitos con penas mayores a seis años, excluyendo delitos como trata de personas, extorsión, tráfico de órganos, estafa agravada, tala ilegal, tortura y corrupción de funcionarios.",
+    "question": "Estuvo bien aprobar la ley que cambia el concepto de organización criminal, excluyendo delitos como trata de personas, extorsión, tráfico de órganos, estafa agravada, tala ilegal, tortura y corrupción de funcionarios.",
     "polarity": "+",
     "options": [
       "Estoy de acuerdo",

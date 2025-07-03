@@ -62,6 +62,36 @@
           "vote": "0",
           "comment": "Lo llama una \"discusión cerrada\".",
           "source": "https://www.eldinamo.cl/politica/2025/03/31/discusion-cerrada-matthei-y-el-gobierno-se-alinean-en-rechazo-a-una-nueva-constitucion-sugerida-por-el-pc/"
+        },
+        "Pena de muerte": {
+          "question": "La pena de muerte debería estar permitida en Chile.",
+          "vote": "1",
+          "comment": "Propone reabrir el debate y aplicarla en delitos gravísimos.",
+          "source": "https://www.infobae.com/america/america-latina/2025/03/14/polemica-en-chile-por-propuesta-de-la-candidata-evelyn-matthei-de-reflotar-la-pena-de-muerte/"
+        },
+        "Gasto": {
+          "question": "El gobierno debería invertir más en fortalecer las instituciones, en vez de reducir gastos.",
+          "vote": "0",
+          "comment": "Propone recortar US$ 6 000 millones del gasto fiscal y limitar personal público.",
+          "source": "https://elpais.com/chile/2025-05-15/primer-cara-a-cara-de-los-presidenciables-en-chile-recorte-del-gasto-publico-incentivo-a-la-vivienda-y-cruces-por-las-contribuciones.html"
+        },
+        "Nacimiento": {
+          "question": "El Estado Chileno debería fomentar que las personas tengan más hijos e hijas.",
+          "vote": "1",
+          "comment": "Propone ayudas de vivienda, sala cuna universal y cobertura de fertilidad.",
+          "source": "https://elpais.com/chile/2025-05-07/ayuda-para-la-vivienda-bono-por-hijo-sala-cuna-universal-y-un-banco-de-gametos-las-propuestas-en-natalidad-de-los-candidatos-en-chile.html"
+        },
+        "Seguridad pública": {
+          "question": "El estado debería priorizar el castigo de criminales en vez de su reintegración en la sociedad.",
+          "vote": "1",
+          "comment": "Propone cárcel de máxima seguridad “al estilo Bukele” y promete “mano de hierro”.",
+          "source": "https://pauta.cl/actualidad/2025/04/22/matthei-propone-la-construccion-de-una-carcel-de-alta-de-seguridad-en-atacama-tendre-mano-de-hierro.html"
+        },
+        "Despidos": {
+          "question": "El estado debería despedir a muchos funcionarios públicos para reducir sus gastos.",
+          "vote": "1",
+          "comment": "Anuncia “tijera de podar” para recortar gasto; quiere identificar y desvincular funcionarios con licencias médicas falsas.",
+          "source": "https://www.emol.com/noticias/Nacional/2025/05/23/1167065/reducciondel-estado-campanapresidencial.html"
         }
       }
     },
@@ -127,6 +157,36 @@
           "vote": "0",
           "comment": "Contra una nueva constitución",
           "source": "https://www.latercera.com/la-tercera-domingo/noticia/jose-antonio-kast-no-necesitamos-una-nueva-constitucion/WZEZITGFNND4JNMDAJY4IINXE4/"
+        },
+        "Pena de muerte": {
+          "question": "La pena de muerte debería estar permitida en Chile.",
+          "vote": "0",
+          "comment": "Rechaza; prefiere cadena perpetua y la califica de “salida fácil”.",
+          "source": "https://www.infobae.com/america/america-latina/2025/03/14/polemica-en-chile-por-propuesta-de-la-candidata-evelyn-matthei-de-reflotar-la-pena-de-muerte/"
+        },
+        "Gasto": {
+          "question": "El gobierno debería invertir más en fortalecer las instituciones, en vez de reducir gastos.",
+          "vote": "0",
+          "comment": "Quiere eliminar 50 000 empleos públicos y “achicar el Estado”.",
+          "source": "https://elpais.com/chile/2025-05-15/primer-cara-a-cara-de-los-presidenciables-en-chile-recorte-del-gasto-publico-incentivo-a-la-vivienda-y-cruces-por-las-contribuciones.html"
+        },
+        "Nacimiento": {
+          "question": "El Estado Chileno debería fomentar que las personas tengan más hijos e hijas.",
+          "vote": "1",
+          "comment": "Plan “Renace”: bono de $ 1 000 000 a la madre y otro al recién nacido, más exenciones tributarias.",
+          "source": "https://elpais.com/chile/2025-05-07/ayuda-para-la-vivienda-bono-por-hijo-sala-cuna-universal-y-un-banco-de-gametos-las-propuestas-en-natalidad-de-los-candidatos-en-chile.html"
+        },
+        "Seguridad pública": {
+          "question": "El estado debería priorizar el castigo de criminales en vez de su reintegración en la sociedad.",
+          "vote": "1",
+          "comment": "“Plan Implacable”: penas más duras, cárceles de aislamiento total y “guerra” al crimen organizado.",
+          "source": "https://www.t13.cl/noticia/politica/las-propuestas-de-kast-para-su-plan-implacable-de-seguridad-19-5-2025"
+        },
+        "Despidos": {
+          "question": "El estado debería despedir a muchos funcionarios públicos para reducir sus gastos.",
+          "vote": "1",
+          "comment": "Propone reducir ministerios y “solicitar el retiro a 30 000 personas”.",
+          "source": "https://www.futuro.cl/2021/10/kast-propuso-reducir-ministerios-y-solicitar-el-retiro-a-30-mil-personas/"
         }
       }
     },
@@ -192,6 +252,36 @@
           "vote": "0",
           "comment": "Se declaró “En contra” en el plebiscito y dice que es una discusión cerrada",
           "source": "https://www.latercera.com/politica/noticia/segundo-parlamentario-republicano-que-se-desmarca-del-sector-johannes-kaiser-se-manifiesta-por-el-en-contra/ER7XLUF52BA65K2XZ22ONZ4NAI/"
+        },
+        "Pena de muerte": {
+          "question": "La pena de muerte debería estar permitida en Chile.",
+          "vote": "1",
+          "comment": "“Debe reinstalarse”; la ve necesaria para violadores y asesinos de policías.",
+          "source": "https://www.infobae.com/america/america-latina/2025/03/14/polemica-en-chile-por-propuesta-de-la-candidata-evelyn-matthei-de-reflotar-la-pena-de-muerte/"
+        },
+        "Gasto": {
+          "question": "El gobierno debería invertir más en fortalecer las instituciones, en vez de reducir gastos.",
+          "vote": "0",
+          "comment": "Plantea suprimir ministerios (ej. Mujer) y reducir la estructura estatal.",
+          "source": "https://www.elmostrador.cl/noticias/pais/2025/03/30/kaiser-en-modo-milei-quiere-eliminar-ministerio-de-la-mujer-porque-es-un-desastre/"
+        },
+        "Nacimiento": {
+          "question": "El Estado Chileno debería fomentar que las personas tengan más hijos e hijas.",
+          "vote": "0.5",
+          "comment": "Sin propuesta conocida sobre natalidad.",
+          "source": null
+        },
+        "Seguridad pública": {
+          "question": "El estado debería priorizar el castigo de criminales en vez de su reintegración en la sociedad.",
+          "vote": "1",
+          "comment": "Defiende el modelo Bukele; se declara partidario de “mano dura” y endurecer penas.",
+          "source": "https://www.ciperchile.cl/2025/04/01/la-mano-hiper-dura-analisis-de-las-propuestas-en-seguridad-de-las-candidaturas-presidenciales-de-derecha/"
+        },
+        "Despidos": {
+          "question": "El estado debería despedir a muchos funcionarios públicos para reducir sus gastos.",
+          "vote": "1",
+          "comment": "Pide cesar a los 25 000 empleados con licencias fraudulentas; “hay que achicar el Estado”.",
+          "source": "https://www.latercera.com/politica/noticia/kaiser-propone-despedir-a-los-mas-de-25-mil-funcionarios-publicos-que-viajaron-fuera-del-pais-durante-licencias-medicas/"
         }
       }
     },
@@ -257,6 +347,36 @@
           "vote": "1",
           "comment": "A favor de una nueva constitución",
           "source": "https://www.latercera.com/politica/noticia/por-el-a-favor-franco-parisi-define-su-postura-para-el-plebiscito-del-17-de-diciembre/MXWLLBNVP5BFTKHPSB5FWKL7QU/"
+        },
+        "Pena de muerte": {
+          "question": "La pena de muerte debería estar permitida en Chile.",
+          "vote": "1",
+          "comment": "Plantea “iniciar la discusión” para restituirla; la considera una medida disuasiva.",
+          "source": "https://www.antofagasta.tv/categoria/politica/video-parisi-lanza-propuestas-presidenciales-foco-seguridad-region"
+        },
+        "Gasto": {
+          "question": "El gobierno debería invertir más en fortalecer las instituciones, en vez de reducir gastos.",
+          "vote": "0",
+          "comment": "Promete “ajuste drástico”: fusionar ministerios y tope salarial de $ 5 millones.",
+          "source": "https://thetimes.cl/contenido/3319/franco-parisi-promete-sueldos-maximos-de-5-millones-y-recorte-masivo-de-empleos-"
+        },
+        "Nacimiento": {
+          "question": "El Estado Chileno debería fomentar que las personas tengan más hijos e hijas.",
+          "vote": "0.5",
+          "comment": "Sin postura pública registrada.",
+          "source": null
+        },
+        "Seguridad pública": {
+          "question": "El estado debería priorizar el castigo de criminales en vez de su reintegración en la sociedad.",
+          "vote": "1",
+          "comment": "Sugiere “barcos-cárcel” donde los presos “la pasen mal, muy mal”.",
+          "source": "https://www.biobiochile.cl/especial/bbcl-investiga/noticias/articulos/2025/04/24/barcos-carceles-la-propuesta-de-franco-parisi-para-encarcelar-a-los-reos-mas-peligrosos.shtml"
+        },
+        "Despidos": {
+          "question": "El estado debería despedir a muchos funcionarios públicos para reducir sus gastos.",
+          "vote": "1",
+          "comment": "Promete “recorte masivo de empleos públicos” y fusionar ministerios.",
+          "source": "https://thetimes.cl/contenido/3319/franco-parisi-promete-sueldos-maximos-de-5-millones-y-recorte-masivo-de-empleos-"
         }
       }
     },
@@ -322,6 +442,36 @@
           "vote": "0",
           "comment": "Lideró campañas por el “Rechazo” y sostiene que no se necesita una nueva Constitución.",
           "source": "https://www.biobiochile.cl/especial/una-constitucion-para-chile/noticias/2022/05/28/se-entregan-derechos-con-letra-chica-diputadas-emprenden-campana-del-rechazo-en-bio-bio-y-nuble.shtml"
+        },
+        "Pena de muerte": {
+          "question": "La pena de muerte debería estar permitida en Chile.",
+          "vote": "0",
+          "comment": "Votó en contra de reponerla en la Cámara (2018).",
+          "source": "https://www.emol.com/noticias/Nacional/2018/08/07/916160/Camara-rechaza-reinstaurar-pena-de-muerte-Revisa-como-votaron-los-diputados.html"
+        },
+        "Gasto": {
+          "question": "El gobierno debería invertir más en fortalecer las instituciones, en vez de reducir gastos.",
+          "vote": "0",
+          "comment": "Señala que trabaja en un “fuerte ajuste” al gasto y fusionar carteras (PSC).",
+          "source": "https://www.latercera.com/politica/noticia/matthei-kast-kaiser-winter-parisi-por-que-y-cuales-son-los-ministerios-que-quieren-eliminar-los-candidatos/"
+        },
+        "Nacimiento": {
+          "question": "El Estado Chileno debería fomentar que las personas tengan más hijos e hijas.",
+          "vote": "0.5",
+          "comment": "Sin postura pública registrada.",
+          "source": null
+        },
+        "Seguridad pública": {
+          "question": "El estado debería priorizar el castigo de criminales en vez de su reintegración en la sociedad.",
+          "vote": "1",
+          "comment": "En Sala pidió “poner mano dura”, respaldar a policías y Fuerzas Armadas contra la delincuencia.",
+          "source": "https://www.bcn.cl/obtienearchivo?id=recursoslegales/10221.3/78618/1/C20241112_100.pdf"
+        },
+        "Despidos": {
+          "question": "El estado debería despedir a muchos funcionarios públicos para reducir sus gastos.",
+          "vote": "1",
+          "comment": "Tuitea que los 25 000 funcionarios implicados “deben ser desvinculados” para bajar el gasto fiscal.",
+          "source": "https://x.com/FrancescaD20Dip/status/1925560846656168348"
         }
       }
     },
@@ -362,7 +512,7 @@
           "question": "El pueblo Mapuche debería tener más autonomía y tierras.",
           "vote": "1",
           "comment": "Ha criticado el maltrato de la población mapuche por el Estado Chileno",
-          "source": null
+          "source": "https://obtienearchivo.bcn.cl/obtienearchivo?id=recursoslegales/10221.3/66695/1/4554_369.pdf"
         },
         "Migración irregular": {
           "question": "Debería ser más fácil regularizarse para los migrantes irregulares.",
@@ -387,6 +537,226 @@
           "vote": "1",
           "comment": "Se declaró públicamente por el “Apruebo” y critica el actual proceso por falta de participación",
           "source": "https://www.diarioconcepcion.cl/ciudad/2022/07/12/felix-gonzalez-los-municipios-de-chile-tienen-que-salir-de-este-secuestro-de-la-basura.html"
+        },
+        "Pena de muerte": {
+          "question": "La pena de muerte debería estar permitida en Chile.",
+          "vote": "0",
+          "comment": "Votó en contra de reponerla en la Cámara (2018).",
+          "source": "https://www.emol.com/noticias/Nacional/2018/08/07/916160/Camara-rechaza-reinstaurar-pena-de-muerte-Revisa-como-votaron-los-diputados.html"
+        },
+        "Gasto": {
+          "question": "El gobierno debería invertir más en fortalecer las instituciones, en vez de reducir gastos.",
+          "vote": "0.5",
+          "comment": "Sin postura pública registrada que contraste recortes vs. inversión.",
+          "source": null
+        },
+        "Nacimiento": {
+          "question": "El Estado Chileno debería fomentar que las personas tengan más hijos e hijas.",
+          "vote": "0.5",
+          "comment": "Sin postura pública registrada.",
+          "source": null
+        },
+        "Seguridad pública": {
+          "question": "El estado debería priorizar el castigo de criminales en vez de su reintegración en la sociedad.",
+          "vote": "0",
+          "comment": "Rechaza el “populismo penal”; pide inteligencia policial y niega que endurecer penas reduzca el delito.",
+          "source": "https://www.radioudec.cl/diputado-felix-gonzalez-sobre-agenda-de-seguridad-el-populismo-penal-no-nos-va-a-ayudar/"
+        },
+        "Despidos": {
+          "question": "El estado debería despedir a muchos funcionarios públicos para reducir sus gastos.",
+          "vote": "0.5",
+          "comment": "No hay información válida.",
+          "source": null
+        }
+      }
+    },
+    "Ximena Rincón": {
+      "party": "Demócratas",
+      "votes": {
+        "Aborto": {
+          "question": "El aborto debería ser despenalizado dentro de las primeras 14 semanas de gestación.",
+          "vote": "0",
+          "comment": "Se declara contraria al aborto libre; “no soy partidaria… no lo impulsaría”.",
+          "source": "https://www.t13.cl/noticia/politica/ximena-rincon-aborto-libre-dc-elecciones-31-01-2021"
+        },
+        "Matrimonio": {
+          "question": "Está bien que esté permitido el matrimonio igualitario, independientemente del género.",
+          "vote": "1",
+          "comment": "Como presidenta del Senado respaldó acelerar la aprobación del proyecto de matrimonio igualitario.",
+          "source": "https://www.movilh.cl/presidenta-del-senado-apoya-aprobacion-del-matrimonio-igualitario-sin-necesidad-de-pasar-por-comision-mixta/"
+        },
+        "Impuestos progresivos": {
+          "question": "Debería haber un sistema de impuestos progresivos, donde los más ricos paguen un mayor porcentaje.",
+          "vote": "1",
+          "comment": "“Si ganamos más, pagamos más”; aboga por cerrar exenciones y gravar rentas de capital.",
+          "source": "https://www.eldinamo.cl/actualidad/2019/09/01/senadora-ximena-rincon-sobre-reforma-tributaria-si-ganamos-mas-pagamos-mas/"
+        },
+        "Pensiones": {
+          "question": "Las contribuciones de pensiones deberían ir a cuentas individuales y no a un fondo común (PAYGO).",
+          "vote": "1",
+          "comment": "Propone que 4,2 % del 6 % extra vaya a cuentas individuales y solo 1,8 % a solidaridad.",
+          "source": "https://www.ex-ante.cl/ximena-rincon-y-criticas-de-diego-ibanez-cuando-no-existen-argumentos-se-ocupan-ataques-personales-bajos-ruines-y-mentirosos/"
+        },
+        "Cambio climático": {
+          "question": "El cambio climático es uno de los problemas centrales de los cuales se debería encargar el gobierno.",
+          "vote": "0.5",
+          "comment": "No se encontró posición respaldada con fuente confiable.",
+          "source": null
+        },
+        "Autonomía Mapuche": {
+          "question": "El pueblo Mapuche debería tener más autonomía y tierras.",
+          "vote": "1",
+          "comment": "Presentó reforma que reconoce autonomía en asuntos internos y locales de los pueblos originarios.",
+          "source": "https://www.elmostrador.cl/noticias/pais/2022/10/25/ximena-rincon-por-reforma-constitucional-en-reconocimiento-a-pueblos-originarios-simple-pero-contundente/"
+        },
+        "Migración irregular": {
+          "question": "Debería ser más fácil regularizarse para los migrantes irregulares.",
+          "vote": "0",
+          "comment": "Propuesta de seguridad Demócratas incluye detención preventiva y control fronterizo más estricto, no facilidades de regularización.",
+          "source": "https://radio.uchile.cl/2023/01/19/democratas-presentan-propuesta-de-seguridad-al-gobierno-que-incluye-detencion-de-migrantes-irregulares/"
+        },
+        "Sueldo mínimo": {
+          "question": "Se debería aumentar el sueldo mínimo.",
+          "vote": "0.5",
+          "comment": "No se encontró posición respaldada con fuente confiable.",
+          "source": null
+        },
+        "Litio": {
+          "question": "La extracción del litio debería permanecer bajo el control del estado.",
+          "vote": "0.5",
+          "comment": "No se encontró posición respaldada con fuente confiable.",
+          "source": null
+        },
+        "Constitución": {
+          "question": "Chile debería tener una nueva constitución.",
+          "vote": "0",
+          "comment": "Fue una de las primeras figuras de centro-izquierda en llamar a votar Rechazo (2022) y luego “A Favor” (2023); descarta un nuevo proceso.",
+          "source": "https://www.latercera.com/la-tercera-domingo/noticia/el-viraje-sin-retorno-de-ximena-rincon/JXMP45NGSFAS3HFGN77IDM6CYI/"
+        },
+        "Pena de muerte": {
+          "question": "La pena de muerte debería estar permitida en Chile.",
+          "vote": "0.5",
+          "comment": "No se encontró posición respaldada con fuente confiable.",
+          "source": null
+        },
+        "Gasto": {
+          "question": "El gobierno debería invertir más en fortalecer las instituciones, en vez de reducir gastos.",
+          "vote": "0.5",
+          "comment": "No se encontró posición respaldada con fuente confiable.",
+          "source": null
+        },
+        "Nacimiento": {
+          "question": "El Estado Chileno debería fomentar que las personas tengan más hijos e hijas.",
+          "vote": "No se encontró posición respaldada con fuente confiable.",
+          "comment": "No se encontró posición respaldada con fuente confiable.",
+          "source": null
+        },
+        "Seguridad pública": {
+          "question": "El estado debería priorizar el castigo de criminales en vez de su reintegración en la sociedad.",
+          "vote": "0.5",
+          "comment": "No se encontró posición respaldada con fuente confiable.",
+          "source": null
+        },
+        "Despidos": {
+          "question": "El estado debería despedir a muchos funcionarios públicos para reducir sus gastos.",
+          "vote": "0.5",
+          "comment": "No se encontró posición respaldada con fuente confiable.",
+          "source": null
+        }
+      }
+    },
+    "Jeanette Jara": {
+      "party": "Partido Comunista",
+      "votes": {
+        "Aborto": {
+          "question": "El aborto debería ser despenalizado dentro de las primeras 14 semanas de gestación.",
+          "vote": "1",
+          "comment": "A favor de la despenalización hasta la semana 14.",
+          "source": "https://www.elciudadano.com/chile/despenalizar-aborto-chile-14-semanas/05/30/"
+        },
+        "Matrimonio": {
+          "question": "Está bien que esté permitido el matrimonio igualitario, independientemente del género.",
+          "vote": "1",
+          "comment": "Participó en la firma del proyecto de ley de matrimonio igualitario (2017).",
+          "source": "https://www.mintrab.gob.cl/26363-2/"
+        },
+        "Impuestos progresivos": {
+          "question": "Debería haber un sistema de impuestos progresivos, donde los más ricos paguen un mayor porcentaje.",
+          "vote": "1",
+          "comment": "Propone un sistema tributario progresivo y subir impuestos a los súper ricos.",
+          "source": "https://www.latercera.com/pulso/noticia/las-definiciones-y-planteamientos-economicos-de-jeannette-jara/"
+        },
+        "Pensiones": {
+          "question": "Las contribuciones de pensiones deberían ir a cuentas individuales y no a un fondo común (PAYGO).",
+          "vote": "0",
+          "comment": "Su propuesta reparte el 6 %: 3 % capitalización individual + 3 % seguro social solidario.",
+          "source": "https://cooperativa.cl/noticias/economia/sistema-previsional/jubilacion/ministra-jara-en-materia-de-equidad-de-genero-tenemos-diferencias-con/2024-12-11/145107.html"
+        },
+        "Cambio climático": {
+          "question": "El cambio climático es uno de los problemas centrales de los cuales se debería encargar el gobierno.",
+          "vote": "1",
+          "comment": "Programa preliminar incluye transición ecológica, cierre de termoeléctricas y Ley de Glaciares.",
+          "source": "https://www.cr2.cl/analisis-cr2-un-vistazo-al-programa-preliminar-de-jeannette-jara-respecto-al-cambio-climatico/"
+        },
+        "Autonomía Mapuche": {
+          "question": "El pueblo Mapuche debería tener más autonomía y tierras.",
+          "vote": "0.5",
+          "comment": "No se encontró información pública verificable sobre su postura específica.",
+          "source": null
+        },
+        "Migración irregular": {
+          "question": "Debería ser más fácil regularizarse para los migrantes irregulares.",
+          "vote": "1",
+          "comment": "Propone un programa de regularización para personas en situación irregular.",
+          "source": "https://www.facebook.com/LaVozDeAH/posts/jeannette-jara-candidata-presidencial-propone-abrir-un-programa-de-regularizaci%C3%B3/1127210136105045/"
+        },
+        "Sueldo mínimo": {
+          "question": "Se debería aumentar el sueldo mínimo.",
+          "vote": "1",
+          "comment": "Promete “salario vital” de CLP 750 000 y alzas sostenidas del mínimo.",
+          "source": "https://www.latercera.com/pulso/noticia/las-definiciones-y-planteamientos-economicos-de-jeannette-jara/"
+        },
+        "Litio": {
+          "question": "La extracción del litio debería permanecer bajo el control del estado.",
+          "vote": "1",
+          "comment": "Quiere crear una Empresa Nacional del Litio y sacar a SQM del salar de Atacama.",
+          "source": "https://www.latercera.com/pulso/noticia/las-definiciones-y-planteamientos-economicos-de-jeannette-jara/"
+        },
+        "Constitución": {
+          "question": "Chile debería tener una nueva constitución.",
+          "vote": "0",
+          "comment": "Señala que reabrir un proceso constituyente “no es prioridad” y lo descarta.",
+          "source": "https://elpais.com/chile/2025-07-01/las-preguntas-que-abre-el-triunfo-de-jeannette-jara-fue-mas-fuerte-su-carisma-que-su-militancia-comunista.html"
+        },
+        "Pena de muerte": {
+          "question": "La pena de muerte debería estar permitida en Chile.",
+          "vote": "0",
+          "comment": "Critica volver a la pena de muerte; lo considera un retroceso civilizatorio.",
+          "source": "https://www.biobiochile.cl/noticias/nacional/chile/2025/03/21/jara-pide-unidad-ante-ultraderecha-amenazando-retrocesos-que-es-eso-de-volver-a-pena-de-muerte.shtml"
+        },
+        "Gasto": {
+          "question": "El gobierno debería invertir más en fortalecer las instituciones, en vez de reducir gastos.",
+          "vote": "1",
+          "comment": "Propone inversión estatal en salud, seguridad y trenes; no plantea recortes masivos.",
+          "source": "https://www.emol.com/noticias/Nacional/2025/06/29/1170474/prioridades-programa-gobierno-jeannette-jara.html"
+        },
+        "Nacimiento": {
+          "question": "El Estado Chileno debería fomentar que las personas tengan más hijos e hijas.",
+          "vote": "1",
+          "comment": "Aboga por políticas integrales (sala cuna universal, condiciones materiales) para aumentar la natalidad.",
+          "source": "https://www.adnradio.cl/2025/06/25/jeannette-jara-aborda-la-crisis-habitacional-y-la-necesidad-de-politicas-integrales-para-la-natalidad-y-el-envejecimiento-en-chile/"
+        },
+        "Seguridad pública": {
+          "question": "El estado debería priorizar el castigo de criminales en vez de su reintegración en la sociedad.",
+          "vote": "0",
+          "comment": "Enfoca la seguridad en prevención social, rehabilitación y derechos humanos.",
+          "source": "https://www.emol.com/noticias/Nacional/2025/06/29/1170474/prioridades-programa-gobierno-jeannette-jara.html"
+        },
+        "Despidos": {
+          "question": "El estado debería despedir a muchos funcionarios públicos para reducir sus gastos.",
+          "vote": "0.5",
+          "comment": "No se encontró información pública sobre despidos masivos de trabajadores del Estado.",
+          "source": null
         }
       }
     }

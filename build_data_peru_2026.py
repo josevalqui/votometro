@@ -230,14 +230,16 @@ def generate_combined_votes_json():
                     vote_value = max(vote_counts.items(), key=lambda x: x[1])[0] if any(vote_counts.values()) else "N/A"
                     date_value = format_date(csv_date)
                     break
+
             details.append({
                 "id": pdf_name,
                 "question": q_row["Question"],
                 "date": date_value,
                 "vote": vote_value,
+                "vote_counts": vote_counts,          # ← add this line
                 "source": clean_value(q_row.get("Sources", "N/A")),
                 "law": clean_value(q_row.get("Law", "N/A")),
-                "pdf_link": f"src/assets/sesiones_parlamentarias_2021-2025_pdfs/{pdf_name}.pdf"
+                "pdf_link": f"…/{pdf_name}.pdf"
             })
         party_vote_details[party_str] = details
 

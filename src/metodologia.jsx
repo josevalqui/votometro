@@ -63,7 +63,7 @@ export default function Methodology() {
             </a>
             )
             <br />
-            2. Extraje los nombres de los parlamentarios presentes en esas votaciones, y le asigné a cada persona el partido político actual.
+            2. Extraje los nombres de los parlamentarios presentes en esas votaciones, y le asigné a cada persona un partido político actual.
             <br />
             3. Extraje el voto de cada parlamentario (a favor, en contra, abstención, ausencia), y los combiné por partido político.
             <br />
@@ -80,7 +80,7 @@ export default function Methodology() {
             <br />
             2. Determiné los temas más presentes en el discurso de los candidatos en los cuales no están de acuerdo.
             <br />
-            3. Le asigné a cada candidato una posición (A favor, En contra, Abstención) en cada tema.
+            3. Le asigné a cada candidato una posición (A favor, En contra, Neutral) sobre cada tema.
             <br/>
             4. La aplicación compara las respuestas del usuario con las de los candidatos, y determina qué tan alineadas están.
           </p>
