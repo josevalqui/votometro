@@ -1,3 +1,19 @@
+html {
+  /* tells the UA form controls, scrollbars, etc. to render in dark */
+  color-scheme: dark;
+}
+
+body {
+  /* always use these colors, no media‐query needed */
+  background-color: #121212 !important;
+  color:           white !important;
+}
+
+button {
+  background-color: #20292e;
+  color:            #ffffff;
+}
+
 .menu-button {
   position: absolute;
   top: 20px;

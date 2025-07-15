@@ -118,12 +118,12 @@ export default function App() {
                       )}
                       title={`Opinión del ${party_meta ? 'partido' : 'candidato'}: ${voteMapping[d.vote]}\nTu opinión: ${userText}`}
                       style={{
-                        cursor: isMobile ? 'pointer' : 'default',
+                        cursor: isMobile ? 'pointer' : 'help',
                         color,
                         marginRight: '4px'
                       }}
                     >
-                      {icon} <strong style={{ color }}>Tema:</strong>
+                      {icon} <strong style={{textDecoration: 'underline dotted',color }}>Tema:</strong>
                     </span>
                      {qd.question}
                     <br/>
@@ -167,7 +167,7 @@ export default function App() {
                                     rel="noopener noreferrer"
                                     title="Ver fuente"
                                   >
-                                    *
+                                    (Ver fuente)
                                   </a>
                                 </sup>
                               )}
